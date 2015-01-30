@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'atelierf',
+			'database'  => 'lismarca',
 			'username'  => 'root',
 			'password'  => '123456',
 			'charset'   => 'utf8',

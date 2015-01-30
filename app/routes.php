@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('pages/home');
 });
 
 Route::get('users', function() 
@@ -21,4 +21,9 @@ Route::get('users', function()
 	$users = User::all();
 
     return View::make('users')->with('users', $users);
+});
+
+Route::get('admin', function() 
+{
+	return 'Area de admin';
 });
