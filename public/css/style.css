@@ -1,13 +1,60 @@
+/*    Slideshow Zone     */
+
+#slideshow {
+	margin-top: 3%;
+}
+
+ol.bjqs-markers li {
+	background-color: white;
+	display:inline-block !important;
+	position:relative;
+	left:85%;
+	top:-30px;
+	margin: 0% 1%;
+	width:24px;
+	height:24px;
+	background: -moz-linear-gradient(left,  rgba(204,249,255,0.5) 0%, rgba(204,249,255,0.5) 23%, rgba(204,249,255,0.5) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(204,249,255,0.5)), color-stop(23%,rgba(204,249,255,0.5)), color-stop(100%,rgba(204,249,255,0.5))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(204,249,255,0.5) 0%,rgba(204,249,255,0.5) 23%,rgba(204,249,255,0.5) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(204,249,255,0.5) 0%,rgba(204,249,255,0.5) 23%,rgba(204,249,255,0.5) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(204,249,255,0.5) 0%,rgba(204,249,255,0.5) 23%,rgba(204,249,255,0.5) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(204,249,255,0.5) 0%,rgba(204,249,255,0.5) 23%,rgba(204,249,255,0.5) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ccf9ff', endColorstr='#80ccf9ff',GradientType=1 ); /* IE6-9 */
+}
+
+ol.bjqs-markers li a {
+	width:24px;
+	height:24px;
+	line-height: 0; 
+    font-size: 0;
+    color: transparent; 
+}
+
+ol.bjqs-markers li.active-marker {
+	border:0;
+	background: rgb(206,4,4); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(206,4,4,1) 0%, rgba(206,4,4,1) 23%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(206,4,4,1)), color-stop(23%,rgba(206,4,4,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(206,4,4,1) 0%,rgba(206,4,4,1) 23%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(206,4,4,1) 0%,rgba(206,4,4,1) 23%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(206,4,4,1) 0%,rgba(206,4,4,1) 23%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(206,4,4,1) 0%,rgba(206,4,4,1) 23%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce0404', endColorstr='#ce0404',GradientType=1 ); /* IE6-9 */
+}
+
+/*     Slideshow Zone End    */
+
 body, html {
+	/*font-family: 'Slabo';*/
 	width:1000px;
 	max-width:1366px;
 	margin: 0 auto;
 	margin-top:10px;
-}
+} 
 
 header {
 	position:relative;	
-}
+} 
 
 .logo {
 	width:30%;
@@ -24,7 +71,7 @@ header li {
 	float:right;
 	display:inline-block;
 	margin: 0px;
-	margin-left:41px;
+	margin-left:40px;
 	text-transform: uppercase;
 }
 
