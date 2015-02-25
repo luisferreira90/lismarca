@@ -16,14 +16,4 @@ Route::get('/', function()
 	return View::make('pages/home');
 });
 
-Route::get('users', function() 
-{
-	$users = User::all();
-
-    return View::make('users')->with('users', $users);
-});
-
-Route::get('admin', function() 
-{
-	return 'Area de admin';
-});
+Route::get('registo', array('as' => 'registo', 'uses' => 'UsersController@registration'));

@@ -9,7 +9,9 @@
 		<li><img src="images/slideshow/3.jpg"></li>
 	</ul>
 </div>
-
-
+<div>
+	<br><br><br><br><br>
+	<a href = '/registo'>Registo</a>
+</div>
 
 @stop

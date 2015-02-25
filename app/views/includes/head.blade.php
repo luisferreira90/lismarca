@@ -2,7 +2,7 @@
 <meta name="description" content="">
 <meta name="author" content="Scotch">
 
-<title>Lismarca - Tudo para si</title>
+<title>Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria</title>
 
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
