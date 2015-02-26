@@ -9,7 +9,50 @@
 		<li><img src="images/slideshow/1.jpg"></li>
 	</ul>
 </div>
+
 <img src = 'images/separator.jpg' class = 'separator'>
+
+<div class = 'novidades'>
+	<p class = 'title red'>.NOVIDADES</p>
+</div>
+
+<img src = 'images/separator.jpg' class = 'separator'>
+
+<div class = 'three-columns'>
+	<div class = 'column'>
+		<p class = 'title-smaller red'>.PROMOÇÃO</p>
+		<img class = 'product-image' src = 'images/test/exemplo1.png'>
+		<div class = 'product-name'>
+			<img src = 'images/arrow-small-right-red.png'>
+			<p class = 'product-name'>Lis PowerUp 2500 (Área de Alcance 22m)</p>
+			<p class = 'see-more'>... +</p>
+		</div>
+	</div>
+
+	<div class = 'column middle'>
+		<p class = 'title-smaller red'>.PORTFÓLIO</p>
+		<img class = 'product-image' src = 'images/test/exemplo3.png'>
+		<div class = 'product-name'>
+			<img src = 'images/arrow-small-right-red.png'>
+			<p class = 'product-name'>Lis PowerUp 2500 (Área de Alcance 22m)</p>
+			<p class = 'see-more'>... +</p>
+		</div>
+	</div>
+
+	<div class = 'column'>
+		<p class = 'title-smaller red'>.STOCK</p>
+		<img class = 'product-image' src = 'images/test/exemplo2.png'>
+		<div class = 'product-name'>
+			<img src = 'images/arrow-small-right-red.png'>
+			<p class = 'product-name'>Lis PowerUp 2500 (Área de Alcance 22m)</p>
+			<p class = 'see-more red'>... +</p>
+		</div>
+	</div>
+</div>
+
+
+<div class = 'clear-fix'></div>
+
 <div>
 	<br><br><br><br><br>
 	<a href = '/registo'>Registo</a>

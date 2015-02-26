@@ -12,16 +12,29 @@ body, html {
 	color:blue;
 }
 
+.red {
+	color:rgb(206,25,32);
+}
+
+.title {
+	font-weight: bold;
+	font-size:20px;
+}
+
+.title-smaller {
+	font-weight: bold;
+	font-size:15px;
+}
+
 .separator {
 	width:100%;
 	height: 1px;
-	margin:10px 0px;
+	margin:20px 0px;
 }
 
 header {
 	position:relative;	
 } 
-
 
 .upper-header {
 	width:100%;
@@ -120,7 +133,7 @@ header li {
 
 header li:hover {
 	cursor:pointer;
-	color:red;
+	color:rgb(206,25,32);
 }
 
 .search_field {
@@ -155,6 +168,44 @@ header li:hover {
 .search_field button img {
 	width:24px;
 }
+
+.three-columns {
+	width:100%;
+}
+
+.three-columns .column{
+	width:32.6%;
+	float:left;
+}
+
+.three-columns .column .product-image{
+	width:100%;
+}
+
+.middle {
+	margin: 0% 1%;
+}
+
+.product-name {
+	margin-top:3%;
+	margin-left:2%;
+}
+
+.product-name img {
+	width:6px;
+	vertical-align: middle;
+}
+
+.product-name p {
+	display: inline;
+	font-size:12px;
+}
+
+.see-more {
+	float:right;
+}
+
+
 
 /*    Slideshow Zone     */
 
