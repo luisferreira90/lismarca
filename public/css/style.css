@@ -124,13 +124,13 @@ header .arrow-right {
 	margin-top:10px;
 }
 
-header nav {
+nav {
 	margin-top:50px;
 	width:100%;
 	display:inline-block;
 }
 
-header li {
+nav li {
 	float:right;
 	display:inline-block;
 	margin: 0px;
@@ -139,7 +139,7 @@ header li {
 	text-transform: uppercase;
 }
 
-header li:hover {
+nav li:hover {
 	cursor:pointer;
 	color:rgb(206,25,32);
 }
@@ -175,6 +175,37 @@ header li:hover {
 
 .search_field button img {
 	width:24px;
+}
+
+footer {
+	margin:20px 0;
+	color:grey;
+	font-size:12px;
+}
+
+.newsletter {
+	width:25%;
+	float:left;
+}
+
+.newsletter form {
+	display:inline;
+}
+
+.newsletter input {
+	width:200px;
+}
+
+.newsletter img {
+	display: inline;
+	float:right;
+	width:25px;
+}
+
+footer nav {
+	float:right;
+	width:75%;
+	margin:4% 0%;
 }
 
 .three-columns {
