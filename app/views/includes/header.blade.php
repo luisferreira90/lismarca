@@ -32,39 +32,46 @@
 		</div>
 
 		<div class = 'login'>
-			<img class = 'arrow-right' src = 'images/arrow-right.png'>
-			<p>registo</p>
-			<img src = 'images/lock.png'>
-			<img class = 'arrow-right' src = 'images/arrow-right.png'>
-			<p>login</p>
+			<div class = 'login-register'>
+				<img class = 'arrow-right' src = 'images/arrow-right.png'>
+				<p>registo</p>
+			</div>
+			<div class = 'login-login'>
+				<img src = 'images/lock.png'>
+				<img class = 'arrow-right' src = 'images/arrow-right.png'>
+				<p>login</p>
+			</div>
 		</div>
 
 	</div>
 
 	<div class = 'lower-header'>
-
-		<div class = 'search'>
-			<p class = 'facebook'>facebook <img src = 'images/fb-icon.png' class = 'facebookicon'></p>
-
-			<form class='search_field' method='GET' action='http://www.google.com/search'>
-			    <input name='search'/ type = 'text'>
-			    <button type='submit'>
-			    	procurar
-			    	<img src='images/search.png' alt='Pesquisa'/>
-			    </button>
-			</form>
+		<div class = 'lower-header-left'>
+			<img src = 'images/logo.png' alt = 'Logo Lismarca' class = 'logo'>
 		</div>
 
-		<div class = 'header-main'>
-			<img src = 'images/logo.png' alt = 'Logo Lismarca' class = 'logo'>
+		<div class = 'lower-header-right'>
+			<div class = 'validate-budget'>
+				<img src = 'images/arrow-right-red.png'>
+				<p>.VALIDAR ORÇAMENTO</p>
+			</div>
+
+			<div class = 'search'>
+				<form class='search_field' method='GET' action='http://www.google.com/search'>
+				    <input name='search'/ placeholder='Pesquisar...' type = 'text'>
+				    <button type='submit'>
+				    	<img src='images/search.png' alt='Pesquisa'/>
+				    </button>
+				</form>
+			</div>	
 
 			<nav>
 				<ul>
-					<li>Empresa</li>
-					<li>Produtos</li>
-					<li>Contactos</li>
-					<li>Novidades</li>
-					<li>Portfolio</li>
+					<li>.Empresa</li>
+					<li>.Produtos</li>
+					<li>.Contactos</li>
+					<li>.Novidades</li>
+					<li>.Portfolio</li>
 				</ul>
 			</nav>
 		</div>
@@ -72,3 +79,5 @@
 	</div>
 
 </header>	
+
+<div class = 'clear-fix'></div>

@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 	$('#slideshow').bjqs({
 		// width and height need to be provided to enforce consistency
 		// if responsive is set to true, these values act as maximum dimensions
-		'width' : 1000,
+		'width' : 960,
 		'height' : 400,
 
 		// animation values
@@ -34,10 +34,10 @@ jQuery(document).ready(function($) {
 		'automatic' : false, // automatic
 
 		// control and marker configuration
-		'showcontrols' : false, // show next and prev controls
+		'showcontrols' : true, // show next and prev controls
 		'centercontrols' : true, // center controls verically
-		'nexttext' : 'Next', // Text for 'next' button (can use HTML)
-		'prevtext' : 'Prev', // Text for 'previous' button (can use HTML)
+		'nexttext' : '<img src = "images/arrow-big-unselected.png">', // Text for 'next' button (can use HTML)
+		'prevtext' : '<img src = "images/arrow-big-unselected.png">', // Text for 'previous' button (can use HTML)
 		'showmarkers' : true, // Show individual slide markers
 		'centermarkers' : false, // Center markers horizontally
 
@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
 
 		// presentational options
 		'usecaptions' : false, // show captions for images using the image title tag
-		'randomstart' : true, // start slider at random slide
+		'randomstart' : false, // start slider at random slide
 		'responsive' : true // enable responsive capabilities (beta)
 	});
 });
