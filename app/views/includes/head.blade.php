@@ -16,6 +16,28 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <script src="js/bjqs.min.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(32.660536,-16.920736),
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+
+        var marker = new google.maps.Marker({
+	      position: new google.maps.LatLng(32.660536,-16.920736),
+	      map: map,
+	      title: 'Lismarca'
+});
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
 <link type="text/css" rel="Stylesheet" href="css/bjqs.css" />
 
 <script>

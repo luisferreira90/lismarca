@@ -16,6 +16,14 @@ body, html {
 	color:rgb(206,25,32);
 }
 
+.grey {
+	rgb(110,111,113);
+}
+
+.white {
+	color:white;
+}
+
 .title {
 	font-weight: bold;
 	font-size:20px;
@@ -180,32 +188,50 @@ header li:hover {
 
 .three-columns .column .product-image{
 	width:100%;
+	height: 240px;
 }
 
 .middle {
 	margin: 0% 1%;
 }
 
-.product-name {
+.product-description {
 	margin-top:3%;
 	margin-left:2%;
+	position:relative;
 }
 
-.product-name img {
+.product-description img {
 	width:6px;
 	vertical-align: middle;
 }
 
-.product-name p {
+.product-description p {
 	display: inline;
 	font-size:12px;
 }
 
 .see-more {
-	float:right;
+	font-size:18px!important;
+	position: relative;
+	right:-10%;
 }
 
+.location {
+	background-color:rgb(110,111,113);
+	height: 300px;
+}
 
+.location p{
+	padding-top:2%;
+	margin-bottom:0%;
+}
+
+#map-canvas {
+	width: 100%;
+	height: 75%;
+
+}
 
 /*    Slideshow Zone     */
 
