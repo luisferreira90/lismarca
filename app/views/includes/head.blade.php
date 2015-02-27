@@ -97,8 +97,12 @@ var sourceSwap = function () {
     $(document).ready(function(){
       $('.four-columns').slick({
         	  infinite: true,
-	  slidesToShow: 3,
-	  slidesToScroll: 3
+	  slidesToShow: 4,
+	  slidesToScroll: 4,
+   	  lazyLoad: 'ondemand',
+   	  mobileFirst: true,
+   	  nextArrow: '<img class ="carousel-next" data-alt-src = "images/arrow-big-selected.png" src = "images/arrow-big-unselected.png">',
+   	  prevArrow: '<img class ="carousel-previous" data-alt-src = "images/arrow-big-selected.png" src = "images/arrow-big-unselected.png">'
       });
     });
   </script>

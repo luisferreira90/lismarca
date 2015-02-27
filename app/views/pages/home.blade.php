@@ -50,6 +50,42 @@
 				<p class = 'see-more red'>...+</p>
 			</div>
 		</div>
+
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo2.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Chapéu de Sol</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
+
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo2.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Chapéu de Sol</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
+
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo2.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Chapéu de Sol</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
+
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo2.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Chapéu de Sol</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
 	</div>
 </div>
 

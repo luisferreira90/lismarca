@@ -229,6 +229,10 @@ nav li:hover {
 	width:100%;
 }
 
+.slick-slide {
+	max-height:300px!important;
+}
+
 .four-columns .column {
 	width:24.652%;
 	display:inline-block;
@@ -244,6 +248,17 @@ nav li:hover {
 
 .four-columns .see-more {
 
+}
+
+.carousel-next, .carousel-previous {
+	width:40px;
+	position:absolute;
+	top:60px;
+}
+
+.carousel-next {
+	right: 0;
+	transform:rotate(180deg);
 }
 
 .three-columns .column .product-image{
