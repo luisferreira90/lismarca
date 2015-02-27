@@ -38,6 +38,11 @@
 
 <link type="text/css" rel="Stylesheet" href="css/bjqs.css" />
 
+
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+
 <script>
 
 jQuery(document).ready(function($) {
@@ -85,4 +90,15 @@ var sourceSwap = function () {
         }).hover(sourceSwap, sourceSwap); 
     });
 
+
 </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.four-columns').slick({
+        	  infinite: true,
+	  slidesToShow: 3,
+	  slidesToScroll: 3
+      });
+    });
+  </script>
