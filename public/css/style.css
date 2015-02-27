@@ -101,11 +101,6 @@ header {
 	vertical-align: middle;
 }
 
-header .arrow-right {
-	width:10px !important;
-	height: 11px;
-}
-
 .language p, .phone p, .mobile-phone p, .facebook p, .distribution p, .login p, .validate-budget p {
 	display: inline;
 	vertical-align: middle;
@@ -198,7 +193,7 @@ nav li:hover {
 }
 
 .search_field button img {
-	width:24px;
+	width:22px;
 }
 
 .three-columns .column .product-image{
@@ -213,7 +208,7 @@ nav li:hover {
 }
 
 .product-description img {
-	width:6px;
+	width:12px;
 	vertical-align: middle;
 }
 
@@ -276,12 +271,26 @@ footer nav {
 	margin-top:3%;
 }
 
+footer h3 {
+	margin:0;
+}
+
 footer .column {
 	width:31%!important;
 }
 
 footer .middle {
 	width:35%!important;	
+}
+
+footer .column.right div {
+	margin-bottom:10px;
+}
+
+footer .column.right img {
+	width:12px;
+	vertical-align: middle;
+	margin-right:4px;
 }
 
 .footer-about-left, .footer-about-right {
@@ -299,23 +308,36 @@ footer .middle {
 }
 
 footer .distribution img {
-	width:6px;
+	width:12px;
 	vertical-align: middle;
 }
 
-.social-networks img {
-	width:100%;
+footer .middle .separator {
+	margin-top:5px;
+	margin-bottom:13px;
 }
 
-.footer .right {
-	
+.social-networks {
+	text-align: center;
+}
+
+.social-networks img {
+	width:13.521%;
+}
+
+footer .address {
+	padding-left: 1.5em;
+	text-indent:-1.5em;
+}
+
+footer .address p {
+	display: inline;
 }
 
 .footer-lower {
 	margin-top:20px;
 	text-align: center;
 }
-
 
 /*######    Slideshow     #####*/
 

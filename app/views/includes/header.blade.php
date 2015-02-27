@@ -36,8 +36,8 @@
 				<img class = 'arrow-right' src = 'images/arrow-right.png'>
 				<p>registo</p>
 			</div>
+			<img src = 'images/lock.png'>	
 			<div class = 'login-login'>
-				<img src = 'images/lock.png'>
 				<img class = 'arrow-right' src = 'images/arrow-right.png'>
 				<p>login</p>
 			</div>

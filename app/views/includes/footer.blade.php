@@ -46,7 +46,13 @@
 			</div>
 			<div class = 'separator'></div>
 			<div class = 'social-networks'>
-				<img src = 'images/social.png'>
+				<img src = 'images/social-facebook.png'>
+				<img src = 'images/social-youtube.png'>
+				<img src = 'images/social-linkedin.png'>
+				<img src = 'images/social-gplus.png'>
+				<img src = 'images/social-dropbox.png'>
+				<img src = 'images/social-evernote.png'>
+				<img src = 'images/social-pinterest.png'>
 			</div>
 		</div>
 		<div class = 'column right'>

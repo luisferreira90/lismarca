@@ -56,8 +56,8 @@ jQuery(document).ready(function($) {
 		// control and marker configuration
 		'showcontrols' : true, // show next and prev controls
 		'centercontrols' : true, // center controls verically
-		'nexttext' : '<img src = "images/arrow-big-unselected.png">', // Text for 'next' button (can use HTML)
-		'prevtext' : '<img src = "images/arrow-big-unselected.png">', // Text for 'previous' button (can use HTML)
+		'nexttext' : '<img data-alt-src = "images/arrow-big-selected.png" src = "images/arrow-big-unselected.png">', // Text for 'next' button (can use HTML)
+		'prevtext' : '<img data-alt-src = "images/arrow-big-selected.png" src = "images/arrow-big-unselected.png">', // Text for 'previous' button (can use HTML)
 		'showmarkers' : true, // Show individual slide markers
 		'centermarkers' : false, // Center markers horizontally
 
@@ -71,5 +71,18 @@ jQuery(document).ready(function($) {
 		'responsive' : true // enable responsive capabilities (beta)
 	});
 });
+
+var sourceSwap = function () {
+        var $this = $(this);
+        var newSource = $this.data('alt-src');
+        $this.data('alt-src', $this.attr('src'));
+        $this.attr('src', newSource);
+    }
+
+    $(function() {
+        $('img[data-alt-src]').each(function() { 
+            new Image().src = $(this).data('alt-src'); 
+        }).hover(sourceSwap, sourceSwap); 
+    });
 
 </script>
