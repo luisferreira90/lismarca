@@ -7,8 +7,6 @@
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 
-<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-
 <script src = "js/html5shiv-master/dist/html5shiv.js"></script>
 <script src = "js/html5shiv-master/dist/html5shiv-printshiv.js"></script>
 
@@ -51,9 +49,9 @@ jQuery(document).ready(function($) {
 
 		// animation values
 		'animtype' : 'fade', // accepts 'fade' or 'slide'
-		'animduration' : 450, // how fast the animation are
+		'animduration' : 550, // how fast the animation are
 		'animspeed' : 3500, // the delay between each slide
-		'automatic' : false, // automatic
+		'automatic' : true, // automatic
 
 		// control and marker configuration
 		'showcontrols' : true, // show next and prev controls
@@ -64,7 +62,7 @@ jQuery(document).ready(function($) {
 		'centermarkers' : false, // Center markers horizontally
 
 		// interaction values
-		'keyboardnav' : true, // enable keyboard navigation
+		'keyboardnav' : false, // enable keyboard navigation
 		'hoverpause' : true, // pause the slider on hover
 
 		// presentational options

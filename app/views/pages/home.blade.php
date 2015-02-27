@@ -4,9 +4,9 @@
 
 <div id="slideshow">
 	<ul class="bjqs">
-		<li><img src="images/slideshow/3.jpg"></li>
-		<li><img src="images/slideshow/2.jpg"></li>
-		<li><img src="images/slideshow/1.jpg"></li>
+		<li><a class = 'slide-img' href = 'images/slideshow/3.jpg'><img src="images/slideshow/3.jpg"></a></li>
+		<li><a class = 'slide-img' href = 'images/slideshow/2.jpg'><img src="images/slideshow/2.jpg"></a></li>
+		<li><a class = 'slide-img' href = 'images/slideshow/1.jpg'><img src="images/slideshow/1.jpg"></a></li>
 	</ul>
 </div>
 
