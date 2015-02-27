@@ -39,29 +39,33 @@
 				</ul>
 			</div>
 		</div>
-		<div class = 'column'>
+		<div class = 'column middle'>
 			<div class = 'distribution'>
 				<img class = 'arrow-right' src = 'images/arrow-right.png'>
 				<p>Fornecemos para todo o país: Portugal Continental e Ilhas</p>
 			</div>
+			<div class = 'separator'></div>
 			<div class = 'social-networks'>
 				<img src = 'images/social.png'>
 			</div>
 		</div>
-		<div class = 'column'>
+		<div class = 'column right'>
 			<div class = 'phone'>
 				<img src = 'images/phone.png'>
-				<p>291 741 884</p>
-			</div>
-			<div class = 'mobile-phone'>
+				<p>291 741 884 | </p>
 				<img src = 'images/mobile-phone.png'>
 				<p>965 010 699</p>
 			</div>
 			<div class = 'email'>
 				<img src = 'images/email-small.png'><a href = 'mailto:info@lismarca.pt'>info@lismarca.pt</a> | <a href = 'mailto:web@lismarca.pt'>web@lismarca.pt</a>
 			</div>
+			<div class = 'address'>
+				<img src = 'images/location.png'><p>Rua Mestre Sidónio 9A, 9020-365, Funchal<br>Madeira | Portugal</p>
+			</div>
 		</div>
 	</div>
+	<div class = 'clear-fix'></div>
+	<div class = 'separator'></div>
 	<div class = 'footer-lower'>
 		Copyright © 2015 Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria. Todo os direitos reservados.
 	</div>

@@ -52,7 +52,7 @@
 
 <div class = 'clear-fix'></div>
 
-<div class = 'location'>
+<div class = 'map'>
 	<p class = 'title white'>.LOCALIZAÇÃO</p>
 	<div id="map-canvas"></div>
 </div>
