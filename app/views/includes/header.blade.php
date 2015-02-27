@@ -1,48 +1,49 @@
 <header>
 	<div class = 'upper-header'>
+		<div class = 'upper-header-content'>
+			<div class = 'upper-header-left'>
 
-		<div class = 'upper-header-left'>
+				<div class = 'language'>
+					<img class = 'language-flag' src = 'images/flag-icon-pt.gif'>
+					<p class = 'language-name'>Português</p>
+					<img src = 'images/arrow-down.png'>
+				</div>
 
-			<div class = 'language'>
-				<img class = 'language-flag' src = 'images/flag-icon-pt.gif'>
-				<p class = 'language-name'>Português</p>
-				<img src = 'images/arrow-down.png'>
+				<div class = 'phone'>
+					<img src = 'images/phone.png'>
+					<p>291 741 884</p>
+				</div>
+
+				<div class = 'mobile-phone'>
+					<img src = 'images/mobile-phone.png'>
+					<p>965 010 699</p>
+				</div>
+
+				<div class = 'facebook'>
+					<img src = 'images/fb-icon.png'>
+					<p class = 'blue'>gosto</p>
+				</div>
+
+				<div class = 'distribution'>
+					<img class = 'arrow-right' src = 'images/arrow-right.png'>
+					<p>Fornecemos para todo o país: Portugal Continental e Ilhas</p>
+				</div>
+
 			</div>
 
-			<div class = 'phone'>
-				<img src = 'images/phone.png'>
-				<p>291 741 884</p>
-			</div>
 
-			<div class = 'mobile-phone'>
-				<img src = 'images/mobile-phone.png'>
-				<p>965 010 699</p>
+			<div class = 'login'>
+				<div class = 'login-register'>
+					<img class = 'arrow-right' src = 'images/arrow-right.png'>
+					<p>registo</p>
+				</div>
+				<img src = 'images/lock.png'>	
+				<div class = 'login-login'>
+					<img class = 'arrow-right' src = 'images/arrow-right.png'>
+					<p>login</p>
+				</div>
 			</div>
-
-			<div class = 'facebook'>
-				<img src = 'images/fb-icon.png'>
-				<p class = 'blue'>gosto</p>
-			</div>
-
-			<div class = 'distribution'>
-				<img class = 'arrow-right' src = 'images/arrow-right.png'>
-				<p>Fornecemos para todo o país: Portugal Continental e Ilhas</p>
-			</div>
-
 		</div>
-
-		<div class = 'login'>
-			<div class = 'login-register'>
-				<img class = 'arrow-right' src = 'images/arrow-right.png'>
-				<p>registo</p>
-			</div>
-			<img src = 'images/lock.png'>	
-			<div class = 'login-login'>
-				<img class = 'arrow-right' src = 'images/arrow-right.png'>
-				<p>login</p>
-			</div>
-		</div>
-
 	</div>
 
 	<div class = 'lower-header'>

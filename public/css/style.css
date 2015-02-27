@@ -15,11 +15,19 @@ body, html {
 }
 
 .red {
-	color:rgb(206,25,32);
+	color:#e11b22;
 }
 
 .grey {
-	rgb(110,111,113);
+	color:#aeb0b2;
+}
+
+.dark-grey {
+	color:#6d6f71;
+}
+
+.light-grey {
+	color:#e6e7e9;
 }
 
 .white {
@@ -74,18 +82,36 @@ header {
 
 .upper-header {
 	width:100%;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 999;
 	height: 30px;
+	text-align: center;
 	display: inline-block;
-	background-color:lightgrey;
+	background-color:#e6e7e9;
 	border-bottom: solid 1px grey;
+}
+
+.upper-header-content {
+	display: inline-block!important;
+	width:960px;
 }
 
 .upper-header div {
 	line-height: 30px;
 	display: inline;
 	font-size:12px;
-	color:grey;
+	color:#6d6f71;
 	margin:0 7px;
+}
+
+.upper-header div:first-child {
+	margin-left:0;
+}
+
+.upper-header div:last-child {
+	margin-right:0;
 }
 
 .upper-header-left {
@@ -107,7 +133,7 @@ header {
 }
 
 .lower-header {
-	margin-top:20px;
+	margin-top:40px;
 }
 
 .lower-header-left {
@@ -155,12 +181,13 @@ nav li {
 	margin: 0px;
 	margin-left:20px;
 	font-size: 14px;
+	font-weight: bold;
 	text-transform: uppercase;
 }
 
 nav li:hover {
 	cursor:pointer;
-	color:rgb(206,25,32);
+	color:#e11b22;
 }
 
 .search_field {
@@ -168,7 +195,7 @@ nav li:hover {
 	float: right;
 	display: block;
 	margin-top:30px;
-	background-color:lightgrey;
+	background-color:#e6e7e9;
 }
 
 .search_field input {
@@ -177,7 +204,7 @@ nav li:hover {
 	position:relative;
 	left:2%;
 	border: none;
-	background-color:lightgrey;
+	background-color:#e6e7e9;
 	font-style:italic;
 	font-size:11px;
 	padding-top: 2%;
@@ -194,6 +221,29 @@ nav li:hover {
 
 .search_field button img {
 	width:22px;
+}
+
+/*##### BODY #####*/ 
+
+.four-columns {
+	width:100%;
+}
+
+.four-columns .column {
+	width:24.652%;
+	display:inline-block;
+}
+
+.four-columns .column img {
+	width:100%;
+}
+
+.four-columns .product-description img {
+	width:12px;
+}
+
+.four-columns .see-more {
+
 }
 
 .three-columns .column .product-image{
@@ -224,7 +274,6 @@ nav li:hover {
 }
 
 .map {
-	background-color:rgb(110,111,113);
 	height: 300px;
 }
 
@@ -242,8 +291,9 @@ nav li:hover {
 
 footer {
 	margin:20px 0;
-	color:grey;
+	color: #6d6f71;
 	font-size:12px;
+	background-color:#e6e7e9;
 }
 
 .newsletter {
@@ -266,6 +316,7 @@ footer {
 }
 
 footer nav {
+	font-weight: bold;
 	float:right;
 	width:75%;
 	margin-top:3%;

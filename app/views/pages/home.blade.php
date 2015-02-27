@@ -14,6 +14,43 @@
 
 <div class = 'novidades'>
 	<p class = 'title red'>.NOVIDADES</p>
+	<div class = 'four-columns'>
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo1.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Lis PowerUp 2500</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
+
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo2.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Cadeira Trend</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
+
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo3.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Cadeira Lisboa</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
+
+		<div class = 'column'>
+			<img class = 'product-image' src = 'images/test/exemplo2.png'>
+			<div class = 'product-description'>
+				<img src = 'images/arrow-small-right-red.png'>
+				<p>Chapéu de Sol</p>
+				<p class = 'see-more red'>...+</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <img src = 'images/separator.jpg' class = 'separator'>
@@ -53,7 +90,7 @@
 <div class = 'clear-fix'></div>
 
 <div class = 'map'>
-	<p class = 'title white'>.LOCALIZAÇÃO</p>
+	<p class = 'title red'>.LOCALIZAÇÃO</p>
 	<div id="map-canvas"></div>
 </div>
 

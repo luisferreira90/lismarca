@@ -73,6 +73,6 @@
 	<div class = 'clear-fix'></div>
 	<div class = 'separator'></div>
 	<div class = 'footer-lower'>
-		Copyright © 2015 Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria. Todo os direitos reservados.
+		Copyright © 2015 Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria. Todos os direitos reservados.
 	</div>
 </footer>
