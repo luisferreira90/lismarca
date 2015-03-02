@@ -256,6 +256,10 @@ nav li:hover {
 	top:60px;
 }
 
+.carousel-next:hover, .carousel-previous:hover {
+	cursor:pointer;
+}
+
 .carousel-next {
 	right: 0;
 	transform:rotate(180deg);

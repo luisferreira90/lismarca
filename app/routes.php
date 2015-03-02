@@ -16,4 +16,16 @@ Route::get('/', function()
 	return View::make('pages/home');
 });
 
+Route::resource('registo', 'UsersController'); 
+
 Route::get('registo', array('as' => 'registo', 'uses' => 'UsersController@registration'));
+
+Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
+
+Route::post('/login', array('as' => 'login', 'uses' => 'UsersController@handleLogin'));
+
+Route::get('/profile', array('as' => 'profile', 'uses' => 'UsersController@profile'));
+
+Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));
+
+Route::resource('user', 'UsersController'); 

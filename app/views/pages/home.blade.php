@@ -130,10 +130,10 @@
 	<div id="map-canvas"></div>
 </div>
 
-<!--
+
 <div>
 	<br><br><br><br><br>
 	<a href = '/registo'>Registo</a>
-</div>-->
+</div>
 
 @stop

@@ -98,7 +98,7 @@ var sourceSwap = function () {
       $('.four-columns').slick({
         	  infinite: true,
 	  slidesToShow: 4,
-	  slidesToScroll: 4,
+	  slidesToScroll: 1,
    	  lazyLoad: 'ondemand',
    	  mobileFirst: true,
    	  nextArrow: '<img class ="carousel-next" data-alt-src = "images/arrow-big-selected.png" src = "images/arrow-big-unselected.png">',
