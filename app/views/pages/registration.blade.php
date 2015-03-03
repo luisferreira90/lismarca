@@ -6,6 +6,12 @@
 <div>
     <div>
         <h2>Registo</h2>
+
+        @foreach ($errors->all() as $message)
+            <br>
+            {{$message}}
+        @endforeach
+
         {{ Form::open(array('route' => array('user.store'), 'method' => 'post')) }}
         <div>
             {{Form::label('name','Nome')}}
@@ -40,8 +46,8 @@
             {{Form::password('password')}}
         </div>
         <div>
-            {{Form::label('repeat_password','Repetir palavra-passe')}}
-            {{Form::password('repeat_password')}}
+            {{Form::label('password_confirmation','Repetir palavra-passe')}}
+            {{Form::password('password_confirmation')}}
         </div>
         <div id="passwordCheck">
         </div>

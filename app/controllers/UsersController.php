@@ -9,6 +9,15 @@ class UsersController extends BaseController {
 	public function handleLogin() {
 		$data = Input::only(['email', 'password']);
 
+		$validator = Validator::make($data, [
+			'email' => 'required|email', 
+			'password' => 'required'
+			]);
+
+        if($validator->fails()){
+            return Redirect::route('login')->withErrors($validator)->withInput();
+        }
+
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])){
             return Redirect::to('profile');
         }
@@ -35,7 +44,20 @@ class UsersController extends BaseController {
 	}
 
 	public function store() {
-		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password']);
+		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password', 'password_confirmation']);
+		
+		$validator = Validator::make($data, [
+			'name' => 'required|min:2',
+			'email' => 'required|email', 
+			'phone' => 'numeric',
+			'password' => 'required|min:6|confirmed',
+            'password_confirmation'=> 'required|min:6'
+			]);
+
+        if($validator->fails()){
+            return Redirect::route('registo')->withErrors($validator)->withInput();
+        }
+
 		$data['password'] = Hash::make($data['password']);
 
         $newUser = User::create($data);

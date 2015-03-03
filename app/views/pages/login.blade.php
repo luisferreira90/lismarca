@@ -2,6 +2,11 @@
 
 @section('content')
 
+@foreach ($errors->all() as $message)
+	<br>
+	{{$message}}
+@endforeach
+
 <div id="registration">
 
 {{ Form::open(array('url' => 'login', 'method' => 'post')) }}
