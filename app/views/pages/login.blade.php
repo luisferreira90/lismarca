@@ -6,10 +6,10 @@
 
 {{ Form::open(array('url' => 'login', 'method' => 'post')) }}
 	{{ Form::label('email','Email') }}
-	{{ Form::text('email', null,array('class' => 'form-control')) }}
+	{{ Form::email('email') }}
 	{{ Form::label('password','Password') }}
-	{{ Form::password('password',array('class' => 'form-control')) }}
-	{{ Form::submit('Login', array('class' => 'btn btn-primary')) }}
+	{{ Form::password('password') }}
+	{{ Form::submit('Login') }}
 {{ Form::close() }}
 
 	

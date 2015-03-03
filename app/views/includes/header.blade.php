@@ -35,12 +35,12 @@
 			<div class = 'login'>
 				<div class = 'login-register'>
 					<img class = 'arrow-right' src = 'images/arrow-right.png'>
-					<p>registo</p>
+					<a href = 'registo'><p>registo</p></a>
 				</div>
 				<img src = 'images/lock.png'>	
 				<div class = 'login-login'>
 					<img class = 'arrow-right' src = 'images/arrow-right.png'>
-					<p>login</p>
+					<a href = 'login'><p>login</p></a>
 				</div>
 			</div>
 		</div>
@@ -48,7 +48,7 @@
 
 	<div class = 'lower-header'>
 		<div class = 'lower-header-left'>
-			<img src = 'images/logo.png' alt = 'Logo Lismarca' class = 'logo'>
+			<a href = '/'><img src = 'images/logo.png' alt = 'Logo Lismarca' class = 'logo'></a>
 		</div>
 
 		<div class = 'lower-header-right'>

@@ -3,8 +3,8 @@
 @section('content')
 
 <br><br><br>
-<div class="row">
-    <div class="col-md-4 col-md-offset-4">
+<div>
+    <div>
         <h2>Registo</h2>
         {{ Form::open(array('route' => array('user.store'), 'method' => 'post')) }}
         <div>
@@ -29,7 +29,7 @@
         </div>
         <div>
             {{Form::label('entity_type','Tipo de entidade')}}
-            {{Form::text('entity_type')}}
+            {{Form::select('entity_type', $data)}}
         </div>
         <div>
             {{Form::label('company_name','Nome comercial da empresa')}}
@@ -43,10 +43,32 @@
             {{Form::label('repeat_password','Repetir palavra-passe')}}
             {{Form::password('repeat_password')}}
         </div>
-        {{Form::submit('Registar')}}
+        <div id="passwordCheck">
+        </div>
+        <div>
+            {{Form::submit('Registar',array('id' => 'submit'))}}
+        </div>
         {{ Form::close() }}
     </div>
 </div>
+
+<script>
+function checkPasswordMatch() {
+    var password = $("#password").val();
+    var confirmPassword = $("#repeat_password").val();
+
+    if (password != confirmPassword)
+        $("#passwordCheck").html("Passwords do not match!");
+    else
+        $("#passwordCheck").html("Passwords match.");
+}
+
+$(document).ready(function () {
+    $("#submit").disabled = true;
+    $("#password").keyup(checkPasswordMatch);
+    $("#repeat_password").keyup(checkPasswordMatch);
+});
+</script>
 
 
 
