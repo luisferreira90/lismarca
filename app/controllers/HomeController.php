@@ -2,23 +2,22 @@
 
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+	public function language() 
+    {
+        $rules = [
+        'language' => 'in:en,pt' //list of supported languages of your application.
+        ];
 
-	public function showWelcome()
-	{
-		echo "Laravel is cool!";
-		return View::make('hello');
-	}
+        $language = Input::get('lang'); //lang is name of form select field.
+
+        $validator = Validator::make(compact($language),$rules);
+
+        if($validator->passes())
+        {
+            Session::put('language',$language);
+            App::setLocale($language);
+            return Redirect::back()->withInput();
+        }
+    }
 
 }

@@ -29,3 +29,5 @@ Route::get('/profile', array('as' => 'profile', 'uses' => 'UsersController@profi
 Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));
 
 Route::resource('user', 'UsersController'); 
+
+Route::get('language', array('uses' => 'HomeController@language'));

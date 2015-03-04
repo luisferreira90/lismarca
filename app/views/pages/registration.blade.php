@@ -16,7 +16,7 @@
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('name','Nome')}}
+                {{Form::label('name', Lang::get('messages.Name'))}}
                 {{Form::text('name')}}
             </div>
             <div id = 'nameCheck' class = 'form-error'></div>
@@ -40,7 +40,7 @@
 
      	<div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('address','Morada')}}
+                {{Form::label('address', Lang::get('messages.Address'))}}
                 {{Form::text('address')}}
             </div>
         </div>
@@ -68,7 +68,7 @@
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('password','Palavra-passe')}}
+                {{Form::label('password', Lang::get('messages.Password'))}}
                 {{Form::password('password')}}
             </div>
             <div id = 'passwordCheck' class = 'form-error'></div>

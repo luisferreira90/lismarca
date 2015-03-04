@@ -3,10 +3,21 @@
 		<div class = 'upper-header-content'>
 			<div class = 'upper-header-left'>
 
+				
+			    
+			
 				<div class = 'language'>
-					<img class = 'language-flag' src = 'images/flag-icon-pt.gif'>
-					<p class = 'language-name'>Português</p>
+					<img class = 'language-flag' 
+						@if(Session::get('language') === 'en') 
+							src = 'images/flag-icon-pt.png'>
+							<p class = 'language-name'><a href = 'language?lang=pt'>Portuguese</a></p>
+						@else
+							src = 'images/flag-icon-en.png'>
+							<p class = 'language-name'><a href = 'language?lang=en'>English</a></p>
+						@endif	
+					
 					<img src = 'images/arrow-down.png'>
+
 				</div>
 
 				<div class = 'phone'>
