@@ -24,7 +24,6 @@
 			<div class = 'footer-about-left'>
 				<h3>.SOBRE NÓS</h3>
 				<ul>
-					<li>Sobre Nós</li>
 					<li>Entrar em contacto</li>
 					<li>Termos de Serviço</li>
 					<li>Politica de Privacidade</li>

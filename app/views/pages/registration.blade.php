@@ -4,7 +4,7 @@
 
 <br><br><br>
 <div>
-    <h2>Registo</h2>
+    <h2>{{Lang::get('strings.registration')}}</h2>
 
     @foreach ($errors->all() as $message)
         <br>
@@ -16,7 +16,7 @@
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('name', Lang::get('messages.Name'))}}
+                {{Form::label('name', Lang::get('strings.name'))}}
                 {{Form::text('name')}}
             </div>
             <div id = 'nameCheck' class = 'form-error'></div>
@@ -24,7 +24,7 @@
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('email','E-mail')}}
+                {{Form::label('email','Email')}}
                 {{Form::email('email')}}
             </div>
             <div id = 'emailCheck' class = 'form-error'></div>
@@ -32,7 +32,7 @@
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('phone','Telefone')}}
+                {{Form::label('phone',Lang::get('strings.telephone'))}}
                 {{Form::text('phone')}}
             </div>
             <div id = 'phoneCheck' class = 'form-error'></div>
@@ -40,35 +40,35 @@
 
      	<div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('address', Lang::get('messages.Address'))}}
+                {{Form::label('address', Lang::get('strings.address'))}}
                 {{Form::text('address')}}
             </div>
         </div>
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('location','Localização')}}
+                {{Form::label('location',Lang::get('strings.location'))}}
                 {{Form::text('location')}}
             </div>
         </div>
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('entity_type','Tipo de entidade')}}
+                {{Form::label('entity_type',Lang::get('strings.entity_type'))}}
                 {{Form::select('entity_type', $data)}}
             </div>
         </div>
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('company_name','Nome comercial da empresa')}}
+                {{Form::label('company_name',Lang::get('strings.company_name'))}}
                 {{Form::text('company_name')}}
             </div>
         </div>
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('password', Lang::get('messages.Password'))}}
+                {{Form::label('password', Lang::get('strings.password'))}}
                 {{Form::password('password')}}
             </div>
             <div id = 'passwordCheck' class = 'form-error'></div>
@@ -76,13 +76,13 @@
 
         <div class = 'form-element'>
             <div class = 'form-left'>
-                {{Form::label('password_confirmation','Repetir palavra-passe')}}
+                {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
                 {{Form::password('password_confirmation')}}
             </div>
         </div>
 
         <div class = 'form-element'>
-            {{Form::submit('Registar',array('id' => 'submit'))}}
+            {{Form::submit(Lang::get('strings.submit'),array('id' => 'submit'))}}
         </div>
         {{ Form::close() }}
     </div>
@@ -111,7 +111,7 @@ function checkForm() {
     }
 
     if(!re.test(email)) {
-        $("#emailCheck").html("Tem que inserir um endereço de e-mail válido, no formato nome@dominio.com");
+        $("#emailCheck").html("Tem que inserir um endereço de email válido, no formato nome@dominio.com");
         form[1] = 0;    
     }
     else {

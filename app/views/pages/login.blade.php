@@ -7,17 +7,16 @@
 	{{$message}}
 @endforeach
 
-<div id="registration">
+<div>
 
 {{ Form::open(array('url' => 'login', 'method' => 'post')) }}
 	{{ Form::label('email','Email') }}
 	{{ Form::email('email') }}
-	{{ Form::label('password','Password') }}
+	{{ Form::label('password',Lang::get('strings.password')) }}
 	{{ Form::password('password') }}
 	{{ Form::submit('Login') }}
 {{ Form::close() }}
 
-	
 </div>
 
 

@@ -2,12 +2,12 @@
 
 @section('content')
 
-<div class="yya">
-    <div>
-        @if(Auth::check())
-            <p>Welcome to your profile page {{Auth::user()->name}} - {{Auth::user()->phone}}</p>
-        @endif
-    </div>
+<div>
+    @if(Auth::check())
+        <p>{{Lang::get('strings.welcome_profile')}}, {{Auth::user()->name}}!</p>
+    @else 
+    	<p>{{Lang::get('strings.need_login')}}</p>
+    @endif
 </div>
 
 @stop

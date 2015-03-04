@@ -3,21 +3,15 @@
 		<div class = 'upper-header-content'>
 			<div class = 'upper-header-left'>
 
-				
-			    
-			
 				<div class = 'language'>
-					<img class = 'language-flag' 
-						@if(Session::get('language') === 'en') 
-							src = 'images/flag-icon-pt.png'>
-							<p class = 'language-name'><a href = 'language?lang=pt'>Portuguese</a></p>
-						@else
-							src = 'images/flag-icon-en.png'>
-							<p class = 'language-name'><a href = 'language?lang=en'>English</a></p>
-						@endif	
-					
+					@if(Session::get('language') === 'en') 
+						<img class = 'language-flag' src = 'images/flag-icon-pt.png'>
+						<p class = 'language-name'><a href = 'language?lang=pt'>Portuguese</a></p>
+					@else
+						<img class = 'language-flag' src = 'images/flag-icon-en.png'>
+						<p class = 'language-name'><a href = 'language?lang=en'>English</a></p>
+					@endif		
 					<img src = 'images/arrow-down.png'>
-
 				</div>
 
 				<div class = 'phone'>
@@ -42,16 +36,23 @@
 
 			</div>
 
-
 			<div class = 'login'>
 				<div class = 'login-register'>
 					<img class = 'arrow-right' src = 'images/arrow-right.png'>
-					<a href = 'registo'><p>registo</p></a>
+					@if(Auth::check())
+						<a href = 'profile'><p>{{Lang::get('strings.profile')}}</p></a>
+					@else
+						<a href = 'registo'><p>{{Lang::get('strings.registration')}}</p></a>
+					@endif
 				</div>
 				<img src = 'images/lock.png'>	
 				<div class = 'login-login'>
 					<img class = 'arrow-right' src = 'images/arrow-right.png'>
-					<a href = 'login'><p>login</p></a>
+					@if(Auth::check())
+						<a href = 'logout'><p>Logout</p></a>
+					@else
+						<a href = 'login'><p>Login</p></a>
+					@endif
 				</div>
 			</div>
 		</div>
