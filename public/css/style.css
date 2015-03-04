@@ -462,3 +462,21 @@ ol.bjqs-markers li.active-marker {
 	background: linear-gradient(to right,  rgba(206,4,4,1) 0%,rgba(206,4,4,1) 23%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce0404', endColorstr='#ce0404',GradientType=1 ); /* IE6-9 */
 }
+
+/*##### Formulário de inscrição #####*/
+
+.form-element div{
+	display:inline-block;
+}
+
+label {
+	display:inline-block;
+}
+
+input, select {
+	display:block;
+}
+
+/*.form-error {
+	display:block;
+}*/

@@ -4,54 +4,84 @@
 
 <br><br><br>
 <div>
-    <div>
-        <h2>Registo</h2>
+    <h2>Registo</h2>
 
-        @foreach ($errors->all() as $message)
-            <br>
-            {{$message}}
-        @endforeach
+    @foreach ($errors->all() as $message)
+        <br>
+        {{$message}}
+    @endforeach
 
+    <div class = 'registration'>
         {{ Form::open(array('route' => array('user.store'), 'method' => 'post')) }}
-        <div>
-            {{Form::label('name','Nome')}}
-            {{Form::text('name')}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('name','Nome')}}
+                {{Form::text('name')}}
+            </div>
+            <div id = 'nameCheck' class = 'form-error'></div>
         </div>
-        <div>
-            {{Form::label('email','E-mail')}}
-            {{Form::email('email')}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('email','E-mail')}}
+                {{Form::email('email')}}
+            </div>
+            <div id = 'emailCheck' class = 'form-error'></div>
         </div>
-        <div>
-            {{Form::label('phone','Telefone')}}
-            {{Form::text('phone')}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('phone','Telefone')}}
+                {{Form::text('phone')}}
+            </div>
+            <div id = 'phoneCheck' class = 'form-error'></div>
         </div>
-     	<div>
-            {{Form::label('address','Morada')}}
-            {{Form::text('address')}}
+
+     	<div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('address','Morada')}}
+                {{Form::text('address')}}
+            </div>
         </div>
-        <div>
-            {{Form::label('location','Localização')}}
-            {{Form::text('location')}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('location','Localização')}}
+                {{Form::text('location')}}
+            </div>
         </div>
-        <div>
-            {{Form::label('entity_type','Tipo de entidade')}}
-            {{Form::select('entity_type', $data)}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('entity_type','Tipo de entidade')}}
+                {{Form::select('entity_type', $data)}}
+            </div>
         </div>
-        <div>
-            {{Form::label('company_name','Nome comercial da empresa')}}
-            {{Form::text('company_name')}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('company_name','Nome comercial da empresa')}}
+                {{Form::text('company_name')}}
+            </div>
         </div>
-        <div>
-            {{Form::label('password','Palavra-passe')}}
-            {{Form::password('password')}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('password','Palavra-passe')}}
+                {{Form::password('password')}}
+            </div>
+            <div id = 'passwordCheck' class = 'form-error'></div>
         </div>
-        <div>
-            {{Form::label('password_confirmation','Repetir palavra-passe')}}
-            {{Form::password('password_confirmation')}}
+
+        <div class = 'form-element'>
+            <div class = 'form-left'>
+                {{Form::label('password_confirmation','Repetir palavra-passe')}}
+                {{Form::password('password_confirmation')}}
+            </div>
         </div>
-        <div id="passwordCheck">
-        </div>
-        <div>
+
+        <div class = 'form-element'>
             {{Form::submit('Registar',array('id' => 'submit'))}}
         </div>
         {{ Form::close() }}
@@ -59,21 +89,85 @@
 </div>
 
 <script>
-function checkPasswordMatch() {
-    var password = $("#password").val();
-    var confirmPassword = $("#repeat_password").val();
+var submit = document.getElementById('submit');
+var form = ['0', '0', '0', '0'];
 
-    if (password != confirmPassword)
-        $("#passwordCheck").html("Passwords do not match!");
-    else
-        $("#passwordCheck").html("Passwords match.");
+function checkForm() {
+
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var password = $("#password").val();
+    var password_confirmation = $("#password_confirmation").val();
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if(name.length < 2) {
+        $("#nameCheck").html("O nome tem que ter pelo menos dois caracteres");
+        form[0] = 0;
+    }
+    else {
+        $("#nameCheck").html("");
+        form[0] = 1;
+    }
+
+    if(!re.test(email)) {
+        $("#emailCheck").html("Tem que inserir um endereço de e-mail válido, no formato nome@dominio.com");
+        form[1] = 0;    
+    }
+    else {
+        $("#emailCheck").html("");
+        form[1] = 1;
+    }
+
+    if(!/^\d+$/.test(phone)) {
+        $("#phoneCheck").html("O número de telefone só pode conter algarismos");
+        form[2] = 0;
+        errors = true;  
+    }
+    else if(phone.length < 9) {
+        $("#phoneCheck").html("O número de telefone tem que ter pelo menos 9 algarismos");  
+        form[2] = 0;
+    }
+    else {
+        $("#phoneCheck").html("");
+        form[2] = 1;
+    }
+
+    if (password.length < 6) {
+        $("#passwordCheck").html("A palavra-passe tem que ter pelo menos 6 caracteres");
+        form[3] = 0;
+     }
+    else if (password != password_confirmation) {
+        $("#passwordCheck").html("A palavra-passe não é igual");
+        form[3] = 0;
+    }
+    else {
+        $("#passwordCheck").html("");
+        form[3] = 1;
+    }
 }
 
 $(document).ready(function () {
-    $("#submit").disabled = true;
-    $("#password").keyup(checkPasswordMatch);
-    $("#repeat_password").keyup(checkPasswordMatch);
+
+    submit.disabled = validate();
+
+    $("#name").keyup(validate);
+    $("#email").keyup(validate);
+    $("#phone").keyup(validate);
+    $("#password").keyup(validate);
+    $("#password_confirmation").keyup(validate);
 });
+
+function validate () {
+    checkForm();
+    for (i = 0; i<=form.length; i++) {
+        if(form[i] == 0) {
+            submit.disabled = true;
+            return true;
+        }
+    }
+    submit.disabled = false;
+}
 </script>
 
 

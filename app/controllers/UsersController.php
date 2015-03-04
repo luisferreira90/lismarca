@@ -6,6 +6,7 @@ class UsersController extends BaseController {
 		return View::make('pages.login');
 	}
 
+
 	public function handleLogin() {
 		$data = Input::only(['email', 'password']);
 
@@ -25,6 +26,7 @@ class UsersController extends BaseController {
         return Redirect::route('login')->withInput();
 	}
 
+
 	public function logout() {
 		if(Auth::check()){
 	  		Auth::logout();
@@ -32,9 +34,11 @@ class UsersController extends BaseController {
 	 	return Redirect::route('login');
 	}
 
+
 	public function profile() {
 		return View::make('pages.profile');
 	}
+
 
 	public function registration()
 	{
@@ -42,6 +46,7 @@ class UsersController extends BaseController {
 		$data = $entity_type::lists('name_pt', 'id');
 		return View::make('pages.registration')->with('data', $data);;
 	}
+
 
 	public function store() {
 		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password', 'password_confirmation']);
