@@ -26,4 +26,8 @@ Route::group(array('prefix'=> 'admin', 'before' => array('auth|admin')), functio
 
 	Route::get('/', 'AdminController@dashboard');
 
+	Route::get('produtos', 'AdminController@products');
+
+	Route::get('utilizadores', 'AdminController@users');
+
 });

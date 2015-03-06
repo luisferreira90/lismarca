@@ -46,7 +46,7 @@ class UsersController extends BaseController {
 	{
 		$entity_type = new EntityType;
 		$data = $entity_type::lists('name_pt', 'id');
-		return View::make('pages.registration')->with('data', $data);;
+		return View::make('pages.registration')->with('data', $data);
 	}
 
 

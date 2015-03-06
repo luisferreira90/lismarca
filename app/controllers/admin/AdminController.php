@@ -3,7 +3,16 @@
 class AdminController extends BaseController {
 
 	public function dashboard() {
-  		echo "Estás na área de admin";
+  		return View::make('admin.dashboard');
+	}
+
+	public function users() {
+		$users = DB::table('users')->get();
+  		return View::make('admin.users')->with('users', $users);
+	}
+
+	public function products() {
+  		return View::make('admin.products');
 	}
 
 
