@@ -15,6 +15,14 @@ App::before(function($request)
 {
 	$language = Session::get('language','pt'); //en will be the default language.
    	App::setLocale($language);
+
+
+   	Route::filter('admin', function()
+	{
+		if (! Auth::user()->isAdmin() ) return Redirect::to('/');
+	});
+
+
 });
 
 

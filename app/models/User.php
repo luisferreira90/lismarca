@@ -6,6 +6,17 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	protected $fillable = ['name','email','phone','address','location','entity_type','company_name','password'];
+
+	/**
+     * Find out if User is an admin
+     *
+     * @return boolean
+     */
+    public static function isAdmin()
+    {
+    	return Auth::user()->is_admin;
+    }
+    
 	
 	/**
 	 * Get the unique identifier for the user.

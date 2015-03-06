@@ -39,7 +39,9 @@
 			<div class = 'login'>
 				<div class = 'login-register'>
 					<img class = 'arrow-right' src = '/images/arrow-right.png'>
-					@if(Auth::check())
+					@if(Auth::check() && User::isAdmin())
+						<a href = 'admin'><p>Administração</p></a>
+					@elseif(Auth::check())
 						<a href = 'profile'><p>{{Lang::get('strings.profile')}}</p></a>
 					@else
 						<a href = 'registo'><p>{{Lang::get('strings.registration')}}</p></a>
