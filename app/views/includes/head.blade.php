@@ -1,19 +1,19 @@
 <meta charset="utf-8">
 <meta name="description" content="">
-<meta name="author" content="Scotch">
+<meta name="author" content="Luís Ferreira">
 
 <title>Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria</title>
 
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/style.css">
+{{ HTML::style('css/normalize.css') }}
+{{ HTML::style('css/style.css') }}
 
-<script src = "js/html5shiv-master/dist/html5shiv.js"></script>
-<script src = "js/html5shiv-master/dist/html5shiv-printshiv.js"></script>
+{{ HTML::script('js/html5shiv-master/dist/html5shiv.js') }}
+{{ HTML::script('js/html5shiv-master/dist/html5shiv-printshiv.js') }}
 
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<script src="js/bjqs.min.js"></script>
+{{ HTML::script('js/bjqs.min.js') }}
 
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
@@ -36,8 +36,7 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-<link type="text/css" rel="Stylesheet" href="css/bjqs.css" />
-
+{{ HTML::style('css/bjqs.css') }}
 
 
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>

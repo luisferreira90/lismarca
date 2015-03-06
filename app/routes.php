@@ -29,3 +29,5 @@ Route::get('/profile', array('as' => 'profile', 'uses' => 'UsersController@profi
 Route::resource('user', 'UsersController'); 
 
 Route::get('language', array('uses' => 'HomeController@language'));
+
+Route::get('admin/login', 'AdminController@login');
