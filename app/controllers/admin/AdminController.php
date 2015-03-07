@@ -7,7 +7,7 @@ class AdminController extends BaseController {
 	}
 
 	public function users() {
-		$users = DB::table('users')->get();
+		$users = DB::table('users')->select('id', 'name', 'email', 'phone', 'address', 'location', 'entity_type', 'company_name', 'created_at')->get();
   		return View::make('admin.users')->with('users', $users);
 	}
 
