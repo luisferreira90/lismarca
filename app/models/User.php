@@ -16,6 +16,28 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     {
     	return Auth::user()->is_admin;
     }
+
+
+    /**
+     * Return user list
+     *
+     * @return array
+     */
+    public function listAll()
+    {
+    	return $this->select('id', 'name', 'email', 'phone', 'location', 'entity_type', 'company_name')->get();
+    }
+
+
+    /**
+     * Return Entity Type list
+     *
+     * @return string
+     */
+ 	public function entityType()
+    {
+        return $this->belongsTo('EntityType');
+    }
     
 	
 	/**

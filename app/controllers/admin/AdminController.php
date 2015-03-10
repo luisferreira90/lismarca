@@ -7,8 +7,15 @@ class AdminController extends BaseController {
 	}
 
 	public function users() {
-		$users = DB::table('users')->select('id', 'name', 'email', 'phone', 'address', 'location', 'entity_type', 'company_name', 'created_at')->get();
+		$user = new User;
+		$users = $user->listAll();
   		return View::make('admin.users')->with('users', $users);
+	}
+
+	public function userEdit($id) {
+		$users = new User;
+		$user = $users::find($id);
+		return View::make('admin.userEdit')->with('user', $user);
 	}
 
 	public function products() {

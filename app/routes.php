@@ -30,4 +30,6 @@ Route::group(array('prefix'=> 'admin', 'before' => array('auth|admin')), functio
 
 	Route::get('utilizadores', 'AdminController@users');
 
+	Route::get('utilizadores/{id}', 'AdminController@userEdit');
+
 });
