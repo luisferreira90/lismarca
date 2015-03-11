@@ -22,14 +22,14 @@ Route::get('language', array('uses' => 'HomeController@language'));
 
 /* ########## Administration panel routes ########## */
 
-Route::group(array('prefix'=> 'admin', 'before' => array('auth|admin')), function() {
+Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array('auth|admin')), function() {
 
 	Route::get('/', 'AdminController@dashboard');
 
 	Route::get('produtos', 'AdminController@products');
 
-	Route::get('utilizadores', 'AdminController@users');
+	Route::get('utilizadores', 'UsersController@users');
 
-	Route::get('utilizadores/{id}', 'AdminController@userEdit');
+	Route::get('utilizadores/{id}', 'UsersController@userEdit');
 
 });

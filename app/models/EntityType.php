@@ -1,6 +1,5 @@
 <?php
 
-
 class EntityType extends Eloquent{
 
 	protected $fillable = ['name_pt', 'name_en'];
