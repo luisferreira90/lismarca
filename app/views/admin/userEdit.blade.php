@@ -6,6 +6,11 @@
 
 <div>
 
+@foreach ($errors->all() as $message)
+    <br>
+    {{$message}}
+@endforeach
+
 {{ Form::model($user, array('route' => array('admin.user.update', $user->id), 'method' => 'PUT')) }}
 
     <div class = 'form-element'>
@@ -60,6 +65,12 @@
     <div class = 'form-element'>
         {{Form::submit('Gravar',array('id' => 'submit'))}}
     </div>
+
+    {{ Form::close() }}
+
+    {{ Form::open(array('method' => 'delete', 'route' => array('admin.user.destroy', $user->id))) }}
+
+        {{Form::submit('Apagar utilizador',array('id' => 'submit'))}}
 
     {{ Form::close() }}
 
