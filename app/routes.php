@@ -24,6 +24,8 @@ Route::get('language', array('uses' => 'HomeController@language'));
 
 Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array('auth|admin')), function() {
 
+	Route::resource('user', 'UsersController'); 
+
 	Route::get('/', 'AdminController@dashboard');
 
 	Route::get('produtos', 'AdminController@products');
