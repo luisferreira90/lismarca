@@ -11,11 +11,6 @@ class AdminController extends \BaseController {
 	}
 
 
-	public function products() {
-  		return View::make('admin.products');
-	}
-
-
 	public function logout() {
 		if(Auth::check()){
 	  		Auth::logout();
