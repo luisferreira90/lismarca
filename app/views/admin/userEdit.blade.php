@@ -68,12 +68,24 @@
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'route' => array('admin.user.destroy', $user->id))) }}
+    {{ Form::open(array('method' => 'delete', 'route' => array('admin.user.destroy', $user->id), 'onsubmit' => 'return ConfirmDelete()')) }}
 
         {{Form::submit('Apagar utilizador',array('id' => 'submit'))}}
 
     {{ Form::close() }}
 
 </div>
+
+<script>
+
+  function ConfirmDelete() {
+      var x = confirm("Tem a certeza que deseja apagar o utilizador?");
+      if (x)
+        return true;
+      else
+        return false;
+  }
+
+</script>
 
 @stop
