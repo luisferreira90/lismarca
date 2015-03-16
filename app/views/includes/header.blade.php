@@ -62,7 +62,7 @@
 
 	<div class = 'lower-header'>
 		<div class = 'lower-header-left'>
-			<a href = '/'><img src = '/images/logo.png' alt = 'Logo Lismarca' class = 'logo'></a>
+			<a href = '/'><img src = '/images/logo.svg' alt = 'Logo Lismarca' class = 'logo'></a>
 		</div>
 
 		<div class = 'lower-header-right'>
