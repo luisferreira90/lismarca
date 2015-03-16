@@ -32,6 +32,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::get('utilizadores', 'UsersController@users');
 
+	Route::post('utilizadores', 'UsersController@users');
+
 	Route::get('utilizadores/{id}', 'UsersController@userEdit');
 
 	Route::get('produtos', 'ProductsController@products');

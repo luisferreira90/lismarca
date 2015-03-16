@@ -23,9 +23,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      *
      * @return array
      */
-    public function listAll()
+    public function listAll($filter)
     {
-    	return $this->select('id', 'name', 'email', 'phone', 'location', 'entity_type', 'company_name')->where('is_admin', '0')->get();
+    	$users = $this->select('id', 'name', 'email', 'phone', 'location', 'entity_type', 'company_name')->where('is_admin', '0');
+    	if(Input::get('entity_type')) 
+    		$users = $users->where('entity_type', '=', $filter['entity_type']);
+    	if(Input::get('location')) 
+    		$users = $users->where('location', '=', $filter['location']);
+    	return $users->get();
     }
 
 

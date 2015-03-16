@@ -13,8 +13,18 @@ class UsersController extends \BaseController {
 
 	public function users() {
 		$user = new User;
-		$users = $user->listAll();
-  		return View::make('admin.users')->with('users', $users);
+		$users = $user->listAll(Input::all());
+		$entity_type = new EntityType;
+		$entities = $entity_type::lists('name_pt', 'id');
+		$locations = array(
+			'Funchal' => 'Funchal',
+			'Caniço' => 'Caniço',
+			'Machico' => 'Machico',
+			'Santa Cruz' => 'Santa Cruz',
+			'Câmara de Lobos' => 'Câmara de Lobos',
+			'Santana' => 'Santana');
+
+  		return View::make('admin.users')->with('users', $users)->with('entities', $entities)->with('locations', $locations)->withInput(Input::all());
 	}
 
 	public function userEdit($id) {

@@ -4,6 +4,18 @@
 
 <h1>Gestão de utilizadores</h1>
 
+<div>
+	{{ Form::open(array('url' => 'admin/utilizadores', 'method' => 'post')) }}
+
+		{{Form::label('entity_type','Tipo de entidade')}}	
+		{{Form::select('entity_type', [null=>'Sem filtro']+$entities, Input::get('entity_type'), array('onchange' => 'this.form.submit()'))}}
+
+		{{Form::label('location','Localidade')}}	
+		{{Form::select('location', [null=>'Sem filtro']+$locations, Input::get('location'), array('onchange' => 'this.form.submit()'))}}
+
+    {{ Form::close() }}
+</div>
+
 <div id = 'wrapper'>
 	<table id = 'keywords'>
 		<thead>
