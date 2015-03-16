@@ -15,10 +15,6 @@ class ProductsController extends \BaseController {
   		return View::make('admin.products');
 	}
 
-	public function subSections() {
-  		return View::make('admin.subSections')->with('subSections', ProductSubsection::all());
-	}
-
 	public function categories() {
   		return View::make('admin.categories')->with('categories', ProductCategory::all());
 	}
