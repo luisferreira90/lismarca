@@ -28,7 +28,10 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('product', 'ProductsController'); 
 
+	Route::resource('section', 'SectionsController');
+
 	Route::get('/', 'AdminController@dashboard');
+
 
 	Route::get('utilizadores', 'UsersController@users');
 
@@ -36,9 +39,16 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::get('utilizadores/{id}', 'UsersController@userEdit');
 
+
 	Route::get('produtos', 'ProductsController@products');
 
-	Route::get('produtos/seccoes', 'ProductsController@sections');
+
+	Route::get('produtos/seccoes', 'SectionsController@sections');
+
+	Route::get('produtos/seccoes/criar', 'SectionsController@sectionCreate');
+
+	Route::get('produtos/seccoes/{id}', 'SectionsController@sectionEdit');
+
 
 	Route::get('produtos/subseccoes', 'ProductsController@subSections');
 

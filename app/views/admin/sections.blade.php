@@ -4,6 +4,8 @@
 
 <h1>Gestão de secções</h1>
 
+<a href = 'seccoes/criar'>Criar nova secção</a>
+
 <div id = 'wrapper'>
 	<table id = 'keywords'>
 		<thead>
