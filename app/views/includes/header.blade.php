@@ -5,32 +5,32 @@
 
 				<div class = 'language'>
 					@if(Session::get('language') === 'en') 
-						<img class = 'language-flag' src = '/images/flag-icon-pt.png'>
+						<img class = 'language-flag' src = '/images/flag-icon-pt.svg'>
 						<p class = 'language-name'><a href = 'language?lang=pt'>Portuguese</a></p>
 					@else
-						<img class = 'language-flag' src = '/images/flag-icon-en.png'>
+						<img class = 'language-flag' src = '/images/flag-icon-en.svg'>
 						<p class = 'language-name'><a href = 'language?lang=en'>English</a></p>
 					@endif		
-					<img src = '/images/arrow-down.png'>
+					<img src = '/images/arrow-down.svg'>
 				</div>
 
 				<div class = 'phone'>
-					<img src = '/images/phone.png'>
+					<img src = '/images/phone.svg'>
 					<p>291 741 884</p>
 				</div>
 
 				<div class = 'mobile-phone'>
-					<img src = '/images/mobile-phone.png'>
+					<img src = '/images/mobile-phone.svg'>
 					<p>965 010 699</p>
 				</div>
 
 				<div class = 'facebook'>
-					<img src = '/images/fb-icon.png'>
+					<img src = '/images/fb-icon.svg'>
 					<p class = 'blue'>gosto</p>
 				</div>
 
 				<div class = 'distribution'>
-					<img class = 'arrow-right' src = '/images/arrow-right.png'>
+					<img class = 'arrow-right' src = '/images/arrow-right.svg'>
 					<p>Fornecemos para todo o país: Portugal Continental e Ilhas</p>
 				</div>
 
@@ -38,7 +38,7 @@
 
 			<div class = 'login'>
 				<div class = 'login-register'>
-					<img class = 'arrow-right' src = '/images/arrow-right.png'>
+					<img class = 'arrow-right' src = '/images/arrow-right.svg'>
 					@if(Auth::check() && User::isAdmin())
 						<a href = 'admin'><p>Administração</p></a>
 					@elseif(Auth::check())
@@ -47,9 +47,9 @@
 						<a href = 'registo'><p>{{Lang::get('strings.registration')}}</p></a>
 					@endif
 				</div>
-				<img src = '/images/lock.png'>	
+				<img src = '/images/lock.svg'>	
 				<div class = 'login-login'>
-					<img class = 'arrow-right' src = '/images/arrow-right.png'>
+					<img class = 'arrow-right' src = '/images/arrow-right.svg'>
 					@if(Auth::check())
 						<a href = 'logout'><p>Logout</p></a>
 					@else
@@ -67,7 +67,7 @@
 
 		<div class = 'lower-header-right'>
 			<div class = 'validate-budget'>
-				<img src = '/images/arrow-right-red.png'>
+				<img src = '/images/arrow-right-red.svg'>
 				<p>.VALIDAR ORÇAMENTO</p>
 			</div>
 
@@ -75,7 +75,7 @@
 				<form class='search_field' method='GET' action='http://www.google.com/search'>
 				    <input name='search'/ placeholder='Pesquisar...' type = 'text'>
 				    <button type='submit'>
-				    	<img src='/images/search.png' alt='Pesquisa'/>
+				    	<img src='/images/search.svg' alt='Pesquisa'/>
 				    </button>
 				</form>
 			</div>	

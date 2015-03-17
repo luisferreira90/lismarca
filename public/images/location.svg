@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="42.875px" height="69.401px" viewBox="0 0 42.875 69.401" enable-background="new 0 0 42.875 69.401" xml:space="preserve">
+<g>
+	
+		<radialGradient id="SVGID_2_" cx="21.2793" cy="-74.5918" r="14.3168" gradientTransform="matrix(1 0 0 0.643 0 108.9612)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#262626"/>
+		<stop  offset="0.1269" style="stop-color:#545454"/>
+		<stop  offset="0.2893" style="stop-color:#888888"/>
+		<stop  offset="0.4493" style="stop-color:#B2B2B2"/>
+		<stop  offset="0.6033" style="stop-color:#D4D4D4"/>
+		<stop  offset="0.7497" style="stop-color:#ECECEC"/>
+		<stop  offset="0.8854" style="stop-color:#FAFAFA"/>
+		<stop  offset="1" style="stop-color:#FFFFFF"/>
+	</radialGradient>
+	<ellipse fill="url(#SVGID_2_)" cx="21.279" cy="60.997" rx="17.906" ry="8.404"/>
+	<g>
+		<path fill="none" d="M11.416,21.416c-0.014,5.535,4.465,10.033,10,10.045l0.045-20.045C15.924,11.404,11.426,15.883,11.416,21.416
+			z"/>
+		<path fill="#E11B22" d="M11.416,21.416c0.01-5.533,4.508-10.012,10.045-10L21.484,0C9.645-0.025,0.025,9.553,0,21.393
+			C-0.025,33.23,21.352,61.307,21.352,61.307l0.064-29.846C15.881,31.449,11.402,26.951,11.416,21.416z"/>
+		<path fill="#D12027" d="M21.484,0l-0.023,11.416c5.533,0.012,10.01,4.51,10,10.045c-0.014,5.533-4.51,10.012-10.045,10
+			l-0.064,29.846c0,0,21.498-27.982,21.523-39.822C42.9,9.646,33.324,0.025,21.484,0z"/>
+	</g>
+</g>
+</svg>
