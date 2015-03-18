@@ -54,7 +54,7 @@
 
 <hr>
 
-<div class = 'two-columns-top'>
+<div class = 'two-columns'>
 	<div class = 'promotion'>
 		<h3 class = 'red'>.PROMOÇÃO</h3>
 		<img src = '/images/slideshow/1.png'>
@@ -67,20 +67,21 @@
 
 <hr class = 'clear-fix'>
 
-<div class = 'two-columns-bottom'>
+<div class = 'two-columns'>
 	<div class = 'video'>
-		<h3>.CANAL YOUTUBE</h3>
+		<h4 class = 'grey'>.CANAL YOUTUBE</h4>
 		<iframe 
-			src="https://www.youtube.com/embed/I_ZX1ypXgaY?rel=0" frameborder="0" allowfullscreen>
+			src="https://www.youtube.com/embed/I_ZX1ypXgaY?rel=0&amp;showinfo=0" 
+			frameborder="0" allowfullscreen>
 		</iframe>
 	</div>
 	<div class = 'portfolio'>
-		<h3>.PORTFOLIO</h3>
+		<h4 class = 'grey'>.PORTFOLIO</h4>
 		<div id="slideshow">
 			<ul class="bjqs">
-				<li><a class = 'slide-img' href = '/images/slideshow/3.png'><img src="/images/slideshow/3.png"></a></li>
-				<li><a class = 'slide-img' href = '/images/slideshow/2.png'><img src="/images/slideshow/2.png"></a></li>
-				<li><a class = 'slide-img' href = '/images/slideshow/1.png'><img src="/images/slideshow/1.png"></a></li>
+				<li><a class = 'slide-img' href = '/images/slideshow/4.jpg'><img src="/images/slideshow/4.jpg"></a></li>
+				<li><a class = 'slide-img' href = '/images/slideshow/5.jpg'><img src="/images/slideshow/5.jpg"></a></li>
+				<li><a class = 'slide-img' href = '/images/slideshow/6.jpg'><img src="/images/slideshow/6.jpg"></a></li>
 			</ul>
 		</div>
 	</div>
