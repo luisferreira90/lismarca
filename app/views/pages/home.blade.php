@@ -2,132 +2,89 @@
 
 @section('content')
 
-<div id="slideshow">
-	<ul class="bjqs">
-		<li><a class = 'slide-img' href = '/images/slideshow/3.jpg'><img src="/images/slideshow/3.jpg"></a></li>
-		<li><a class = 'slide-img' href = '/images/slideshow/2.jpg'><img src="/images/slideshow/2.jpg"></a></li>
-		<li><a class = 'slide-img' href = '/images/slideshow/1.jpg'><img src="/images/slideshow/1.jpg"></a></li>
-	</ul>
-</div>
-
-<img src = '/images/separator.jpg' class = 'separator'>
-
-<div class = 'novidades'>
-	<p class = 'title red'>.NOVIDADES</p>
-	<div class = 'four-columns'>
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo1.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Lis PowerUp 2500</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
-		</div>
-
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo2.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Cadeira Trend</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
-		</div>
-
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo3.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Cadeira Lisboa</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
-		</div>
-
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo2.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Chapéu de Sol</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
-		</div>
-
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo2.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Chapéu de Sol</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
-		</div>
-
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo2.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Chapéu de Sol</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
-		</div>
-
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo2.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Chapéu de Sol</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
-		</div>
-
-		<div class = 'column'>
-			<img class = 'product-image' src = '/images/test/exemplo2.png'>
-			<div class = 'product-description'>
-				<img src = '/images/arrow-small-right-red.png'>
-				<p>Chapéu de Sol</p>
-				<p class = 'see-more red'>...+</p>
-			</div>
+<div class = 'home-sections'>
+	<div class = 'three-columns'>
+		<img src = 'images/test/1.png'>
+		<img src = 'images/test/2.png'>
+		<img src = 'images/test/3.png'>
+	</div>
+	<div class = 'section-select white'>
+		<div class = 'inner'>
+			<h1>MOBILIÁRIO</h1>
+			<p>
+				Mesas, Cadeiras, Bancos Altos, Mobiliário Piscina, Cadeiras de Bébé,
+				Mobiliário com iluminação em Polipropileno
+			</p>
 		</div>
 	</div>
 </div>
 
-<img src = '/images/separator.jpg' class = 'separator'>
-
-<div class = 'three-columns'>
-	<div class = 'column'>
-		<p class = 'title-smaller red'>.PROMOÇÃO</p>
-		<img class = 'product-image' src = '/images/test/exemplo1.png'>
-		<div class = 'product-description'>
-			<img src = '/images/arrow-small-right-red.png'>
-			<p>Lis PowerUp 2500 (Área de Alcance 22m)</p>
-			<p class = 'see-more red'>...+</p>
+<div class = 'home-sections'>
+	<div class = 'section-select white inverse'>
+		<div class = 'inner'>
+			<h1>SOMBREAMENTO E PROTECÇÃO SOLAR</h1>
+			<p>
+				Estores exterior e interior, Toldos, Coberturas Tensionadas, Chapéus de Sol
+			</p>
 		</div>
 	</div>
-
-	<div class = 'column middle'>
-		<p class = 'title-smaller red'>.PORTFÓLIO</p>
-		<img class = 'product-image' src = '/images/test/exemplo3.png'>
-		<div class = 'product-description'>
-			<img src = '/images/arrow-small-right-red.png'>
-			<p>Lis PowerUp 2500 (Área de Alcance 22m)</p>
-			<p class = 'see-more red'>...+</p>
-		</div>
+	<div class = 'three-columns'>
+		<img src = 'images/test/4.png'>
+		<img src = 'images/test/5.png'>
+		<img src = 'images/test/6.png'>
 	</div>
+</div>
 
-	<div class = 'column'>
-		<p class = 'title-smaller red'>.STOCK</p>
-		<img class = 'product-image' src = '/images/test/exemplo2.png'>
-		<div class = 'product-description'>
-			<img src = '/images/arrow-small-right-red.png'>
-			<p>Lis PowerUp 2500 (Área de Alcance 22m)</p>
-			<p class = 'see-more red'>...+</p>
+<div class = 'home-sections'>
+	<div class = 'three-columns'>
+		<img src = 'images/test/7.png'>
+		<img src = 'images/test/8.png'>
+		<img src = 'images/test/9.png'>
+	</div>
+	<div class = 'section-select white'>
+		<div class = 'inner'>
+			<h1>DIVERSOS</h1>
+			<p>
+				Tapetes de Alto Tráfeco, Pavimentos, Cofres, Louças, Secadores, Espelhos, Minibares,
+				Lamparinas, Aquecedores e Ventilação de Esplanada
+			</p>
 		</div>
 	</div>
 </div>
 
-<div class = 'clear-fix'></div>
+<hr>
 
-<div class = 'map'>
-	<p class = 'title red'>.LOCALIZAÇÃO</p>
-	<div id="map-canvas"></div>
+<div class = 'two-columns-top'>
+	<div class = 'promotion'>
+		<h3 class = 'red'>.PROMOÇÃO</h3>
+		<img src = '/images/slideshow/1.png'>
+	</div>
+	<div class = 'new'>
+		<h3 class = 'red'>.NOVIDADES</h3>
+		<img src = '/images/slideshow/2.png'>
+	</div>
 </div>
+
+<hr class = 'clear-fix'>
+
+<div class = 'two-columns-bottom'>
+	<div class = 'video'>
+		<h3>.CANAL YOUTUBE</h3>
+		<iframe 
+			src="https://www.youtube.com/embed/I_ZX1ypXgaY?rel=0" frameborder="0" allowfullscreen>
+		</iframe>
+	</div>
+	<div class = 'portfolio'>
+		<h3>.PORTFOLIO</h3>
+		<div id="slideshow">
+			<ul class="bjqs">
+				<li><a class = 'slide-img' href = '/images/slideshow/3.png'><img src="/images/slideshow/3.png"></a></li>
+				<li><a class = 'slide-img' href = '/images/slideshow/2.png'><img src="/images/slideshow/2.png"></a></li>
+				<li><a class = 'slide-img' href = '/images/slideshow/1.png'><img src="/images/slideshow/1.png"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
 
 @stop

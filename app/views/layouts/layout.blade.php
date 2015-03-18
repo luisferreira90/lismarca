@@ -3,11 +3,11 @@
     <body>
         <div class = "container">
 
-            @include('includes.header')
+           <!-- @include('includes.header') -->
         
         	@yield('content')
             
-            @include('includes.footer')
+           <!-- @include('includes.footer') -->
 
         </div>
     </body>
