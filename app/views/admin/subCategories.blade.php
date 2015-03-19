@@ -4,6 +4,17 @@
 
 <h1>Gestão de sub-categorias</h1>
 
+<div>
+	{{ Form::open(array('url' => 'admin/produtos/subcategorias', 'method' => 'post')) }}
+
+		{{Form::label('category','Categoria')}}	
+		{{Form::select('category', [null=>'Sem filtro']+$categories, Input::get('category'), array('onchange' => 'this.form.submit()'))}}
+
+    {{ Form::close() }}
+</div>
+
+<a href = 'subcategorias/criar'>Criar nova sub-categoria</a>
+
 <div id = 'wrapper'>
 	<table id = 'keywords'>
 		<thead>
@@ -16,7 +27,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach ($subCategories as $subCategory)
+			@foreach ($subcategories as $subCategory)
 				<tr>
 					<td><a href = 'subcategorias/{{ $subCategory->id }}'>{{ $subCategory->id }}</a></td>
 					<td>{{ $subCategory->name }}</td>
