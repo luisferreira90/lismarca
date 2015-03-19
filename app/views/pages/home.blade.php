@@ -77,15 +77,11 @@
 	</div>
 	<div class = 'portfolio'>
 		<h4 class = 'grey'>.PORTFOLIO</h4>
-		<div id="slideshow">
-			<ul class="bjqs">
-				<li><a class = 'slide-img' href = '/images/slideshow/4.jpg'><img src="/images/slideshow/4.jpg"></a></li>
-				<li><a class = 'slide-img' href = '/images/slideshow/5.jpg'><img src="/images/slideshow/5.jpg"></a></li>
-				<li><a class = 'slide-img' href = '/images/slideshow/6.jpg'><img src="/images/slideshow/6.jpg"></a></li>
-			</ul>
-		</div>
+		<img src="/images/slideshow/3.png">
 	</div>
 </div>
+
+<hr>
 
 
 @stop
