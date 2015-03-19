@@ -20,7 +20,11 @@ class SubsectionsController extends \BaseController {
 	}
 
 	public function subsections() {
-  		return View::make('admin.subSections')->with('subSections', ProductSubsection::all());
+		$subsection = new ProductSubsection;
+		$subsections = $subsection->listAll(Input::all());
+		$section = new ProductSection;
+		$sections = $section::lists('name', 'id');
+  		return View::make('admin.subSections')->with('subSections', $subsections)->with('section', $sections);
 	}
 
 	public function subsectionCreate(){

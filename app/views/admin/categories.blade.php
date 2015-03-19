@@ -4,6 +4,17 @@
 
 <h1>Gestão de categorias</h1>
 
+<div>
+	{{ Form::open(array('url' => 'admin/produtos/categorias', 'method' => 'post')) }}
+
+		{{Form::label('subsection','Sub-Secção')}}	
+		{{Form::select('subsection', [null=>'Sem filtro']+$subsection, Input::get('subsection'), array('onchange' => 'this.form.submit()'))}}
+
+    {{ Form::close() }}
+</div>
+
+<a href = 'categorias/criar'>Criar nova categoria</a>
+
 <div id = 'wrapper'>
 	<table id = 'keywords'>
 		<thead>

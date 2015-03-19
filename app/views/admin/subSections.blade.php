@@ -4,6 +4,15 @@
 
 <h1>Gestão de sub-secções</h1>
 
+<div>
+	{{ Form::open(array('url' => 'admin/produtos/subseccoes', 'method' => 'post')) }}
+
+		{{Form::label('section','Secção')}}	
+		{{Form::select('section', [null=>'Sem filtro']+$section, Input::get('section'), array('onchange' => 'this.form.submit()'))}}
+
+    {{ Form::close() }}
+</div>
+
 <a href = 'subseccoes/criar'>Criar nova sub-secção</a>
 
 <div id = 'wrapper'>

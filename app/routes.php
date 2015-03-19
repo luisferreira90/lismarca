@@ -32,6 +32,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('subsection', 'SubsectionsController');
 
+	Route::resource('category', 'CategoriesController');
+
 	Route::get('/', 'AdminController@dashboard');
 
 
@@ -54,12 +56,21 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::get('produtos/subseccoes', 'SubsectionsController@subsections');
 
+	Route::post('produtos/subseccoes', 'SubsectionsController@subsections');
+
 	Route::get('produtos/subseccoes/criar', 'SubsectionsController@subsectionCreate');
 
 	Route::get('produtos/subseccoes/{id}', 'SubsectionsController@subsectionEdit');
 
 
-	Route::get('produtos/categorias', 'ProductsController@categories');
+	Route::get('produtos/categorias', 'CategoriesController@categories');
+
+	Route::post('produtos/categorias', 'CategoriesController@categories');
+
+	Route::get('produtos/categorias/criar', 'CategoriesController@categoryCreate');
+
+	Route::get('produtos/categorias/{id}', 'CategoriesController@categoryEdit');
+
 
 	Route::get('produtos/subcategorias', 'ProductsController@subCategories');
 
