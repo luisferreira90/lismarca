@@ -37,7 +37,7 @@
 		<td>{{ $user->email }}</td>
 		<td>{{ $user->phone }}</td>
 		<td>{{ $user->location }}</td>
-		<td>{{ $user->entity_type }}</td>
+		<td>{{ $entities[$user->entity_type] }}</td>
 		<td>{{ $user->company_name }}</td>
 	</tr>
 	@endforeach

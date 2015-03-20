@@ -31,7 +31,7 @@
 				<tr>
 					<td><a href = 'categorias/{{ $category->id }}'>{{ $category->id }}</a></td>
 					<td>{{ $category->name }}</td>
-					<td>{{ $category->subsection }}</td>
+					<td>{{ $subsection[$category->subsection] }}</td>
 					<td>{{ $category->published }}</td>
 					<td>{{ $category->ordering }}</td>
 				</tr>

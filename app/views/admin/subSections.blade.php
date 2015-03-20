@@ -31,7 +31,7 @@
 				<tr>
 					<td><a href = 'subseccoes/{{ $subSection->id }}'>{{ $subSection->id }}</a></td>
 					<td>{{ $subSection->name }}</td>
-					<td>{{ $subSection->section }}</td>
+					<td>{{ $section[$subSection->section] }}</td>
 					<td>{{ $subSection->published }}</td>
 					<td>{{ $subSection->ordering }}</td>
 				</tr>
