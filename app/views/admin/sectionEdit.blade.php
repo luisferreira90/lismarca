@@ -13,29 +13,27 @@
 
 {{ Form::model($section, array('route' => array('admin.section.update', $section->id), 'method' => 'PUT', 'files' => true)) }}
 
-    <div class = 'form-element'>
-        <div class = 'form-left'>
+    <div class = 'form-group'>
             {{Form::label('name', 'Nome')}}
-            {{Form::text('name')}}
-        </div>
+            {{Form::text('name', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
+            {{Form::label('icon', 'Ícone')}}
+            {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-element'>
-        <div class = 'form-left'>
-            {{Form::label('icon','Ícone')}}
-            {{Form::file('icon')}}
-        </div>
-    </div>
-
-    <div class = 'form-element'>
-        {{Form::submit('Gravar',array('id' => 'submit'))}}
+        {{Form::submit('Gravar',array('id' => 'submit','class' => 'btn btn-primary'))}}
     </div>
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'route' => array('admin.section.destroy', $section->id), 'onsubmit' => 'return ConfirmDelete()')) }}
-
-        {{Form::submit('Apagar secção',array('id' => 'submit'))}}
+    {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.section.destroy', $section->id), 'onsubmit' => 'return ConfirmDelete()')) }}
+        
+        <div class = 'form-group'>
+            {{Form::submit('Apagar secção',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
+        </div>
 
     {{ Form::close() }}
 

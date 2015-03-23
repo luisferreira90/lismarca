@@ -4,16 +4,17 @@
 
 <h1>Gestão de secções</h1>
 
-<a href = 'seccoes/criar'>Criar nova secção</a>
+<a href = 'seccoes/criar'><button class="btn btn-primary">Novo</button></a>
 
 <div id = 'wrapper'>
-	<table id = 'keywords'>
+	<table id = 'keywords' class = 'table table-hover'>
 		<thead>
 			<tr>
 				<th><span>ID</span></th>
 				<th><span>Nome</span></th>
 				<th><span>Publicado</span></th>
 				<th><span>Ordem</span></th>
+				<th>Apagar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,10 +24,25 @@
 					<td>{{ $section->name }}</td>
 					<td>{{ $section->published }}</td>
 					<td>{{ $section->ordering }}</td>
+					{{ Form::open(array('method' => 'delete', 'route' => array('admin.section.destroy', $section->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
+			        	<td>{{Form::submit('Apagar',array('id' => 'submit', 'class' => 'btn btn-danger btn-sm'))}}</td>
+					{{ Form::close() }}
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
 </div>
+
+<script>
+
+  function ConfirmDelete() {
+      var x = confirm("Tem a certeza que deseja apagar a categoria?");
+      if (x)
+        return true;
+      else
+        return false;
+  }
+
+</script>
 
 @stop

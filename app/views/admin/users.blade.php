@@ -5,14 +5,15 @@
 <h1>Gestão de utilizadores</h1>
 
 <div>
-	{{ Form::open(array('url' => 'admin/utilizadores', 'method' => 'post')) }}
-
-		{{Form::label('entity_type','Tipo de entidade')}}	
-		{{Form::select('entity_type', [null=>'Sem filtro']+$entities, Input::get('entity_type'), array('onchange' => 'this.form.submit()'))}}
-
-		{{Form::label('location','Localidade')}}	
-		{{Form::select('location', [null=>'Sem filtro']+$locations, Input::get('location'), array('onchange' => 'this.form.submit()'))}}
-
+	{{ Form::open(array('url' => 'admin/utilizadores', 'method' => 'post', 'class' => 'form-inline')) }}
+		<div class = 'form-group'>
+			{{Form::label('entity_type','Tipo de entidade')}}	
+			{{Form::select('entity_type', [null=>'Sem filtro']+$entities, Input::get('entity_type'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+		</div>
+		<div class = 'form-group'>
+			{{Form::label('location','Localidade')}}	
+			{{Form::select('location', [null=>'Sem filtro']+$locations, Input::get('location'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+		</div>
     {{ Form::close() }}
 </div>
 
@@ -41,7 +42,7 @@
 		<td>{{ $entities[$user->entity_type] }}</td>
 		<td>{{ $user->company_name }}</td>
 		{{ Form::open(array('method' => 'delete', 'route' => array('admin.user.destroy', $user->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
-        	<td>{{Form::submit('Apagar',array('id' => 'submit', 'class' => 'btn btn-danger'))}}</td>
+        	<td>{{Form::submit('Apagar',array('id' => 'submit', 'class' => 'btn btn-danger btn-sm'))}}</td>
 		{{ Form::close() }}
 	</tr>
 
