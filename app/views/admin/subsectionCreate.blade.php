@@ -4,45 +4,37 @@
 
 <h1>Nova Sub-secção</h1>
 
-<div>
+<div class = 'form-wrap'>
 
 @foreach ($errors->all() as $message)
     <br>
     {{$message}}
 @endforeach
 
-{{ Form::open(array('route' => array('admin.subsection.store'), 'method' => 'post', 'files' => 'true')) }}
+{{ Form::open(array('route' => array('admin.subsection.store'), 'method' => 'post', 'files' => 'true', 'class' => 'form-horizontal')) }}
 
-    <div class = 'form-element'>
-        <div class = 'form-left'>
+    <div class = 'form-group'>
             {{Form::label('name', 'Nome')}}
-            {{Form::text('name')}}
-        </div>
+            {{Form::text('name', null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-element'>
-        <div class = 'form-left'>
+    <div class = 'form-group'>
             {{Form::label('section','Secção')}}
-            {{Form::select('section', $sections)}}
-        </div>
+            {{Form::select('section', $sections, null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-element'>
-        <div class = 'form-left'>
+    <div class = 'form-group'>
             {{Form::label('ordering','Ordem')}}
-            {{Form::text('ordering')}}
-        </div>
+            {{Form::text('ordering', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
+            {{Form::label('icon','Ícone')}}
+            {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-element'>
-        <div class = 'form-left'>
-            {{Form::label('icon', 'Ícone')}}
-            {{Form::file('icon')}}
-        </div>
-    </div>
-
-    <div class = 'form-element'>
-        {{Form::submit('Criar',array('id' => 'submit'))}}
+        {{Form::submit('Criar',array('id' => 'submit', 'class' => 'btn btn-primary'))}}
     </div>
 
 {{ Form::close() }}

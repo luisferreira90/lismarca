@@ -4,45 +4,41 @@
 
 <h1>Editar Sub-secção</h1>
 
-<div>
+<div class = 'form-wrap'>
 
 @foreach ($errors->all() as $message)
     <br>
     {{$message}}
 @endforeach
 
-{{ Form::model($subsection, array('route' => array('admin.subsection.update', $subsection->id), 'method' => 'PUT', 'files' => true)) }}
+{{ Form::model($subsection, array('route' => array('admin.subsection.update', $subsection->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
 
-    <div class = 'form-element'>
-        <div class = 'form-left'>
+    <div class = 'form-group'>
             {{Form::label('name', 'Nome')}}
-            {{Form::text('name')}}
-        </div>
+            {{Form::text('name', null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-element'>
-        <div class = 'form-left'>
+    <div class = 'form-group'>
             {{Form::label('section','Secção')}}
-            {{Form::select('section', $sections)}}
-        </div>
+            {{Form::select('section', $sections, null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-element'>
-        <div class = 'form-left'>
+    <div class = 'form-group'>
             {{Form::label('icon','Ícone')}}
-            {{Form::file('icon')}}
-        </div>
+            {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-element'>
-        {{Form::submit('Gravar',array('id' => 'submit'))}}
+    <div class = 'form-group'>
+        {{Form::submit('Gravar',array('id' => 'submit', 'class' => 'btn btn-primary'))}}
     </div>
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'route' => array('admin.subsection.destroy', $subsection->id), 'onsubmit' => 'return ConfirmDelete()')) }}
-
-        {{Form::submit('Apagar sub-secção',array('id' => 'submit'))}}
+    {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.subsection.destroy', $subsection->id), 'onsubmit' => 'return ConfirmDelete()')) }}
+        
+        <div class = 'form-group'>
+            {{Form::submit('Apagar sub-secção',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
+        </div>
 
     {{ Form::close() }}
 
