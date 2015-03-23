@@ -17,7 +17,7 @@
 </div>
 
 <div id = 'wrapper'>
-	<table id = 'keywords'>
+	<table id = 'keywords' class = 'table table-hover'>
 		<thead>
 			<tr>
 				<th><span>ID</span></th>
@@ -27,6 +27,7 @@
 				<th><span>Localização</span></th>
 				<th><span>Tipo de entidade</span></th>
 				<th><span>Nome da empresa</span></th>
+				<th>Apagar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -39,10 +40,28 @@
 		<td>{{ $user->location }}</td>
 		<td>{{ $entities[$user->entity_type] }}</td>
 		<td>{{ $user->company_name }}</td>
+		{{ Form::open(array('method' => 'delete', 'route' => array('admin.user.destroy', $user->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
+        	<td>{{Form::submit('Apagar',array('id' => 'submit', 'class' => 'btn btn-danger'))}}</td>
+		{{ Form::close() }}
 	</tr>
+
+
+
 	@endforeach
 	</tbody>
 	</table>
 </div>
+
+<script>
+
+  function ConfirmDelete() {
+      var x = confirm("Tem a certeza que deseja apagar o utilizador?");
+      if (x)
+        return true;
+      else
+        return false;
+  }
+
+</script>
 
 @stop
