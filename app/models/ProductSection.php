@@ -2,7 +2,7 @@
 
 class ProductSection extends Eloquent {
 
-	protected $fillable = ['name', 'icon', 'published', 'order'];
+	protected $fillable = ['name', 'icon', 'published', 'ordering'];
 	public $timestamps = false;
 
 	public function subsections() {

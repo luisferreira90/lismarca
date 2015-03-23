@@ -81,7 +81,6 @@ class SectionsController extends \BaseController {
 	}
 
 	public function destroy($id) {
-
 		$section = ProductSection::find($id)->delete();
 		return Redirect::to('admin/produtos/seccoes');
 	}

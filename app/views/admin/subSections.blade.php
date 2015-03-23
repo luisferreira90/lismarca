@@ -47,7 +47,7 @@
 <script>
 
   function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar a categoria?");
+      var x = confirm("Tem a certeza que deseja apagar a sub-secção?");
       if (x)
         return true;
       else

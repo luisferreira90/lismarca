@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Editar Sub-secção</h1>
+<h1>Editar Categoria</h1>
 
 <div class = 'form-wrap'>
 
