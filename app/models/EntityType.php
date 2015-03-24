@@ -3,6 +3,7 @@
 class EntityType extends Eloquent{
 
 	protected $fillable = ['name_pt', 'name_en'];
+	public $timestamps = false;
 
 	public function name() {
 		return $this->select('id', 'name_pt', 'name_en')->get();
@@ -11,5 +12,8 @@ class EntityType extends Eloquent{
 	public function user() {
         return $this->hasMany('User');
     }
+    
+
+
 	
 }

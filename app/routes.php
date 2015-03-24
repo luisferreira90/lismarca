@@ -34,6 +34,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('subcategory', 'SubcategoriesController');
 
+	Route::resource('entity', 'EntitiesController');
+
 	Route::get('/', 'UsersController@users');
 
 
@@ -94,6 +96,17 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('subcategorias/publish/{id}', 'SubcategoriesController@publish');
 
 	Route::get('subcategorias/unpublish/{id}', 'SubcategoriesController@unpublish');
+
+
+
+	Route::get('entidades', 'EntitiesController@entities');
+
+	Route::post('entidades', 'EntitiesController@entities');
+
+	Route::get('entidades/criar', 'EntitiesController@entityCreate');
+
+	Route::get('entidades/{id}', 'EntitiesController@entityEdit');
+
 
 
 	Route::get('items', 'ItemsController@items');
