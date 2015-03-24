@@ -24,12 +24,17 @@
     </div>
 
     <div class = 'form-group'>
+            {{Form::label('ordering','Ordem')}}
+            {{Form::text('ordering', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
             {{Form::label('icon', 'Ícone')}}
             {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-element'>
-        {{Form::submit('Gravar',array('id' => 'submit'))}}
+    <div class = 'form-group'>
+        {{Form::submit('Gravar',array('id' => 'submit', 'class' => 'btn btn-primary'))}}
     </div>
 
     {{ Form::close() }}
@@ -41,6 +46,8 @@
         </div>
 
     {{ Form::close() }}
+
+    <a href = '/admin/produtos/subcategorias'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
 

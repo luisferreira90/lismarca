@@ -27,6 +27,12 @@
         </ul>
       </li>
 
+      <li role="presentation">
+        <a href="/" role="button" aria-expanded="false">
+          Voltar ao site
+        </a>
+      </li>
+
     </ul>
 
 </header>	

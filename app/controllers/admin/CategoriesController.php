@@ -62,7 +62,7 @@ class CategoriesController extends \BaseController {
 	}
 
 	public function update($id) {
-		$data = Input::only(['name','icon', 'subsection']);
+		$data = Input::only(['name','icon', 'subsection','ordering']);
 		
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2'

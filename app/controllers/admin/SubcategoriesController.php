@@ -62,7 +62,7 @@ class SubcategoriesController extends \BaseController {
 	}
 
 	public function update($id) {
-		$data = Input::only(['name','icon', 'category']);
+		$data = Input::only(['name','icon', 'category','ordering']);
 		
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2'

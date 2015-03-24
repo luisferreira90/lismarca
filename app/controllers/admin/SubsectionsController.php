@@ -61,7 +61,7 @@ class SubsectionsController extends \BaseController {
 	}
 
 	public function update($id) {
-		$data = Input::only(['name','icon', 'section']);
+		$data = Input::only(['name','icon', 'section','ordering']);
 		
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2'

@@ -19,6 +19,11 @@
     </div>
 
     <div class = 'form-group'>
+            {{Form::label('ordering','Ordem')}}
+            {{Form::text('ordering', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
             {{Form::label('icon', 'Ícone')}}
             {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
@@ -36,6 +41,8 @@
         </div>
 
     {{ Form::close() }}
+
+    <a href = '/admin/produtos/seccoes'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
 

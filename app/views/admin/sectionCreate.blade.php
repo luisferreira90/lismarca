@@ -34,6 +34,8 @@
 
 {{ Form::close() }}
 
+<a href = '/admin/produtos/seccoes'><button class="btn btn-warning">Cancelar</button></a>
+
 </div>
 
 @stop
