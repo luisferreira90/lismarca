@@ -10,7 +10,7 @@ class ProductSubsection extends Eloquent{
     } 
 
 	/**
-     * Return user list
+     * Return subsection list
      *
      * @return array
      */
@@ -21,6 +21,28 @@ class ProductSubsection extends Eloquent{
     	if(Input::get('section')) 
     		$subsection = $subsection->where('section', '=', $filter['section']);
     	return $subsection->get();
+    }
+
+
+    /**
+     * Publish subsection
+     *
+     * @return array
+     */
+    public function publish($id)
+    {
+        $this->where('id', $id)->update(array('published' => 1));
+    }
+
+
+    /**
+     * Unpublish subsection
+     *
+     * @return array
+     */
+    public function unpublish($id)
+    {
+        $this->where('id', $id)->update(array('published' => 0));
     }
 	
 }

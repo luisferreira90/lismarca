@@ -24,8 +24,8 @@
 				<th><span>ID</span></th>
 				<th><span>Nome</span></th>
 				<th><span>Categoria</span></th>
-				<th><span>Publicado</span></th>
 				<th><span>Ordem</span></th>
+				<th><span>Publicado</span></th>
 				<th>Apagar</th>
 			</tr>
 		</thead>
@@ -35,8 +35,14 @@
 					<td><a href = 'subcategorias/{{ $subCategory->id }}'>{{ $subCategory->id }}</a></td>
 					<td>{{ $subCategory->name }}</td>
 					<td>{{ $categories[$subCategory->category] }}</td>
-					<td>{{ $subCategory->published }}</td>
 					<td>{{ $subCategory->ordering }}</td>
+					<td>
+						@if($subCategory->published === 1)
+							<a href = 'subcategorias/unpublish/{{ $subCategory->id }}'><button class="btn btn-warning btn-sm">Despublicar</button></a>
+						@else
+							<a href = 'subcategorias/publish/{{ $subCategory->id }}'><button class="btn btn-success btn-sm">Publicar</button></a>
+						@endif
+					</td>
 					{{ Form::open(array('method' => 'delete', 'route' => array('admin.subcategory.destroy', $subCategory->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
 			        	<td>{{Form::submit('Apagar',array('id' => 'submit', 'class' => 'btn btn-danger btn-sm'))}}</td>
 					{{ Form::close() }}

@@ -91,4 +91,14 @@ class SubcategoriesController extends \BaseController {
 		return Redirect::to('admin/produtos/subcategorias');
 	}
 
+	public function unpublish($id) {
+		$subcategory = ProductSubcategory::find($id)->unpublish($id);
+		return Redirect::to('admin/produtos/subcategorias');
+	}
+
+	public function publish($id) {
+		$subcategory = ProductSubcategory::find($id)->publish($id);
+		return Redirect::to('admin/produtos/subcategorias');
+	}
+
 }

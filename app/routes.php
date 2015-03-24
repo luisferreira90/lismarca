@@ -55,6 +55,10 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::get('produtos/seccoes/{id}', 'SectionsController@sectionEdit');
 
+	Route::get('produtos/seccoes/publish/{id}', 'SectionsController@publish');
+
+	Route::get('produtos/seccoes/unpublish/{id}', 'SectionsController@unpublish');
+
 
 	Route::get('produtos/subseccoes', 'SubsectionsController@subsections');
 
@@ -63,6 +67,12 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('produtos/subseccoes/criar', 'SubsectionsController@subsectionCreate');
 
 	Route::get('produtos/subseccoes/{id}', 'SubsectionsController@subsectionEdit');
+
+	Route::get('produtos/subseccoes/{id}', 'SubsectionsController@subsectionEdit');
+
+	Route::get('produtos/subseccoes/publish/{id}', 'SubsectionsController@publish');
+
+	Route::get('produtos/subseccoes/unpublish/{id}', 'SubsectionsController@unpublish');
 
 
 	Route::get('produtos/categorias', 'CategoriesController@categories');
@@ -73,6 +83,10 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::get('produtos/categorias/{id}', 'CategoriesController@categoryEdit');
 
+	Route::get('produtos/categorias/publish/{id}', 'CategoriesController@publish');
+
+	Route::get('produtos/categorias/unpublish/{id}', 'CategoriesController@unpublish');
+
 
 	Route::get('produtos/subcategorias', 'SubcategoriesController@subCategories');
 
@@ -81,6 +95,10 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('produtos/subcategorias/criar', 'SubcategoriesController@subcategoryCreate');
 
 	Route::get('produtos/subcategorias/{id}', 'SubcategoriesController@subcategoryEdit');
+
+	Route::get('produtos/subcategorias/publish/{id}', 'SubcategoriesController@publish');
+
+	Route::get('produtos/subcategorias/unpublish/{id}', 'SubcategoriesController@unpublish');
 
 
 

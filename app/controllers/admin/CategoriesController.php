@@ -91,4 +91,14 @@ class CategoriesController extends \BaseController {
 		return Redirect::to('admin/produtos/categorias');
 	}
 
+	public function unpublish($id) {
+		$category = ProductCategory::find($id)->unpublish($id);
+		return Redirect::to('admin/produtos/categorias');
+	}
+
+	public function publish($id) {
+		$category = ProductCategory::find($id)->publish($id);
+		return Redirect::to('admin/produtos/categorias');
+	}
+
 }

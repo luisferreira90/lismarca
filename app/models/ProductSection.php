@@ -8,5 +8,26 @@ class ProductSection extends Eloquent {
 	public function subsections() {
 		return $this->hasMany('ProductSubsection');
    	}
+
+   	/**
+     * Publish section
+     *
+     * @return array
+     */
+    public function publish($id)
+    {
+        $this->where('id', $id)->update(array('published' => 1));
+    }
+
+
+    /**
+     * Unpublish section
+     *
+     * @return array
+     */
+    public function unpublish($id)
+    {
+        $this->where('id', $id)->update(array('published' => 0));
+    }
 	
 }

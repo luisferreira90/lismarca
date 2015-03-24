@@ -20,5 +20,26 @@ class ProductSubcategory extends Eloquent{
     		$subcategory = $subcategory->where('category', '=', $filter['category']);
     	return $subcategory->get();
     }
+
+    /**
+     * Publish subcategory
+     *
+     * @return array
+     */
+    public function publish($id)
+    {
+        $this->where('id', $id)->update(array('published' => 1));
+    }
+
+
+    /**
+     * Unpublish subcategory
+     *
+     * @return array
+     */
+    public function unpublish($id)
+    {
+        $this->where('id', $id)->update(array('published' => 0));
+    }
 	
 }

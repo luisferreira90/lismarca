@@ -85,8 +85,17 @@ class SubsectionsController extends \BaseController {
 	}
 
 	public function destroy($id) {
-
 		$subsection = ProductSubsection::find($id)->delete();
+		return Redirect::to('admin/produtos/subseccoes');
+	}
+
+	public function unpublish($id) {
+		$subsection = ProductSubsection::find($id)->unpublish($id);
+		return Redirect::to('admin/produtos/subseccoes');
+	}
+
+	public function publish($id) {
+		$subsection = ProductSubsection::find($id)->publish($id);
 		return Redirect::to('admin/produtos/subseccoes');
 	}
 

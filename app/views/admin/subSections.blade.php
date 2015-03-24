@@ -24,8 +24,8 @@
 				<th><span>ID</span></th>
 				<th><span>Nome</span></th>
 				<th><span>Secção</span></th>
-				<th><span>Publicado</span></th>
 				<th><span>Ordem</span></th>
+				<th><span>Publicado</span></th>
 				<th>Apagar</th>
 			</tr>
 		</thead>
@@ -35,8 +35,14 @@
 					<td><a href = 'subseccoes/{{ $subSection->id }}'>{{ $subSection->id }}</a></td>
 					<td>{{ $subSection->name }}</td>
 					<td>{{ $section[$subSection->section] }}</td>
-					<td>{{ $subSection->published }}</td>
 					<td>{{ $subSection->ordering }}</td>
+					<td>
+						@if($subSection->published === 1)
+							<a href = 'subseccoes/unpublish/{{ $subSection->id }}'><button class="btn btn-warning btn-sm">Despublicar</button></a>
+						@else
+							<a href = 'subseccoes/publish/{{ $subSection->id }}'><button class="btn btn-success btn-sm">Publicar</button></a>
+						@endif
+					</td>
 					{{ Form::open(array('method' => 'delete', 'route' => array('admin.subsection.destroy', $subSection->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
 			        	<td>{{Form::submit('Apagar',array('id' => 'submit', 'class' => 'btn btn-danger btn-sm'))}}</td>
 					{{ Form::close() }}

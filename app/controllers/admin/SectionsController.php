@@ -85,4 +85,14 @@ class SectionsController extends \BaseController {
 		return Redirect::to('admin/produtos/seccoes');
 	}
 
+	public function unpublish($id) {
+		$section = ProductSection::find($id)->unpublish($id);
+		return Redirect::to('admin/produtos/seccoes');
+	}
+
+	public function publish($id) {
+		$section = ProductSection::find($id)->publish($id);
+		return Redirect::to('admin/produtos/seccoes');
+	}
+
 }
