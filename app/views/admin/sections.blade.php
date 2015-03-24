@@ -4,7 +4,9 @@
 
 <h1>Gestão de secções</h1>
 
-<a href = 'seccoes/criar'><button class="btn btn-primary">Novo</button></a>
+<div class = 'novo'>
+	<a href = 'seccoes/criar'><button class="btn btn-primary">Novo</button></a>
+</div>
 
 <div id = 'wrapper'>
 	<table id = 'keywords' class = 'table table-hover'>

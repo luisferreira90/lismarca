@@ -4,7 +4,7 @@
 
 <h1>Gestão de utilizadores</h1>
 
-<div>
+<div class = 'filters'>
 	{{ Form::open(array('url' => 'admin/utilizadores', 'method' => 'post', 'class' => 'form-inline')) }}
 		<div class = 'form-group'>
 			{{Form::label('entity_type','Tipo de entidade')}}	

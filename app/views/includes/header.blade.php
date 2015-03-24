@@ -1,5 +1,5 @@
 <header>
-	<!--<div class = 'upper-header'>
+	<div class = 'upper-header'>
 		<div class = 'upper-header-content'>
 			<div class = 'upper-header-left'>
 
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div> 
-	</div>-->
+	</div>
 
 	<div class = 'lower-header'>
 		<div class = 'lower-header-left'>

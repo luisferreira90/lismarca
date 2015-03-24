@@ -4,7 +4,7 @@
 
 <h1>Gestão de sub-secções</h1>
 
-<div>
+<div class = 'filters'>
 	{{ Form::open(array('url' => 'admin/produtos/subseccoes', 'method' => 'post', 'class' => 'form-inline')) }}
 		<div class = 'form-group'>
 			{{Form::label('section','Secção')}}	
@@ -13,7 +13,9 @@
     {{ Form::close() }}
 </div>
 
-<a href = 'subseccoes/criar'><button class="btn btn-primary">Novo</button></a>
+<div class = 'novo'>
+	<a href = 'subseccoes/criar'><button class="btn btn-primary">Novo</button></a>
+</div>
 
 <div id = 'wrapper'>
 	<table id = 'keywords' class = 'table table-hover'>

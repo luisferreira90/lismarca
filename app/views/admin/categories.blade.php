@@ -4,7 +4,7 @@
 
 <h1>Gestão de categorias</h1>
 
-<div>
+<div class = 'filters'>
 	{{ Form::open(array('url' => 'admin/produtos/categorias', 'method' => 'post', 'class' => 'form-inline')) }}
 		<div class = 'form-group'>
 			{{Form::label('subsection','Sub-Secção')}}	
@@ -13,7 +13,9 @@
     {{ Form::close() }}
 </div>
 
-<a href = 'categorias/criar'><button class="btn btn-primary">Novo</button></a>
+<div class = 'novo'>
+	<a href = 'categorias/criar'><button class="btn btn-primary">Novo</button></a>
+</div>
 
 <div id = 'wrapper'>
 	<table id = 'keywords' class = 'table table-hover'>

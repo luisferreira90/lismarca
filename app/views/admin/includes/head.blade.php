@@ -7,13 +7,14 @@
 {{ HTML::style('css/normalize.css') }}
 {{ HTML::style('css/styleAlt.css') }}
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
 {{ HTML::script('js/html5shiv-master/dist/html5shiv.js') }}
 {{ HTML::script('js/html5shiv-master/dist/html5shiv-printshiv.js') }}
 
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 {{ HTML::script('js/tablesorter.min.js') }}
 
