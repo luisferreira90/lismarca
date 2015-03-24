@@ -26,8 +26,6 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('user', 'UsersController'); 
 
-	Route::resource('product', 'ProductsController'); 
-
 	Route::resource('section', 'SectionsController');
 
 	Route::resource('subsection', 'SubsectionsController');
@@ -36,7 +34,7 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('subcategory', 'SubcategoriesController');
 
-	Route::get('/', 'AdminController@dashboard');
+	Route::get('/', 'UsersController@users');
 
 
 	Route::get('utilizadores', 'UsersController@users');
@@ -46,62 +44,58 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('utilizadores/{id}', 'UsersController@userEdit');
 
 
-	Route::get('produtos', 'ProductsController@products');
+	Route::get('seccoes', 'SectionsController@sections');
+
+	Route::get('seccoes/criar', 'SectionsController@sectionCreate');
+
+	Route::get('seccoes/{id}', 'SectionsController@sectionEdit');
+
+	Route::get('seccoes/publish/{id}', 'SectionsController@publish');
+
+	Route::get('seccoes/unpublish/{id}', 'SectionsController@unpublish');
 
 
-	Route::get('produtos/seccoes', 'SectionsController@sections');
+	Route::get('subseccoes', 'SubsectionsController@subsections');
 
-	Route::get('produtos/seccoes/criar', 'SectionsController@sectionCreate');
+	Route::post('subseccoes', 'SubsectionsController@subsections');
 
-	Route::get('produtos/seccoes/{id}', 'SectionsController@sectionEdit');
+	Route::get('subseccoes/criar', 'SubsectionsController@subsectionCreate');
 
-	Route::get('produtos/seccoes/publish/{id}', 'SectionsController@publish');
+	Route::get('subseccoes/{id}', 'SubsectionsController@subsectionEdit');
 
-	Route::get('produtos/seccoes/unpublish/{id}', 'SectionsController@unpublish');
+	Route::get('subseccoes/{id}', 'SubsectionsController@subsectionEdit');
 
+	Route::get('subseccoes/publish/{id}', 'SubsectionsController@publish');
 
-	Route::get('produtos/subseccoes', 'SubsectionsController@subsections');
-
-	Route::post('produtos/subseccoes', 'SubsectionsController@subsections');
-
-	Route::get('produtos/subseccoes/criar', 'SubsectionsController@subsectionCreate');
-
-	Route::get('produtos/subseccoes/{id}', 'SubsectionsController@subsectionEdit');
-
-	Route::get('produtos/subseccoes/{id}', 'SubsectionsController@subsectionEdit');
-
-	Route::get('produtos/subseccoes/publish/{id}', 'SubsectionsController@publish');
-
-	Route::get('produtos/subseccoes/unpublish/{id}', 'SubsectionsController@unpublish');
+	Route::get('subseccoes/unpublish/{id}', 'SubsectionsController@unpublish');
 
 
-	Route::get('produtos/categorias', 'CategoriesController@categories');
+	Route::get('categorias', 'CategoriesController@categories');
 
-	Route::post('produtos/categorias', 'CategoriesController@categories');
+	Route::post('categorias', 'CategoriesController@categories');
 
-	Route::get('produtos/categorias/criar', 'CategoriesController@categoryCreate');
+	Route::get('categorias/criar', 'CategoriesController@categoryCreate');
 
-	Route::get('produtos/categorias/{id}', 'CategoriesController@categoryEdit');
+	Route::get('categorias/{id}', 'CategoriesController@categoryEdit');
 
-	Route::get('produtos/categorias/publish/{id}', 'CategoriesController@publish');
+	Route::get('categorias/publish/{id}', 'CategoriesController@publish');
 
-	Route::get('produtos/categorias/unpublish/{id}', 'CategoriesController@unpublish');
-
-
-	Route::get('produtos/subcategorias', 'SubcategoriesController@subCategories');
-
-	Route::post('produtos/subcategorias', 'SubcategoriesController@subCategories');
-
-	Route::get('produtos/subcategorias/criar', 'SubcategoriesController@subcategoryCreate');
-
-	Route::get('produtos/subcategorias/{id}', 'SubcategoriesController@subcategoryEdit');
-
-	Route::get('produtos/subcategorias/publish/{id}', 'SubcategoriesController@publish');
-
-	Route::get('produtos/subcategorias/unpublish/{id}', 'SubcategoriesController@unpublish');
+	Route::get('categorias/unpublish/{id}', 'CategoriesController@unpublish');
 
 
+	Route::get('subcategorias', 'SubcategoriesController@subCategories');
 
-	Route::get('produtos/items', 'ProductsController@items');
+	Route::post('subcategorias', 'SubcategoriesController@subCategories');
+
+	Route::get('subcategorias/criar', 'SubcategoriesController@subcategoryCreate');
+
+	Route::get('subcategorias/{id}', 'SubcategoriesController@subcategoryEdit');
+
+	Route::get('subcategorias/publish/{id}', 'SubcategoriesController@publish');
+
+	Route::get('subcategorias/unpublish/{id}', 'SubcategoriesController@unpublish');
+
+
+	Route::get('items', 'ItemsController@items');
 
 });

@@ -44,14 +44,14 @@ class CategoriesController extends \BaseController {
 			]);
 
         if($validator->fails()){
-            return Redirect::to('admin/produtos/categorias/criar')->withErrors($validator)->withInput();
+            return Redirect::to('admin/categorias/criar')->withErrors($validator)->withInput();
         }
 
         $data['icon'] = $this->storeImage();
 
         $newCategory = ProductCategory::create($data);
         if($newCategory){
-            return Redirect::to('admin/produtos/categorias');
+            return Redirect::to('admin/categorias');
         }
 	}
 
@@ -69,7 +69,7 @@ class CategoriesController extends \BaseController {
 		]);
 
         if($validator->fails()){
-            return Redirect::to('admin/produtos/categorias/' . $id)->withErrors($validator)->withInput();
+            return Redirect::to('admin/categorias/' . $id)->withErrors($validator)->withInput();
         }
 
         if (is_null($data['icon']))
@@ -81,24 +81,24 @@ class CategoriesController extends \BaseController {
 		$category->fill($data);
 		$category->save();
         
-    	return Redirect::to('admin/produtos/categorias/' . $id)->withInput();
+    	return Redirect::to('admin/categorias/' . $id)->withInput();
         
 	}
 
 	public function destroy($id) {
 
 		$category = ProductCategory::find($id)->delete();
-		return Redirect::to('admin/produtos/categorias');
+		return Redirect::to('admin/categorias');
 	}
 
 	public function unpublish($id) {
 		$category = ProductCategory::find($id)->unpublish($id);
-		return Redirect::to('admin/produtos/categorias');
+		return Redirect::to('admin/categorias');
 	}
 
 	public function publish($id) {
 		$category = ProductCategory::find($id)->publish($id);
-		return Redirect::to('admin/produtos/categorias');
+		return Redirect::to('admin/categorias');
 	}
 
 }

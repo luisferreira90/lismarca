@@ -37,14 +37,14 @@ class SectionsController extends \BaseController {
 			]);
 
         if($validator->fails()){
-            return Redirect::to('admin/produtos/seccoes/criar')->withErrors($validator)->withInput();
+            return Redirect::to('admin/seccoes/criar')->withErrors($validator)->withInput();
         }
 
         $data['icon'] = $this->storeImage();
 
         $newSection = ProductSection::create($data);
         if($newSection){
-            return Redirect::to('admin/produtos/seccoes');
+            return Redirect::to('admin/seccoes');
         }
 	}
 
@@ -63,7 +63,7 @@ class SectionsController extends \BaseController {
 		]);
 
         if($validator->fails()){
-            return Redirect::to('admin/produtos/seccoes/' . $id)->withErrors($validator)->withInput();
+            return Redirect::to('admin/seccoes/' . $id)->withErrors($validator)->withInput();
         }
 
 
@@ -76,23 +76,23 @@ class SectionsController extends \BaseController {
 		$section->fill($data);
 		$section->save();
         
-    	return Redirect::to('admin/produtos/seccoes/' . $id)->withInput();
+    	return Redirect::to('admin/seccoes/' . $id)->withInput();
         
 	}
 
 	public function destroy($id) {
 		$section = ProductSection::find($id)->delete();
-		return Redirect::to('admin/produtos/seccoes');
+		return Redirect::to('admin/seccoes');
 	}
 
 	public function unpublish($id) {
 		$section = ProductSection::find($id)->unpublish($id);
-		return Redirect::to('admin/produtos/seccoes');
+		return Redirect::to('admin/seccoes');
 	}
 
 	public function publish($id) {
 		$section = ProductSection::find($id)->publish($id);
-		return Redirect::to('admin/produtos/seccoes');
+		return Redirect::to('admin/seccoes');
 	}
 
 }

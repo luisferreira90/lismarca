@@ -15,7 +15,7 @@
 				<th><span>ID</span></th>
 				<th><span>Nome</span></th>
 				<th><span>Ordem</span></th>
-				<th><span>Publicado</span></th>
+				<th><span>Publicar</span></th>
 				<th>Apagar</th>
 			</tr>
 		</thead>

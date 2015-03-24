@@ -39,7 +39,7 @@
 
 {{ Form::close() }}
 
-<a href = '/admin/produtos/categorias'><button class="btn btn-warning">Cancelar</button></a>
+<a href = '/admin/categorias'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
 

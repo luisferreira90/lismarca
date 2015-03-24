@@ -43,14 +43,14 @@ class SubsectionsController extends \BaseController {
 			]);
 
         if($validator->fails()){
-            return Redirect::to('admin/produtos/subseccoes/criar')->withErrors($validator)->withInput();
+            return Redirect::to('admin/subseccoes/criar')->withErrors($validator)->withInput();
         }
 
         $data['icon'] = $this->storeImage();
 
         $newSubsection = ProductSubsection::create($data);
         if($newSubsection){
-            return Redirect::to('admin/produtos/subseccoes');
+            return Redirect::to('admin/subseccoes');
         }
 	}
 
@@ -68,7 +68,7 @@ class SubsectionsController extends \BaseController {
 		]);
 
         if($validator->fails()){
-            return Redirect::to('admin/produtos/subseccoes/' . $id)->withErrors($validator)->withInput();
+            return Redirect::to('admin/subseccoes/' . $id)->withErrors($validator)->withInput();
         }
 
         if (is_null($data['icon']))
@@ -80,23 +80,23 @@ class SubsectionsController extends \BaseController {
 		$subsection->fill($data);
 		$subsection->save();
         
-    	return Redirect::to('admin/produtos/subseccoes/' . $id)->withInput();
+    	return Redirect::to('admin/subseccoes/' . $id)->withInput();
         
 	}
 
 	public function destroy($id) {
 		$subsection = ProductSubsection::find($id)->delete();
-		return Redirect::to('admin/produtos/subseccoes');
+		return Redirect::to('admin/subseccoes');
 	}
 
 	public function unpublish($id) {
 		$subsection = ProductSubsection::find($id)->unpublish($id);
-		return Redirect::to('admin/produtos/subseccoes');
+		return Redirect::to('admin/subseccoes');
 	}
 
 	public function publish($id) {
 		$subsection = ProductSubsection::find($id)->publish($id);
-		return Redirect::to('admin/produtos/subseccoes');
+		return Redirect::to('admin/subseccoes');
 	}
 
 }

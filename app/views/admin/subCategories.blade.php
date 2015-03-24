@@ -5,7 +5,7 @@
 <h1>Gestão de sub-categorias</h1>
 
 <div class = 'filters'>
-	{{ Form::open(array('url' => 'admin/produtos/subcategorias', 'method' => 'post', 'class' => 'form-inline')) }}
+	{{ Form::open(array('url' => 'admin/subcategorias', 'method' => 'post', 'class' => 'form-inline')) }}
 		<div class = 'form-group'>
 			{{Form::label('category','Categoria')}}	
 			{{Form::select('category', [null=>'Sem filtro']+$categories, Input::get('category'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
@@ -25,7 +25,7 @@
 				<th><span>Nome</span></th>
 				<th><span>Categoria</span></th>
 				<th><span>Ordem</span></th>
-				<th><span>Publicado</span></th>
+				<th><span>Publicar</span></th>
 				<th>Apagar</th>
 			</tr>
 		</thead>

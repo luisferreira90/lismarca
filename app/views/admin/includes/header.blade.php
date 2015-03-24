@@ -19,11 +19,11 @@
           <span class="caret"></span>
         </a>
         <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/produtos/seccoes">Secções</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/produtos/subseccoes">Sub-secções</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/produtos/categorias">Categorias</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/produtos/subcategorias">Sub-categorias</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/produtos/items">Items</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/seccoes">Secções</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/subseccoes">Sub-secções</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/categorias">Categorias</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/subcategorias">Sub-categorias</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/items">Items</a></li>
         </ul>
       </li>
 

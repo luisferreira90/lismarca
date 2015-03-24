@@ -5,7 +5,7 @@
 <h1>Gestão de sub-secções</h1>
 
 <div class = 'filters'>
-	{{ Form::open(array('url' => 'admin/produtos/subseccoes', 'method' => 'post', 'class' => 'form-inline')) }}
+	{{ Form::open(array('url' => 'admin/subseccoes', 'method' => 'post', 'class' => 'form-inline')) }}
 		<div class = 'form-group'>
 			{{Form::label('section','Secção')}}	
 			{{Form::select('section', [null=>'Sem filtro']+$section, Input::get('section'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
@@ -25,7 +25,7 @@
 				<th><span>Nome</span></th>
 				<th><span>Secção</span></th>
 				<th><span>Ordem</span></th>
-				<th><span>Publicado</span></th>
+				<th><span>Publicar</span></th>
 				<th>Apagar</th>
 			</tr>
 		</thead>

@@ -2,14 +2,14 @@
 
 namespace admin;
 
+use ProductItem;
 use ProductSubcategory;
-use ProductCategory;
 use View;
 use Input;
 use Validator;
 use Redirect;
 
-class SubcategoriesController extends \BaseController {
+class ItemsController extends \BaseController {
 
 	private function storeImage() {
 		$file = Input::file('icon');
@@ -19,6 +19,9 @@ class SubcategoriesController extends \BaseController {
 		return $filename;
 	}
 
+	public function items() {
+  		return View::make('admin.items')->with('items', ProductItem::all());
+	}
 
 	public function subCategories() {
 		$subcategory = new ProductSubcategory;
