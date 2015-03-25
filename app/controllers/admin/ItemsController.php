@@ -28,8 +28,8 @@ class ItemsController extends \BaseController {
 	}
 
 	public function create(){
-		$items = ProductItem::lists('name', 'id');
-		return View::make('admin.item-create')->with('items', $items);
+		$subcategories = ProductSubcategory::lists('name', 'id');
+		return View::make('admin.item-create')->with('subcategories', $subcategories);
 	}
 
 	public function store() {
@@ -55,7 +55,7 @@ class ItemsController extends \BaseController {
 	}
 
 	public function edit($id) {
-		$item = ProductItems::find($id);
+		$item = ProductItem::find($id);
 		$subcategories = ProductSubcategory::lists('name', 'id');
 		return View::make('admin.item-edit')->with('item', $item)->with('subcategories', $subcategories);
 	}

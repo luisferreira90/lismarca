@@ -5,7 +5,7 @@
 <h1>Gestão de items</h1>
 
 <div class = 'filters'>
-	{{ Form::open(array('url' => 'admin/items', 'method' => 'post', 'class' => 'form-inline')) }}
+	{{ Form::open(array('url' => 'admin/items', 'method' => 'get', 'class' => 'form-inline')) }}
 		<div class = 'form-group'>
 			{{Form::label('subcategory','Subcategoria')}}	
 			{{Form::select('subcategory', [null=>'Sem filtro']+$subcategories, Input::get('subcategory'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
@@ -48,6 +48,9 @@
 			@endforeach
 		</tbody>
 	</table>
+
+	{{ $items->appends(Input::except('page'))->links() }}
+
 </div>
 
 <script>

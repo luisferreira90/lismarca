@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+<script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
+
 {{ HTML::script('js/tablesorter.min.js') }}
 
 <script>

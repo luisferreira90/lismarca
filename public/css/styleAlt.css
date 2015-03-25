@@ -5,7 +5,11 @@
 .form-wrap {
   display:inline-block;
   float:left;
-  max-width:500px;
+  max-width:900px;
+}
+
+.form-wrap .form-items{
+  max-width:100%;
 }
 
 .form-group {
@@ -24,4 +28,8 @@
   display:inline-block;
   float:left;
   margin-left:100px;
+}
+
+#wrapper {
+  text-align:center;
 }

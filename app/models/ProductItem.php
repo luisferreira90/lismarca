@@ -15,9 +15,12 @@ class ProductItem extends Eloquent{
     public function listAll($filter)
     {
         $items = $this->select('id', 'name', 'subcategory', 'published');
-        if(Input::get('subcategory')) 
-            $items = $items->where('subcategory', '=', $filter['subcategory']);
-        return $items->get();
+            //var_dump(Input::all());
+            if(isset($filter['subcategory']))
+                $items = $items->where('subcategory', '=', $filter['subcategory']);
+
+        $items = $items->orderBy('id', 'desc');
+        return $items->paginate(25);
     }
 
 
