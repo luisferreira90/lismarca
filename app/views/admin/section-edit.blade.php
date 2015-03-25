@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>Editar Secção</h1>
+<div class = 'form-wrap'>
 
-<div>
+<h1>Editar Secção</h1>
 
 @foreach ($errors->all() as $message)
     <br>
@@ -43,6 +43,14 @@
     {{ Form::close() }}
 
     <a href = '/admin/seccoes'><button class="btn btn-warning">Cancelar</button></a>
+
+</div>
+
+<div class = 'form-icon'>
+
+    <h2>Icone</h2>
+
+    {{ HTML::image($section->icon) }}
 
 </div>
 

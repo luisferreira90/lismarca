@@ -3,6 +3,8 @@
 }
 
 .form-wrap {
+  display:inline-block;
+  float:left;
   max-width:500px;
 }
 
@@ -16,4 +18,10 @@
 
 .novo {
   margin:20px 0px;
+}
+
+.form-icon {
+  display:inline-block;
+  float:left;
+  margin-left:100px;
 }
