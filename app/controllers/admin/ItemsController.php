@@ -20,88 +20,85 @@ class ItemsController extends \BaseController {
 	}
 
 	public function items() {
-  		return View::make('admin.items')->with('items', ProductItem::all());
-	}
-
-	public function subCategories() {
+		$item = new ProductItem;
+		$items = $item->listAll(Input::all());
 		$subcategory = new ProductSubcategory;
-		$subcategories = $subcategory->listAll(Input::all());
-		$category = new ProductCategory;
-		$categories = $category::lists('name', 'id');
-  		return View::make('admin.subcategories')->with('subcategories', $subcategories)->with('categories', $categories);
+		$subcategories = $subcategory::lists('name', 'id');
+  		return View::make('admin.items')->with('items', $items)->with('subcategories', $subcategories);
 	}
 
-	public function subcategoryCreate(){
-		$categories = ProductCategory::lists('name', 'id');
-		return View::make('admin.subcategoryCreate')->with('categories', $categories);
+	public function create(){
+		$items = ProductItem::lists('name', 'id');
+		return View::make('admin.item-create')->with('items', $items);
 	}
 
 	public function store() {
-		$data = Input::only(['name','ordering','icon', 'category']);
+		$data = Input::only(['name','icon','subcategory','description']);
 		
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
-			'ordering' => 'required|numeric',
+			'description' => 'required',
 			'icon' => 'required|image',
-			'category' => 'required'
+			'subcategory' => 'required'
 			]);
 
         if($validator->fails()){
-            return Redirect::to('admin/subcategorias/criar')->withErrors($validator)->withInput();
+            return Redirect::to('admin/items/criar')->withErrors($validator)->withInput();
         }
 
         $data['icon'] = $this->storeImage();
 
-        $newSubcategory = ProductSubcategory::create($data);
-        if($newSubcategory){
-            return Redirect::to('admin/subcategorias');
+        $new = ProductItem::create($data);
+        if($new){
+            return Redirect::to('admin/items');
         }
 	}
 
-	public function subcategoryEdit($id) {
-		$subcategory = ProductSubcategory::find($id);
-		$categories = ProductCategory::lists('name', 'id');
-		return View::make('admin.subcategoryEdit')->with('subcategory', $subcategory)->with('categories', $categories);
+	public function edit($id) {
+		$item = ProductItems::find($id);
+		$subcategories = ProductSubcategory::lists('name', 'id');
+		return View::make('admin.item-edit')->with('item', $item)->with('subcategories', $subcategories);
 	}
 
 	public function update($id) {
-		$data = Input::only(['name','icon', 'category','ordering']);
+		$data = Input::only(['name','icon','subcategory','description']);
 		
 		$validator = Validator::make($data, [
-			'name' => 'required|min:2'
+			'name' => 'required|min:2',
+			'description' => 'required',
+			'subcategory' => 'required'
 		]);
 
         if($validator->fails()){
-            return Redirect::to('admin/subcategorias/' . $id)->withErrors($validator)->withInput();
+            return Redirect::to('admin/items/' . $id)->withErrors($validator)->withInput();
         }
 
         if (is_null($data['icon']))
-        	$data['icon'] = ProductSubcategory::find($id)->icon;
+        	$data['icon'] = ProductItem::find($id)->icon;
         else
         	$data['icon'] = $this->storeImage();
 
-        $subcategory = ProductSubcategory::find($id);
-		$subcategory->fill($data);
-		$subcategory->save();
+        $item = ProductItem::find($id);
+		$item->fill($data);
+		$item->save();
         
-    	return Redirect::to('admin/subcategorias/' . $id)->withInput();
-        
+    	return Redirect::to('admin/items/' . $id)->withInput();
 	}
 
 	public function destroy($id) {
 
-		$subcategory = ProductSubcategory::find($id)->delete();
-		return Redirect::to('admin/subcategorias');
+		$item = ProductItem::find($id)->delete();
+		return Redirect::to('admin/items');
 	}
 
 	public function unpublish($id) {
-		$subcategory = ProductSubcategory::find($id)->unpublish($id);
-		return Redirect::to('admin/subcategorias');
+		$item = ProductItem::find($id)->unpublish($id);
+		return Redirect::to('admin/items');
 	}
 
 	public function publish($id) {
-		$subcategory = ProductSubcategory::find($id)->publish($id);
-		return Redirect::to('admin/subcategorias');
+		$item = ProductItem::find($id)->publish($id);
+		return Redirect::to('admin/items');
 	}
 
 }

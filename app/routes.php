@@ -34,6 +34,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('subcategory', 'SubcategoriesController');
 
+	Route::resource('item', 'ItemsController');
+
 	Route::resource('entity', 'EntitiesController');
 
 	Route::resource('location', 'LocationsController');
@@ -121,5 +123,15 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 
 	Route::get('items', 'ItemsController@items');
+
+	Route::post('items', 'ItemsController@items');
+
+	Route::get('items/criar', 'ItemsController@create');
+
+	Route::get('items/{id}', 'ItemsController@edit');
+
+	Route::get('items/publish/{id}', 'ItemsController@publish');
+
+	Route::get('items/unpublish/{id}', 'ItemsController@unpublish');
 
 });
