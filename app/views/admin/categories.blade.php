@@ -37,7 +37,7 @@
 					<td>{{ $subsection[$category->subsection] }}</td>
 					<td>{{ $category->ordering }}</td>
 					<td>
-						@if($category->published === 1)
+						@if($category->published == 1)
 							<a href = 'categorias/unpublish/{{ $category->id }}'><button class="btn btn-warning btn-sm">Despublicar</button></a>
 						@else
 							<a href = 'categorias/publish/{{ $category->id }}'><button class="btn btn-success btn-sm">Publicar</button></a>

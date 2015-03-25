@@ -26,7 +26,7 @@
 					<td>{{ $section->name }}</td>
 					<td>{{ $section->ordering }}</td>
 					<td>
-						@if($section->published === 1)
+						@if($section->published == 1)
 							<a href = 'seccoes/unpublish/{{ $section->id }}'><button class="btn btn-warning btn-sm">Despublicar</button></a>
 						@else
 							<a href = 'seccoes/publish/{{ $section->id }}'><button class="btn btn-success btn-sm">Publicar</button></a>
