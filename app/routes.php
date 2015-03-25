@@ -36,6 +36,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('entity', 'EntitiesController');
 
+	Route::resource('location', 'LocationsController');
+
 	Route::get('/', 'UsersController@users');
 
 
@@ -106,6 +108,15 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('entidades/criar', 'EntitiesController@entityCreate');
 
 	Route::get('entidades/{id}', 'EntitiesController@entityEdit');
+
+
+	Route::get('localizacoes', 'LocationsController@locations');
+
+	Route::post('localizacoes', 'LocationsController@locations');
+
+	Route::get('localizacoes/criar', 'LocationsController@create');
+
+	Route::get('localizacoes/{id}', 'LocationsController@edit');
 
 
 
