@@ -4,6 +4,7 @@ namespace admin;
 
 use User;
 use EntityType;
+use Location;
 use View;
 use Input;
 use Validator;
@@ -16,13 +17,8 @@ class UsersController extends \BaseController {
 		$users = $user->listAll(Input::all());
 		$entity_type = new EntityType;
 		$entities = $entity_type::lists('name_pt', 'id');
-		$locations = array(
-			'Funchal' => 'Funchal',
-			'Caniço' => 'Caniço',
-			'Machico' => 'Machico',
-			'Santa Cruz' => 'Santa Cruz',
-			'Câmara de Lobos' => 'Câmara de Lobos',
-			'Santana' => 'Santana');
+		$location = new Location;
+		$locations = $location::lists('name', 'id');
 
   		return View::make('admin.users')->with('users', $users)->with('entities', $entities)->with('locations', $locations)->withInput(Input::all());
 	}

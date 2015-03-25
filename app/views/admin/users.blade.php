@@ -38,7 +38,7 @@
 		<td>{{ $user->name }}</td>
 		<td>{{ $user->email }}</td>
 		<td>{{ $user->phone }}</td>
-		<td>{{ $user->location }}</td>
+		<td>{{ $locations[$user->location] }}</td>
 		<td>{{ $entities[$user->entity_type] }}</td>
 		<td>{{ $user->company_name }}</td>
 		{{ Form::open(array('method' => 'delete', 'route' => array('admin.user.destroy', $user->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
