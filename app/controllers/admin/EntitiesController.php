@@ -15,7 +15,7 @@ class EntitiesController extends \BaseController {
 	}
 
 	public function entityCreate(){
-		return View::make('admin.entityCreate');
+		return View::make('admin.entity-create');
 	}
 
 	public function store() {
@@ -40,7 +40,7 @@ class EntitiesController extends \BaseController {
 		$entities = new EntityType;
 		$entity = $entities::find($id);	
 
-		return View::make('admin.entityEdit')->with('entity', $entity);
+		return View::make('admin.entity-edit')->with('entity', $entity);
 	}
 
 	public function update($id) {

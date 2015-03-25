@@ -24,7 +24,7 @@ class SectionsController extends \BaseController {
 	}
 
 	public function sectionCreate(){
-		return View::make('admin.sectionCreate');
+		return View::make('admin.section-create');
 	}
 
 	public function store() {
@@ -52,7 +52,7 @@ class SectionsController extends \BaseController {
 		$sections = new ProductSection;
 		$section = $sections::find($id);	
 
-		return View::make('admin.sectionEdit')->with('section', $section);
+		return View::make('admin.section-edit')->with('section', $section);
 	}
 
 	public function update($id) {

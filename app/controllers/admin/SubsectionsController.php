@@ -24,12 +24,12 @@ class SubsectionsController extends \BaseController {
 		$subsections = $subsection->listAll(Input::all());
 		$section = new ProductSection;
 		$sections = $section::lists('name', 'id');
-  		return View::make('admin.subSections')->with('subSections', $subsections)->with('section', $sections);
+  		return View::make('admin.subsections')->with('subSections', $subsections)->with('section', $sections);
 	}
 
 	public function subsectionCreate(){
 		$sections = ProductSection::lists('name', 'id');
-		return View::make('admin.subsectionCreate')->with('sections', $sections);
+		return View::make('admin.subsection-create')->with('sections', $sections);
 	}
 
 	public function store() {
@@ -57,7 +57,7 @@ class SubsectionsController extends \BaseController {
 	public function subsectionEdit($id) {
 		$subsection = ProductSubsection::find($id);
 		$sections = ProductSection::lists('name', 'id');
-		return View::make('admin.subsectionEdit')->with('subsection', $subsection)->with('sections', $sections);
+		return View::make('admin.subsection-edit')->with('subsection', $subsection)->with('sections', $sections);
 	}
 
 	public function update($id) {

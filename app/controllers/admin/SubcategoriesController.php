@@ -30,7 +30,7 @@ class SubcategoriesController extends \BaseController {
 
 	public function subcategoryCreate(){
 		$categories = ProductCategory::lists('name', 'id');
-		return View::make('admin.subcategoryCreate')->with('categories', $categories);
+		return View::make('admin.subcategory-create')->with('categories', $categories);
 	}
 
 	public function store() {
@@ -58,7 +58,7 @@ class SubcategoriesController extends \BaseController {
 	public function subcategoryEdit($id) {
 		$subcategory = ProductSubcategory::find($id);
 		$categories = ProductCategory::lists('name', 'id');
-		return View::make('admin.subcategoryEdit')->with('subcategory', $subcategory)->with('categories', $categories);
+		return View::make('admin.subcategory-edit')->with('subcategory', $subcategory)->with('categories', $categories);
 	}
 
 	public function update($id) {
