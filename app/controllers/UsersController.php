@@ -45,8 +45,10 @@ class UsersController extends BaseController {
 	public function registration()
 	{
 		$entity_type = new EntityType;
-		$data = $entity_type::lists('name_pt', 'id');
-		return View::make('pages.registration')->with('data', $data);
+		$entity_types = $entity_type::lists('name_pt', 'id');
+		$location = new Location;
+		$locations = $location::lists('name', 'id');
+		return View::make('pages.registration')->with('entity_types', $entity_types)->with('locations', $locations);
 	}
 
 

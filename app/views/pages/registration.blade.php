@@ -48,14 +48,14 @@
         <div class = 'form-element'>
             <div class = 'form-left'>
                 {{Form::label('location',Lang::get('strings.location'))}}
-                {{Form::text('location')}}
+                {{Form::select('location', $locations)}}
             </div>
         </div>
 
         <div class = 'form-element'>
             <div class = 'form-left'>
                 {{Form::label('entity_type',Lang::get('strings.entity_type'))}}
-                {{Form::select('entity_type', $data)}}
+                {{Form::select('entity_type', $entity_types)}}
             </div>
         </div>
 
