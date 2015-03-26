@@ -52,16 +52,4 @@
 	</table>
 </div>
 
-<script>
-
-  function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar a sub-secção?");
-      if (x)
-        return true;
-      else
-        return false;
-  }
-
-</script>
-
 @stop

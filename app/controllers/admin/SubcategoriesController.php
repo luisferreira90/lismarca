@@ -11,93 +11,88 @@ use Redirect;
 
 class SubcategoriesController extends \BaseController {
 
-	private function storeImage() {
-		$file = Input::file('icon');
-		$destinationPath = public_path().'/images/produtos/icons'; 
-		$filename = 'images/produtos/icons/' . $file->getClientOriginalName();
-		$upload_success = Input::file('icon')->move($destinationPath, $filename);
-		return $filename;
+	private function validate($data) {
+		$validator = Validator::make($data, [
+			'name' => 'required|min:2',
+			'ordering' => 'numeric',
+			'icon' => 'image',
+			'category' => 'required'
+			]);
+
+        if($validator->fails()){
+            return $validator;
+        }
+
+        return false;
 	}
 
 
 	public function subCategories() {
 		$subcategory = new ProductSubcategory;
 		$subcategories = $subcategory->listAll(Input::all());
-		$category = new ProductCategory;
-		$categories = $category::lists('name', 'id');
-  		return View::make('admin.subcategories')->with('subcategories', $subcategories)->with('categories', $categories);
+  		return View::make('admin.subcategory')->with('subcategories', $subcategories)->with('categories', ProductCategory::lists('name', 'id'));
 	}
 
-	public function subcategoryCreate(){
-		$categories = ProductCategory::lists('name', 'id');
-		return View::make('admin.subcategory-create')->with('categories', $categories);
+
+	public function create(){
+		return View::make('admin.subcategory-edit')->with('categories', ProductCategory::lists('name', 'id'));
 	}
+
 
 	public function store() {
-		$data = Input::only(['name','ordering','icon', 'category']);
-		
-		$validator = Validator::make($data, [
-			'name' => 'required|min:2',
-			'ordering' => 'required|numeric',
-			'icon' => 'required|image',
-			'category' => 'required'
-			]);
-
-        if($validator->fails()){
+		$data = Input::all();
+		$validator = $this->validate($data);
+        if($validator)
             return Redirect::to('admin/subcategorias/criar')->withErrors($validator)->withInput();
-        }
 
-        $data['icon'] = $this->storeImage();
+       if(isset($data['icon'])) 
+        	$data['icon'] = ProductSubcategory::storeImage(Input::file('icon'));
 
-        $newSubcategory = ProductSubcategory::create($data);
-        if($newSubcategory){
+        $new = ProductSubcategory::create($data);
+        if($new){
             return Redirect::to('admin/subcategorias');
         }
 	}
 
-	public function subcategoryEdit($id) {
+
+	public function edit($id) {
 		$subcategory = ProductSubcategory::find($id);
-		$categories = ProductCategory::lists('name', 'id');
-		return View::make('admin.subcategory-edit')->with('subcategory', $subcategory)->with('categories', $categories);
+		return View::make('admin.subcategory-edit')->with('subcategory', $subcategory)->with('categories', ProductCategory::lists('name', 'id'));
 	}
+
 
 	public function update($id) {
-		$data = Input::only(['name','icon', 'category','ordering']);
-		
-		$validator = Validator::make($data, [
-			'name' => 'required|min:2'
-		]);
+		$validator = $this->validate(Input::all());
+        if($validator)
+        	return Redirect::to('admin/subcategorias/' . $id)->withErrors($validator)->withInput();
 
-        if($validator->fails()){
-            return Redirect::to('admin/subcategorias/' . $id)->withErrors($validator)->withInput();
-        }
+		if (Input::file('icon')) {
+			$data = Input::all();
+        	$data['icon'] = ProductSubcategory::storeImage(Input::file('icon'));
+    	}
+        else {
+        	$data = Input::only(['name','ordering','category']);
+        }		
 
-        if (is_null($data['icon']))
-        	$data['icon'] = ProductSubcategory::find($id)->icon;
-        else
-        	$data['icon'] = $this->storeImage();
-
-        $subcategory = ProductSubcategory::find($id);
-		$subcategory->fill($data);
-		$subcategory->save();
-        
+        ProductSubcategory::find($id)->fill($data)->save();        
     	return Redirect::to('admin/subcategorias/' . $id)->withInput();
-        
 	}
+
 
 	public function destroy($id) {
-
-		$subcategory = ProductSubcategory::find($id)->delete();
+		ProductSubcategory::find($id)->delete();
 		return Redirect::to('admin/subcategorias');
 	}
+
 
 	public function unpublish($id) {
-		$subcategory = ProductSubcategory::find($id)->unpublish($id);
+		ProductSubcategory::find($id)->unpublish($id);
 		return Redirect::to('admin/subcategorias');
 	}
 
+
 	public function publish($id) {
-		$subcategory = ProductSubcategory::find($id)->publish($id);
+		ProductSubcategory::find($id)->publish($id);
 		return Redirect::to('admin/subcategorias');
 	}
 

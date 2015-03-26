@@ -2,16 +2,20 @@
 
 @section('content')
 
-<h1>Editar localização</h1>
+<div class = 'form-wrap'>
 
-<div>
+<h1>Editar localização</h1>
 
 @foreach ($errors->all() as $message)
     <br>
     {{$message}}
 @endforeach
 
-{{ Form::model($location, array('route' => array('admin.location.update', $location->id), 'method' => 'PUT')) }}
+@if(isset($location))
+  {{ Form::model($location, array('route' => array('admin.location.update', $location->id), 'method' => 'PUT')) }}
+@else
+  {{ Form::open(array('route' => array('admin.location.store'), 'method' => 'post', 'class' => 'form-horizontal')) }}
+@endif
 
     <div class = 'form-group'>
         {{Form::label('name', 'Nome')}}
@@ -24,28 +28,20 @@
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.location.destroy', $location->id), 'onsubmit' => 'return ConfirmDelete()')) }}
-        
-        <div class = 'form-group'>
-            {{Form::submit('Apagar localização',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
-        </div>
+    @if(isset($location))
 
-    {{ Form::close() }}
+      {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.location.destroy', $location->id), 'onsubmit' => 'return ConfirmDelete()')) }}
+          
+          <div class = 'form-group'>
+              {{Form::submit('Apagar localização',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
+          </div>
+
+      {{ Form::close() }}
+
+    @endif
 
     <a href = '/admin/localizacoes'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
-
-<script>
-
-  function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar esta localização?");
-      if (x)
-        return true;
-      else
-        return false;
-  }
-
-</script>
 
 @stop

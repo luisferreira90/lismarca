@@ -65,11 +65,9 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::post('subseccoes', 'SubsectionsController@subsections');
 
-	Route::get('subseccoes/criar', 'SubsectionsController@subsectionCreate');
+	Route::get('subseccoes/criar', 'SubsectionsController@create');
 
-	Route::get('subseccoes/{id}', 'SubsectionsController@subsectionEdit');
-
-	Route::get('subseccoes/{id}', 'SubsectionsController@subsectionEdit');
+	Route::get('subseccoes/{id}', 'SubsectionsController@edit');
 
 	Route::get('subseccoes/publish/{id}', 'SubsectionsController@publish');
 
@@ -80,9 +78,9 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::post('categorias', 'CategoriesController@categories');
 
-	Route::get('categorias/criar', 'CategoriesController@categoryCreate');
+	Route::get('categorias/criar', 'CategoriesController@create');
 
-	Route::get('categorias/{id}', 'CategoriesController@categoryEdit');
+	Route::get('categorias/{id}', 'CategoriesController@edit');
 
 	Route::get('categorias/publish/{id}', 'CategoriesController@publish');
 
@@ -93,9 +91,9 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::post('subcategorias', 'SubcategoriesController@subCategories');
 
-	Route::get('subcategorias/criar', 'SubcategoriesController@subcategoryCreate');
+	Route::get('subcategorias/criar', 'SubcategoriesController@create');
 
-	Route::get('subcategorias/{id}', 'SubcategoriesController@subcategoryEdit');
+	Route::get('subcategorias/{id}', 'SubcategoriesController@edit');
 
 	Route::get('subcategorias/publish/{id}', 'SubcategoriesController@publish');
 
@@ -107,9 +105,9 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::post('entidades', 'EntitiesController@entities');
 
-	Route::get('entidades/criar', 'EntitiesController@entityCreate');
+	Route::get('entidades/criar', 'EntitiesController@create');
 
-	Route::get('entidades/{id}', 'EntitiesController@entityEdit');
+	Route::get('entidades/{id}', 'EntitiesController@edit');
 
 
 	Route::get('localizacoes', 'LocationsController@locations');

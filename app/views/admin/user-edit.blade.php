@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>Editar utilizador</h1>
-
 <div class = 'form-wrap'>
+
+<h1>Editar utilizador</h1>
 
 @foreach ($errors->all() as $message)
     <br>

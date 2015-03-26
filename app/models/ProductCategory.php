@@ -7,6 +7,15 @@ class ProductCategory extends Eloquent{
 	protected $fillable = ['subsection', 'name', 'icon', 'published', 'ordering'];
 	public $timestamps = false;
 
+
+    public static function storeImage($file) {
+        $destinationPath = public_path().'/images/produtos/icons'; 
+        $filename = 'images/produtos/icons/' . $file->getClientOriginalName();
+        $upload_success = $file->move($destinationPath, $filename);
+        return $filename;
+    }
+
+
 	/**
      * Return categories list
      *

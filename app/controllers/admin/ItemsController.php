@@ -11,42 +11,42 @@ use Redirect;
 
 class ItemsController extends \BaseController {
 
-	private function storeImage() {
-		$file = Input::file('icon');
-		$destinationPath = public_path().'/images/produtos/icons'; 
-		$filename = 'images/produtos/icons/' . $file->getClientOriginalName();
-		$upload_success = Input::file('icon')->move($destinationPath, $filename);
-		return $filename;
-	}
-
-	public function items() {
-		$item = new ProductItem;
-		$items = $item->listAll(Input::all());
-		$subcategory = new ProductSubcategory;
-		$subcategories = $subcategory::lists('name', 'id');
-  		return View::make('admin.items')->with('items', $items)->with('subcategories', $subcategories);
-	}
-
-	public function create(){
-		$subcategories = ProductSubcategory::lists('name', 'id');
-		return View::make('admin.item-create')->with('subcategories', $subcategories);
-	}
-
-	public function store() {
-		$data = Input::only(['name','icon','subcategory','description']);
-		
+	private function validate($data) {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
 			'description' => 'required',
-			'icon' => 'required|image',
+			'icon' => 'image',
 			'subcategory' => 'required'
 			]);
 
         if($validator->fails()){
-            return Redirect::to('admin/items/criar')->withErrors($validator)->withInput();
+            return $validator;
         }
 
-        $data['icon'] = $this->storeImage();
+        return false;
+	}
+
+
+	public function items() {
+		$item = new ProductItem;
+		$items = $item->listAll(Input::all());
+  		return View::make('admin.item')->with('items', $items)->with('subcategories', ProductSubcategory::lists('name', 'id'));
+	}
+
+
+	public function create(){
+		return View::make('admin.item-edit')->with('subcategories', ProductSubcategory::lists('name', 'id'));
+	}
+
+
+	public function store() {
+		$data = Input::all();
+		$validator = $this->validate($data);
+        if($validator)
+            return Redirect::to('admin/items/criar')->withErrors($validator)->withInput();
+
+        if(isset($data['icon'])) 
+        	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
 
         $new = ProductItem::create($data);
         if($new){
@@ -54,50 +54,44 @@ class ItemsController extends \BaseController {
         }
 	}
 
+
 	public function edit($id) {
-		$item = ProductItem::find($id);
-		$subcategories = ProductSubcategory::lists('name', 'id');
-		return View::make('admin.item-edit')->with('item', $item)->with('subcategories', $subcategories);
+		return View::make('admin.item-edit')->with('item', ProductItem::find($id))->with('subcategories', ProductSubcategory::lists('name', 'id'));
 	}
 
+
 	public function update($id) {
-		$data = Input::only(['name','icon','subcategory','description']);
-		
-		$validator = Validator::make($data, [
-			'name' => 'required|min:2',
-			'description' => 'required',
-			'subcategory' => 'required'
-		]);
+		 $validator = $this->validate(Input::all());
+        if($validator)
+        	return Redirect::to('admin/items/' . $id)->withErrors($validator)->withInput();
 
-        if($validator->fails()){
-            return Redirect::to('admin/items/' . $id)->withErrors($validator)->withInput();
-        }
+		if (Input::file('icon')) {
+			$data = Input::all();
+        	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
+    	}
+        else {
+        	$data = Input::only(['name','description','subcategory']);
+        }		
 
-        if (is_null($data['icon']))
-        	$data['icon'] = ProductItem::find($id)->icon;
-        else
-        	$data['icon'] = $this->storeImage();
-
-        $item = ProductItem::find($id);
-		$item->fill($data);
-		$item->save();
-        
+        ProductItem::find($id)->fill($data)->save();    
     	return Redirect::to('admin/items/' . $id)->withInput();
 	}
 
-	public function destroy($id) {
 
-		$item = ProductItem::find($id)->delete();
+	public function destroy($id) {
+		ProductItem::find($id)->delete();
 		return Redirect::to('admin/items');
 	}
+
 
 	public function unpublish($id) {
-		$item = ProductItem::find($id)->unpublish($id);
+		ProductItem::find($id)->unpublish($id);
 		return Redirect::to('admin/items');
 	}
 
+
 	public function publish($id) {
-		$item = ProductItem::find($id)->publish($id);
+		ProductItem::find($id)->publish($id);
 		return Redirect::to('admin/items');
 	}
 

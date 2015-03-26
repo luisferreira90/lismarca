@@ -11,26 +11,30 @@
     {{$message}}
 @endforeach
 
-{{ Form::model($category, array('route' => array('admin.category.update', $category->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@if(isset($category))
+    {{ Form::model($category, array('route' => array('admin.category.update', $category->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@else
+    {{ Form::open(array('route' => array('admin.category.store'), 'method' => 'post', 'files' => 'true', 'class' => 'form-horizontal')) }}
+@endif
 
     <div class = 'form-group'>
-            {{Form::label('name', 'Nome')}}
-            {{Form::text('name', null, array('class' => 'form-control'))}}
+        {{Form::label('name', 'Nome')}}
+        {{Form::text('name', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('subsection','Sub-Secção')}}
-            {{Form::select('subsection', $subsections, null, array('class' => 'form-control'))}}
+        {{Form::label('subsection','Sub-Secção')}}
+        {{Form::select('subsection', $subsections, null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('ordering','Ordem')}}
-            {{Form::text('ordering', null, array('class' => 'form-control'))}}
+        {{Form::label('ordering','Ordem')}}
+        {{Form::text('ordering', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('icon','Ícone')}}
-            {{Form::file('icon', null, array('class' => 'form-control'))}}
+        {{Form::label('icon','Ícone')}}
+        {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
@@ -38,6 +42,8 @@
     </div>
 
     {{ Form::close() }}
+
+    @if(isset($category))
 
     {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.category.destroy', $category->id), 'onsubmit' => 'return ConfirmDelete()')) }}
         
@@ -47,9 +53,13 @@
 
     {{ Form::close() }}
 
+    @endif
+
     <a href = '/admin/categorias'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
+
+@if(isset($category))
 
 <div class = 'form-icon'>
 
@@ -59,16 +69,6 @@
 
 </div>
 
-<script>
-
-  function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar esta categoria?");
-      if (x)
-        return true;
-      else
-        return false;
-  }
-
-</script>
+@endif
 
 @stop

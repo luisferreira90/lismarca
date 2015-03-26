@@ -11,9 +11,13 @@
     {{$message}}
 @endforeach
 
-{{ Form::model($item, array('route' => array('admin.item.update', $item->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@if(isset($item))
+    {{ Form::model($item, array('route' => array('admin.item.update', $item->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@else
+    {{ Form::open(array('route' => array('admin.item.store'), 'method' => 'post', 'files' => 'true', 'class' => 'form-horizontal')) }}
+@endif
 
-   <div class = 'form-group'>
+    <div class = 'form-group'>
         {{Form::label('name', 'Nome')}}
         {{Form::text('name', null, array('class' => 'form-control'))}}
     </div>
@@ -43,36 +47,32 @@
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.item.destroy', $item->id), 'onsubmit' => 'return ConfirmDelete()')) }}
-        
-        <div class = 'form-group'>
-            {{Form::submit('Apagar item',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
-        </div>
+    @if(isset($item))
 
-    {{ Form::close() }}
+        {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.item.destroy', $item->id), 'onsubmit' => 'return ConfirmDelete()')) }}
+            
+            <div class = 'form-group'>
+                {{Form::submit('Apagar item',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
+            </div>
+
+        {{ Form::close() }}
+
+    @endif
 
     <a href = '/admin/items'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
 
-<div class = 'form-icon'>
+@if(isset($item))
 
-    <h2>Icone</h2>
+    <div class = 'form-icon'>
 
-    {{ HTML::image($item->icon) }}
+        <h2>Icone</h2>
 
-</div>
+        {{ HTML::image($item->icon) }}
 
-<script>
+    </div>
 
-  function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar este item?");
-      if (x)
-        return true;
-      else
-        return false;
-  }
-
-</script>
+@endif
 
 @stop

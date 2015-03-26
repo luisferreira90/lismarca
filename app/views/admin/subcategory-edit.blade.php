@@ -11,26 +11,30 @@
     {{$message}}
 @endforeach
 
-{{ Form::model($subcategory, array('route' => array('admin.subcategory.update', $subcategory->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@if(isset($subcategory))
+    {{ Form::model($subcategory, array('route' => array('admin.subcategory.update', $subcategory->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@else
+    {{ Form::open(array('route' => array('admin.subcategory.store'), 'method' => 'post', 'files' => 'true', 'class' => 'form-horizontal')) }}
+@endif
 
-   <div class = 'form-group'>
-            {{Form::label('name', 'Nome')}}
-            {{Form::text('name', null, array('class' => 'form-control'))}}
+    <div class = 'form-group'>
+        {{Form::label('name', 'Nome')}}
+        {{Form::text('name', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('category','Categoria')}}
-            {{Form::select('category', $categories, null, array('class' => 'form-control'))}}
+        {{Form::label('category','Categoria')}}
+        {{Form::select('category', $categories, null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('ordering','Ordem')}}
-            {{Form::text('ordering', null, array('class' => 'form-control'))}}
+        {{Form::label('ordering','Ordem')}}
+        {{Form::text('ordering', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('icon', 'Ícone')}}
-            {{Form::file('icon', null, array('class' => 'form-control'))}}
+        {{Form::label('icon', 'Ícone')}}
+        {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
@@ -39,36 +43,32 @@
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.subcategory.destroy', $subcategory->id), 'onsubmit' => 'return ConfirmDelete()')) }}
-        
-        <div class = 'form-group'>
-            {{Form::submit('Apagar sub-categoria',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
-        </div>
+    @if(isset($subcategory))
 
-    {{ Form::close() }}
+        {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.subcategory.destroy', $subcategory->id), 'onsubmit' => 'return ConfirmDelete()')) }}
+            
+            <div class = 'form-group'>
+                {{Form::submit('Apagar sub-categoria',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
+            </div>
+
+        {{ Form::close() }}
+
+    @endif
 
     <a href = '/admin/subcategorias'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
 
-<div class = 'form-icon'>
+@if(isset($subcategory))
 
-    <h2>Icone</h2>
+    <div class = 'form-icon'>
 
-    {{ HTML::image($subcategory->icon) }}
+        <h2>Icone</h2>
 
-</div>
+        {{ HTML::image($subcategory->icon) }}
 
-<script>
+    </div>
 
-  function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar esta sub-categoria?");
-      if (x)
-        return true;
-      else
-        return false;
-  }
-
-</script>
+@endif
 
 @stop

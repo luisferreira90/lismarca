@@ -11,26 +11,30 @@
     {{$message}}
 @endforeach
 
-{{ Form::model($subsection, array('route' => array('admin.subsection.update', $subsection->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@if(isset($subsection))
+    {{ Form::model($subsection, array('route' => array('admin.subsection.update', $subsection->id), 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal')) }}
+@else
+    {{ Form::open(array('route' => array('admin.subsection.store'), 'method' => 'post', 'files' => 'true', 'class' => 'form-horizontal')) }}
+@endif
 
     <div class = 'form-group'>
-            {{Form::label('name', 'Nome')}}
-            {{Form::text('name', null, array('class' => 'form-control'))}}
+        {{Form::label('name', 'Nome')}}
+        {{Form::text('name', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('section','Secção')}}
-            {{Form::select('section', $sections, null, array('class' => 'form-control'))}}
+        {{Form::label('section','Secção')}}
+        {{Form::select('section', $sections, null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('ordering','Ordem')}}
-            {{Form::text('ordering', null, array('class' => 'form-control'))}}
+        {{Form::label('ordering','Ordem')}}
+        {{Form::text('ordering', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
-            {{Form::label('icon','Ícone')}}
-            {{Form::file('icon', null, array('class' => 'form-control'))}}
+        {{Form::label('icon','Ícone')}}
+        {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>
@@ -39,36 +43,32 @@
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.subsection.destroy', $subsection->id), 'onsubmit' => 'return ConfirmDelete()')) }}
-        
-        <div class = 'form-group'>
-            {{Form::submit('Apagar sub-secção',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
-        </div>
+    @if(isset($subsection))
 
-    {{ Form::close() }}
+        {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.subsection.destroy', $subsection->id), 'onsubmit' => 'return ConfirmDelete()')) }}
+            
+            <div class = 'form-group'>
+                {{Form::submit('Apagar sub-secção',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
+            </div>
+
+        {{ Form::close() }}
+
+    @endif
 
 <a href = '/admin/subseccoes'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
 
-<div class = 'form-icon'>
+@if(isset($subsection))
 
-    <h2>Icone</h2>
+    <div class = 'form-icon'>
 
-    {{ HTML::image($subsection->icon) }}
+        <h2>Icone</h2>
 
-</div>
+        {{ HTML::image($subsection->icon) }}
 
-<script>
+    </div>
 
-  function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar esta sub-secção?");
-      if (x)
-        return true;
-      else
-        return false;
-  }
-
-</script>
+@endif
 
 @stop

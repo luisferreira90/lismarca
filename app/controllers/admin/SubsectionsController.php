@@ -11,91 +11,89 @@ use Redirect;
 
 class SubsectionsController extends \BaseController {
 
-	private function storeImage() {
-		$file = Input::file('icon');
-		$destinationPath = public_path().'/images/produtos/icons'; 
-		$filename = 'images/produtos/icons/' . $file->getClientOriginalName();
-		$upload_success = Input::file('icon')->move($destinationPath, $filename);
-		return $filename;
-	}
-
-	public function subsections() {
-		$subsection = new ProductSubsection;
-		$subsections = $subsection->listAll(Input::all());
-		$section = new ProductSection;
-		$sections = $section::lists('name', 'id');
-  		return View::make('admin.subsections')->with('subSections', $subsections)->with('section', $sections);
-	}
-
-	public function subsectionCreate(){
-		$sections = ProductSection::lists('name', 'id');
-		return View::make('admin.subsection-create')->with('sections', $sections);
-	}
-
-	public function store() {
-		$data = Input::only(['name','ordering','icon', 'section']);
-		
+	private function validate($data) {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
-			'ordering' => 'required|numeric',
-			'icon' => 'required|image',
+			'ordering' => 'numeric',
+			'icon' => 'image',
 			'section' => 'required'
 			]);
 
         if($validator->fails()){
-            return Redirect::to('admin/subseccoes/criar')->withErrors($validator)->withInput();
+            return $validator;
         }
 
-        $data['icon'] = $this->storeImage();
+        return false;
+	}
 
-        $newSubsection = ProductSubsection::create($data);
-        if($newSubsection){
+
+	public function subsections() {
+		$subsection = new ProductSubsection;
+		$subsections = $subsection->listAll(Input::all());
+		$sections = ProductSection::lists('name', 'id');
+  		return View::make('admin.subsection')->with('subSections', $subsections)->with('section', $sections);
+	}
+
+
+	public function create(){
+		return View::make('admin.subsection-edit')->with('sections', ProductSection::lists('name', 'id'));
+	}
+
+
+	public function store() {
+		$data = Input::all();
+		$validator = $this->validate($data);
+        if($validator)
+            return Redirect::to('admin/subseccoes/criar')->withErrors($validator)->withInput();
+
+        if(isset($data['icon'])) 
+        	$data['icon'] = ProductSubsection::storeImage(Input::file('icon'));
+
+        $new = ProductSubsection::create($data);
+        if($new){
             return Redirect::to('admin/subseccoes');
         }
 	}
 
-	public function subsectionEdit($id) {
-		$subsection = ProductSubsection::find($id);
+
+	public function edit($id) {
 		$sections = ProductSection::lists('name', 'id');
-		return View::make('admin.subsection-edit')->with('subsection', $subsection)->with('sections', $sections);
+		return View::make('admin.subsection-edit')->with('subsection', ProductSubsection::find($id))->with('sections', $sections);
 	}
+
 
 	public function update($id) {
-		$data = Input::only(['name','icon', 'section','ordering']);
-		
-		$validator = Validator::make($data, [
-			'name' => 'required|min:2'
-		]);
-
-        if($validator->fails()){
+		$validator = $this->validate(Input::all());
+        if($validator)
             return Redirect::to('admin/subseccoes/' . $id)->withErrors($validator)->withInput();
-        }
 
-        if (is_null($data['icon']))
-        	$data['icon'] = ProductSubsection::find($id)->icon;
-        else
-        	$data['icon'] = $this->storeImage();
+        if (Input::file('icon')) {
+			$data = Input::all();
+        	$data['icon'] = ProductSubsection::storeImage(Input::file('icon'));
+    	}
+        else {
+        	$data = Input::only(['name','ordering', 'section']);
+        }		
 
-        $subsection = ProductSubsection::find($id);
-		$subsection->fill($data);
-		$subsection->save();
-        
+        ProductSubsection::find($id)->fill($data)->save();        
     	return Redirect::to('admin/subseccoes/' . $id)->withInput();
-        
 	}
+
 
 	public function destroy($id) {
-		$subsection = ProductSubsection::find($id)->delete();
+		ProductSubsection::find($id)->delete();
 		return Redirect::to('admin/subseccoes');
 	}
+
 
 	public function unpublish($id) {
-		$subsection = ProductSubsection::find($id)->unpublish($id);
+		ProductSubsection::find($id)->unpublish($id);
 		return Redirect::to('admin/subseccoes');
 	}
 
+
 	public function publish($id) {
-		$subsection = ProductSubsection::find($id)->publish($id);
+		ProductSubsection::find($id)->publish($id);
 		return Redirect::to('admin/subseccoes');
 	}
 

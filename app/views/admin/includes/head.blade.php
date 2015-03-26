@@ -10,6 +10,8 @@
 {{ HTML::script('js/html5shiv-master/dist/html5shiv.js') }}
 {{ HTML::script('js/html5shiv-master/dist/html5shiv-printshiv.js') }}
 
+{{ HTML::script('js/scripts.js') }}
+
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 

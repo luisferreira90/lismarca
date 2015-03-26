@@ -20,7 +20,7 @@ class UsersController extends \BaseController {
 		$location = new Location;
 		$locations = $location::lists('name', 'id');
 
-  		return View::make('admin.users')->with('users', $users)->with('entities', $entities)->with('locations', $locations)->withInput(Input::all());
+  		return View::make('admin.user')->with('users', $users)->with('entities', $entities)->with('locations', $locations)->withInput(Input::all());
 	}
 
 	public function userEdit($id) {

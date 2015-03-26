@@ -13,7 +13,7 @@ class SectionsController extends \BaseController {
 	private function validate($data) {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
-			'ordering' => 'required|numeric',
+			'ordering' => 'numeric',
 			'icon' => 'image'
 			]);
 
@@ -26,21 +26,23 @@ class SectionsController extends \BaseController {
 	
 
 	public function sections() {
-  		return View::make('admin.sections')->with('sections', ProductSection::all());
+  		return View::make('admin.section')->with('sections', ProductSection::all());
 	}
 
 
 	public function create(){
-		return View::make('admin.section-create');
+		return View::make('admin.section-edit');
 	}
 
 
 	public function store() {
-		$validator = $this->validate(Input::all());
+		$data = Input::all();
+		$validator = $this->validate($data);
         if($validator)
         	return Redirect::to('admin/seccoes/criar')->withErrors($validator)->withInput();
 
-        $data['icon'] = ProductSection::storeImage(Input::file('icon'));
+        if(isset($data['icon'])) 
+        	$data['icon'] = ProductSection::storeImage(Input::file('icon'));
 
         $new = ProductSection::create($data);
         if($new){
@@ -60,7 +62,7 @@ class SectionsController extends \BaseController {
         	return Redirect::to('admin/seccoes/' . $id)->withErrors($validator)->withInput();
 
 		if (Input::file('icon')) {
-			$data = Input::only(['name','ordering','icon']);
+			$data = Input::all();
         	$data['icon'] = ProductSection::storeImage(Input::file('icon'));
     	}
         else {

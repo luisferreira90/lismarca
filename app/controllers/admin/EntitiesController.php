@@ -11,12 +11,14 @@ use EntityType;
 class EntitiesController extends \BaseController {
 	
 	public function entities() {
-  		return View::make('admin.entities')->with('entities', EntityType::all());
+  		return View::make('admin.entity')->with('entities', EntityType::all());
 	}
 
-	public function entityCreate(){
-		return View::make('admin.entity-create');
+
+	public function create(){
+		return View::make('admin.entity-edit');
 	}
+
 
 	public function store() {
 		$data = Input::only(['name_pt','name_en']);
@@ -30,18 +32,17 @@ class EntitiesController extends \BaseController {
             return Redirect::to('admin/entidades/criar')->withErrors($validator)->withInput();
         }
 
-        $newEntity = EntityType::create($data);
-        if($newEntity){
+        $new = EntityType::create($data);
+        if($new){
             return Redirect::to('admin/entidades');
         }
 	}
 
-	public function entityEdit($id) {
-		$entities = new EntityType;
-		$entity = $entities::find($id);	
 
-		return View::make('admin.entity-edit')->with('entity', $entity);
+	public function edit($id) {
+		return View::make('admin.entity-edit')->with('entity', EntityType::find($id));
 	}
+
 
 	public function update($id) {
 		$data = Input::only(['name_pt','name_en']);
@@ -55,16 +56,13 @@ class EntitiesController extends \BaseController {
             return Redirect::to('admin/entidades/' . $id)->withErrors($validator)->withInput();
         }
 
-        $entity = EntityType::find($id);
-		$entity->fill($data);
-		$entity->save();
-        
+        EntityType::find($id)->fill($data)->save();       
     	return Redirect::to('admin/entidades/' . $id)->withInput();
-        
 	}
 
+
 	public function destroy($id) {
-		$entity = EntityType::find($id)->delete();
+		EntityType::find($id)->delete();
 		return Redirect::to('admin/entidades');
 	}
 

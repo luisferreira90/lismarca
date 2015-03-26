@@ -11,12 +11,14 @@ use Location;
 class LocationsController extends \BaseController {
 	
 	public function locations() {
-  		return View::make('admin.locations')->with('locations', Location::all());
+  		return View::make('admin.location')->with('locations', Location::all());
 	}
 
+
 	public function create(){
-		return View::make('admin.location-create');
+		return View::make('admin.location-edit');
 	}
+
 
 	public function store() {
 		$data = Input::only(['name']);
@@ -25,9 +27,8 @@ class LocationsController extends \BaseController {
 			'name' => 'required|min:2'
 			]);
 
-        if($validator->fails()){
+        if($validator->fails())
             return Redirect::to('admin/localizacoes/criar')->withErrors($validator)->withInput();
-        }
 
         $new = Location::create($data);
         if($new){
@@ -35,12 +36,11 @@ class LocationsController extends \BaseController {
         }
 	}
 
-	public function edit($id) {
-		$locations = new Location;
-		$location = $locations::find($id);	
 
-		return View::make('admin.location-edit')->with('location', $location);
+	public function edit($id) {
+		return View::make('admin.location-edit')->with('location', Location::find($id));
 	}
+
 
 	public function update($id) {
 		$data = Input::only(['name']);
@@ -53,16 +53,13 @@ class LocationsController extends \BaseController {
             return Redirect::to('admin/localizacoes/' . $id)->withErrors($validator)->withInput();
         }
 
-        $location = Location::find($id);
-		$location->fill($data);
-		$location->save();
-        
+        Location::find($id)->fill($data)->save();  
     	return Redirect::to('admin/localizacoes/' . $id)->withInput();
-        
 	}
 
+
 	public function destroy($id) {
-		$location = Location::find($id)->delete();
+		Location::find($id)->delete();
 		return Redirect::to('admin/localizacoes');
 	}
 

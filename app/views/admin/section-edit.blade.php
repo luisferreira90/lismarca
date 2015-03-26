@@ -11,7 +11,11 @@
     {{$message}}
 @endforeach
 
-{{ Form::model($section, array('route' => array('admin.section.update', $section->id), 'method' => 'PUT', 'files' => true)) }}
+@if(isset($section))
+    {{ Form::model($section, array('route' => array('admin.section.update', $section->id), 'method' => 'PUT', 'files' => true)) }}
+@else
+    {{ Form::open(array('route' => array('admin.section.store'), 'method' => 'post', 'files' => 'true', 'class' => 'form-horizontal')) }}
+@endif
 
     <div class = 'form-group'>
             {{Form::label('name', 'Nome')}}
@@ -28,23 +32,29 @@
             {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-element'>
+    <div class = 'form-group'>
         {{Form::submit('Gravar',array('id' => 'submit','class' => 'btn btn-primary'))}}
     </div>
 
     {{ Form::close() }}
 
-    {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.section.destroy', $section->id), 'onsubmit' => 'return ConfirmDelete()')) }}
-        
-        <div class = 'form-group'>
-            {{Form::submit('Apagar secção',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
-        </div>
+    @if(isset($section))
 
-    {{ Form::close() }}
+        {{ Form::open(array('method' => 'delete', 'class' => 'form-horizontal', 'route' => array('admin.section.destroy', $section->id), 'onsubmit' => 'return ConfirmDelete()')) }}
+            
+            <div class = 'form-group'>
+                {{Form::submit('Apagar secção',array('id' => 'submit', 'class' => 'btn btn-danger'))}}
+            </div>
+
+        {{ Form::close() }}
+
+    @endif
 
     <a href = '/admin/seccoes'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
+
+@if(isset($section))
 
 <div class = 'form-icon'>
 
@@ -54,16 +64,6 @@
 
 </div>
 
-<script>
-
-  function ConfirmDelete() {
-      var x = confirm("Tem a certeza que deseja apagar esta secção?");
-      if (x)
-        return true;
-      else
-        return false;
-  }
-
-</script>
+@endif
 
 @stop
