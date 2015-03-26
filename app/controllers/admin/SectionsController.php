@@ -59,7 +59,9 @@ class SectionsController extends \BaseController {
 		$data = Input::only(['name','icon','ordering']);
 		
 		$validator = Validator::make($data, [
-			'name' => 'required|min:2'
+			'name' => 'required|min:2',
+			'ordering' => 'required|numeric',
+			'icon' => 'required|image'
 		]);
 
         if($validator->fails()){

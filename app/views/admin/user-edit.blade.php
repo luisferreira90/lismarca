@@ -33,9 +33,9 @@
         {{Form::text('address', null, array('class' => 'form-control'))}}
     </div>
 
-    <div class = 'form-group'>      
+    <div class = 'form-group'>       
         {{Form::label('location', 'Localização')}}
-        {{Form::text('location', null, array('class' => 'form-control'))}}
+        {{Form::select('location', $locations, null, array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>       

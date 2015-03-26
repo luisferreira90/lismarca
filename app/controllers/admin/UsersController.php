@@ -29,8 +29,10 @@ class UsersController extends \BaseController {
 
 		$entity_type = new EntityType;
 		$entities = $entity_type::lists('name_pt', 'id');
+		$location = new Location;
+		$locations = $location::lists('name', 'id');
 
-		return View::make('admin.user-edit')->with('user', $user)->with('entities', $entities);
+		return View::make('admin.user-edit')->with('user', $user)->with('entities', $entities)->with('locations', $locations);
 	}
 
 	public function update($id) {
