@@ -30,6 +30,10 @@
   margin-left:100px;
 }
 
+.form-icon img {
+  max-width:250px;
+}
+
 #wrapper {
   text-align:center;
 }

@@ -52,9 +52,9 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::get('seccoes', 'SectionsController@sections');
 
-	Route::get('seccoes/criar', 'SectionsController@sectionCreate');
+	Route::get('seccoes/criar', 'SectionsController@create');
 
-	Route::get('seccoes/{id}', 'SectionsController@sectionEdit');
+	Route::get('seccoes/{id}', 'SectionsController@edit');
 
 	Route::get('seccoes/publish/{id}', 'SectionsController@publish');
 

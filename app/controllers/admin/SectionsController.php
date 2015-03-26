@@ -10,90 +10,82 @@ use Redirect;
 
 class SectionsController extends \BaseController {
 
-	private function storeImage() {
-		$file = Input::file('icon');
-		$destinationPath = public_path().'/images/produtos/icons'; 
-		$filename = 'images/produtos/icons/' . $file->getClientOriginalName();
-		$upload_success = Input::file('icon')->move($destinationPath, $filename);
-		return $filename;
-	}
+	private function validate($data) {
+		$validator = Validator::make($data, [
+			'name' => 'required|min:2',
+			'ordering' => 'required|numeric',
+			'icon' => 'image'
+			]);
 
+        if($validator->fails()){
+            return $validator;
+        }
+
+        return false;
+	}
 	
+
 	public function sections() {
   		return View::make('admin.sections')->with('sections', ProductSection::all());
 	}
 
-	public function sectionCreate(){
+
+	public function create(){
 		return View::make('admin.section-create');
 	}
 
+
 	public function store() {
-		$data = Input::only(['name','ordering','icon']);
-		
-		$validator = Validator::make($data, [
-			'name' => 'required|min:2',
-			'ordering' => 'required|numeric',
-			'icon' => 'required|image'
-			]);
+		$validator = $this->validate(Input::all());
+        if($validator)
+        	return Redirect::to('admin/seccoes/criar')->withErrors($validator)->withInput();
 
-        if($validator->fails()){
-            return Redirect::to('admin/seccoes/criar')->withErrors($validator)->withInput();
-        }
+        $data['icon'] = ProductSection::storeImage(Input::file('icon'));
 
-        $data['icon'] = $this->storeImage();
-
-        $newSection = ProductSection::create($data);
-        if($newSection){
+        $new = ProductSection::create($data);
+        if($new){
             return Redirect::to('admin/seccoes');
         }
 	}
 
-	public function sectionEdit($id) {
-		$sections = new ProductSection;
-		$section = $sections::find($id);	
 
-		return View::make('admin.section-edit')->with('section', $section);
+	public function edit($id) {
+		return View::make('admin.section-edit')->with('section', ProductSection::find($id));
 	}
+
 
 	public function update($id) {
-		$data = Input::only(['name','icon','ordering']);
-		
-		$validator = Validator::make($data, [
-			'name' => 'required|min:2',
-			'ordering' => 'required|numeric',
-			'icon' => 'required|image'
-		]);
+        $validator = $this->validate(Input::all());
+        if($validator)
+        	return Redirect::to('admin/seccoes/' . $id)->withErrors($validator)->withInput();
 
-        if($validator->fails()){
-            return Redirect::to('admin/seccoes/' . $id)->withErrors($validator)->withInput();
-        }
+		if (Input::file('icon')) {
+			$data = Input::only(['name','ordering','icon']);
+        	$data['icon'] = ProductSection::storeImage(Input::file('icon'));
+    	}
+        else {
+        	$data = Input::only(['name','ordering']);
+        }		
 
-
-        if (is_null($data['icon']))
-        	$data['icon'] = ProductSection::find($id)->icon;
-        else
-        	$data['icon'] = $this->storeImage();
-
-        $section = ProductSection::find($id);
-		$section->fill($data);
-		$section->save();
-        
-    	return Redirect::to('admin/seccoes/' . $id)->withInput();
-        
+        ProductSection::find($id)->fill($data)->save();
+    	return Redirect::to('admin/seccoes/' . $id)->withInput();      
 	}
+
 
 	public function destroy($id) {
-		$section = ProductSection::find($id)->delete();
+		ProductSection::find($id)->delete();
 		return Redirect::to('admin/seccoes');
 	}
+
 
 	public function unpublish($id) {
-		$section = ProductSection::find($id)->unpublish($id);
+		ProductSection::find($id)->unpublish($id);
 		return Redirect::to('admin/seccoes');
 	}
 
+
 	public function publish($id) {
-		$section = ProductSection::find($id)->publish($id);
+		ProductSection::find($id)->publish($id);
 		return Redirect::to('admin/seccoes');
 	}
 
