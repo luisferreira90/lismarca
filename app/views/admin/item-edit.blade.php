@@ -32,9 +32,15 @@
         {{Form::textarea('description', null, array('class' => 'form-control'))}}
     </div>
 
-    <script>
-        CKEDITOR.replace('description');
-    </script>
+    <div class = 'form-group'>
+        {{Form::label('new', 'Novidade')}}
+        {{Form::checkbox('new', '1', array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
+        {{Form::label('featured', 'Em destaque')}}
+        {{Form::checkbox('featured', '1', array('class' => 'form-control'))}}
+    </div>
 
     <div class = 'form-group'>
         {{Form::label('icon', 'Ícone')}}
@@ -62,6 +68,10 @@
     <a href = '/admin/items'><button class="btn btn-warning">Cancelar</button></a>
 
 </div>
+
+<script>
+    CKEDITOR.replace('description');
+</script>
 
 @if(isset($item))
 

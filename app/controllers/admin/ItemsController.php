@@ -48,6 +48,12 @@ class ItemsController extends \BaseController {
         if(isset($data['icon'])) 
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
 
+        if (!Input::has('new'))
+        	$data['new'] = 0;
+
+        if (!Input::has('featured'))
+        	$data['featured'] = 0; 
+
         $new = ProductItem::create($data);
         if($new){
             return Redirect::to('admin/items');
@@ -70,8 +76,14 @@ class ItemsController extends \BaseController {
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
     	}
         else {
-        	$data = Input::only(['name','description','subcategory']);
-        }		
+        	$data = Input::only(['name','description','subcategory','featured','new']);
+        }
+
+        if (!Input::has('new'))
+        	$data['new'] = 0;
+
+        if (!Input::has('featured'))
+        	$data['featured'] = 0;		
 
         ProductItem::find($id)->fill($data)->save();    
     	return Redirect::to('admin/items/' . $id)->withInput();
