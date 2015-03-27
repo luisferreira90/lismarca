@@ -21,11 +21,10 @@ class UsersController extends BaseController {
 
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])){
 	        User::isAdmin();
-        
-            return Redirect::to('profile');
+            return Redirect::to('admin');
         }
 
-        return Redirect::route('login')->withInput();
+        return Redirect::route('login')->withInput()->withErrors(array('Dados de login errados'));
 	}
 
 
