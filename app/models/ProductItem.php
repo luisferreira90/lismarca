@@ -7,6 +7,12 @@ class ProductItem extends Eloquent{
 	public $timestamps = false;
 
 
+    public function subcategory()
+    {
+        return $this->belongsTo('ProductSubcategory');
+    }
+
+
     public static function storeImage($file) {
         $destinationPath = public_path().'/images/produtos/icons'; 
         $filename = 'images/produtos/icons/' . $file->getClientOriginalName();
@@ -14,7 +20,6 @@ class ProductItem extends Eloquent{
         return $filename;
     }
     
-
 
     /**
      * Return item list
@@ -24,14 +29,19 @@ class ProductItem extends Eloquent{
     public function listAll($filter)
     {
         $items = $this->select('id', 'name', 'subcategory', 'published');
-            //var_dump(Input::all());
-            if(isset($filter['subcategory']))
-                $items = $items->where('subcategory', '=', $filter['subcategory']);
 
-        $items = $items->orderBy('id', 'desc');
+        if(isset($filter['subcategory']))
+            $items = $items->where('subcategory', '=', $filter['subcategory']);
+
+        if(isset($filter['order']))
+            $items = $items->orderBy($filter['order'], 'asc');
+
+        if(isset($filter['order']) && $filter['order'] == 'subcategory')
+            $items = $items->orderBy(subcategory, 'asc');
+
+        //$items = $items->orderBy('id', 'desc');
         return $items->paginate(25);
     }
-
 
 	
 	/**

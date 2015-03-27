@@ -67,7 +67,7 @@ class ItemsController extends \BaseController {
 
 
 	public function update($id) {
-		 $validator = $this->validate(Input::all());
+	 	$validator = $this->validate(Input::all());
         if($validator)
         	return Redirect::to('admin/items/' . $id)->withErrors($validator)->withInput();
 

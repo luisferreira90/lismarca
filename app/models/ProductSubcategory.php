@@ -8,6 +8,12 @@ class ProductSubcategory extends Eloquent{
 	public $timestamps = false;
 
 
+    public function item()
+    {
+        return $this->hasMany('ProductItem');
+    }
+
+
     public static function storeImage($file) {
         $destinationPath = public_path().'/images/produtos/icons'; 
         $filename = 'images/produtos/icons/' . $file->getClientOriginalName();
