@@ -24,6 +24,17 @@
 
       <li role="presentation" class="dropdown">
         <a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+          Portfólio
+          <span class="caret"></span>
+        </a>
+        <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/portfolio-categoria">Categorias</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/portfolio-cliente">Clientes</a></li>
+        </ul>
+      </li>
+
+      <li role="presentation" class="dropdown">
+        <a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
           Misc
           <span class="caret"></span>
         </a>

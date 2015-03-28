@@ -1,15 +1,14 @@
 <?php
 
+class PortfolioClient extends Eloquent{
 
-class ProductItem extends Eloquent{
-
-	protected $fillable = ['subcategory', 'name', 'icon', 'description', 'published','new','featured'];
+	protected $fillable = ['category', 'name', 'info', 'icon', 'photos','description','published','ordering'];
 	public $timestamps = false;
 
 
-    public function subcategory()
+    public function category()
     {
-        return $this->belongsTo('ProductSubcategory');
+        return $this->belongsTo('PortfolioCategory');
     }
 
 
@@ -21,11 +20,6 @@ class ProductItem extends Eloquent{
     }
     
 
-    /**
-     * Return item list
-     *
-     * @return array
-     */
     public function listAll($filter)
     {
         $items = $this->select('id', 'name', 'subcategory', 'published');
@@ -47,23 +41,13 @@ class ProductItem extends Eloquent{
         return $items->paginate(25);
     }
 
-	
-	/**
-     * Publish item
-     *
-     * @return array
-     */
+
     public function publish($id)
     {
         $this->where('id', $id)->update(array('published' => 1));
     }
 
 
-    /**
-     * Unpublish item
-     *
-     * @return array
-     */
     public function unpublish($id)
     {
         $this->where('id', $id)->update(array('published' => 0));

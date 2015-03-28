@@ -40,6 +40,10 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('location', 'LocationsController');
 
+	Route::resource('portfoliocategory', 'PortfolioCategoriesController');
+
+	Route::resource('portfolioclient', 'PortfolioClientsController');
+
 	Route::get('/', 'UsersController@users');
 
 
@@ -119,7 +123,6 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('localizacoes/{id}', 'LocationsController@edit');
 
 
-
 	Route::get('items', 'ItemsController@items');
 
 	Route::post('items', 'ItemsController@items');
@@ -131,5 +134,31 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('items/publish/{id}', 'ItemsController@publish');
 
 	Route::get('items/unpublish/{id}', 'ItemsController@unpublish');
+
+
+	Route::get('portfolio-categoria', 'PortfolioCategoriesController@categories');
+
+	Route::post('portfolio-categoria', 'PortfolioCategoriesController@categories');
+
+	Route::get('portfolio-categoria/criar', 'PortfolioCategoriesController@create');
+
+	Route::get('portfolio-categoria/{id}', 'PortfolioCategoriesController@edit');
+
+	Route::get('portfolio-categoria/publish/{id}', 'PortfolioCategoriesController@publish');
+
+	Route::get('portfolio-categoria/unpublish/{id}', 'PortfolioCategoriesController@unpublish');
+
+
+	Route::get('portfolio-cliente', 'PortfolioClientsController@clients');
+
+	Route::post('portfolio-cliente', 'PortfolioClientsController@clients');
+
+	Route::get('portfolio-cliente/criar', 'PortfolioClientsController@create');
+
+	Route::get('portfolio-cliente/{id}', 'PortfolioClientsController@edit');
+
+	Route::get('portfolio-cliente/publish/{id}', 'PortfolioClientsController@publish');
+
+	Route::get('portfolio-cliente/unpublish/{id}', 'PortfolioClientsController@unpublish');
 
 });
