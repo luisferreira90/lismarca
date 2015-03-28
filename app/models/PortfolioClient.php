@@ -2,7 +2,7 @@
 
 class PortfolioClient extends Eloquent{
 
-	protected $fillable = ['category', 'name', 'info', 'icon', 'photos','description','published','ordering'];
+	protected $fillable = ['category', 'name', 'info', 'icon', 'description','published','ordering'];
 	public $timestamps = false;
 
 
@@ -22,22 +22,13 @@ class PortfolioClient extends Eloquent{
 
     public function listAll($filter)
     {
-        $items = $this->select('id', 'name', 'subcategory', 'published');
+        $items = $this->select('id', 'name', 'category', 'published');
 
-        if(isset($filter['subcategory']))
-            $items = $items->where('subcategory', '=', $filter['subcategory']);
+        if(isset($filter['category']))
+            $items = $items->where('category', '=', $filter['category']);
 
-        if(isset($filter['order']))
-            $items = $items->orderBy($filter['order'], 'asc');
+        $items->orderBy('id', 'desc');
 
-        if(isset($filter['order']) && $filter['order'] == 'subcategory')
-            $items = $items->orderBy('subcategory', 'asc');
-
-        //$item = ProductItem::whereId($id)->first();
-    
-        //echo ProductSubcategory::find($item->subcategory)->name; die();
-
-        //$items = $items->orderBy('id', 'desc');
         return $items->paginate(25);
     }
 

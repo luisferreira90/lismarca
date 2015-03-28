@@ -31,7 +31,7 @@ class PortfolioClientsController extends \BaseController {
 	public function clients() {
 		$client = new PortfolioClient;
 		$clients = $client->listAll(Input::all());
-  		return View::make('admin.portfolioclient')->with('clients', $clients)->with('categories', PortfolioCategory::lists('name', 'id'));
+  		return View::make('admin.portfolioclient')->with('clients', $clients)->with('category', PortfolioCategory::lists('name', 'id'));
 	}
 
 
