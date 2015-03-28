@@ -24,7 +24,7 @@ class PortfolioClient extends Eloquent{
     {
         $items = $this->select('id', 'name', 'category', 'published');
 
-        if(isset($filter['category']))
+        if(isset($filter['category']) && $filter['category'] != '')
             $items = $items->where('category', '=', $filter['category']);
 
         $items->orderBy('id', 'desc');

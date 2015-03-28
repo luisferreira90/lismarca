@@ -30,7 +30,7 @@ class ProductItem extends Eloquent{
     {
         $items = $this->select('id', 'name', 'subcategory', 'published');
 
-        if(isset($filter['subcategory']))
+        if(isset($filter['subcategory']) && $filter['subcategory'] != '')
             $items = $items->where('subcategory', '=', $filter['subcategory']);
 
         if(isset($filter['order']))
