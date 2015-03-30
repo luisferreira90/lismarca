@@ -2,36 +2,35 @@
 
 @section('content')
 
-<div>
+<div class = 'form-wrap'>
 
 {{ Form::open(array('action' => 'RemindersController@postReset', 'method' => 'post')) }}
 
     {{ Form::hidden('token', $token) }}
 
-    {{Form::label('email', 'E-mail')}}
-    {{ Form::email('email') }}
+    <div class = 'form-group'>
+        {{Form::label('email', 'E-mail')}}
+        {{ Form::email('email', null, array('class' => 'form-control')) }}
+    </div>
 
-    <div class = 'form-element'>
-            <div class = 'form-left'>
-                {{Form::label('password', Lang::get('strings.password'))}}
-                {{Form::password('password')}}
-            </div>
-            <div id = 'passwordCheck' class = 'form-error'></div>
-        </div>
+    <div class = 'form-group'>
+        {{Form::label('password', Lang::get('strings.password'))}}
+        {{Form::password('password', array('class' => 'form-control'))}}
+    </div>
 
-        <div class = 'form-element'>
-            <div class = 'form-left'>
-                {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
-                {{Form::password('password_confirmation')}}
-            </div>
-        </div>
+    <div class = 'form-group'>
+        {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
+        {{Form::password('password_confirmation', null, array('class' => 'form-control'))}}
+    </div>
 
-    {{Form::submit(Lang::get('strings.submit'),array('id' => 'submit'))}}
+    <div class = 'form-group'>
+        {{Form::submit(Lang::get('strings.submit'),array('id' => 'submit', 'class' => 'btn btn-primary'))}}
+    </div>
 
 {{ Form::close() }}
 
 </div>
 
-
-
 @stop
+
+{{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') }}

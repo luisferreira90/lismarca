@@ -2,89 +2,90 @@
 
 @section('content')
 
-<br><br><br>
 <div>
-    <h2>{{Lang::get('strings.registration')}}</h2>
+    <h1>{{Lang::get('strings.registration')}}</h1>
 
     @foreach ($errors->all() as $message)
         <br>
         {{$message}}
     @endforeach
 
-    <div class = 'registration'>
-        {{ Form::open(array('route' => array('user.store'), 'method' => 'post')) }}
+    <div class = 'form-wrap'>
+        {{ Form::open(array('route' => array('user.store'), 'method' => 'post', 'data-toggle' => 'validator')) }}
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('name', Lang::get('strings.name'))}}
-                {{Form::text('name')}}
-            </div>
+                {{Form::text('name', null, array('class' => 'form-control'))}}
+            </div>            
             <div id = 'nameCheck' class = 'form-error'></div>
-        </div>
+        </div>       
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('email','Email')}}
-                {{Form::email('email')}}
+                {{Form::email('email', null, array('class' => 'form-control'))}}
             </div>
             <div id = 'emailCheck' class = 'form-error'></div>
         </div>
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('phone',Lang::get('strings.telephone'))}}
-                {{Form::text('phone')}}
+                {{Form::text('phone', null, array('class' => 'form-control'))}}
             </div>
             <div id = 'phoneCheck' class = 'form-error'></div>
         </div>
 
-     	<div class = 'form-element'>
+     	<div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('address', Lang::get('strings.address'))}}
-                {{Form::text('address')}}
+                {{Form::text('address', null, array('class' => 'form-control'))}}
             </div>
         </div>
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('location',Lang::get('strings.location'))}}
-                {{Form::select('location', $locations)}}
+                {{Form::select('location', $locations, null, array('class' => 'form-control'))}}
             </div>
         </div>
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('entity_type',Lang::get('strings.entity_type'))}}
-                {{Form::select('entity_type', $entity_types)}}
+                {{Form::select('entity_type', $entity_types, null, array('class' => 'form-control'))}}
             </div>
         </div>
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('company_name',Lang::get('strings.company_name'))}}
-                {{Form::text('company_name')}}
+                {{Form::text('company_name', null, array('class' => 'form-control'))}}
             </div>
         </div>
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('password', Lang::get('strings.password'))}}
-                {{Form::password('password')}}
+                {{Form::password('password', array('class' => 'form-control'))}}
             </div>
             <div id = 'passwordCheck' class = 'form-error'></div>
         </div>
 
-        <div class = 'form-element'>
+        <div class = 'form-group'>
             <div class = 'form-left'>
                 {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
-                {{Form::password('password_confirmation')}}
+                {{Form::password('password_confirmation', array('class' => 'form-control'))}}
             </div>
         </div>
 
-        <div class = 'form-element'>
-            {{Form::submit(Lang::get('strings.submit'),array('id' => 'submit'))}}
+        <div class = 'form-group'>
+            {{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control'))}}
         </div>
+
         {{ Form::close() }}
+
     </div>
 </div>
 
@@ -170,6 +171,6 @@ function validate () {
 }
 </script>
 
-
-
 @stop
+
+{{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') }}

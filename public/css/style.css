@@ -347,21 +347,13 @@ iframe {
 	width:100%;
 }
 
-
-/*##### Formulário de inscrição #####*/
-
-.form-element div{
-	display:inline-block;
+.form-wrap {
+  display:block;
+  max-width:400px;
+  margin:60px auto;
 }
 
-label {
-	display:inline-block;
-}
+.form-group {
 
-input, select {
-	display:block;
-}
 
-/*.form-error {
-	display:block;
-}*/
+}
