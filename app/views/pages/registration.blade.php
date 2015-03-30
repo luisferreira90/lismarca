@@ -15,7 +15,8 @@
 
         <div class = 'form-group' id = 'group-name'>
             {{Form::label('name', Lang::get('strings.name'))}}
-            {{Form::text('name', null, array('class' => 'form-control', 'onChange' => 'checkForm(0)'))}}           
+            {{Form::text('name', null, array('class' => 'form-control', 'onChange' => 'checkForm(0)'))}}
+            <span class="" aria-hidden="true"></span>          
             <p class="help-block">Nome inválido</p>
         </div>       
 
@@ -150,12 +151,14 @@ function checkForm(element) {
 function toggleState(elem, op) {
     var element =  document.getElementById('group-' + elem);
     if(op) {
-        element.className = "form-group has-success";
+        element.className = "form-group has-success has-feedback";
         element.getElementsByClassName('help-block')[0].style.display = 'none';
+        element.getElementsByTagName('span')[0].className = 'glyphicon glyphicon-ok form-control-feedback';
     }
     else {
-        element.className = "form-group has-error";
+        element.className = "form-group has-error has-feedback";
         element.getElementsByClassName('help-block')[0].style.display = 'block';
+        element.getElementsByTagName('span')[0].className = 'glyphicon glyphicon-remove form-control-feedback';
     }
 }
 
