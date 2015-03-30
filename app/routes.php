@@ -5,6 +5,8 @@ Route::get('/', function()
 	return View::make('pages/home');
 });
 
+Route::controller('password', 'RemindersController');
+
 Route::get('registo', array('as' => 'registo', 'uses' => 'UsersController@registration'));
 
 Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
@@ -14,6 +16,8 @@ Route::post('/login', array('as' => 'login', 'uses' => 'UsersController@handleLo
 Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));
 
 Route::get('/profile', array('as' => 'profile', 'uses' => 'UsersController@profile'));
+
+Route::get('/passwordreset', array('as' => 'passwordreset', 'uses' => 'RemindersController@getRemind'));
 
 Route::resource('user', 'UsersController'); 
 

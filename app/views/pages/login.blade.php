@@ -17,6 +17,8 @@
 	{{ Form::submit('Login') }}
 {{ Form::close() }}
 
+<a href = 'passwordreset'><p>Esqueci-me da palavra passe</p></a>
+
 </div>
 
 
