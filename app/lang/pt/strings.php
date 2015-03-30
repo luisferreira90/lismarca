@@ -28,6 +28,8 @@ return array(
 
 	"need_login" => "Precisa de efectuar login para aceder a esta página!",
 
+	"valid_email" => "Precisa de utilizar um e-mail válido",
+
 	
 
 

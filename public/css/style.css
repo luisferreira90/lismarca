@@ -353,7 +353,6 @@ iframe {
   margin:60px auto;
 }
 
-.form-group {
-
-
+.help-block {
+	display:none;
 }

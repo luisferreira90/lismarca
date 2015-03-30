@@ -13,71 +13,54 @@
     <div class = 'form-wrap'>
         {{ Form::open(array('route' => array('user.store'), 'method' => 'post', 'data-toggle' => 'validator')) }}
 
-        <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('name', Lang::get('strings.name'))}}
-                {{Form::text('name', null, array('class' => 'form-control'))}}
-            </div>            
-            <div id = 'nameCheck' class = 'form-error'></div>
+        <div class = 'form-group' id = 'group-name'>
+            {{Form::label('name', Lang::get('strings.name'))}}
+            {{Form::text('name', null, array('class' => 'form-control', 'onChange' => 'checkForm(0)'))}}           
+            <p class="help-block">Nome inválido</p>
         </div>       
 
-        <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('email','Email')}}
-                {{Form::email('email', null, array('class' => 'form-control'))}}
-            </div>
-            <div id = 'emailCheck' class = 'form-error'></div>
+        <div class = 'form-group' id = 'group-email'>
+            {{Form::label('email','Email')}}
+            {{Form::email('email', null, array('class' => 'form-control', 'onChange' => 'checkForm(1)'))}}
+            <p class="help-block">{{Lang::get('strings.valid_email')}}</p>
         </div>
 
-        <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('phone',Lang::get('strings.telephone'))}}
-                {{Form::text('phone', null, array('class' => 'form-control'))}}
-            </div>
-            <div id = 'phoneCheck' class = 'form-error'></div>
+        <div class = 'form-group' id = 'group-phone'>
+            {{Form::label('phone',Lang::get('strings.telephone'))}}
+            {{Form::text('phone', null, array('class' => 'form-control', 'onChange' => 'checkForm(2)'))}}
+            <p class="help-block">Telefone inválido</p>
         </div>
 
      	<div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('address', Lang::get('strings.address'))}}
-                {{Form::text('address', null, array('class' => 'form-control'))}}
-            </div>
+            {{Form::label('address', Lang::get('strings.address'))}}
+            {{Form::text('address', null, array('class' => 'form-control'))}}
         </div>
 
         <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('location',Lang::get('strings.location'))}}
-                {{Form::select('location', $locations, null, array('class' => 'form-control'))}}
-            </div>
+            {{Form::label('location',Lang::get('strings.location'))}}
+            {{Form::select('location', $locations, null, array('class' => 'form-control'))}}
         </div>
 
         <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('entity_type',Lang::get('strings.entity_type'))}}
-                {{Form::select('entity_type', $entity_types, null, array('class' => 'form-control'))}}
-            </div>
+            {{Form::label('entity_type',Lang::get('strings.entity_type'))}}
+            {{Form::select('entity_type', $entity_types, null, array('class' => 'form-control'))}}
         </div>
 
         <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('company_name',Lang::get('strings.company_name'))}}
-                {{Form::text('company_name', null, array('class' => 'form-control'))}}
-            </div>
+            {{Form::label('company_name',Lang::get('strings.company_name'))}}
+            {{Form::text('company_name', null, array('class' => 'form-control'))}}
         </div>
 
-        <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('password', Lang::get('strings.password'))}}
-                {{Form::password('password', array('class' => 'form-control'))}}
-            </div>
-            <div id = 'passwordCheck' class = 'form-error'></div>
+        <div class = 'form-group' id = 'group-password'>
+            {{Form::label('password', Lang::get('strings.password'))}}
+            {{Form::password('password', array('class' => 'form-control','onChange' => 'checkForm(3)'))}}
+            <p class="help-block">A palavra-passe tem que conter pelo menos 6 caracteres</p>
         </div>
 
-        <div class = 'form-group'>
-            <div class = 'form-left'>
-                {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
-                {{Form::password('password_confirmation', array('class' => 'form-control'))}}
-            </div>
+        <div class = 'form-group' id = 'group-password-confirmation'>
+            {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
+            {{Form::password('password_confirmation', array('class' => 'form-control','onChange' => 'checkForm(4)'))}}
+            <p class="help-block">As palavras-passe não são iguais</p>
         </div>
 
         <div class = 'form-group'>
@@ -91,9 +74,9 @@
 
 <script>
 var submit = document.getElementById('submit');
-var form = ['0', '0', '0', '0'];
+var form = ['0', '0', '0', '0', '0'];
 
-function checkForm() {
+function checkForm(element) {
 
     var name = $("#name").val();
     var email = $("#email").val();
@@ -102,49 +85,77 @@ function checkForm() {
     var password_confirmation = $("#password_confirmation").val();
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if(name.length < 2) {
-        $("#nameCheck").html("O nome tem que ter pelo menos dois caracteres");
-        form[0] = 0;
-    }
-    else {
-        $("#nameCheck").html("");
-        form[0] = 1;
-    }
-
-    if(!re.test(email)) {
-        $("#emailCheck").html("Tem que inserir um endereço de email válido, no formato nome@dominio.com");
-        form[1] = 0;    
-    }
-    else {
-        $("#emailCheck").html("");
-        form[1] = 1;
+    if(element == 0) {
+        if(name.length < 2) {
+            toggleState('name', 0);
+            form[0] = 0;
+        }
+        else {
+            toggleState('name', 1);
+            form[0] = 1;
+        }
     }
 
-    if(!/^\d+$/.test(phone)) {
-        $("#phoneCheck").html("O número de telefone só pode conter algarismos");
-        form[2] = 0;
-        errors = true;  
-    }
-    else if(phone.length < 9) {
-        $("#phoneCheck").html("O número de telefone tem que ter pelo menos 9 algarismos");  
-        form[2] = 0;
-    }
-    else {
-        $("#phoneCheck").html("");
-        form[2] = 1;
+    if(element == 1) {
+        if(!re.test(email)) {
+            toggleState('email', 0);
+            form[1] = 0;    
+        }
+        else {
+            toggleState('email', 1);
+            form[1] = 1;
+        }
     }
 
-    if (password.length < 6) {
-        $("#passwordCheck").html("A palavra-passe tem que ter pelo menos 6 caracteres");
-        form[3] = 0;
-     }
-    else if (password != password_confirmation) {
-        $("#passwordCheck").html("A palavra-passe não é igual");
-        form[3] = 0;
+    if(element == 2) {
+        if(!/^\d+$/.test(phone)) {
+            toggleState('phone', 0);
+            form[2] = 0;
+        }
+        else if(phone.length < 9) {
+            toggleState('phone', 0);  
+            form[2] = 0;
+        }
+        else {
+            toggleState('phone', 1);
+            form[2] = 1;
+        }
+    }
+
+    if(element == 3) {
+        if (password.length < 6) {
+            toggleState('password', 0);
+            form[3] = 0;
+        }
+        else {
+            toggleState('password', 1);
+            form[3] = 1;
+        }
+    }
+
+    if(element == 4) {
+        if (password != password_confirmation) {
+            toggleState('password-confirmation', 0);
+            form[4] = 0;
+        }
+        else {
+            toggleState('password-confirmation', 1);
+            form[4] = 1;
+        }
+    }
+
+    submit.disabled = validate();
+}
+
+function toggleState(elem, op) {
+    var element =  document.getElementById('group-' + elem);
+    if(op) {
+        element.className = "form-group has-success";
+        element.getElementsByClassName('help-block')[0].style.display = 'none';
     }
     else {
-        $("#passwordCheck").html("");
-        form[3] = 1;
+        element.className = "form-group has-error";
+        element.getElementsByClassName('help-block')[0].style.display = 'block';
     }
 }
 
@@ -152,15 +163,9 @@ $(document).ready(function () {
 
     submit.disabled = validate();
 
-    $("#name").keyup(validate);
-    $("#email").keyup(validate);
-    $("#phone").keyup(validate);
-    $("#password").keyup(validate);
-    $("#password_confirmation").keyup(validate);
 });
 
 function validate () {
-    checkForm();
     for (i = 0; i<=form.length; i++) {
         if(form[i] == 0) {
             submit.disabled = true;
