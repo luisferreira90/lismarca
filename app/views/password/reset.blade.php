@@ -20,7 +20,7 @@
 
     <div class = 'form-group'>
         {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
-        {{Form::password('password_confirmation', null, array('class' => 'form-control'))}}
+        {{Form::password('password_confirmation', array('class' => 'form-control'))}}
     </div>
 
     <div class = 'form-group'>

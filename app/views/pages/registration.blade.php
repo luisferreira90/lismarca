@@ -23,12 +23,14 @@
         <div class = 'form-group' id = 'group-email'>
             {{Form::label('email','Email')}}
             {{Form::email('email', null, array('class' => 'form-control', 'onChange' => 'checkForm(1)'))}}
+            <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_email')}}</p>
         </div>
 
         <div class = 'form-group' id = 'group-phone'>
             {{Form::label('phone',Lang::get('strings.telephone'))}}
             {{Form::text('phone', null, array('class' => 'form-control', 'onChange' => 'checkForm(2)'))}}
+            <span class="" aria-hidden="true"></span> 
             <p class="help-block">Telefone inválido</p>
         </div>
 
@@ -55,17 +57,19 @@
         <div class = 'form-group' id = 'group-password'>
             {{Form::label('password', Lang::get('strings.password'))}}
             {{Form::password('password', array('class' => 'form-control','onChange' => 'checkForm(3)'))}}
+            <span class="" aria-hidden="true"></span> 
             <p class="help-block">A palavra-passe tem que conter pelo menos 6 caracteres</p>
         </div>
 
         <div class = 'form-group' id = 'group-password-confirmation'>
             {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}
             {{Form::password('password_confirmation', array('class' => 'form-control','onChange' => 'checkForm(4)'))}}
+            <span class="" aria-hidden="true"></span> 
             <p class="help-block">As palavras-passe não são iguais</p>
         </div>
 
         <div class = 'form-group'>
-            {{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control'))}}
+            {{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control btn btn-primary'))}}
         </div>
 
         {{ Form::close() }}
@@ -123,7 +127,7 @@ function checkForm(element) {
         }
     }
 
-    if(element == 3) {
+    if(element == 4 || element == 3) {
         if (password.length < 6) {
             toggleState('password', 0);
             form[3] = 0;
@@ -132,9 +136,7 @@ function checkForm(element) {
             toggleState('password', 1);
             form[3] = 1;
         }
-    }
 
-    if(element == 4) {
         if (password != password_confirmation) {
             toggleState('password-confirmation', 0);
             form[4] = 0;
