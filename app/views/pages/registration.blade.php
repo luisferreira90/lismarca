@@ -15,21 +15,21 @@
 
         <div class = 'form-group' id = 'group-name'>
             {{Form::label('name', Lang::get('strings.name'))}}*
-            {{Form::text('name', null, array('class' => 'form-control', 'onkeyup' => 'checkForm(0)'))}}
+            {{Form::text('name', null, array('class' => 'form-control', 'onchange' => 'checkForm(0)'))}}
             <span class="" aria-hidden="true"></span>          
             <p class="help-block">{{Lang::get('strings.valid_name')}}</p>
         </div>       
 
         <div class = 'form-group' id = 'group-email'>
             {{Form::label('email','Email')}}*
-            {{Form::email('email', null, array('class' => 'form-control', 'onkeyup' => 'checkForm(1)'))}}
+            {{Form::email('email', null, array('class' => 'form-control', 'onchange' => 'checkForm(1)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_email')}}</p>
         </div>
 
         <div class = 'form-group' id = 'group-phone'>
             {{Form::label('phone',Lang::get('strings.telephone'))}}*
-            {{Form::text('phone', null, array('class' => 'form-control', 'onkeyup' => 'checkForm(2)'))}}
+            {{Form::text('phone', null, array('class' => 'form-control', 'onchange' => 'checkForm(2)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_phone')}}</p>
         </div>
@@ -56,14 +56,14 @@
 
         <div class = 'form-group' id = 'group-password'>
             {{Form::label('password', Lang::get('strings.password'))}}*
-            {{Form::password('password', array('class' => 'form-control','onkeyup' => 'checkForm(3)'))}}
+            {{Form::password('password', array('class' => 'form-control','onchange' => 'checkForm(3)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_password')}}</p>
         </div>
 
         <div class = 'form-group' id = 'group-password-confirmation'>
             {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}*
-            {{Form::password('password_confirmation', array('class' => 'form-control','onkeyup' => 'checkForm(4)'))}}
+            {{Form::password('password_confirmation', array('class' => 'form-control','onchange' => 'checkForm(4)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_password_confirmation')}}</p>
         </div>
@@ -80,6 +80,16 @@
 <script>
 var submit = document.getElementById('submit');
 var form = ['0', '0', '0', '0', '0'];
+var x = document.cookie;
+
+if(x == 'back=1') {
+    checkForm(0);
+    checkForm(1);
+    checkForm(2);
+    checkForm(3);
+    checkForm(4);
+}
+document.cookie = "back=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
 function checkForm(element) {
 
@@ -173,6 +183,7 @@ function validate () {
             return true;
         }
     }
+    document.cookie="back=1";
     submit.disabled = false;
 }
 </script>

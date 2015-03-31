@@ -46,3 +46,7 @@
 @stop
 
 {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') }}
+
+<script>
+	document.cookie = "back=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+</script>
