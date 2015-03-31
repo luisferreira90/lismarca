@@ -30,6 +30,14 @@ return array(
 
 	"valid_email" => "You need to insert a valid email",
 
+	"valid_name" => 'The name has to be at least 2 characters long',
+
+	"valid_phone" => 'The telephone number can only contain numbers and has to be at least 9 digits long',
+
+	'valid_password' => 'The password has to be at least 6 characters long',
+
+	'valid_password_confirmation' => 'The passwords do not match',
+
 	"verification_email" => 'Thanks for creating an account in the Lismarca website. Please follow the link below to verify your email address:',
 
 	"verification_email_title" => 'Verify your email address',

@@ -30,6 +30,14 @@ return array(
 
 	"valid_email" => "Precisa de utilizar um e-mail válido",
 
+	"valid_name" => 'O nome tem que conter pelo menos 2 caracteres',
+
+	"valid_phone" => 'O número de telefone apenas pode conter números e tem que ter pelo menos 9 digitos',
+
+	'valid_password' => 'A palavra-passe tem que ter pelo menos 6 caracteres',
+
+	'valid_password_confirmation' => 'As palavras-passe não são iguais',
+
 	"verification_email" => 'Obrigado por criar uma conta no site da Lismarca. Por favor clique no seguinte link para validar o seu endereço de email:',
 
 	"verification_email_title" => 'Verifique o seu endereço de email',
