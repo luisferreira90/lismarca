@@ -1,27 +1,34 @@
 <footer>
-	<div class = 'footer-upper'>
-		<div class = 'newsletter'>
-			<h2 class = 'title-smaller'>.NEWSLETTER</h2>
-			<form>
-				<input type = 'email' placeholder = 'E-mail' name = 'email'>
+
+	<div class = 'newsletter'>
+		<h4 class = 'title-smaller'>Newsletter</h2>
+			<form class='search_field' method='GET' action='http://www.google.com/search'>
+			    <input name='search'/ placeholder='Colocar o seu endereço de e-mail aqui...' type = 'text'>
+			    <button type='submit'>
+			    	<img src='/images/email.svg' alt='newsletter'/>
+			    </button>
 			</form>
-			<img src = '/images/email.svg'>
-		</div>
-		<nav>
-			<ul>
-				<li>.Empresa</li>
-				<li>.Produtos</li>
-				<li>.Contactos</li>
-				<li>.Novidades</li>
-				<li>.Portfolio</li>
-			</ul>
-		</nav>
 	</div>
-	<div class = 'clear-fix'></div>
+
+	<div class = 'span'>
+		<p><img src = '/images/arrow-right.svg'>Fornecemos para todo o país: Portugal Continental e Ilhas</p>
+	</div>
+
+	<nav>
+		<ul>
+			<li>.Empresa</li>
+			<li>.Produtos</li>
+			<li>.Contactos</li>
+			<li>.Novidades</li>
+			<li>.Portfolio</li>
+		</ul>
+	</nav>
 
 	<div class = 'clear-fix'></div>
 	<div class = 'separator'></div>
+
 	<div class = 'footer-lower'>
 		Copyright © 2015 Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria. Todos os direitos reservados.
 	</div>
+
 </footer>
