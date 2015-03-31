@@ -46,6 +46,8 @@ return array(
 
 	"verification_go_confirm" => 'Thanks for signing up. A verification email has been sent. Please check your inbox.',
 
+	"login_right" => 'Successfully logged in!',
+
 	"login_wrong" => 'Incorrect login data',
 
 	"password_forgot" => 'I forgot my password',

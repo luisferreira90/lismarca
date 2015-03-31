@@ -23,6 +23,7 @@ class UsersController extends BaseController {
 	        if(User::isAdmin()) {
     	 		return Redirect::to('admin');
 	        }
+	        return Redirect::route('login')->withInput()->withErrors(array(Lang::get('strings.login_right')));
         }
 
         return Redirect::route('login')->withInput()->withErrors(array(Lang::get('strings.login_wrong')));

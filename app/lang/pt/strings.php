@@ -46,6 +46,8 @@ return array(
 
 	"verification_go_confirm" => 'Obrigado por se registar. Foi enviado um email de confirmação. Por favor verifique a sua caixa de entrada.',
 
+	"login_right" => 'Login efectuado com sucesso!',
+	
 	"login_wrong" => 'Dados de login errados',
 
 	"password_forgot" => 'Esqueci-me da palavra-passe',
