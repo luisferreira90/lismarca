@@ -2,16 +2,22 @@
 
 @section('content')
 
-@foreach ($errors->all() as $message)
-	<br>
-	{{$message}}
-@endforeach
-
 <h1>Login</h1>
 
 @if(Session::has('flash_message'))
     {{ Session::get('flash_message') }}
 @endif
+
+@if (Session::has('error'))
+    {{ trans(Session::get('error')) }}
+@elseif (Session::has('success'))
+    {{ trans(Session::get('success')) }}
+@endif
+
+@foreach ($errors->all() as $message)
+	<br>
+	{{$message}}
+@endforeach
 
 <div class = 'form-wrap'>
 
@@ -33,7 +39,7 @@
 
 {{ Form::close() }}
 
-<a href = 'passwordreset'><p>Esqueci-me da palavra passe</p></a>
+<a href = 'passwordreset'><p>{{Lang::get('strings.password_forgot')}}</p></a>
 
 </div>
 

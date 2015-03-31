@@ -13,14 +13,14 @@ return array(
 	|
 	*/
 
-	"password" => "Passwords must be at least six characters and match the confirmation.",
+	"password" => "As palavra-passe têm que ter pelo menos seis caracteres e corresponderem à confirmação.",
 
-	"user" => "We can't find a user with that e-mail address.",
+	"user" => "Não conseguimos encontrar um utilizador com esse endereço de e-mail.",
 
-	"token" => "This password reset token is invalid.",
+	"token" => "O link de renovação de password é inválido.",
 
-	"sent" => "Password reminder sent!",
+	"sent" => "Foi enviado um e-mail com instruções para renovar password!",
 
-	"reset" => "Password has been reset!",
+	"reset" => "A password foi alterada!",
 
 );

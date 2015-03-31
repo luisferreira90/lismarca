@@ -38,5 +38,21 @@ return array(
 
 	"verification_go_confirm" => 'Thanks for signing up. A verification email has been sent. Please check your inbox.',
 
+	"login_wrong" => 'Incorrect login data',
+
+	"password_forgot" => 'I forgot my password',
+
+	"password_reset_title" => 'Reset your password',
+
+	"password_reset_invalid_user" => 'That email does not have an account in our website.',
+
+	"password_reset_sent" => 'An email has been sent to the supplied address with instructions on how to reset your password.',
+
+	"password_reset_email_part_one" => 'To reset your password, complete this form:',
+
+	"password_reset_email_part_two" => 'This link will expire in',
+
+	"minutes" => 'minutes',
+
 
 );

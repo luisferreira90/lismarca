@@ -20,11 +20,12 @@ class UsersController extends BaseController {
         }
 
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'confirmed' => 1])){
-	        User::isAdmin();
-            return Redirect::to('admin');
+	        if(User::isAdmin()) {
+    	 		return Redirect::to('admin');
+	        }
         }
 
-        return Redirect::route('login')->withInput()->withErrors(array('Dados de login errados'));
+        return Redirect::route('login')->withInput()->withErrors(array(Lang::get('strings.login_wrong')));
 	}
 
 
@@ -43,10 +44,8 @@ class UsersController extends BaseController {
 
 	public function registration()
 	{
-		$entity_type = new EntityType;
-		$entity_types = $entity_type::lists('name_pt', 'id');
-		$location = new Location;
-		$locations = $location::lists('name', 'id');
+		$entity_types = EntityType::lists('name_pt', 'id');
+		$locations = Location::lists('name', 'id');
 		return View::make('pages.registration')->with('entity_types', $entity_types)->with('locations', $locations);
 	}
 

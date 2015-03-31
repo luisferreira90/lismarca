@@ -2,6 +2,14 @@
 
 @section('content')
 
+<h1>{{Lang::get('strings.password_reset_title')}}</h1>
+
+@if (Session::has('error'))
+    {{ trans(Session::get('error')) }}
+@elseif (Session::has('success'))
+    {{ trans(Session::get('success')) }}
+@endif
+
 <div class = 'form-wrap'>
 
 {{ Form::open(array('action' => 'RemindersController@postRemind', 'method' => 'post')) }}

@@ -38,8 +38,20 @@ return array(
 
 	"verification_go_confirm" => 'Obrigado por se registar. Foi enviado um email de confirmação. Por favor verifique a sua caixa de entrada.',
 
-	
+	"login_wrong" => 'Dados de login errados',
 
+	"password_forgot" => 'Esqueci-me da palavra-passe',
 
+	"password_reset_title" => 'Renovar palavra-passe',
+
+	"password_reset_invalid_user" => 'O endereço de e-mail fornecido não tem conta registada no nosso website.',
+
+	"password_reset_sent" => 'Foi enviado um e-mail para o endereço fornecido com instrucções para renovar a sua palavra-passe.',
+
+	"password_reset_email_part_one" => 'Para renovar a sua palavra-passe, clique no seguinte link:',
+
+	"password_reset_email_part_two" => 'Este link vai expirar em',
+
+	"minutes" => 'minutos',
 
 );
