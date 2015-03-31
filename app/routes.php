@@ -23,6 +23,11 @@ Route::resource('user', 'UsersController');
 
 Route::get('language', array('uses' => 'HomeController@language'));
 
+Route::get('registo/verificar/{confirmationCode}', [
+    'as' => 'confirmation_path',
+    'uses' => 'UsersController@confirm'
+]);
+
 
 /* ########## Administration panel routes ########## */
 

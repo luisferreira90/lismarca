@@ -7,7 +7,11 @@
 	{{$message}}
 @endforeach
 
-<h1>Lembrar password</h1>
+<h1>Login</h1>
+
+@if(Session::has('flash_message'))
+    {{ Session::get('flash_message') }}
+@endif
 
 <div class = 'form-wrap'>
 

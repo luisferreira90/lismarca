@@ -28,6 +28,15 @@ return array(
 
 	"need_login" => "You need to login in order to access this page!",
 
-	"valid_email" => "You need to insert a valid e-mail",
+	"valid_email" => "You need to insert a valid email",
+
+	"verification_email" => 'Thanks for creating an account in the Lismarca website. Please follow the link below to verify your email address:',
+
+	"verification_email_title" => 'Verify your email address',
+
+	"verification_confirmed" => 'Your email address has been verified. You can now login.',
+
+	"verification_go_confirm" => 'Thanks for signing up. A verification email has been sent. Please check your inbox.',
+
 
 );

@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use RemindableTrait;
-	protected $fillable = ['name','email','phone','address','location','entity_type','company_name','password'];
+	protected $fillable = ['name','email','phone','address','location','entity_type','company_name','password', 'confirmation_code'];
 
 	/**
      * Find out if User is an admin
