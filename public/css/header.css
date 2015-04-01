@@ -4,10 +4,16 @@ header {
 	width:100%;
 	display: inline-block;
 	background-color:white;
+	text-align:right;
 } 
 
 header img {
 	vertical-align:middle;
+}
+
+header a {
+	text-decoration:none;
+	color:#6d6f71;
 }
 
 .logo {
@@ -17,41 +23,48 @@ header img {
 }
 
 .header-upper div, .header-middle div {
-	display:inline;
+	display:inline-block;
 }
 
 .language, .login {
-	margin-left:20px;
+	margin-left:30px;
+}
+
+.language {
+	padding:0 30;
+	border-left: solid  1px grey;
+	border-right: solid  1px grey;
+}
+
+.login-register {
+	margin-right:10px;
+}
+
+.login-login {
+	margin-left:10px;
 }
 
 .header-middle {
 	margin-top:10px;
 }
 
-.header-lower {
-	margin-top:10px;
-}
-
-
 .validate-budget {
 	font-weight: bold;
 	font-size:14px;
-}
 
-.validate-budget img{
-	width:21px;
+	padding-right:30px;
+	border-right: solid 1px grey;
 }
 
 .search_field {
-	width:190px;
-	float: right;
-	display: block;
+	width:290px;
+	margin-left:30px;
+	display: inline-block;
 	background-color:#e6e7e9;
 }
 
 .search_field input {
-	width:78%;
-	float:left;
+	width:87%;
 	position:relative;
 	left:2%;
 	border: none;
@@ -63,29 +76,35 @@ header img {
 
 .search_field button {
 	position:relative;
-	right:-4%;
+	right:-2%;
 	float:right;
 	border: none;
 	background: none;
-	font-size:10px;
 }
 
 .search_field button img {
-	width:22px;
+	width:23px;
 }
 
 header nav {
-	width:100%;
 	display:inline-block;
 }
 
+header nav ul {
+	margin:0;
+}
+
 header nav li {
-	float:right;
 	display:inline-block;
-	margin-left:20px;
+	margin-left:30px;
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
+	color:#6d6f71;
+}
+
+header nav li:first-child {
+	margin-left:0px;
 }
 
 header nav li:hover {

@@ -33,8 +33,8 @@
 				@else
 				<a href = 'registo'>{{Lang::get('strings.registration')}}</a>
 				@endif
-			</div>
-			<img src = '/images/lock.svg'>	
+			</div>	
+			<img src = '/images/lock.svg'>
 			<div class = 'login-login'>
 				<img class = 'arrow-right' src = '/images/arrow-right.svg'>
 				@if(Auth::check())
@@ -75,5 +75,7 @@
 	</div>
 
 </header>	
+
+<hr></hr>
 
 <div class = 'clear-fix'></div>
