@@ -1,3 +1,5 @@
+<hr>
+
 <footer>
 	<div class = 'footer-upper'>
 		<div class = 'newsletter'>

@@ -1,24 +1,40 @@
 /*##### FOOTER #####*/
 footer {
 	text-align:center;
+	  height: 125px;
+  line-height: 20px;
+	box-sizing:border-box;
 }
 
 footer p {
 	display:inline;
 	font-size:14px;
 	color:grey;
+	box-sizing:border-box;
+	margin:0;
 }
 
 footer img {
 	vertical-align:middle;
+	box-sizing:border-box;
 }
 
 footer .footer-upper div{
 	display:inline-block;
+	box-sizing:border-box;
 }
 
 footer .newsletter {
 	width:40%;
+	box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  display: inline-block;
+  font-family: ClearSans, sans-serif;
+  font-size: 14px;
+  height: 41px;
+  line-height: 20px;
+  text-align: center;
+  width: 524px;
 }
 
 footer .distribution {
@@ -30,12 +46,14 @@ footer .search_field {
 	width:250px;
 	display: inline-block;
 	background-color:#e6e7e9;
+	box-sizing:border-box;
 }
 
 footer .search_field input {
 	width:86%;
 	background-color:#e6e7e9;
 	font-style:italic;
+	box-sizing:border-box;
 }
 
 footer nav {
@@ -45,6 +63,8 @@ footer nav {
 
 footer nav ul {
 	margin:5;
+	font-size:14px;
+	line-height:1em;
 }
 
 footer nav li {

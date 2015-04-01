@@ -13,6 +13,7 @@ header img {
 
 header a {
 	text-decoration:none;
+	font-size:14px;
 	color:#6d6f71;
 }
 
@@ -24,6 +25,8 @@ header a {
 
 .header-upper div, .header-middle div {
 	display:inline-block;
+	box-sizing:border-box;
+	font-size:14px;
 }
 
 .language, .login {
@@ -51,9 +54,13 @@ header a {
 .validate-budget {
 	font-weight: bold;
 	font-size:14px;
-
+	box-sizing:border-box;
 	padding-right:30px;
 	border-right: solid 1px grey;
+}
+
+.validate-budget a{
+	box-sizing:border-box;
 }
 
 .search_field {
@@ -88,6 +95,8 @@ header a {
 
 header nav {
 	display:inline-block;
+	font-size:14px;
+	line-height:1em;
 }
 
 header nav ul {
@@ -101,6 +110,7 @@ header nav li {
 	font-weight: bold;
 	text-transform: uppercase;
 	color:#6d6f71;
+	line-height:1em;
 }
 
 header nav li:first-child {

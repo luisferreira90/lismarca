@@ -1,3 +1,5 @@
+{{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') }}
+
 @extends('layouts.layout')
 
 @section('content')
@@ -189,5 +191,3 @@ function validate () {
 </script>
 
 @stop
-
-{{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') }}
