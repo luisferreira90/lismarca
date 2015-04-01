@@ -67,19 +67,16 @@
 	background-color: #6d6f71;
 }
 
-/*.home-sections:hover > .three-columns img  {
-	background-color: #6d6f71;
-}*/
-
 .section-select .inner {
-	width:80%;
+	width:90%;
 	position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  	top: 50%;
+  	transform: translateY(-50%);
 }
 
 .section-select h1 {
-	font-size:45px;
+	font-size:55px;
+	margin-bottom:0;
 }
 
 .two-columns {
