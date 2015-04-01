@@ -2,10 +2,10 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="21.88px" height="21.88px" viewBox="0 0 21.88 21.88" enable-background="new 0 0 21.88 21.88" xml:space="preserve">
+	 width="25.001px" height="25px" viewBox="0 0 25.001 25" enable-background="new 0 0 25.001 25" xml:space="preserve">
 <g>
 	<defs>
-		<rect id="SVGID_3_" x="-25.25" y="0" width="21.881" height="21.881"/>
+		<rect id="SVGID_3_" x="-33.333" y="-0.833" width="26.667" height="26.667"/>
 	</defs>
 	<clipPath id="SVGID_2_">
 		<use xlink:href="#SVGID_3_"  overflow="visible"/>
@@ -13,15 +13,15 @@
 	<g clip-path="url(#SVGID_2_)">
 		<g>
 			<g>
-				<polyline fill="#BB1B21" points="-14.402,5 -15.74,3.621 -17.816,9.276 -16.482,10.592 -20.369,11.318 -19.775,18.167 
-					-13.904,23.855 7.916,22.926 -10.072,5.103 				"/>
+				<polyline fill="#BB1B21" points="-20.105,5.713 -21.634,4.138 -24.007,10.599 -22.483,12.103 -26.923,12.933 -26.245,20.758 
+					-19.537,27.256 5.394,26.194 -15.159,5.831 				"/>
 			</g>
 		</g>
 	</g>
 </g>
 <g>
 	<defs>
-		<rect id="SVGID_7_" width="21.882" height="21.881"/>
+		<rect id="SVGID_7_" x="-0.833" y="-0.833" width="26.668" height="26.667"/>
 	</defs>
 	<clipPath id="SVGID_4_">
 		<use xlink:href="#SVGID_7_"  overflow="visible"/>
@@ -29,7 +29,7 @@
 	<g clip-path="url(#SVGID_4_)">
 		<g>
 			<defs>
-				<rect id="SVGID_9_" width="21.882" height="21.881"/>
+				<rect id="SVGID_9_" x="-0.833" y="-0.833" width="26.668" height="26.667"/>
 			</defs>
 			<use xlink:href="#SVGID_9_"  overflow="visible" fill="#017BB6"/>
 			<clipPath id="SVGID_6_">
@@ -39,14 +39,14 @@
 	</g>
 	<g clip-path="url(#SVGID_4_)">
 		<g>
-			<polyline fill="#0375AD" points="16.676,9.183 34.664,27.004 13.386,24.8 4.895,17.184 6.495,13.449 6.228,10.592 6.228,5.294 
-				7.52,5.057 11.787,8.618 11.389,10.563 13.301,9.898 16.676,9.183 			"/>
+			<polyline fill="#0375AD" points="19.053,10.492 39.605,30.854 15.294,28.336 5.593,19.634 7.421,15.366 7.115,12.103 7.115,6.05 
+				8.592,5.777 13.468,9.847 13.013,12.069 15.197,11.31 19.053,10.492 			"/>
 		</g>
 		<g>
-			<path fill="#FFFFFF" d="M4.895,8.618h2.667v8.566H4.895V8.618z M6.228,4.36c0.854,0,1.545,0.691,1.545,1.542
-				c0,0.852-0.691,1.545-1.545,1.545c-0.855,0-1.544-0.693-1.544-1.545C4.684,5.052,5.372,4.36,6.228,4.36"/>
-			<path fill="#FFFFFF" d="M9.232,8.618h2.555V9.79h0.035c0.356-0.675,1.224-1.385,2.521-1.385c2.695,0,3.192,1.774,3.192,4.081
-				v4.699h-2.66v-4.166c0-0.993-0.021-2.271-1.385-2.271c-1.388,0-1.599,1.082-1.599,2.198v4.239h-2.66V8.618z"/>
+			<path fill="#FFFFFF" d="M5.593,9.847H8.64v9.787H5.593V9.847z M7.115,4.982c0.976,0,1.766,0.79,1.766,1.762
+				c0,0.974-0.79,1.765-1.766,1.765c-0.978,0-1.764-0.791-1.764-1.765C5.352,5.772,6.138,4.982,7.115,4.982"/>
+			<path fill="#FFFFFF" d="M10.549,9.847h2.919v1.339h0.04c0.407-0.771,1.398-1.583,2.881-1.583c3.079,0,3.647,2.027,3.647,4.662
+				v5.369h-3.039v-4.76c0-1.134-0.023-2.595-1.583-2.595c-1.585,0-1.826,1.235-1.826,2.512v4.843h-3.039V9.847z"/>
 		</g>
 	</g>
 </g>

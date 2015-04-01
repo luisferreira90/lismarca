@@ -5,7 +5,8 @@
 <title>Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria</title>
 
 {{ HTML::style('css/normalize.css') }}
-{{ HTML::style('css/style.css') }}
+{{ HTML::style('css/home.css') }}
+{{ HTML::style('css/base.css') }}
 {{ HTML::style('css/header.css') }}
 {{ HTML::style('css/footer.css') }}
 
