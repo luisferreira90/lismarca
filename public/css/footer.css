@@ -1,32 +1,70 @@
 /*##### FOOTER #####*/
+footer {
+	text-align:center;
+}
+
+footer p {
+	display:inline;
+	font-size:14px;
+	color:grey;
+}
+
+footer img {
+	vertical-align:middle;
+}
+
+footer .footer-upper div{
+	display:inline-block;
+}
+
+footer .newsletter {
+	width:40%;
+}
+
+footer .distribution {
+	width:40%;
+	border-left:solid 1px grey;
+}
 
 footer .search_field {
 	width:250px;
-	display: block;
+	display: inline-block;
 	background-color:#e6e7e9;
 }
 
 footer .search_field input {
 	width:86%;
-	float:left;
-	position:relative;
-	left:2%;
-	border: none;
 	background-color:#e6e7e9;
 	font-style:italic;
-	font-size:11px;
-	padding-top: 2%;
 }
 
-footer .search_field button {
-	position:relative;
-	right:-4%;
-	float:right;
-	border: none;
-	background: none;
-	font-size:10px;
+footer nav {
+	width:100%;
+	display:inline-block;
 }
 
-footer .search_field button img {
-	width:22px;
+footer nav ul {
+	margin:5;
+}
+
+footer nav li {
+	display:inline-block;
+	margin-left:5%;
+	font-size: 14px;
+	text-transform: uppercase;
+	color:#6d6f71;
+}
+
+footer nav li:first-child {
+	margin-left:0px;
+}
+
+footer nav li:hover {
+	cursor:pointer;
+	color:#e11b22;
+}
+
+footer .footer-lower {
+	font-size:15px;
+	color:#6d6f71;
 }
