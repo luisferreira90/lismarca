@@ -2,11 +2,20 @@
 
 @section('content')
 
-<div class = 'home-sections'>
+<section class = 'home-sections'>
 	<div class = 'three-columns'>
-		<img src = 'images/test/1.png'>
-		<img src = 'images/test/2.png'>
-		<img src = 'images/test/3.png'>
+		<div>
+			<img class="bottom" src="/images/home/1t.jpg" />
+	  		<img class="top" src="/images/home/1.jpg" />
+	  	</div>
+	  	<div>
+			<img class="bottom" src="/images/home/2t.jpg" />
+	  		<img class="top" src="/images/home/2.jpg" />
+	  	</div>
+	  	<div>
+			<img class="bottom" src="/images/home/3t.jpg" />
+	  		<img class="top" src="/images/home/3.jpg" />
+	  	</div>
 	</div>
 	<div class = 'section-select white'>
 		<div class = 'inner'>
@@ -17,9 +26,9 @@
 			</p>
 		</div>
 	</div>
-</div>
+</section>
 
-<div class = 'home-sections'>
+<section class = 'home-sections'>
 	<div class = 'section-select white inverse'>
 		<div class = 'inner'>
 			<h1>SOMBREAMENTO E PROTECÇÃO SOLAR</h1>
@@ -29,17 +38,35 @@
 		</div>
 	</div>
 	<div class = 'three-columns'>
-		<img src = 'images/test/4.png'>
-		<img src = 'images/test/5.png'>
-		<img src = 'images/test/6.png'>
+		<div>
+			<img class="bottom" src="/images/home/4t.jpg" />
+	  		<img class="top" src="/images/home/4.jpg" />
+	  	</div>
+	  	<div>
+			<img class="bottom" src="/images/home/5t.jpg" />
+	  		<img class="top" src="/images/home/5.jpg" />
+	  	</div>
+	  	<div>
+			<img class="bottom" src="/images/home/6t.jpg" />
+	  		<img class="top" src="/images/home/6.jpg" />
+	  	</div>
 	</div>
-</div>
+</section>
 
-<div class = 'home-sections'>
+<section class = 'home-sections'>
 	<div class = 'three-columns'>
-		<img src = 'images/test/7.png'>
-		<img src = 'images/test/8.png'>
-		<img src = 'images/test/9.png'>
+		<div>
+			<img class="bottom" src="/images/home/7t.jpg" />
+	  		<img class="top" src="/images/home/7.jpg" />
+	  	</div>
+	  	<div>
+			<img class="bottom" src="/images/home/8t.jpg" />
+	  		<img class="top" src="/images/home/8.jpg" />
+	  	</div>
+	  	<div>
+			<img class="bottom" src="/images/home/9t.jpg" />
+	  		<img class="top" src="/images/home/9.jpg" />
+	  	</div>
 	</div>
 	<div class = 'section-select white'>
 		<div class = 'inner'>
@@ -50,7 +77,7 @@
 			</p>
 		</div>
 	</div>
-</div>
+</section>
 
 <hr>
 

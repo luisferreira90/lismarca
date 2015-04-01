@@ -1,0 +1,32 @@
+/*##### FOOTER #####*/
+
+footer .search_field {
+	width:250px;
+	display: block;
+	background-color:#e6e7e9;
+}
+
+footer .search_field input {
+	width:86%;
+	float:left;
+	position:relative;
+	left:2%;
+	border: none;
+	background-color:#e6e7e9;
+	font-style:italic;
+	font-size:11px;
+	padding-top: 2%;
+}
+
+footer .search_field button {
+	position:relative;
+	right:-4%;
+	float:right;
+	border: none;
+	background: none;
+	font-size:10px;
+}
+
+footer .search_field button img {
+	width:22px;
+}

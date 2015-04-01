@@ -1,0 +1,148 @@
+/*##### Header #####*/
+
+header {
+	position:relative;	
+} 
+
+.upper-header {
+	width:100%;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 999;
+	height: 30px;
+	text-align: center;
+	display: inline-block;
+	background-color:#e6e7e9;
+	border-bottom: solid 1px grey;
+}
+
+.upper-header-content {
+	display: inline-block!important;
+	width:960px;
+}
+
+.upper-header div {
+	line-height: 30px;
+	display: inline;
+	font-size:12px;
+	color:#6d6f71;
+	margin:0 7px;
+}
+
+.upper-header div:first-child {
+	margin-left:0;
+}
+
+.upper-header div:last-child {
+	margin-right:0;
+}
+
+.upper-header-left {
+	float:left;
+}
+
+.login {
+	float:right;
+}
+
+.upper-header img {
+	width:12px;
+	vertical-align: middle;
+}
+
+.language p, .phone p, .mobile-phone p, .facebook p, .distribution p, .login p, .validate-budget p {
+	display: inline;
+	vertical-align: middle;
+}
+
+.lower-header {
+	margin-top:40px;
+}
+
+.lower-header-left {
+	width:35%;
+	float:left;
+	position: relative;
+}
+
+.lower-header-right {
+	width:65%;
+	float:right;
+}
+
+.lower-header-right div {
+	float:right;
+	position:absolute;
+	right:0%;
+}
+
+.validate-budget {
+	font-weight: bold;
+	font-size:14px;
+}
+
+.validate-budget img{
+	width:21px;
+	vertical-align: middle;
+}
+
+.logo {
+	width:100%;
+	max-width: 700px;
+	margin-top:10px;
+}
+
+nav {
+	margin-top:50px;
+	width:100%;
+	display:inline-block;
+}
+
+nav li {
+	float:right;
+	display:inline-block;
+	margin: 0px;
+	margin-left:20px;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+nav li:hover {
+	cursor:pointer;
+	color:#e11b22;
+}
+
+.search_field {
+	width:190px;
+	float: right;
+	display: block;
+	margin-top:30px;
+	background-color:#e6e7e9;
+}
+
+.search_field input {
+	width:78%;
+	float:left;
+	position:relative;
+	left:2%;
+	border: none;
+	background-color:#e6e7e9;
+	font-style:italic;
+	font-size:11px;
+	padding-top: 2%;
+}
+
+.search_field button {
+	position:relative;
+	right:-4%;
+	float:right;
+	border: none;
+	background: none;
+	font-size:10px;
+}
+
+.search_field button img {
+	width:22px;
+}

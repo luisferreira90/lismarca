@@ -6,6 +6,8 @@
 
 {{ HTML::style('css/normalize.css') }}
 {{ HTML::style('css/style.css') }}
+{{ HTML::style('css/header.css') }}
+{{ HTML::style('css/footer.css') }}
 
 {{ HTML::script('js/html5shiv-master/dist/html5shiv.js') }}
 {{ HTML::script('js/html5shiv-master/dist/html5shiv-printshiv.js') }}
