@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="author" content="Luís Ferreira">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Lismarca - Sistemas de Sombreamento | Mobiliário para Hotelaria</title>
 
