@@ -39,6 +39,7 @@
 
 {{ Form::close() }}
 
+<a href = 'registo'><p>{{Lang::get('strings.register_here')}}</p></a>
 <a href = 'passwordreset'><p>{{Lang::get('strings.password_forgot')}}</p></a>
 
 </div>

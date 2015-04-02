@@ -2,7 +2,11 @@
 
 return array(
 
+	"login_registration" => "Login / Registo",
+
 	"registration" => "Registo",
+
+	"register_here" => 'Ainda não tem uma conta? Registe-se aqui!',
 
 	"name" => "Nome",
 

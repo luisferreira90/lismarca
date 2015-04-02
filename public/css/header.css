@@ -1,10 +1,10 @@
 /*##### Header #####*/
 
+
 header {
 	width:100%;
 	display: inline-block;
 	background-color:white;
-	text-align:right;
 } 
 
 header img {
@@ -17,6 +17,35 @@ header a {
 	color:#6d6f71;
 }
 
+.marker {
+	display:none;
+}
+
+.header-upper {
+	display:inline-block;
+	width:100%;
+	background-color:#e6e7e9;
+	padding: 5px 2px;
+	margin-bottom:10px;
+}
+
+.social-networks {
+	float:left;
+}
+
+.header-upper-right {
+	float:right;
+}
+
+.language {
+	float:left;
+}
+
+.login {
+	padding:0 10px;
+	float:left;
+}
+
 .logo {
 	width:70%;
 	max-width: 700px;
@@ -25,26 +54,6 @@ header a {
 
 .header-upper div, .header-middle div {
 	display:inline-block;
-	box-sizing:border-box;
-	font-size:14px;
-}
-
-.language, .login {
-	margin-left:30px;
-}
-
-.language {
-	padding:0 30;
-	border-left: solid  1px grey;
-	border-right: solid  1px grey;
-}
-
-.login-register {
-	margin-right:10px;
-}
-
-.login-login {
-	margin-left:10px;
 }
 
 .header-middle {
@@ -54,31 +63,20 @@ header a {
 .validate-budget {
 	font-weight: bold;
 	font-size:14px;
-	box-sizing:border-box;
-	padding-right:30px;
-	border-right: solid 1px grey;
-}
-
-.validate-budget a{
-	box-sizing:border-box;
 }
 
 .search_field {
-	width:290px;
-	margin-left:30px;
+	width:200px;
 	display: inline-block;
 	background-color:#e6e7e9;
 }
 
 .search_field input {
 	width:87%;
-	position:relative;
-	left:2%;
 	border: none;
 	background-color:#e6e7e9;
 	font-style:italic;
 	font-size:11px;
-	padding-top: 2%;
 }
 
 .search_field button {
@@ -105,7 +103,6 @@ header nav ul {
 
 header nav li {
 	display:inline-block;
-	margin-left:30px;
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -114,10 +111,145 @@ header nav li {
 }
 
 header nav li:first-child {
-	margin-left:0px;
 }
 
 header nav li:hover {
 	cursor:pointer;
 	color:#e11b22;
+}
+
+
+@media only screen and (min-width: 400px) {
+	
+	.marker {
+		display:inline;
+	}
+		
+}
+
+
+@media only screen and (min-width: 500px) {
+	
+	.header-upper {
+		padding:5px 10px;
+	}
+	
+	.header-upper-right {
+		padding-right:15px;
+	}
+	
+	.language {
+		margin-right:30px;
+	}
+	
+}
+
+
+@media only screen and (min-width: 980px) {	
+
+	header {
+		text-align:right;
+	} 
+
+	header img {
+		vertical-align:middle;
+	}
+
+	header a {
+		text-decoration:none;
+		font-size:14px;
+		color:#6d6f71;
+	}
+	
+	.header-upper div{
+		float:none;
+	}
+
+	.logo {
+		width:70%;
+		max-width: 700px;
+		float:left;
+	}
+
+	.language {
+		margin-left:30px;
+	}
+
+	.language {
+		padding:0 30;
+		border-left: solid  1px grey;
+		border-right: solid  1px grey;
+	}
+
+	.validate-budget {
+		font-weight: bold;
+		font-size:14px;
+		box-sizing:border-box;
+		padding-right:30px;
+		border-right: solid 1px grey;
+	}
+
+	.validate-budget a{
+		box-sizing:border-box;
+	}
+
+	.search_field {
+		width:290px;
+		margin-left:30px;
+		display: inline-block;
+		background-color:#e6e7e9;
+	}
+
+	.search_field input {
+		width:87%;
+		position:relative;
+		left:2%;
+		border: none;
+		background-color:#e6e7e9;
+		font-style:italic;
+		font-size:11px;
+		padding-top: 2%;
+	}
+
+	.search_field button {
+		position:relative;
+		right:-2%;
+		float:right;
+		border: none;
+		background: none;
+	}
+
+	.search_field button img {
+		width:23px;
+	}
+
+	header nav {
+		display:inline-block;
+		font-size:14px;
+		line-height:1em;
+	}
+
+	header nav ul {
+		margin:0;
+	}
+
+	header nav li {
+		display:inline-block;
+		margin-left:30px;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color:#6d6f71;
+		line-height:1em;
+	}
+
+	header nav li:first-child {
+		margin-left:0px;
+	}
+
+	header nav li:hover {
+		cursor:pointer;
+		color:#e11b22;
+	}
+
 }
