@@ -37,34 +37,32 @@
 		</div>
 	</div>
 
-	<div class = 'logo'>
-		<a href = '/'><img src = '/images/logo.svg' alt = 'Logo Lismarca' class = 'logo'></a>
-	</div>
-
-	<div class = 'header-middle'>
-		<div class = 'validate-budget'>
-			<img src = '/images/arrow-right-red.svg'>
-			<a href = 'registo'>{{Lang::get('strings.validate_budget')}}</a>
-		</div>
-
-		<div class = 'search'>
-			<form class='search_field' method='GET' action='http://www.google.com/search'>
-				<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
-				<button type='submit'>
-					<img src='/images/search.svg' alt='Pesquisa'/>
-				</button>
-			</form>
-		</div>	
-	</div>
-
 	<div class = 'header-lower'>
 		<nav>
+			<div class = 'logo'>
+				<a href = '/'><img src = '/images/logo.svg' alt = 'Logo Lismarca' class = 'logo'></a>
+			</div>
 			<ul>
-				<li>.Empresa</li>
-				<li>.Produtos</li>
-				<li>.Contactos</li>
-				<li>.Novidades</li>
-				<li>.Portfolio</li>
+				<li>Empresa</li>
+				<li>Produtos</li>
+				<li>Contactos</li>
+				<li>Novidades</li>
+				<li>Portfolio</li>
+				<li class = 'validate-budget'>
+					<!--<img src = '/images/arrow-right-red.svg'>-->
+					<a href = 'registo'>{{Lang::get('strings.validate_budget')}}</a>
+				</li>
+				<li class = 'search'>
+					<img src='/images/search.svg' alt='Pesquisa'/>
+				</li>
+				<!--<li class = 'search'>
+					<form class='search_field' method='GET' action='http://www.google.com/search'>
+						<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
+						<button type='submit'>
+							<img src='/images/search.svg' alt='Pesquisa'/>
+						</button>
+					</form>
+				</li>-->
 			</ul>
 		</nav>
 	</div>
