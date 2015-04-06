@@ -5,7 +5,7 @@
 		<div class = 'newsletter'>
 			<p><img src = '/images/arrow-right.svg'>Newsletter</p>
 			<form class='search_field' method='GET' action='http://www.google.com/search'>
-			    <input name='search'/ placeholder='Coloque o seu email aqui' type = 'text'>
+			    <input name='search'/ placeholder="{{Lang::get('strings.newsletter_input')}}" type = 'text'>
 			    <button type='submit'>
 			    	<img src='/images/email.svg' alt='newsletter'/>
 			    </button>
@@ -13,7 +13,7 @@
 		</div>
 
 		<div class = 'distribution'>
-			<p><img src = '/images/arrow-right.svg'>Fornecemos para todo o país: Portugal Continental e Ilhas</p>
+			<p><img src = '/images/arrow-right.svg'>{{Lang::get('strings.distribution')}}</p>
 		</div>
 	</div>
 

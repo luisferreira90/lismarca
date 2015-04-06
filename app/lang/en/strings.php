@@ -2,11 +2,19 @@
 
 return array(
 
-	"login_registration" => "Login / Registration",
+	"login_registration" => "Login / Sign up",
 
 	"registration" => "Registration",
 
 	"register_here" => 'You do not have an account? Register here!',
+
+	'validate_budget' => 'Validate budget',
+
+	'search' => 'Search',
+
+	'newsletter_input' => 'Write your email here',
+
+	'distribution' => 'We supply to the whole country: Mainland Portugal and Islands',
 
 	"name" => "Name",
 

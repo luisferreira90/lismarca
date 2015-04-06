@@ -44,12 +44,12 @@
 	<div class = 'header-middle'>
 		<div class = 'validate-budget'>
 			<img src = '/images/arrow-right-red.svg'>
-			<a href = 'registo'>.VALIDAR ORÇAMENTO</a>
+			<a href = 'registo'>{{Lang::get('strings.validate_budget')}}</a>
 		</div>
 
 		<div class = 'search'>
 			<form class='search_field' method='GET' action='http://www.google.com/search'>
-				<input name='search'/ placeholder='Pesquisar...' type = 'text'>
+				<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
 				<button type='submit'>
 					<img src='/images/search.svg' alt='Pesquisa'/>
 				</button>

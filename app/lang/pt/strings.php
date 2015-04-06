@@ -8,6 +8,14 @@ return array(
 
 	"register_here" => 'Ainda não tem uma conta? Registe-se aqui!',
 
+	'validate_budget' => 'Validar orçamento',
+
+	'search' => 'Pesquisar',
+
+	'newsletter_input' => 'Coloque o seu email aqui',
+
+	'distribution' => 'Fornecemos para todo o país: Portugal Continental e Ilhas',
+
 	"name" => "Nome",
 
 	"telephone" => "Telefone",
