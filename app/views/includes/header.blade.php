@@ -1,40 +1,40 @@
 <header>
 	<div class = 'header-upper'>
-
-		<div class = 'social-networks'>
-			<img src = '/images/arrow-right.svg' class = 'marker'>
-			<a href = '#'><img src = '/images/social-youtube.svg'></a>
-			<a href = '#'><img src = '/images/social-linkedin.svg'></a>
-			<a href = '#'><img src = '/images/social-gplus.svg'></a>
-			<a href = '#'><img src = '/images/social-pinterest.svg'></a>
-			<a href = '#'><img src = '/images/social-facebook.svg'></a>
-		</div>
-
-		<div class = 'header-upper-right'>
-
-			<div class = 'language'>
+		<div class = 'header-upper-inner'>
+			<div class = 'social-networks'>
 				<img src = '/images/arrow-right.svg' class = 'marker'>
-				@if(Session::get('language') === 'en') 
-					<a href = 'language?lang=pt'><img class = 'language-flag' src = '/images/flag-icon-pt.svg'></a>
-				@else
-					<a href = 'language?lang=en'><img class = 'language-flag' src = '/images/flag-icon-en.svg'></a>
-				@endif		
+				<a href = '#'><img src = '/images/social-youtube.svg'></a>
+				<a href = '#'><img src = '/images/social-linkedin.svg'></a>
+				<a href = '#'><img src = '/images/social-gplus.svg'></a>
+				<a href = '#'><img src = '/images/social-pinterest.svg'></a>
+				<a href = '#'><img src = '/images/social-facebook.svg'></a>
 			</div>
 
-			<div class = 'login'>
-				<img src = '/images/lock.svg' class = 'marker'>
-				@if(Auth::check() && User::isAdmin())
-					<a href = 'admin'>Administração</a>
-					<a href = 'logout'> / Logout</a>
-				@elseif(Auth::check())
-					<a href = 'profile'>{{Lang::get('strings.profile')}}</a>
-					<a href = 'logout'> / Logout</a>
-				@else
-					<a href = 'login'>{{Lang::get('strings.login_registration')}}</a>
-				@endif
-			</div>	
-		</div>
+			<div class = 'header-upper-right'>
 
+				<div class = 'language'>
+					<img src = '/images/arrow-right.svg' class = 'marker'>
+					@if(Session::get('language') === 'en') 
+						<a href = 'language?lang=pt'><img class = 'language-flag' src = '/images/flag-icon-pt.svg'></a>
+					@else
+						<a href = 'language?lang=en'><img class = 'language-flag' src = '/images/flag-icon-en.svg'></a>
+					@endif		
+				</div>
+
+				<div class = 'login'>
+					<img src = '/images/lock.svg' class = 'marker'>
+					@if(Auth::check() && User::isAdmin())
+						<a href = 'admin'>Administração</a>
+						<a href = 'logout'> / Logout</a>
+					@elseif(Auth::check())
+						<a href = 'profile'>{{Lang::get('strings.profile')}}</a>
+						<a href = 'logout'> / Logout</a>
+					@else
+						<a href = 'login'>{{Lang::get('strings.login_registration')}}</a>
+					@endif
+				</div>	
+			</div>
+		</div>
 	</div>
 
 	<div class = 'logo'>

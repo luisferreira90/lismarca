@@ -2,7 +2,7 @@
 
 
 header {
-	width:98.5%;
+	width:100%;
 	display: inline-block;
 	background-color:white;
 } 
@@ -25,25 +25,21 @@ header a {
 	display:inline-block;
 	width:100%;
 	background-color:#e6e7e9;
-	padding: 5px 2px;
+	padding: 5px 0px;
 	margin-bottom:10px;
 }
 
-.social-networks {
-	float:left;
-}
-
-.header-upper-right {
+.header-upper-inner {
 	float:right;
 }
 
-.language {
-	float:left;
+.header-upper-inner div{
+	margin:0px 2px;
 }
 
 .login {
 	padding:0 10px;
-	float:left;
+	float:right;
 }
 
 .logo {
@@ -63,32 +59,6 @@ header a {
 .validate-budget {
 	font-weight: bold;
 	font-size:14px;
-}
-
-.search_field {
-	width:200px;
-	display: inline-block;
-	background-color:#e6e7e9;
-}
-
-.search_field input {
-	width:87%;
-	border: none;
-	background-color:#e6e7e9;
-	font-style:italic;
-	font-size:11px;
-}
-
-.search_field button {
-	position:relative;
-	right:-2%;
-	float:right;
-	border: none;
-	background: none;
-}
-
-.search_field button img {
-	width:23px;
 }
 
 header nav {
@@ -130,51 +100,19 @@ header nav li:hover {
 
 @media only screen and (min-width: 500px) {
 	
-	.header-upper {
-		padding:5px 10px;
+	.header-upper-inner div{
+		margin:0px 15px;
 	}
 	
-	.header-upper-right {
-		padding-right:15px;
-	}
-	
-	.language {
-		margin-right:30px;
+	.header-upper-inner div:last-child{
+		margin-right:0px;
 	}
 	
 }
 
 
 @media only screen and (min-width: 980px) {	
-
-	header {
-		text-align:right;
-	} 
-
-	header img {
-		vertical-align:middle;
-	}
-
-	header a {
-		text-decoration:none;
-		font-size:14px;
-		color:#6d6f71;
-	}
 	
-	.header-upper div{
-		float:none;
-	}
-
-	.logo {
-		width:70%;
-		max-width: 700px;
-		float:left;
-	}
-
-	.language {
-		margin-left:30px;
-	}
-
 	.language {
 		padding:0 30;
 		border-left: solid  1px grey;
