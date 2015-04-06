@@ -39,7 +39,6 @@ footer .footer-lower {
 		display:inline-block;
 		width:100%;
 		margin-top:20px;
-
 	}
 	
 	footer nav ul {
@@ -74,6 +73,7 @@ footer .footer-lower {
 	}
 
 	footer .distribution {
+		padding-left:4%;
 		border-left:solid 1px grey;
 	}
 
