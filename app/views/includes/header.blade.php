@@ -69,6 +69,6 @@
 
 </header>	
 
-<hr></hr>
+<hr class = 'header-hr'></hr>
 
 <div class = 'clear-fix'></div>

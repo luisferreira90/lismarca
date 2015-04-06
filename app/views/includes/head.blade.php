@@ -22,7 +22,7 @@
 {{ HTML::style('css/bjqs.css') }}
 
 <script>
-
+/*
 jQuery(document).ready(function($) {
 	$('#slideshow').bjqs({
 		// width and height need to be provided to enforce consistency
@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
 		'randomstart' : false, // start slider at random slide
 		'responsive' : true // enable responsive capabilities (beta)
 	});
-});
+});*/
 
 
 </script>
