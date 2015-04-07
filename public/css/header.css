@@ -34,7 +34,7 @@ header a {
 }
 
 .header-upper-inner div{
-	margin:0px 2px;
+	margin:0px 0px;
 }
 
 .login {
@@ -42,14 +42,73 @@ header a {
 	float:right;
 }
 
+.header-lower {
+	height: 72px;
+}
+
 .logo {
-	max-width: 300px;
+	max-width: 220px;
+	position:relative;
+	top:5px;
 	display:inline-block;
 	float:left;
 }
 
+#main-menu {
+	height: 100vh;
+	display:block;
+	position:absolute;
+	right:0px;
+	z-index: 1;
+	background-color:grey;
+	color:white;
+	transform: translate(250px, 0px);
+	transition: translate 1s ease;
+}
+
+#main-menu li {
+	list-style: none;
+}
+
+#hamburger {
+	margin-top:-5px;
+	float:right;
+	transition: translate 1s ease;
+	background-color:grey;
+	height: 77px;
+	width:70px;
+	background-image: url('../images/hamburger.svg');
+	background-repeat:no-repeat;
+	background-position: 3;
+}
+
+#hamburger:hover {
+	transform:translate(-119px, 0px);
+	cursor:pointer;
+}
+
+#hamburger:hover + #main-menu {
+	transform:translate(50px, -21px);
+}
+
+
+
+
+
+@media only screen and (min-width: 330px) {
+	
+	.header-upper-inner div{
+		margin:0px 2px;
+	}
+	
+}
+
 
 @media only screen and (min-width: 400px) {
+	
+	.logo {
+		max-width: 300px;
+	}
 	
 	.marker {
 		display:inline;
@@ -58,7 +117,7 @@ header a {
 }
 
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 480px) {
 	
 	.header-upper-inner div{
 		margin:0px 15px;

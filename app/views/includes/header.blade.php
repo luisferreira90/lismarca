@@ -42,7 +42,8 @@
 			<div class = 'logo'>
 				<a href = '/'><img src = '/images/logo.svg' alt = 'Logo Lismarca' class = 'logo'></a>
 			</div>
-			<ul>
+			<div id = 'hamburger'></div>
+			<ul id = 'main-menu'>
 				<li>Empresa</li>
 				<li>Produtos</li>
 				<li>Contactos</li>
