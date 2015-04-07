@@ -1,9 +1,11 @@
 var menu;
 var hamburger;
 var menu_state;
+var mq;
 
 window.onload = function(){
 	menu_state = 0;
+	mq = window.matchMedia( "(min-width: 980px)" );
 };
 
 function ConfirmDelete() {
@@ -37,4 +39,31 @@ function showMenu() {
 		document.getElementById('hamburger').style.msTransform = "translate(-199px, 0px)";
 		menu_state = 1;
 	}
+}
+
+// media query event handler
+if (matchMedia) {
+	var mq = window.matchMedia("(min-width: 980px)");
+	mq.addListener(WidthChange);
+	WidthChange(mq);
+}
+
+// media query change
+function WidthChange(mq) {
+
+	if (mq.matches) {
+		document.getElementById('main-menu').style.transform = "translate(0px, 0px)";
+		document.getElementById('main-menu').style.webkitTransform = "translate(0px, 0px)";
+		document.getElementById('main-menu').style.msTransform = "translate(0px, 0px)";
+
+		document.getElementById('hamburger').style.transform = "translate(0px, 0px)";
+		document.getElementById('hamburger').style.webkitTransform = "translate(0px, 0px)";
+		document.getElementById('hamburger').style.msTransform = "translate(0px, 0px)";
+	}
+	else {
+		menu_state = 1;
+		showMenu();
+	}
+
+
 }
