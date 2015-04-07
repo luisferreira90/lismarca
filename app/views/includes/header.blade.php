@@ -42,28 +42,25 @@
 			<div class = 'logo'>
 				<a href = '/'><img src = '/images/logo.svg' alt = 'Logo Lismarca' class = 'logo'></a>
 			</div>
-			<div id = 'hamburger'></div>
+			<div id = 'hamburger' onclick = 'showMenu()'></div>
 			<ul id = 'main-menu'>
-				<li>Empresa</li>
-				<li>Produtos</li>
-				<li>Contactos</li>
-				<li>Novidades</li>
-				<li>Portfolio</li>
+				<li><a href = '#'>Empresa</a></li>
+				<li><a href = '#'>Produtos</a></li>
+				<li><a href = '#'>Contactos</a></li>
+				<li><a href = '#'>Novidades</a></li>
+				<li><a href = '#'>Portfolio</a></li>
 				<li class = 'validate-budget'>
-					<!--<img src = '/images/arrow-right-red.svg'>-->
 					<a href = 'registo'>{{Lang::get('strings.validate_budget')}}</a>
 				</li>
 				<li class = 'search'>
-					<img src='/images/search.svg' alt='Pesquisa'/>
-				</li>
-				<!--<li class = 'search'>
+					<img src='/images/search.svg' alt='Pesquisa'/ class = 'search-icon'>
 					<form class='search_field' method='GET' action='http://www.google.com/search'>
 						<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
 						<button type='submit'>
 							<img src='/images/search.svg' alt='Pesquisa'/>
 						</button>
 					</form>
-				</li>-->
+				</li>
 			</ul>
 		</nav>
 	</div>

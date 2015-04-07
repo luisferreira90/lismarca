@@ -48,8 +48,6 @@ header a {
 
 .logo {
 	max-width: 220px;
-	position:relative;
-	top:5px;
 	display:inline-block;
 	float:left;
 }
@@ -61,37 +59,55 @@ header a {
 	right:0px;
 	z-index: 1;
 	background-color:grey;
-	color:white;
+	padding:0px 10px;
+	transition: all 1s ease;
+	text-transform: uppercase;
+	font-weight: bold;	
+	list-style: none;
+	line-height:3em;
+	color:#6d6f71;
 	transform: translate(250px, 0px);
-	transition: translate 1s ease;
+	-ms-transform: translate(250px, 0px); /* IE 9 */
+	-webkit-transform: translate(250px, 0px); /* Chrome, Safari, Opera */
+}
+
+.search-icon {
+	display:none;
 }
 
 #main-menu li {
-	list-style: none;
+	border-top:solid 1px;
+}
+
+#main-menu li a {
+	color:#6d6f71;
+	transition: all 0.5s ease;
+}
+
+#main-menu li a:hover {
+	color:white;
 }
 
 #hamburger {
+	vertical-align: middle;
 	margin-top:-5px;
 	float:right;
-	transition: translate 1s ease;
+	transition: all 1s ease;
 	background-color:grey;
 	height: 77px;
 	width:70px;
-	background-image: url('../images/hamburger.svg');
 	background-repeat:no-repeat;
-	background-position: 3;
+	background-position:3;
+	background-image: url('../images/hamburger.svg');
 }
 
 #hamburger:hover {
-	transform:translate(-119px, 0px);
 	cursor:pointer;
 }
 
-#hamburger:hover + #main-menu {
-	transform:translate(50px, -21px);
+header .search_field {
+	width:180px;
 }
-
-
 
 
 

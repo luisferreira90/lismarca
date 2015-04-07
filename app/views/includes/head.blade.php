@@ -18,8 +18,9 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 {{ HTML::script('js/bjqs.min.js') }}
-
 {{ HTML::style('css/bjqs.css') }}
+
+{{ HTML::script('js/scripts.js') }}
 
 <script>
 /*
