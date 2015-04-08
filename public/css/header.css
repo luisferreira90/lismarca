@@ -239,8 +239,8 @@ header .search_field {
 		color:#6d6f71;
 	}
 	
-	header nav li:last-child {
-		border-right: none;
+	header nav li:first-child {
+		border-left: none!important;
 	}
 
 	header nav li:hover {
