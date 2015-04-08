@@ -13,6 +13,14 @@ header a {
 	color:#6d6f71;
 }
 
+.fixed {
+	position:fixed;
+	margin-top:0;
+	top:0;
+	left:0;
+	right:0;
+}
+
 .marker {
 	display:none;
 }
@@ -44,6 +52,8 @@ header a {
 
 .header-lower {
 	height: 72px;
+	z-index: 1;
+	background-color:white;
 }
 
 .logo {
@@ -115,6 +125,10 @@ header .search_field {
 	width:180px;
 }
 
+/*.validate-budget {
+	background-color: #e11b22;
+}*/
+
 
 
 @media only screen and (min-width: 330px) {
@@ -158,6 +172,7 @@ header .search_field {
 	header {
 		height:110px;
 		overflow: hidden;
+		margin-bottom:20px;
 	}
 	
 	.header-upper {
@@ -173,11 +188,20 @@ header .search_field {
 	.logo {
 		margin-top:8px;
 	}
+	
+	.fixed {
+		position:fixed;
+		margin-top:0;
+		top:0;
+		left:10;
+		right:10;
+	}
 
 	header nav {
 		width:100%;
 		height: 100%;
 		display:inline-block;
+		overflow: hidden;
 	}
 
 	#main-menu {
@@ -249,6 +273,19 @@ header .search_field {
 	
 	header nav li a{
 		font-size:14px;
+	}
+	
+}
+
+
+@media only screen and (min-width: 1680px) {	
+
+	.fixed {
+		position:fixed;
+		margin-top:0;
+		top:0;
+		max-width:1680px;
+		left:calc((100% - 1680px)/2);
 	}
 	
 }

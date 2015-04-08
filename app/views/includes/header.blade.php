@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class = 'header-lower'>
+	<div class = 'header-lower' id = 'headerLower'>
 		<nav>
 			<div class = 'logo'>
 				<a href = '/'><img src = '/images/logo.svg' alt = 'Logo Lismarca' class = 'logo'></a>
@@ -64,9 +64,22 @@
 			</ul>
 		</nav>
 	</div>
-
+	<hr class = 'header-hr' id = 'headerHr'></hr>
 </header>	
 
-<hr class = 'header-hr'></hr>
+
 
 <div class = 'clear-fix'></div>
+
+<script>
+
+	$(window).scroll(function () {
+	    if( $(window).scrollTop() > $('#headerLower').offset().top && !($('#headerLower').hasClass('fixed'))) {
+	    	$('#headerLower').addClass('fixed');
+	    } 
+	    else if ($(window).scrollTop() == 0) {
+	    	$('#headerLower').removeClass('fixed');
+	    }
+	});
+
+</script>
