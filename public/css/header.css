@@ -60,7 +60,7 @@ header a {
 	right:50px;
 	top:19px;
 	z-index: 1;
-	background-color:grey;
+	background-color:white;
 	padding:0px 10px;
 	transition: all .7s ease;
 	text-transform: uppercase;
@@ -81,13 +81,17 @@ header a {
 	border-top:solid 1px;
 }
 
+#main-menu li:first-child {
+	border-top:none;
+}
+
 #main-menu li a {
-	color:#6d6f71;
+	color:darkgrey;
 	transition: all 0.5s ease;
 }
 
 #main-menu li a:hover {
-	color:white;
+	color:grey;
 }
 
 #hamburger {
@@ -95,7 +99,7 @@ header a {
 	margin-top:-5px;
 	float:right;
 	transition: all .7s ease;
-	background-color:grey;
+	background-color:white;
 	height: 77px;
 	width:70px;
 	background-repeat:no-repeat;
