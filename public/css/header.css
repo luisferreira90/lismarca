@@ -57,11 +57,12 @@ header a {
 	height: 100vh;
 	display:block;
 	position:absolute;
-	right:0px;
+	right:50px;
+	top:19px;
 	z-index: 1;
 	background-color:grey;
 	padding:0px 10px;
-	transition: all 1s ease;
+	transition: all .7s ease;
 	text-transform: uppercase;
 	font-weight: bold;	
 	list-style: none;
@@ -93,7 +94,7 @@ header a {
 	vertical-align: middle;
 	margin-top:-5px;
 	float:right;
-	transition: all 1s ease;
+	transition: all .7s ease;
 	background-color:grey;
 	height: 77px;
 	width:70px;

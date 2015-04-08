@@ -30,9 +30,9 @@ function showMenu() {
 		menu_state = 0;
 	}
 	else {
-		document.getElementById('main-menu').style.transform = "translate(0px, -21px)";
-		document.getElementById('main-menu').style.webkitTransform = "translate(0px, -21px)";
-		document.getElementById('main-menu').style.msTransform = "translate(0px, -21px)";
+		document.getElementById('main-menu').style.transform = "translate(50px, 0px)";
+		document.getElementById('main-menu').style.webkitTransform = "translate(50px, 0px)";
+		document.getElementById('main-menu').style.msTransform = "translate(50px, 0px)";
 
 		document.getElementById('hamburger').style.transform = "translate(-199px, 0px)";
 		document.getElementById('hamburger').style.webkitTransform = "translate(-199px, 0px)";
@@ -40,6 +40,8 @@ function showMenu() {
 		menu_state = 1;
 	}
 }
+
+
 
 // media query event handler
 if (matchMedia) {
