@@ -28,7 +28,7 @@ header a {
 .header-upper {
 	display:inline-block;
 	width:100%;
-	background-color:#F2F2F2;
+	/*background-color:#F2F2F2;*/
 	padding: 5px 0px;
 	margin-bottom:5px;
 }
@@ -54,6 +54,7 @@ header a {
 	height: 72px;
 	z-index: 1;
 	background-color:white;
+	border-bottom: solid 2px #e6e7e9;
 }
 
 .logo {
@@ -115,7 +116,9 @@ header a {
 	background-repeat:no-repeat;
 	background-position:3;
 	background-image: url('../images/hamburger.svg');
+	background-size:40px;
 }
+
 
 #hamburger:hover {
 	cursor:pointer;
@@ -125,9 +128,9 @@ header .search_field {
 	width:180px;
 }
 
-/*.validate-budget {
-	background-color: #e11b22;
-}*/
+.fixed-menu {
+	top:-19px!important;	
+}
 
 
 
@@ -196,6 +199,10 @@ header .search_field {
 		left:10;
 		right:10;
 	}
+	
+	.header-lower {
+		border-top: solid 1px #e6e7e9;
+	}
 
 	header nav {
 		width:100%;
@@ -223,8 +230,8 @@ header .search_field {
 		padding-top:40px;
 		font-size:12px;
 		display:inline-block;
-		border-right: solid 1px #e6e7e9;
-		border-top:none;
+		border-left: solid 1px #e6e7e9;
+		border-top: none;
 		transition: background-color .5s ease;
 	}
 

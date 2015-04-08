@@ -64,7 +64,7 @@
 			</ul>
 		</nav>
 	</div>
-	<hr class = 'header-hr' id = 'headerHr'></hr>
+	<!--<hr class = 'header-hr'></hr>-->
 </header>	
 
 
@@ -76,9 +76,11 @@
 	$(window).scroll(function () {
 	    if( $(window).scrollTop() > $('#headerLower').offset().top && !($('#headerLower').hasClass('fixed'))) {
 	    	$('#headerLower').addClass('fixed');
+	    	$('#main-menu').addClass('fixed-menu');
 	    } 
 	    else if ($(window).scrollTop() == 0) {
 	    	$('#headerLower').removeClass('fixed');
+	    	$('#main-menu').removeClass('fixed-menu');
 	    }
 	});
 
