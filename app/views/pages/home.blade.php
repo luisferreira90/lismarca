@@ -108,4 +108,11 @@
 	</div>
 </div>
 
+<hr class = 'clear-fix'>
+<div class = 'location'>
+	<p class = 'red title-smaller'>.LOCALIZAÇÃO</p>
+	<img src="/images/location.svg">
+	<p class = 'dark-grey'>Rua Mestre Sidónio 9A, 9020-365 Funchal, Madeira | Portugal</p>
+</div>
+
 @stop
