@@ -92,6 +92,14 @@ header a {
 	border-top:solid 1px;
 }
 
+#main-menu li:hover {
+	background-color:#e6e7e9;
+}
+
+#main-menu li:last-child:hover {
+	background-color:white;
+}
+
 #main-menu li:first-child {
 	border-top:none;
 }
@@ -99,10 +107,6 @@ header a {
 #main-menu li a {
 	color:darkgrey;
 	transition: all 0.5s ease;
-}
-
-#main-menu li a:hover {
-	color:grey;
 }
 
 #hamburger {
@@ -189,7 +193,7 @@ header .search_field {
 	}
 	
 	.logo {
-		margin-top:8px;
+		margin-top:7px;
 	}
 	
 	.fixed {
@@ -227,16 +231,12 @@ header .search_field {
 		height: 90%;
 		margin:0;
 		padding:0px 11px;
-		padding-top:40px;
+		padding-top:38px;
 		font-size:12px;
 		display:inline-block;
 		border-left: solid 1px #e6e7e9;
 		border-top: none;
 		transition: background-color .5s ease;
-	}
-
-	#main-menu li a:hover {
-		color:#6d6f71;
 	}
 	
 	header nav li:first-child {
@@ -245,7 +245,11 @@ header .search_field {
 
 	header nav li:hover {
 		cursor:pointer;
-		background-color:lightgrey;
+		background-color:#e11b22!important;
+	}
+	
+	header nav li:hover a{
+		color:white!important;
 	}
 	
 	.search-icon {

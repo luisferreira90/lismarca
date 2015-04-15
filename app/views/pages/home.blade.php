@@ -29,14 +29,6 @@
 </section>
 
 <section class = 'home-sections'>
-	<div class = 'section-select white inverse'>
-		<div class = 'inner'>
-			<h1>SOMBREAMENTO E PROTECÇÃO SOLAR</h1>
-			<p>
-				Estores exterior e interior, Toldos, Coberturas Tensionadas, Chapéus de Sol
-			</p>
-		</div>
-	</div>
 	<div class = 'three-columns'>
 		<div>
 			<img class="bottom" src="/images/home/4t.jpg" />
@@ -50,6 +42,14 @@
 			<img class="bottom" src="/images/home/6t.jpg" />
 	  		<img class="top" src="/images/home/6.jpg" />
 	  	</div>
+	</div>
+	<div class = 'section-select white'>
+		<div class = 'inner'>
+			<h1>SOMBREAMENTO E PROTECÇÃO SOLAR</h1>
+			<p>
+				Estores exterior e interior, Toldos, Coberturas Tensionadas, Chapéus de Sol
+			</p>
+		</div>
 	</div>
 </section>
 
