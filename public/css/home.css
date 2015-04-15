@@ -1,64 +1,20 @@
-/*##### Homepage #####*/
-
 .home-sections {
-	width:100%;
+	width:90%;
 	display: inline-block;
-	margin-bottom: 30px;
+	margin: 15px 5%;
 }
 
 .home-sections div {
-	width:48%;
-	height: 240px;
+	width:100%;
 	display: inline-block;
 }
 
-.section-select {
-	margin-left:4%;
-}
-
-.inverse {
-	margin-left:0%;
-	margin-right:4%;
-}
-
-.home-sections .three-columns div {
-  	position:relative;
-  	width:31%;
-	margin-left:3.384615384615385%;
-	height: 100%;
-}
-
-.home-sections .three-columns img {
-	position:absolute;
-	width:100%;
-	height:100%;
-  	-webkit-transition: opacity 1s ease-in-out;
-  	-moz-transition: opacity 1s ease-in-out;
-  	-o-transition: opacity 1s ease-in-out;
-  	transition: opacity 1s ease-in-out;
-}
-
-.home-sections:hover > .three-columns img.top {
-  opacity:0;
-}
-
-.home-sections .three-columns div:first-child {
-	margin-left:0;
-	float:left;
-}
-
-.home-sections .three-columns div:last-child {
-	margin-right:0;
-	float:right;
-}
-
-.three-columns {
-	float:left;
+.home-sections .three-columns {
+	display:none;
 }
 
 .section-select {
 	text-align:center;
-	float:left;
 	background-color: #e11b22;
 	transition: background-color 1s ease;
 }
@@ -67,31 +23,19 @@
 	background-color: #6d6f71;
 }
 
-.section-select .inner {
-	width:90%;
-	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
-}
-
 .section-select h1 {
-	font-size:15px;
-	margin-bottom:0;
+	display:inline-block;
+	font-size:25px;
 }
 
-.two-columns {
-	width:100%;
-	display: inline-block;
+.section-select p {
+	display:none;
 }
 
-.promotion {
-	width:58%;
-	float:left;
-}
-
+.promotion,
 .new {
-	width:38%;
-	float:right;
+	width:90%;
+	margin: 20px 5%;
 }
 
 .two-columns h3, .two-columns h4 {
@@ -127,11 +71,164 @@ iframe {
 }
 
 .form-wrap {
-  display:block;
-  max-width:400px;
-  margin:60px auto;
+	display:block;
+	max-width:400px;
+	margin:60px auto;
 }
 
 .help-block {
 	display:none;
+}
+
+
+@media only screen and (min-width: 980px) {
+	
+	.home-sections {
+		width:100%;
+		display: inline-block;
+		margin: 15px 0;
+	}
+
+	.home-sections div {
+		width:48%;
+		height: 240px;
+		display: inline-block;
+	}
+
+	.section-select {
+		margin-left:4%;
+	}
+
+	.inverse {
+		margin-left:0%;
+		margin-right:4%;
+	}
+
+	.home-sections .three-columns div {
+			position:relative;
+		display:inline-block;
+			width:31%;
+		margin-left:3.384615384615385%;
+		height: 100%;
+	}
+
+	.home-sections .three-columns img {
+		position:absolute;
+		width:100%;
+		height:100%;
+			-webkit-transition: opacity 1s ease-in-out;
+			-moz-transition: opacity 1s ease-in-out;
+			-o-transition: opacity 1s ease-in-out;
+			transition: opacity 1s ease-in-out;
+	}
+
+	.home-sections:hover > .three-columns img.top {
+		opacity:0;
+	}
+
+	.home-sections .three-columns div:first-child {
+		margin-left:0;
+		float:left;
+	}
+
+	.home-sections .three-columns div:last-child {
+		margin-right:0;
+		float:right;
+	}
+
+	.home-sections .three-columns {
+		float:left;
+		display: inline-block;
+	}
+
+	.section-select {
+		text-align:center;
+		float:left;
+		background-color: #e11b22;
+		transition: background-color 1s ease;
+	}
+	
+	.section-select p {
+		display:inline-block;
+	}
+
+	.home-sections:hover > .section-select  {
+		background-color: #6d6f71;
+	}
+
+	.section-select .inner {
+		width:90%;
+		position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+	}
+
+	.section-select h1 {
+		font-size:41px;
+		margin-bottom:0;
+	}
+
+	.two-columns {
+		width:100%;
+		display: inline-block;
+	}
+	
+	.promotion,
+	.new {
+		width:90%;
+		margin: 0;
+	}
+
+	.promotion {
+		width:58%;
+		float:left;
+	}
+
+	.new {
+		width:38%;
+		float:right;
+	}
+
+	.two-columns h3, .two-columns h4 {
+		margin:0;
+	}
+
+	.promotion img, .new img {
+		width:100%;
+	}
+
+	.video, .portfolio {
+		display:inline-block;
+		width:48%;
+		height:350px;
+		overflow:hidden;
+	}
+
+	.video {
+		float:left;
+	}
+
+	iframe {
+		width:100%;
+		height: 95%;
+	}
+
+	.portfolio {
+		float:right;
+	}
+
+	.portfolio img {
+		width:100%;
+	}
+
+	.form-wrap {
+		display:block;
+		max-width:400px;
+		margin:60px auto;
+	}
+
+	.help-block {
+		display:none;
+	}
+	
 }
