@@ -8,6 +8,16 @@ window.onload = function(){
 	mq = window.matchMedia( "(min-width: 980px)" );
 };
 
+jQuery(document).ready(function($) {
+    var $body = $(document);
+    $body.bind('scroll', function() {
+        // "Disable" the horizontal scroll.
+        if ($body.scrollLeft() !== 0) {
+            $body.scrollLeft(0);
+        }
+    });
+});
+
 function ConfirmDelete() {
   var x = confirm("Tem a certeza que deseja apagar?");
   if (x)
