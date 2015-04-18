@@ -28,7 +28,6 @@ header a {
 .header-upper {
 	display:inline-block;
 	width:100%;
-	/*background-color:#F2F2F2;*/
 	padding: 5px 0px;
 	margin-bottom:5px;
 }
@@ -70,7 +69,7 @@ header a {
 	position:absolute;
 	right:50px;
 	top:19px;
-	z-index: 1;
+	z-index: 3;
 	background-color:white;
 	padding:0px 10px;
 	transition: all .7s ease;
