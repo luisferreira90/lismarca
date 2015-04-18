@@ -5,6 +5,31 @@ Route::get('/', function()
 	return View::make('pages/home');
 });
 
+Route::get('/empresa', function()
+{
+	return View::make('pages/company');
+});
+
+Route::get('/produtos', function()
+{
+	return View::make('pages/products');
+});
+
+Route::get('/contactos', function()
+{
+	return View::make('pages/contacts');
+});
+
+Route::get('/novidades', function()
+{
+	return View::make('pages/new');
+});
+
+Route::get('/portfolio', function()
+{
+	return View::make('pages/portfolio');
+});
+
 Route::controller('password', 'RemindersController');
 
 Route::get('registo', array('as' => 'registo', 'uses' => 'UsersController@registration'));

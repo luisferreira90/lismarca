@@ -28,7 +28,6 @@ header a {
 .header-upper {
 	display:inline-block;
 	width:100%;
-	/*background-color:#F2F2F2;*/
 	padding: 5px 0px;
 	margin-bottom:5px;
 }
@@ -89,23 +88,25 @@ header a {
 	display:none;
 }
 
-#main-menu li {
+#main-menu a li {
 	border-top:solid 1px;
+	color:darkgrey;
 }
 
-#main-menu li:hover {
-	background-color:#e6e7e9;
+#main-menu a li:hover {
+	background-color:#e6e7e9!important;
 }
 
-#main-menu li:last-child:hover {
-	background-color:white;
+#main-menu .search:hover {
+	background-color:white!important;
+	cursor:default;
 }
 
-#main-menu li:first-child {
+#main-menu > a:nth-child(1) > li:nth-child(1) {
 	border-top:none;
 }
 
-#main-menu li a {
+#main-menu a li {
 	color:darkgrey;
 	transition: all 0.5s ease;
 }
@@ -235,21 +236,24 @@ header .search_field {
 		padding-top:38px;
 		font-size:11px;
 		display:inline-block;
-		border-left: solid 1px #e6e7e9;
-		border-top: none;
 		transition: background-color .5s ease;
 	}
 	
-	header nav li:first-child {
+	#main-menu a li{
+		border-left: solid 1px #e6e7e9;
+		border-top:none!important;
+	}
+	
+	#main-menu > a:nth-child(1) > li:nth-child(1) {
 		border-left: none!important;
 	}
 
-	header nav li:hover {
+	#main-menu a li:hover {
 		cursor:pointer;
 		background-color:#e11b22!important;
 	}
 	
-	header nav li:hover a{
+	header nav li:hover{
 		color:white!important;
 	}
 	
@@ -272,8 +276,8 @@ header .search_field {
 		background-color:rgb(56,56,56);
 	}
 	
-	.search:hover {
-		cursor:pointer;
+	#main-menu .search:hover {
+		cursor:pointer!important;
 		background-color:rgb(109,110,113)!important;
 		vertical-align: top;
 	}
@@ -305,8 +309,8 @@ header .search_field {
 
 @media only screen and (min-width: 1100px) {	
 	
-	header nav li a{
-		font-size:14px;
+	#main-menu a li{
+		font-size:14px!important;
 	}
 	
 }

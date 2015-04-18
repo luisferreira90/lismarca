@@ -44,28 +44,32 @@
 			</div>
 			<div id = 'hamburger' onclick = 'showMenu()'></div>
 			<ul id = 'main-menu'>
-				<li><a href = '#'>Empresa</a></li>
-				<li><a href = '#'>Produtos</a></li>
-				<li><a href = '#'>Contactos</a></li>
-				<li><a href = '#'>Novidades</a></li>
-				<li><a href = '#'>Portfolio</a></li>
-				<li class = 'validate-budget'>
-					<a href = 'registo'>{{Lang::get('strings.validate_budget')}}</a>
-				</li>
-				<li class = 'search'>
-					<img src='/images/search.svg' alt='Pesquisa'/ class = 'search-icon'>
-					<img src='/images/search-light.svg' alt='Pesquisa'/ class = 'search-icon-light'>
-					<form class='search_field' method='GET' action='http://www.google.com/search'>
-						<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
-						<button type='submit'>
-							<img src='/images/search.svg' alt='Pesquisa'/>
-						</button>
-					</form>
-				</li>
+				<a href = 'empresa'><li>Empresa</li></a>
+				<a href = 'produtos'><li>Produtos</li></a>
+				<a href = 'contactos'><li>Contactos</li></a>
+				<a href = 'novidades'><li>Novidades</li></a>
+				<a href = 'portfolio'><li>Portfolio</li></a>
+				<a href = 'registo'>
+					<li class = 'validate-budget'>
+						{{Lang::get('strings.validate_budget')}}
+					</li>
+				</a>
+				<a href = '#'>
+					<li class = 'search'>
+						<img src='/images/search.svg' alt='Pesquisa'/ class = 'search-icon'>
+						<img src='/images/search-light.svg' alt='Pesquisa'/ class = 'search-icon-light'>
+						<form class='search_field' method='GET' action='http://www.google.com/search'>
+							<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
+							<button type='submit'>
+								<img src='/images/search.svg' alt='Pesquisa'/>
+							</button>
+						</form>
+					</li>
+				</a>
 			</ul>
 		</nav>
 	</div>
-	<!--<hr class = 'header-hr'></hr>-->
+
 </header>	
 
 
