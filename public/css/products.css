@@ -56,4 +56,55 @@
 
 .products a:hover > .top {
 	opacity:0;
+} */
+
+
+.products {
+    width: 80%;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.products .galleryItem {
+    color: #797478;
+    font: 10px/1.5 Verdana, Helvetica, sans-serif;
+    float: left;
+}
+ 
+.products .galleryItem h3 {
+    text-transform: uppercase;
+}
+ 
+.products .galleryItem img {
+    max-width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.products .galleryItem {
+    color: #797478;
+    font: 10px/1.5 Verdana, Helvetica, sans-serif;
+    float: left;    
+    width: 16%;
+    margin:  2% 2% 50px 2%; 
+}
+
+@media only screen and (max-width : 940px) {
+    .products .galleryItem {width: 20%;}
+}
+ 
+@media only screen and (max-width : 720px) {
+    .products .galleryItem {width: 28.3%;}
+}
+ 
+@media only screen and (max-width : 530px) {
+    .products .galleryItem {width: 45%;}
+}
+ 
+@media only screen and (max-width : 320px) {
+    .products .galleryItem {width: 99%;}
+    .products .galleryItem img {width: 96%;}
+    .products .galleryItem h3 {font-size: 18px;}
+    .products .galleryItem p, {font-size: 18px;}
 }

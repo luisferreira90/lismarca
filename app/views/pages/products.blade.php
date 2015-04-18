@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>Produtos</h1>
+<h1>Listagem de produtos nesta página</h1>
 
-<div class="categories">
+<div class="products">
     <div class="galleryItem">
         <a href="produtos/categoria"><img src="/images/home/1.jpg" alt=""></a>
         <h3>.Title</h3>         

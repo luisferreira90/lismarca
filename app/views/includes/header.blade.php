@@ -44,12 +44,12 @@
 			</div>
 			<div id = 'hamburger' onclick = 'showMenu()'></div>
 			<ul id = 'main-menu'>
-				<a href = 'empresa'><li>Empresa</li></a>
-				<a href = 'produtos'><li>Produtos</li></a>
-				<a href = 'contactos'><li>Contactos</li></a>
-				<a href = 'novidades'><li>Novidades</li></a>
-				<a href = 'portfolio'><li>Portfolio</li></a>
-				<a href = 'registo'>
+				<a href = '/empresa'><li>Empresa</li></a>
+				<a href = '/produtos'><li>Produtos</li></a>
+				<a href = '/contactos'><li>Contactos</li></a>
+				<a href = '/novidades'><li>Novidades</li></a>
+				<a href = '/portfolio'><li>Portfolio</li></a>
+				<a href = '/registo'>
 					<li class = 'validate-budget'>
 						{{Lang::get('strings.validate_budget')}}
 					</li>
