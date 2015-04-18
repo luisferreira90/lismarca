@@ -1,0 +1,45 @@
+.products {
+	display:inline-block;
+	width:100%;
+}
+
+.products .three-columns{
+	width:100%;
+	display:inline-block;
+}
+
+.products .three-columns div {
+	width:30.666%;
+	margin:0 1%;
+	display:inline-block;
+}
+
+.products .three-columns div:first-child {
+	margin-left:0!important;
+}
+
+.products .three-columns div:last-child {
+	float:right;
+}
+
+.products .three-columns div a {
+	display:block;
+	position:relative;
+	height: 100%;
+	width:100%;
+}
+
+.products .three-columns div a img{
+	width:100%;
+	height:300px;
+	display:inline-block;
+	position:absolute;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+}
+
+.products .three-columns div a:hover > .top {
+	opacity:0;
+}
