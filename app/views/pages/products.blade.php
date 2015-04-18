@@ -51,6 +51,8 @@
     </div>
 </div>
 
+<hr>
+
 {{ HTML::style('css/products.css') }}
 
 @stop
