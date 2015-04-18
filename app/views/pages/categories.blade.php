@@ -102,7 +102,7 @@
 $(document).ready(function(){
   $('.slideshow').slick({
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 3
   });
 });

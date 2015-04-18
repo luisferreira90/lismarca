@@ -108,3 +108,7 @@
     .products .galleryItem h3 {font-size: 18px;}
     .products .galleryItem p, {font-size: 18px;}
 }
+
+.slideshow img{
+    max-width:140px;
+}
