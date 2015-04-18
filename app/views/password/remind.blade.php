@@ -29,4 +29,4 @@
 
 @stop
 
-{{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css') }}
+{{ HTML::style('css/bootstrap.css') }}

@@ -1,5 +1,3 @@
-
-{{ HTML::style('css/bootstrap.css') }}
 @extends('layouts.layout')
 
 @section('content')
@@ -78,6 +76,8 @@
 
     </div>
 </div>
+
+{{ HTML::style('css/bootstrap.css') }}
 
 <script>
 var submit = document.getElementById('submit');
