@@ -15,6 +15,11 @@ Route::get('/produtos', function()
 	return View::make('pages/products');
 });
 
+Route::get('/produtos/categoria', function()
+{
+	return View::make('pages/categories');
+});
+
 Route::get('/contactos', function()
 {
 	return View::make('pages/contacts');
