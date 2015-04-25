@@ -4,7 +4,7 @@
 
 <h1>Categorias, subcategorias, seccoes e sub seccoes aqui</h1>
 
-<div class="categories">
+<div class="gallery-list">
     <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/1.jpg" alt=""></a></div>
         <h3>.Title</h3>       

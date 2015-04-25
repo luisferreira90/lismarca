@@ -1,25 +1,25 @@
-.categories {
+.gallery-list {
     width: 80%;
     margin: 30px auto;
     overflow: hidden;
 }
 
-.categories .gallery-item {
+.gallery-list .gallery-item {
     color: #797478;
     font: 10px/1.5 Verdana, Helvetica, sans-serif;
     float: left;
 }
  
-.categories .gallery-item h3 {
+.gallery-list .gallery-item h3 {
     text-transform: uppercase;
 }
  
-.categories .gallery-item img {
+.gallery-list .gallery-item img {
     width: 100%;
     transition: all 1s ease;
 }
 
-.categories .gallery-item img:hover {
+.gallery-list .gallery-item img:hover {
     opacity:0.4;
     transform: scale(1.1);
 }
@@ -31,7 +31,7 @@
     border-radius:5px;
 }
 
-.categories .gallery-item {
+.gallery-list .gallery-item {
     color: #797478;
     font: 10px/1.5 Verdana, Helvetica, sans-serif;
     float: left;    
@@ -40,22 +40,22 @@
 }
 
 @media only screen and (max-width : 940px) {
-    .categories .gallery-item {width: 20%;}
+    .gallery-list .gallery-item {width: 20%;}
 }
  
 @media only screen and (max-width : 720px) {
-    .categories .gallery-item {width: 28.3%;}
+    .gallery-list .gallery-item {width: 28.3%;}
 }
  
 @media only screen and (max-width : 530px) {
-    .categories .gallery-item {width: 45%;}
+    .gallery-list .gallery-item {width: 45%;}
 }
  
 @media only screen and (max-width : 320px) {
-    .categories .gallery-item {width: 99%;}
-    .categories .gallery-item img {width: 100%;}
-    .categories .gallery-item h3 {font-size: 18px;}
-    .categories .gallery-item p, {font-size: 18px;}
+    .gallery-list .gallery-item {width: 99%;}
+    .gallery-list .gallery-item img {width: 100%;}
+    .gallery-list .gallery-item h3 {font-size: 18px;}
+    .gallery-list .gallery-item p, {font-size: 18px;}
 }
 
 /*
