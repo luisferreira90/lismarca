@@ -15,7 +15,20 @@
 }
  
 .categories .galleryItem img {
-    max-width: 100%;
+    width: 100%;
+    transition: all 1s ease;
+}
+
+.categories .galleryItem img:hover {
+    opacity:0.4;
+    transform: scale(1.1);
+}
+
+.image {
+    background-color:#e11b22;
+    max-width:100%;
+    overflow: hidden;
+    border-radius:5px;
 }
 
 .categories .galleryItem {
@@ -40,7 +53,7 @@
  
 @media only screen and (max-width : 320px) {
     .categories .galleryItem {width: 99%;}
-    .categories .galleryItem img {width: 96%;}
+    .categories .galleryItem img {width: 100%;}
     .categories .galleryItem h3 {font-size: 18px;}
     .categories .galleryItem p, {font-size: 18px;}
 }
