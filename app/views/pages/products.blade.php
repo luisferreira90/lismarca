@@ -96,7 +96,11 @@
 <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
+
+{{ HTML::script('js/slick.min.js') }}
+{{ HTML::style('css/slick.css') }}
+{{ HTML::style('css/slick-theme.css') }}
+
 <script>
 
 $(document).ready(function(){
