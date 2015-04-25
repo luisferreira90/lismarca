@@ -5,47 +5,47 @@
 <h1>Categorias, subcategorias, seccoes e sub seccoes aqui</h1>
 
 <div class="categories">
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/1.jpg" alt=""></a></div>
         <h3>.Title</h3>       
     </div>
  
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/2.jpg" alt=""></a></div>
         <h3>.Title</h3>        
     </div>
 
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/3.jpg" alt=""></a></div>
         <h3>.Title</h3>       
     </div>
 
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/4.jpg" alt=""></a></div>
         <h3>.Title</h3>        
     </div>
 
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/5.jpg" alt=""></a></div>
         <h3>.Title</h3>        
     </div>
 
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/6.jpg" alt=""></a></div>
         <h3>.Title</h3>        
     </div>
 
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/7.jpg" alt=""></a></div>
         <h3>.Title</h3>        
     </div>
 
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/8.jpg" alt=""></a></div>
         <h3>.Title</h3>        
     </div>
 
-    <div class="galleryItem">
+    <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/9.jpg" alt=""></a></div>
         <h3>.Title</h3>        
     </div>
