@@ -56,39 +56,39 @@
 <h3 class = 'title red uppercase'>.Novidades</h3>
 <div class="slideshow">
     <div>
-        <img src="/images/home/1.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/1.jpg"></a></div>
         <p>Cadeira em madeira</p>
     </div>
     <div>
-        <img src="/images/home/2.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/2.jpg"></a></div>
         <p>Tapa-sol em polipropileno</p>
     </div>
     <div>
-        <img src="/images/home/3.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/3.jpg"></a></div>
         <p>Item de teste 3</p>
     </div>
     <div>
-        <img src="/images/home/4.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/4.jpg"></a></div>
         <p>Mobiliário de interior</p>
     </div>
     <div>
-        <img src="/images/home/5.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/5.jpg"></a></div>
         <p>Calhas PVC</p>
     </div>
     <div>
-        <img src="/images/home/6.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/6.jpg"></a></div>
         <p>Artigo de exposição de vinhos</p>
     </div>
     <div>
-        <img src="/images/home/7.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/7.jpg"></a></div>
         <p>Janela de correr em metal</p>
     </div>
     <div>
-        <img src="/images/home/8.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/8.jpg"></a></div>
         <p>Calhas triangulares</p>
     </div>
     <div>
-        <img src="/images/home/9.jpg">
+        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/9.jpg"></a></div>
         <p>Item de teste</p>
     </div>
 </div>
@@ -119,6 +119,13 @@ $(document).ready(function(){
     },
     {
       breakpoint: 768,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 600,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 2
