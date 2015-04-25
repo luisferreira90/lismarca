@@ -4,7 +4,7 @@
 
 <h1>Listagem de produtos nesta página</h1>
 
-<div class="gallery-list">
+<div class="gallery-list more-items">
     <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/1.jpg" alt=""></a></div>
         <h3>.Title</h3>         
