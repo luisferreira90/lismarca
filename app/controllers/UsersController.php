@@ -3,6 +3,9 @@
 class UsersController extends BaseController {
 
 	public function login() {
+		if(Auth::check()) {
+			return Redirect::route('registo');
+		}
 		return View::make('pages.login');
 	}
 
@@ -45,9 +48,13 @@ class UsersController extends BaseController {
 
 	public function registration()
 	{
+		$user = null;
+		if(Auth::check()) {
+			$user = User::find(Auth::user()->id);
+		}
 		$entity_types = EntityType::lists('name_pt', 'id');
 		$locations = Location::lists('name', 'id');
-		return View::make('pages.registration')->with('entity_types', $entity_types)->with('locations', $locations);
+		return View::make('pages.registration')->with('entity_types', $entity_types)->with('locations', $locations)->with('user', $user);
 	}
 
 
@@ -82,6 +89,27 @@ class UsersController extends BaseController {
             return Redirect::route('login');
         }
         
+	}
+
+	public function update() {		
+		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password', 'password_confirmation']);
+
+		$validator = Validator::make($data, [
+			'name' => 'required|min:2',
+			'email' => 'required|email|unique:users', 
+			'phone' => 'numeric',
+			'password' => 'required|min:6|confirmed',
+            'password_confirmation'=> 'required|min:6'
+			]);
+
+        if($validator->fails()){
+            return Redirect::route('registo')->withErrors($validator)->withInput();
+        }
+
+        $data['password'] = Hash::make($data['password']);
+
+        User::find(Auth::user()->id)->fill($data)->save();
+    	return Redirect::to('login');      
 	}
 
 

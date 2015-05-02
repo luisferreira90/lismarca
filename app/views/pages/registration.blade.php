@@ -11,7 +11,12 @@
     @endforeach
 
     <div class = 'form-wrap'>
-        {{ Form::open(array('route' => array('user.store'), 'method' => 'post', 'data-toggle' => 'validator')) }}
+
+        @if(isset($user))
+            {{ Form::model($user, array('route' => array('user.update', $user->id), 'method' => 'PUT', 'data-toggle' => 'validator')) }}
+        @else
+            {{ Form::open(array('route' => array('user.store'), 'method' => 'post', 'data-toggle' => 'validator')) }}
+        @endif
 
         <div class = 'form-group' id = 'group-name'>
             {{Form::label('name', Lang::get('strings.name'))}}*

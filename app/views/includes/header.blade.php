@@ -27,7 +27,7 @@
 						<a href = 'admin'>Administração</a>
 						<a href = 'logout'> / Logout</a>
 					@elseif(Auth::check())
-						<a href = 'profile'>{{Lang::get('strings.profile')}}</a>
+						<a href = 'registo'>{{Lang::get('strings.profile')}}</a>
 						<a href = 'logout'> / Logout</a>
 					@else
 						<a href = 'login'>{{Lang::get('strings.login_registration')}}</a>
