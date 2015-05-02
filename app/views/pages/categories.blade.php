@@ -101,12 +101,11 @@
 
 $(document).ready(function(){
   $('.slideshow').slick({
-    dots: true,
     infinite: true,
     slidesToShow: 7,
     slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     responsive: [
     {
       breakpoint: 1080,
