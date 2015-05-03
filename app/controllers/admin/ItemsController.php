@@ -4,6 +4,7 @@ namespace admin;
 
 use ProductItem;
 use ProductSubcategory;
+use ProductPhoto;
 use View;
 use Input;
 use Validator;
@@ -18,6 +19,8 @@ class ItemsController extends \BaseController {
 			'icon' => 'image',
 			'subcategory' => 'required'
 			]);
+
+		$images_validator = true;
 
         if($validator->fails()){
             return $validator;
@@ -55,6 +58,28 @@ class ItemsController extends \BaseController {
         	$data['featured'] = 0; 
 
         $new = ProductItem::create($data);
+
+        /*$images = array();
+        foreach($data['images'] as $images) {
+        	array_push();
+        }
+        die();*/
+
+        $files = Input::file('images');
+
+		foreach($files as $file) {
+		    $rules = array(
+		       'file' => 'required|mimes:png,gif,jpeg'
+		    );
+		    $validator = Validator::make(array('file'=> $file), $rules);
+		    if($validator->passes()){
+		    	$src = ProductPhoto::storeImage($file, $new->id);
+		    	ProductPhoto::create(array('src' => $src, 'product_item' => $new->id));
+		    } else {
+		        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
+		    }
+		}
+
         if($new){
             return Redirect::to('admin/items');
         }
