@@ -6,7 +6,9 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"way/generators": "~3.0"
+		"way/generators": "~3.0",
+		"intervention/image": "~2.2",
+		"ext-gd": "0.0.0.*"
 	},
 	"autoload": {
 		"classmap": [
