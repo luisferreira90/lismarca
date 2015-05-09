@@ -82,9 +82,23 @@
 
     <div class = 'form-icon'>
 
-        <h2>Icone</h2>
+        <h3>Icone / Imagem de apresentação actual</h3>
 
-        {{ HTML::image($item->icon) }}
+        {{ HTML::image('/images/produtos/icons/' . $item->icon) }}
+
+    </div>
+
+    <div class = 'form-icon'>
+
+        <h3>Fotos actuais</h3>
+
+        @foreach ($photos as $photo)
+
+             {{ Form::open(array('method' => 'delete', 'route' => array('admin.productphoto.destroy', $photo->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
+                <button type = 'submit'>{{ HTML::image('/images/produtos/items/thumbnails/' . $photo->src) }}</button>
+            {{ Form::close() }}
+
+        @endforeach
 
     </div>
 

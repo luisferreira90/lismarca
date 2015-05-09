@@ -80,7 +80,12 @@ class ItemsController extends \BaseController {
 
 
 	public function edit($id) {
-		return View::make('admin.item-edit')->with('item', ProductItem::find($id))->with('subcategories', ProductSubcategory::lists('name', 'id'));
+		$productPhoto = new ProductPhoto;
+		$photos = $productPhoto->where('product_item', '=', $id)->get();
+		return View::make('admin.item-edit')
+		->with('item', ProductItem::find($id))
+		->with('subcategories', ProductSubcategory::lists('name', 'id'))
+		->with('photos', $photos);
 	}
 
 

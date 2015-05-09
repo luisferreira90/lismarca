@@ -75,6 +75,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('item', 'ItemsController');
 
+	Route::resource('productphoto', 'ProductPhotosController');
+
 	Route::resource('entity', 'EntitiesController');
 
 	Route::resource('location', 'LocationsController');
