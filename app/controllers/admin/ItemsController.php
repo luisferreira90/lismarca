@@ -53,13 +53,10 @@ class ItemsController extends \BaseController {
         if (!Input::has('featured'))
         	$data['featured'] = 0; 
 
-        $new = ProductItem::create($data);
+		if(isset($data['icon'])) 
+        	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
 
-        /*$images = array();
-        foreach($data['images'] as $images) {
-        	array_push();
-        }
-        die();*/
+        $new = ProductItem::create($data);
 
         $files = Input::file('images');
 
@@ -75,9 +72,6 @@ class ItemsController extends \BaseController {
 		        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
 		    }
 		}
-
-		if(isset($data['icon'])) 
-        	$data['icon'] = ProductItem::storeImage(Input::file('icon'), $new->id);
 
         if($new){
             return Redirect::to('admin/items');

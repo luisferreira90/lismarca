@@ -13,9 +13,9 @@ class ProductItem extends Eloquent{
     }
 
 
-    public static function storeImage($file, $id) {
+    public static function storeImage($file) {
         $destinationPath = public_path().'/images/produtos/icons/'; 
-        $filename = $id . '-' . $file->getClientOriginalName();
+        $filename = $file->getClientOriginalName();
         Image::make($file)->resize(400, null, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath . $filename);
