@@ -16,8 +16,7 @@ class ItemsController extends \BaseController {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
 			'description' => 'required',
-			'icon' => 'image',
-			'subcategory' => 'required'
+			'icon' => 'image'
 			]);
 
 		$images_validator = true;
@@ -48,9 +47,6 @@ class ItemsController extends \BaseController {
         if($validator)
             return Redirect::to('admin/items/criar')->withErrors($validator)->withInput();
 
-        if(isset($data['icon'])) 
-        	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
-
         if (!Input::has('new'))
         	$data['new'] = 0;
 
@@ -79,6 +75,9 @@ class ItemsController extends \BaseController {
 		        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
 		    }
 		}
+
+		if(isset($data['icon'])) 
+        	$data['icon'] = ProductItem::storeImage(Input::file('icon'), $new->id);
 
         if($new){
             return Redirect::to('admin/items');

@@ -13,8 +13,10 @@ class ProductPhoto extends Eloquent{
 
     public static function storeImage($file, $id) {
         $destinationPath = public_path().'/images/produtos/items'; 
-        Image::make($file)->resize(300, 200)->save($destinationPath . '/thumbnails');
         $filename = $id . '-' . $file->getClientOriginalName();
+        Image::make($file)->resize(300, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath . '/thumbnails/' . $filename);
         $file->move($destinationPath, $filename);
         
         return $filename;
