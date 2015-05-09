@@ -58,23 +58,28 @@ class ItemsController extends \BaseController {
 
         $new = ProductItem::create($data);
 
-        $files = Input::file('images');
+        if(isset($data['images']) && !empty($data['images'][0])) {
 
-		foreach($files as $file) {
-		    $rules = array(
-		       'file' => 'required|mimes:png,gif,jpeg'
-		    );
-		    $validator = Validator::make(array('file'=> $file), $rules);
-		    if($validator->passes()){
-		    	$src = ProductPhoto::storeImage($file, $new->id);
-		    	ProductPhoto::create(array('src' => $src, 'product_item' => $new->id));
-		    } else {
-		        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
-		    }
-		}
+	        $files = Input::file('images');
+
+			foreach($files as $file) {
+			    $rules = array(
+			       'file' => 'required|mimes:png,gif,jpeg'
+			    );
+			    $validator = Validator::make(array('file'=> $file), $rules);
+			    if($validator->passes()){
+			    	$src = ProductPhoto::storeImage($file, $new->id);
+			    	ProductPhoto::create(array('src' => $src, 'product_item' => $new->id));
+			    } else {
+			        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
+			    }
+			}
+        }
+
+
 
         if($new){
-            return Redirect::to('admin/items');
+            return Redirect::to('admin/items/' . $new->id);
         }
 	}
 
@@ -94,22 +99,37 @@ class ItemsController extends \BaseController {
         if($validator)
         	return Redirect::to('admin/items/' . $id)->withErrors($validator)->withInput();
 
+		$data = Input::all();
+
 		if (Input::file('icon')) {
-			$data = Input::all();
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
     	}
-        else {
-        	$data = Input::only(['name','description','subcategory','featured','new']);
-        }
 
         if (!Input::has('new'))
         	$data['new'] = 0;
 
         if (!Input::has('featured'))
-        	$data['featured'] = 0;		
+        	$data['featured'] = 0;	
+
+		if(isset($data['images']) && !empty($data['images'][0])) {
+			$files = Input::file('images');
+
+			foreach($files as $file) {
+			    $rules = array(
+			       'file' => 'required|mimes:png,gif,jpeg'
+			    );
+			    $validator = Validator::make(array('file'=> $file), $rules);
+			    if($validator->passes()){
+			    	$src = ProductPhoto::storeImage($file, $id);
+			    	ProductPhoto::create(array('src' => $src, 'product_item' => $id));
+			    } else {
+			        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
+			    }
+			}	
+		}
 
         ProductItem::find($id)->fill($data)->save();    
-    	return Redirect::to('admin/items/' . $id)->withInput();
+    	return Redirect::to('admin/items/' . $id);
 	}
 
 
