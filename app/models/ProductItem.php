@@ -1,6 +1,5 @@
 <?php
 
-
 class ProductItem extends Eloquent{
 
 	protected $fillable = ['subcategory', 'name', 'icon', 'description', 'published','new','featured'];

@@ -13,9 +13,12 @@ class PortfolioClient extends Eloquent{
 
 
     public static function storeImage($file) {
-        $destinationPath = public_path().'/images/produtos/icons'; 
-        $filename = 'images/produtos/icons/' . $file->getClientOriginalName();
-        $upload_success = $file->move($destinationPath, $filename);
+        $destinationPath = public_path().'/images/portfolio/icons/'; 
+        $filename = $file->getClientOriginalName();
+        Image::make($file)->resize(400, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath . $filename);
+        
         return $filename;
     }
     

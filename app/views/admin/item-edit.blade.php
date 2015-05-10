@@ -47,7 +47,7 @@
         {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
 
-    .<div class = 'form-group'>
+    <div class = 'form-group'>
         {{Form::label('images', 'Imagens')}}
         {{Form::file('images[]', ['multiple' => true], array('class' => 'form-control'))}}
     </div>

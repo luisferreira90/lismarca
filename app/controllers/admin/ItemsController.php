@@ -76,8 +76,6 @@ class ItemsController extends \BaseController {
 			}
         }
 
-
-
         if($new){
             return Redirect::to('admin/items/' . $new->id);
         }

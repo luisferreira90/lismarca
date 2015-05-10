@@ -85,6 +85,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('portfolioclient', 'PortfolioClientsController');
 
+	Route::resource('portfoliophoto', 'PortfolioPhotosController');
+
 	Route::get('/', 'UsersController@users');
 
 

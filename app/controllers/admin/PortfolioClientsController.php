@@ -4,6 +4,7 @@ namespace admin;
 
 use PortfolioClient;
 use PortfolioCategory;
+use PortfolioPhoto;
 use View;
 use Input;
 use Validator;
@@ -50,14 +51,38 @@ class PortfolioClientsController extends \BaseController {
         	$data['icon'] = PortfolioClient::storeImage(Input::file('icon'));
 
         $new = PortfolioClient::create($data);
+
+        if(isset($data['images']) && !empty($data['images'][0])) {
+
+	        $files = Input::file('images');
+
+			foreach($files as $file) {
+			    $rules = array(
+			       'file' => 'required|mimes:png,gif,jpeg'
+			    );
+			    $validator = Validator::make(array('file'=> $file), $rules);
+			    if($validator->passes()){
+			    	$src = PortfolioPhoto::storeImage($file, $new->id);
+			    	PortfolioPhoto::create(array('src' => $src, 'portfolio_client' => $new->id));
+			    } else {
+			        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
+			    }
+			}
+        }
+
         if($new){
-            return Redirect::to('admin/portfolio-cliente');
+            return Redirect::to('admin/portfolio-cliente/' . $new->id);
         }
 	}
 
 
 	public function edit($id) {
-		return View::make('admin.portfolioclient-edit')->with('client', PortfolioClient::find($id))->with('categories', PortfolioCategory::lists('name', 'id'));
+		$portfolioPhoto = new PortfolioPhoto;
+		$photos = $portfolioPhoto->where('portfolio_client', '=', $id)->get();
+		return View::make('admin.portfolioclient-edit')
+		->with('client', PortfolioClient::find($id))
+		->with('categories', PortfolioCategory::lists('name', 'id'))
+		->with('photos', $photos);
 	}
 
 
@@ -66,16 +91,32 @@ class PortfolioClientsController extends \BaseController {
         if($validator)
         	return Redirect::to('admin/portfolio-cliente/' . $id)->withErrors($validator)->withInput();
 
+        $data = Input::all();
+
 		if (Input::file('icon')) {
-			$data = Input::all();
         	$data['icon'] = PortfolioClient::storeImage(Input::file('icon'));
     	}
-        else {
-        	$data = Input::only(['name','description','category','info','photos','ordering']);
+
+    	if(isset($data['images']) && !empty($data['images'][0])) {
+
+	        $files = Input::file('images');
+
+			foreach($files as $file) {
+			    $rules = array(
+			       'file' => 'required|mimes:png,gif,jpeg'
+			    );
+			    $validator = Validator::make(array('file'=> $file), $rules);
+			    if($validator->passes()){
+			    	$src = PortfolioPhoto::storeImage($file, $new->id);
+			    	PortfolioPhoto::create(array('src' => $src, 'portfolio_client' => $new->id));
+			    } else {
+			        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
+			    }
+			}
         }
 
         PortfolioClient::find($id)->fill($data)->save();    
-    	return Redirect::to('admin/portfolio-cliente/' . $id)->withInput();
+    	return Redirect::to('admin/portfolio-cliente/' . $id);
 	}
 
 

@@ -48,6 +48,11 @@
     </div>
 
     <div class = 'form-group'>
+        {{Form::label('images', 'Imagens')}}
+        {{Form::file('images[]', ['multiple' => true], array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
         {{Form::submit('Gravar',array('id' => 'submit', 'class' => 'btn btn-primary'))}}
     </div>
 
@@ -77,9 +82,23 @@
 
     <div class = 'form-icon'>
 
-        <h2>Icone</h2>
+        <h3>Icone / Imagem de apresentação actual</h3>
 
-        {{ HTML::image($client->icon) }}
+        {{ HTML::image('/images/portfolio/icons/' . $client->icon) }}
+
+    </div>
+
+    <div class = 'form-icon'>
+
+        <h3>Fotos actuais</h3>
+
+        @foreach ($photos as $photo)
+
+             {{ Form::open(array('method' => 'delete', 'route' => array('admin.portfoliophoto.destroy', $photo->id), 'onsubmit' => 'return ConfirmDelete()')) }} 
+                <button type = 'submit'>{{ HTML::image('/images/portfolio/clients/thumbnails/' . $photo->src) }}</button>
+            {{ Form::close() }}
+
+        @endforeach
 
     </div>
 
