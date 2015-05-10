@@ -5,7 +5,9 @@
 <h1>Login</h1>
 
 @if(Session::has('flash_message'))
+<div class = 'message'>
     {{ Session::get('flash_message') }}
+</div>
 @endif
 
 @if (Session::has('error'))

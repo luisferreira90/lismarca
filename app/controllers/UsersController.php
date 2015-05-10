@@ -59,7 +59,7 @@ class UsersController extends BaseController {
 
 
 	public function store() {
-		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password', 'password_confirmation']);
+		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password','password_confirmation','newsletter']);
 		
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
@@ -72,6 +72,9 @@ class UsersController extends BaseController {
         if($validator->fails()){
             return Redirect::route('registo')->withErrors($validator)->withInput();
         }
+
+        if (!Input::has('newsletter'))
+        	$data['newsletter'] = 0; 
 
         $confirmation_code = str_random(30);
         $data['confirmation_code'] = $confirmation_code;
@@ -92,11 +95,11 @@ class UsersController extends BaseController {
 	}
 
 	public function update() {		
-		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password', 'password_confirmation']);
+		$data = Input::only(['name','email','phone', 'address', 'location', 'entity_type', 'company_name','password', 'password_confirmation','newsletter']);
 
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
-			'email' => 'required|email|unique:users', 
+			'email' => 'required|email|unique:users,email,'.Auth::user()->id, 
 			'phone' => 'numeric',
 			'password' => 'required|min:6|confirmed',
             'password_confirmation'=> 'required|min:6'
@@ -105,6 +108,9 @@ class UsersController extends BaseController {
         if($validator->fails()){
             return Redirect::route('registo')->withErrors($validator)->withInput();
         }
+
+        if (!Input::has('newsletter'))
+        	$data['newsletter'] = 0; 
 
         $data['password'] = Hash::make($data['password']);
 

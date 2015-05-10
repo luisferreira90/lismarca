@@ -20,21 +20,21 @@
 
         <div class = 'form-group' id = 'group-name'>
             {{Form::label('name', Lang::get('strings.name'))}}*
-            {{Form::text('name', null, array('class' => 'form-control', 'onchange' => 'checkForm(0)'))}}
+            {{Form::text('name', null, array('class' => 'form-control', 'onchange' => 'checkForm(0,0)'))}}
             <span class="" aria-hidden="true"></span>          
             <p class="help-block">{{Lang::get('strings.valid_name')}}</p>
         </div>       
 
         <div class = 'form-group' id = 'group-email'>
             {{Form::label('email','Email')}}*
-            {{Form::email('email', null, array('class' => 'form-control', 'onchange' => 'checkForm(1)'))}}
+            {{Form::email('email', null, array('class' => 'form-control', 'onchange' => 'checkForm(1,0)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_email')}}</p>
         </div>
 
         <div class = 'form-group' id = 'group-phone'>
             {{Form::label('phone',Lang::get('strings.telephone'))}}*
-            {{Form::text('phone', null, array('class' => 'form-control', 'onchange' => 'checkForm(2)'))}}
+            {{Form::text('phone', null, array('class' => 'form-control', 'onchange' => 'checkForm(2,0)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_phone')}}</p>
         </div>
@@ -61,16 +61,21 @@
 
         <div class = 'form-group' id = 'group-password'>
             {{Form::label('password', Lang::get('strings.password'))}}*
-            {{Form::password('password', array('class' => 'form-control','onchange' => 'checkForm(3)'))}}
+            {{Form::password('password', array('class' => 'form-control','onchange' => 'checkForm(3,0)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_password')}}</p>
         </div>
 
         <div class = 'form-group' id = 'group-password-confirmation'>
             {{Form::label('password_confirmation',Lang::get('strings.password_repeat'))}}*
-            {{Form::password('password_confirmation', array('class' => 'form-control','onchange' => 'checkForm(4)'))}}
+            {{Form::password('password_confirmation', array('class' => 'form-control','onchange' => 'checkForm(4,0)'))}}
             <span class="" aria-hidden="true"></span> 
             <p class="help-block">{{Lang::get('strings.valid_password_confirmation')}}</p>
+        </div>
+
+        <div class = 'form-group'>
+            {{Form::label('newsletter', 'Newsletter')}}
+            {{Form::checkbox('newsletter', '1', array('class' => 'form-control'))}}
         </div>
 
         <div class = 'form-group'>
@@ -86,29 +91,16 @@
 
 <script>
 var submit = document.getElementById('submit');
-var form = ['0', '0', '0', '0', '0'];
-var x = document.cookie;
+var form = new Array(5);
+/*var name = $("#name").val();
+var email = $("#email").val();
+var phone = $("#phone").val();*/
+var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-if(x == 'back=1') {
-    checkForm(0);
-    checkForm(1);
-    checkForm(2);
-    checkForm(3);
-    checkForm(4);
-}
-document.cookie = "back=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-
-function checkForm(element) {
-
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var phone = $("#phone").val();
-    var password = $("#password").val();
-    var password_confirmation = $("#password_confirmation").val();
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+function checkForm(element, init) {
 
     if(element == 0) {
-        if(name.length < 2) {
+        if($("#name").val().length < 2) {
             toggleState('name', 0);
             form[0] = 0;
         }
@@ -119,7 +111,7 @@ function checkForm(element) {
     }
 
     if(element == 1) {
-        if(!re.test(email)) {
+        if(!re.test($("#email").val())) {
             toggleState('email', 0);
             form[1] = 0;    
         }
@@ -130,7 +122,7 @@ function checkForm(element) {
     }
 
     if(element == 2) {
-        if(!/^\d+$/.test(phone) || phone.length < 9) {
+        if(!/^\d+$/.test($("#phone").val()) || $("#phone").val().length < 9) {
             toggleState('phone', 0);
             form[2] = 0;
         }
@@ -141,7 +133,7 @@ function checkForm(element) {
     }
 
     if(element == 3 || element == 4) {
-        if (password.length < 6) {
+        if ($("#password").val().length < 6) {
             toggleState('password', 0);
             form[3] = 0;
         }
@@ -150,7 +142,7 @@ function checkForm(element) {
             form[3] = 1;
         }
 
-        if (password != password_confirmation) {
+        if ($("#password").val() != $("#password_confirmation").val()) {
             toggleState('password-confirmation', 0);
             form[4] = 0;
         }
@@ -160,7 +152,10 @@ function checkForm(element) {
         }
     }
 
-    submit.disabled = validate();
+    if(init == 0) {
+        validate();
+    }
+
 }
 
 function toggleState(elem, op) {
@@ -177,22 +172,25 @@ function toggleState(elem, op) {
     }
 }
 
-$(document).ready(function () {
+function validate () {
+    for (i = 0; i<=4; i++) {
+        if(form[i] == 0) {
+            submit.disabled = true;
+            return;
+        }
+    }
+    submit.disabled = false;
+}
 
-    submit.disabled = validate();
+$(document).ready(function () {
+    form = [0, 0, 0, 0, 0];
+    for (i = 0; i<=4; i++) {
+        checkForm(i, 1);
+    }
+    validate();
 
 });
 
-function validate () {
-    for (i = 0; i<=form.length; i++) {
-        if(form[i] == 0) {
-            submit.disabled = true;
-            return true;
-        }
-    }
-    document.cookie="back=1";
-    submit.disabled = false;
-}
 </script>
 
 @stop

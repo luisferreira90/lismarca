@@ -49,6 +49,11 @@
     </div>
 
     <div class = 'form-group'>
+        {{Form::label('newsletter', 'Newsletter')}}
+        {{Form::checkbox('newsletter', '1', array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
         {{Form::submit('Gravar',array('id' => 'submit', 'class' => 'btn btn-primary'))}}
     </div>
 

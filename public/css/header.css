@@ -51,7 +51,7 @@ header a {
 
 .header-lower {
 	height: 72px;
-	z-index: 1;
+	z-index: 11;
 	background-color:white;
 	border-bottom: solid 2px #e6e7e9;
 }
