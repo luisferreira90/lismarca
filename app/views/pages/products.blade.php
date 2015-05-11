@@ -10,59 +10,13 @@
 
         <div class="gallery-item">
             <div class='image'>
-                <a href="/produtos/{{ $product->id }}">{{ asset(HTML::image('images/produtos/icons/' . $product->icon)) }}</a>
+                <a href={{'/produtos/' . $product->id }}>{{ HTML::image('images/produtos/icons/' . $product->icon) }}</a>
             </div>
             <h3>.{{ $product->name }}</h3>         
         </div>
 
     @endforeach
 
-<!--
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/1.jpg" alt=""></a></div>
-        <h3>.Title</h3>         
-    </div>
- 
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/2.jpg" alt=""></a></div>
-        <h3>.Title</h3>        
-    </div>
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/3.jpg" alt=""></a></div>
-        <h3>.Title</h3>       
-    </div>
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/4.jpg" alt=""></a></div>
-        <h3>.Title</h3>        
-    </div>
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/5.jpg" alt=""></a></div>
-        <h3>.Title</h3>        
-    </div>
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/6.jpg" alt=""></a></div>
-        <h3>.Title</h3>        
-    </div>
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/7.jpg" alt=""></a></div>
-        <h3>.Title</h3>        
-    </div>
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/8.jpg" alt=""></a></div>
-        <h3>.Title</h3>        
-    </div>
-
-    <div class="gallery-item">
-        <div class='image'><a href="produtos/categoria"><img src="/images/home/9.jpg" alt=""></a></div>
-        <h3>.Title</h3>        
-    </div>-->
 </div>
 
 {{ $products->appends(Input::except('page'))->links() }}

@@ -45,7 +45,7 @@ class ProductItem extends Eloquent{
         //echo ProductSubcategory::find($item->subcategory)->name; die();
 
         //$items = $items->orderBy('id', 'desc');
-        return $items->paginate(25);
+        return $items->paginate(15);
     }
 
 	
