@@ -2,9 +2,23 @@
 
 @section('content')
 
-<h1>Listagem de produtos nesta página</h1>
+<h1>Produtos</h1>
 
 <div class="gallery-list more-items">
+
+    @foreach ($products as $product)
+
+        <div class="gallery-item">
+            <div class='image'>
+                <a href="/produtos/{{ $product->id }}">{{ asset(HTML::image('images/produtos/icons/' . $product->icon)) }}</a>
+            </div>
+            <h3>.{{ $product->name }}</h3>         
+        </div>
+
+    @endforeach
+
+<!--
+
     <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/1.jpg" alt=""></a></div>
         <h3>.Title</h3>         
@@ -48,8 +62,10 @@
     <div class="gallery-item">
         <div class='image'><a href="produtos/categoria"><img src="/images/home/9.jpg" alt=""></a></div>
         <h3>.Title</h3>        
-    </div>
+    </div>-->
 </div>
+
+{{ $products->appends(Input::except('page'))->links() }}
 
 <hr>
 

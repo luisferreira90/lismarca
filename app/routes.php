@@ -10,16 +10,6 @@ Route::get('/empresa', function()
 	return View::make('pages/company');
 });
 
-Route::get('/produtos', function()
-{
-	return View::make('pages/categories');
-});
-
-Route::get('/produtos/categoria', function()
-{
-	return View::make('pages/products');
-});
-
 Route::get('/contactos', function()
 {
 	return View::make('pages/contacts');
@@ -45,9 +35,9 @@ Route::post('/login', array('as' => 'login', 'uses' => 'UsersController@handleLo
 
 Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));
 
-Route::get('/profile', array('as' => 'profile', 'uses' => 'UsersController@profile'));
-
 Route::get('/passwordreset', array('as' => 'passwordreset', 'uses' => 'RemindersController@getRemind'));
+
+Route::get('/produtos', array('as' => 'produtos', 'uses' => 'ItemsController@items'));
 
 Route::resource('user', 'UsersController'); 
 

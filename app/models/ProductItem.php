@@ -30,7 +30,7 @@ class ProductItem extends Eloquent{
      */
     public function listAll($filter)
     {
-        $items = $this->select('id', 'name', 'subcategory', 'published');
+        $items = $this->select('id', 'name', 'subcategory', 'published', 'icon');
 
         if(isset($filter['subcategory']) && $filter['subcategory'] != '')
             $items = $items->where('subcategory', '=', $filter['subcategory']);
@@ -38,8 +38,7 @@ class ProductItem extends Eloquent{
         if(isset($filter['order']))
             $items = $items->orderBy($filter['order'], 'asc');
 
-        if(isset($filter['order']) && $filter['order'] == 'subcategory')
-            $items = $items->orderBy('subcategory', 'asc');
+        $items = $items->orderBy('id', 'desc');
 
         //$item = ProductItem::whereId($id)->first();
     
