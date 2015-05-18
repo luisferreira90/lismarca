@@ -6,7 +6,7 @@ class ProductSection extends Eloquent {
 	public $timestamps = false;
 
 
-	public function subsections() {
+	public function subsection() {
 		return $this->hasMany('ProductSubsection');
    	}
 

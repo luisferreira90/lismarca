@@ -5,9 +5,16 @@ class ProductSubsection extends Eloquent{
 	protected $fillable = ['section', 'name', 'icon', 'published', 'ordering'];
 	public $timestamps = false;
 
-    public function sections() {
+
+    public function section() {
         return $this->belongsTo('ProductSection');
-    } 
+    }
+
+
+    public function category()
+    {
+        return $this->hasMany('ProductCategory');
+    }
 
 
     public static function storeImage($file) {

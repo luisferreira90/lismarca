@@ -39,6 +39,8 @@ Route::get('/passwordreset', array('as' => 'passwordreset', 'uses' => 'Reminders
 
 Route::get('/produtos', array('as' => 'produtos', 'uses' => 'ItemsController@items'));
 
+Route::post('/produtos', array('as' => 'produtos', 'uses' => 'ItemsController@items'));
+
 Route::resource('user', 'UsersController'); 
 
 Route::get('language', array('uses' => 'HomeController@language'));

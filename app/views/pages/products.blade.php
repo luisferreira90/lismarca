@@ -4,6 +4,15 @@
 
 <h1>Produtos</h1>
 
+<div class = 'filters'>
+    {{ Form::open(array('url' => 'produtos', 'method' => 'get', 'class' => 'form-inline')) }}
+        <div class = 'form-group'>
+            {{Form::label('category','Categoria')}}   
+            {{Form::select('category', [null=>'Sem filtro']+$categories, Input::get('category'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+        </div>
+    {{ Form::close() }}
+</div>
+
 <div class="gallery-list more-items">
 
     @foreach ($products as $product)
