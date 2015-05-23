@@ -16,6 +16,22 @@ class ProductCategory extends Eloquent{
     }
 
 
+    public function subsection() {
+        return $this->belongsTo('ProductSubsection');
+    }
+
+
+    public function subcategory() {
+        return $this->hasMany('ProductSubcategory', 'category');
+    }
+
+
+    public function item()
+    {
+        return $this->hasManyThrough('ProductItem', 'ProductSubcategory', 'category', 'subcategory');
+    }
+
+
 	/**
      * Return categories list
      *

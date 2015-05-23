@@ -8,9 +8,14 @@ class ProductSubcategory extends Eloquent{
 	public $timestamps = false;
 
 
+    public function category() {
+        return $this->belongsTo('ProductCategory');
+    }
+
+
     public function item()
     {
-        return $this->hasMany('ProductItem');
+        return $this->hasMany('ProductItem', 'subcategory');
     }
 
 

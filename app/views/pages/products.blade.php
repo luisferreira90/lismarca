@@ -19,7 +19,8 @@
 
 </div>
 
-{{ $products->appends(Input::except('page'))->links() }}
+<!--
+{{ $products->appends(Input::except('page'))->links() }} -->
 
 <hr>
 

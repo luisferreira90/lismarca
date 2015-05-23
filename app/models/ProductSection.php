@@ -6,9 +6,15 @@ class ProductSection extends Eloquent {
 	public $timestamps = false;
 
 
-	public function subsections() {
-		return $this->hasMany('ProductSubsection');
+	public function subsection() {
+		return $this->hasMany('ProductSubsection', 'section');
    	}
+
+
+    public function category()
+    {
+        return $this->hasManyThrough('ProductCategory', 'ProductSubsection', 'section', 'subsection');
+    }
 
 
     public static function storeImage($file) {
