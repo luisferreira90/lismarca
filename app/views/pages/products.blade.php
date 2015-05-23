@@ -7,10 +7,35 @@
 <div class = 'filters'>
     {{ Form::open(array('url' => 'produtos', 'method' => 'get', 'class' => 'form-inline')) }}
         <div class = 'form-group'>
-            {{Form::label('category','Categoria')}}   
-            {{Form::select('category', [null=>'Sem filtro']+$categories, Input::get('category'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+            {{Form::label('section','Secção')}}   
+            {{Form::select('section', [null=>'Sem filtro']+$sections, Input::get('section'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
         </div>
+
+        @if(isset($subsections))
+            <div class = 'form-group'>
+                {{Form::label('subsection','Sub-Secção')}}   
+                {{Form::select('subsection', [null=>'Sem filtro']+$subsections, Input::get('subsection'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+            </div>
+        @endif
+
+        @if(isset($categories))
+            <div class = 'form-group'>
+                {{Form::label('category','Categoria')}}   
+                {{Form::select('category', [null=>'Sem filtro']+$categories, Input::get('category'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+            </div>
+        @endif
+
+        @if(isset($subcategories))
+            <div class = 'form-group'>
+                {{Form::label('subcategory','Sub-Categoria')}}   
+                {{Form::select('subcategory', [null=>'Sem filtro']+$subcategories, Input::get('subcategory'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+            </div>
+        @endif
+
     {{ Form::close() }}
+
+    
+    
 </div>
 
 <div class="gallery-list more-items">
