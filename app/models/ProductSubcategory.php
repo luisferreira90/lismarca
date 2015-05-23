@@ -17,6 +17,12 @@ class ProductSubcategory extends Eloquent{
     {
         return $this->hasMany('ProductItem', 'subcategory');
     }
+    
+
+    public function category()
+    {
+        return $this->belongsTo('ProductCategory');
+    }
 
 
     public static function storeImage($file) {
