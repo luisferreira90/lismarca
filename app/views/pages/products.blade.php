@@ -32,9 +32,7 @@
             </div>
         @endif
 
-    {{ Form::close() }}
-
-    
+    {{ Form::close() }}    
     
 </div>
 

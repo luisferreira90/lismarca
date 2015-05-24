@@ -22,15 +22,21 @@ class ItemsController extends BaseController {
 		->withInput(Input::all());
 
 		if(isset($filter['section']) && $filter['section'] != '') {
-			$view = $view->with('subsections', ProductSubsection::lists('name', 'id'));
+			$subsection = new ProductSubsection;
+			$subsections = $subsection->where('section', '=', $filter['section'])->lists('name', 'id');
+			$view = $view->with('subsections', $subsections);
 		}
 
 		if(isset($filter['subsection']) && $filter['subsection'] != '') {
-			$view = $view->with('categories', ProductCategory::lists('name', 'id'));
+			$category = new ProductCategory;
+			$categories = $category->where('subsection', '=', $filter['subsection'])->lists('name', 'id');
+			$view = $view->with('categories', $categories);
 		}
 
 		if(isset($filter['category']) && $filter['category'] != '') {
-			$view = $view->with('subcategories', ProductSubcategory::lists('name', 'id'));
+			$subcategory = new ProductSubcategory;
+			$subcategories = $subcategory->where('category', '=', $filter['category'])->lists('name', 'id');
+			$view = $view->with('subcategories', $subcategories);
 		}
 
   		return $view;
