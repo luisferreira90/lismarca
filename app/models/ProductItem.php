@@ -32,8 +32,8 @@ class ProductItem extends Eloquent{
     {
         $items = $this->select('id', 'name', 'subcategory', 'published', 'icon');
 
-        if(isset($filter['subcategory']) && $filter['subcategory'] != '')
-            $items = $items->where('subcategory', '=', $filter['subcategory']);
+        if(Input::has('section') && Input::has('subsection') && Input::has('category') && Input::has('subcategory'))
+            $items = $items->where('subcategory', '=', Input::get('subcategory'));
 
         if(isset($filter['order']))
             $items = $items->orderBy($filter['order'], 'asc');

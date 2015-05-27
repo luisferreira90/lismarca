@@ -5,7 +5,7 @@
 <h1>Produtos</h1>
 
 <div class = 'filters'>
-    {{ Form::open(array('url' => 'produtos', 'method' => 'get', 'class' => 'form-inline')) }}
+    {{ Form::open(array('url' => 'produtos', 'method' => 'GET', 'class' => 'form-inline')) }}
         <div class = 'form-group'>
             {{Form::label('section','Secção')}}   
             {{Form::select('section', [null=>'Sem filtro']+$sections, Input::get('section'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
