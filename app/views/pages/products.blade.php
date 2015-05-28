@@ -98,6 +98,7 @@
 {{ HTML::style('css/slick.css') }}
 {{ HTML::style('css/slick-theme.css') }}
 {{ HTML::script('js/slick.min.js') }}
+{{ HTML::style('css/bootstrap.css') }}
 <script>
 
 $(document).ready(function(){
