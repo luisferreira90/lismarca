@@ -34,17 +34,15 @@ class ProductItem extends Eloquent{
 
         if(Input::has('section') && Input::has('subsection') && Input::has('category') && Input::has('subcategory'))
             $items = $items->where('subcategory', '=', Input::get('subcategory'));
-
-        if(isset($filter['order']))
-            $items = $items->orderBy($filter['order'], 'asc');
-
-        $items = $items->orderBy('id', 'desc');
-
-        //$item = ProductItem::whereId($id)->first();
-    
-        //echo ProductSubcategory::find($item->subcategory)->name; die();
-
-        //$items = $items->orderBy('id', 'desc');
+        else if(Input::has('section') && Input::has('subsection') && Input::has('category'))
+            $items = $items->where('category', '=', Input::get('category'));
+        else if(Input::has('section') && Input::has('subsection'))
+            $items = $items->where('subsection', '=', Input::get('subsection'));
+        else if(Input::has('section'))
+            $items = $items->where('section', '=', Input::get('section'));
+        else
+            $items = $items;
+        
         return $items->paginate(15);
     }
 
