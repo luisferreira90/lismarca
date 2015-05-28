@@ -1,3 +1,8 @@
+{{ HTML::style('css/slick.css') }}
+{{ HTML::style('css/slick-theme.css') }}
+{{ HTML::style('css/bootstrap.css') }}
+{{ HTML::style('css/products.css') }}
+
 @extends('layouts.layout')
 
 @section('content')
@@ -95,10 +100,7 @@
     </div>
 </div>
 
-{{ HTML::style('css/slick.css') }}
-{{ HTML::style('css/slick-theme.css') }}
 {{ HTML::script('js/slick.min.js') }}
-{{ HTML::style('css/bootstrap.css') }}
 <script>
 
 $(document).ready(function(){
@@ -144,7 +146,5 @@ $(document).ready(function(){
 });
 
 </script>
-
-{{ HTML::style('css/products.css') }}
 
 @stop
