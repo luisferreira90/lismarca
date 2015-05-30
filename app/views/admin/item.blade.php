@@ -4,6 +4,7 @@
 
 <h1>Gestão de items</h1>
 
+{{--
 <div class = 'filters'>
 	{{ Form::open(array('url' => 'admin/items', 'method' => 'get', 'class' => 'form-inline')) }}
 		<div class = 'form-group'>
@@ -12,7 +13,7 @@
 		</div>
     {{ Form::close() }}
 </div>
-
+--}}
 <div class = 'novo'>
 	<a href = 'items/criar'><button class="btn btn-primary">Novo</button></a>
 </div>
@@ -33,7 +34,7 @@
 				<tr>
 					<td><a href = 'items/{{ $item->id }}'>{{ $item->id }}</a></td>
 					<td>{{ $item->name }}</td>
-					<td>{{ $subcategories[$item->subcategory] }}</td>
+					{{--<td>{{ $subcategories[$item->subcategory] }}</td>--}}
 					<td>
 						@if($item->published == 1)
 							<a href = 'items/unpublish/{{ $item->id }}'><button class="btn btn-warning btn-sm">Despublicar</button></a>

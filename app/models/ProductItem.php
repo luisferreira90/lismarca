@@ -2,13 +2,13 @@
 
 class ProductItem extends Eloquent{
 
-	protected $fillable = ['subcategory', 'name', 'icon', 'description', 'published','new','featured'];
+	protected $fillable = ['section','subsection','category','subcategory', 'name', 'icon', 'description', 'published','new','featured'];
 	public $timestamps = false;
 
 
     public function subcategory()
     {
-        return $this->belongsTo('ProductSubcategory');
+        return $this->belongsTo('ProductSubcategory', 'subcategory');
     }
 
 

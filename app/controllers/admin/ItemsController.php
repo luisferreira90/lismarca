@@ -4,6 +4,9 @@ namespace admin;
 
 use ProductItem;
 use ProductSubcategory;
+use ProductCategory;
+use ProductSubsection;
+use ProductSection;
 use ProductPhoto;
 use View;
 use Input;
@@ -32,7 +35,8 @@ class ItemsController extends \BaseController {
 	public function items() {
 		$item = new ProductItem;
 		$items = $item->listAll(Input::all());
-  		return View::make('admin.item')->with('items', $items)->with('subcategories', ProductSubcategory::lists('name', 'id'));
+  		return View::make('admin.item')->with('items', $items)
+  		/*->with('subcategories', ProductSubcategory::lists('name', 'id'))*/;
 	}
 
 
@@ -55,6 +59,13 @@ class ItemsController extends \BaseController {
 
 		if(isset($data['icon'])) 
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
+
+     	$category = ProductSubcategory::find(Input::get('subcategory'))->category;
+    	$subsection = ProductCategory::find($category)->subsection;
+    	$section = ProductSubsection::find($subsection)->section;
+    	$data['category'] = $category;
+    	$data['subsection'] = $subsection;
+    	$data['section'] = $section;
 
         $new = ProductItem::create($data);
 

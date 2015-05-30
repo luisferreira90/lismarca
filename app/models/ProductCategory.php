@@ -17,7 +17,7 @@ class ProductCategory extends Eloquent{
 
 
     public function subsection() {
-        return $this->belongsTo('ProductSubsection');
+        return $this->belongsTo('ProductSubsection', 'subsection');
     }
 
 
