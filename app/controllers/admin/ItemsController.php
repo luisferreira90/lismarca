@@ -137,6 +137,13 @@ class ItemsController extends \BaseController {
 			}	
 		}
 
+		$category = ProductSubcategory::find(Input::get('subcategory'))->category;
+    	$subsection = ProductCategory::find($category)->subsection;
+    	$section = ProductSubsection::find($subsection)->section;
+    	$data['category'] = $category;
+    	$data['subsection'] = $subsection;
+    	$data['section'] = $section;
+
         ProductItem::find($id)->fill($data)->save();    
     	return Redirect::to('admin/items/' . $id);
 	}
