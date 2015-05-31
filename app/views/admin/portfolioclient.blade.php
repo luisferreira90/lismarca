@@ -24,7 +24,6 @@
 				<th><span>ID</span></th>
 				<th><span>Nome</span></th>
 				<th><span>Categoria</span></th>
-				<th><span>Ordem</span></th>
 				<th><span>Publicar</span></th>
 				<th><span>Apagar</span></th>
 			</tr>
@@ -35,7 +34,6 @@
 					<td><a href = 'portfolio-cliente/{{ $client->id }}'>{{ $client->id }}</a></td>
 					<td>{{ $client->name }}</td>
 					<td>{{ $category[$client->category] }}</td>
-					<td>{{ $client->ordering }}</td>
 					<td>
 						@if($client->published == 1)
 							<a href = 'portfolio-cliente/unpublish/{{ $client->id }}'><button class="btn btn-warning btn-sm">Despublicar</button></a>

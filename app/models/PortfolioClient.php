@@ -2,7 +2,7 @@
 
 class PortfolioClient extends Eloquent{
 
-	protected $fillable = ['category', 'name', 'info', 'icon', 'description','published','ordering'];
+	protected $fillable = ['category', 'name', 'info', 'icon', 'description','published'];
 	public $timestamps = false;
 
 
