@@ -80,6 +80,7 @@ class ItemsController extends \BaseController {
 		if(isset($data['icon'])) 
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
 
+
      	$category = ProductSubcategory::find(Input::get('subcategory'))->category;
     	$subsection = ProductCategory::find($category)->subsection;
     	$section = ProductSubsection::find($subsection)->section;
@@ -88,6 +89,9 @@ class ItemsController extends \BaseController {
     	$data['section'] = $section;
 
         $new = ProductItem::create($data);
+
+        if(isset($data['pdf'])) 
+        	$data['pdf'] = ProductItem::storeFile(Input::file('pdf'), $new->id);
 
         if(isset($data['images']) && !empty($data['images'][0])) {
 
@@ -138,7 +142,10 @@ class ItemsController extends \BaseController {
         	$data['new'] = 0;
 
         if (!Input::has('featured'))
-        	$data['featured'] = 0;	
+        	$data['featured'] = 0;
+
+    	if(isset($data['pdf'])) 
+    		$data['pdf'] = ProductItem::storeFile(Input::file('pdf'), $id);	
 
 		if(isset($data['images']) && !empty($data['images'][0])) {
 			$files = Input::file('images');

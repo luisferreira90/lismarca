@@ -43,6 +43,11 @@
     </div>
 
     <div class = 'form-group'>
+        {{Form::label('pdf', 'PDF')}}
+        {{Form::file('pdf', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
         {{Form::label('icon', 'Ícone / Imagem de apresentação')}}
         {{Form::file('icon', null, array('class' => 'form-control'))}}
     </div>
@@ -79,6 +84,10 @@
 </script>
 
 @if(isset($item))
+
+    <div class = 'form-icon'>
+        <a target="_blank" href = {{ URL::asset('/pdf/' . $item->id . '.pdf') }} ><img src = '/images/pdf.svg'></a>
+    </div>
 
     <div class = 'form-icon'>
 

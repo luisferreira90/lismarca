@@ -21,6 +21,15 @@ class ProductItem extends Eloquent{
         
         return $filename;
     }
+
+
+    public static function storeFile($file, $id) {
+        $destinationPath = public_path().'/pdf/'; 
+        $filename = $id . '.pdf';
+        $file->move($destinationPath, $filename);
+        return $filename;
+    }
+
     
 
     /**
@@ -43,7 +52,7 @@ class ProductItem extends Eloquent{
         else
             $items = $items;
         
-        return $items->paginate(15);
+        return $items->orderBy('id', 'desc')->paginate(15);
     }
 
 	
