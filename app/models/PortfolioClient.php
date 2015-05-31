@@ -27,12 +27,12 @@ class PortfolioClient extends Eloquent{
     {
         $items = $this->select('id', 'name', 'category', 'published');
 
-        if(isset($filter['category']) && $filter['category'] != '')
-            $items = $items->where('category', '=', $filter['category']);
+        if(Input::has('category'))
+            $items = $items->where('category', '=', Input::get('category'));
 
         $items->orderBy('id', 'desc');
 
-        return $items->paginate(25);
+        return $items->paginate(15);
     }
 
 

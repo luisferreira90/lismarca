@@ -80,7 +80,6 @@ class ItemsController extends \BaseController {
 		if(isset($data['icon'])) 
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
 
-
      	$category = ProductSubcategory::find(Input::get('subcategory'))->category;
     	$subsection = ProductCategory::find($category)->subsection;
     	$section = ProductSubsection::find($subsection)->section;

@@ -20,11 +20,6 @@ Route::get('/novidades', function()
 	return View::make('pages/new');
 });
 
-Route::get('/portfolio', function()
-{
-	return View::make('pages/portfolio');
-});
-
 Route::controller('password', 'RemindersController');
 
 Route::get('registo', array('as' => 'registo', 'uses' => 'UsersController@registration'));
@@ -40,6 +35,10 @@ Route::get('/passwordreset', array('as' => 'passwordreset', 'uses' => 'Reminders
 Route::get('/produtos', array('as' => 'produtos', 'uses' => 'ItemsController@items'));
 
 Route::post('/produtos', array('as' => 'produtos', 'uses' => 'ItemsController@items'));
+
+Route::get('/portfolio', array('as' => 'portfolio', 'uses' => 'PortfolioController@portfolios'));
+
+Route::post('/portfolio', array('as' => 'portfolio', 'uses' => 'PortfolioController@portfolios'));
 
 Route::resource('user', 'UsersController'); 
 
