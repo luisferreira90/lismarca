@@ -263,6 +263,25 @@ header .search_field {
 	
 	header .search_field {
 		display: none;
+		position: absolute;
+		color:black;
+		background-color:white;
+		z-index: 12222;
+		top:0;
+		right: 0px;
+		width:192px;
+		height: 72px;
+	}
+	
+	header .search_field input{
+		margin-top:25px;
+		width:168px;
+		height: 23px;
+	}
+	
+	header .search_field button{
+		right:24px;
+		top:13.5px;
 	}
 	
 	#hamburger {
@@ -284,6 +303,10 @@ header .search_field {
 	
 	.search:hover > .search-icon {
 		opacity:0;
+	}
+	
+	.search:hover > .search_field {
+		display: block;
 	}
 	
 	.search-icon {
@@ -311,6 +334,19 @@ header .search_field {
 	
 	#main-menu a li{
 		font-size:14px!important;
+	}
+	
+	header .search_field {
+		top:0;
+		right: 0px;
+		width:226px;
+		height: 72px;
+	}
+	
+	header .search_field input{
+		margin-left:0px;
+		width:202px;
+		height: 23px;
 	}
 	
 }
