@@ -41,6 +41,10 @@ class ProductItem extends Eloquent{
     {
         $items = $this->select('id', 'name', 'subcategory', 'published', 'icon');
 
+        if(Input::has('search')) {
+            $items = $items->where('name', 'LIKE', '%' . Input::get('search') . '%');
+        }
+
         if(Input::has('section') && Input::has('subsection') && Input::has('category') && Input::has('subcategory'))
             $items = $items->where('subcategory', '=', Input::get('subcategory'));
         else if(Input::has('section') && Input::has('subsection') && Input::has('category'))

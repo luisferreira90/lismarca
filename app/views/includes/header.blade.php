@@ -58,7 +58,7 @@
 					<li class = 'search'>
 						<img src='/images/search.svg' alt='Pesquisa'/ class = 'search-icon'>
 						<img src='/images/search-light.svg' alt='Pesquisa'/ class = 'search-icon-light'>
-						<form class='search_field' method='GET' action='http://www.google.com/search'>
+						<form class='search_field' method='GET' action='/produtos'>
 							<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
 							<button type='submit'>
 								<img src='/images/search.svg' alt='Pesquisa'/>
