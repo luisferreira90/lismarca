@@ -31,9 +31,10 @@ class ItemsController extends BaseController {
 		}
 
 		if(Input::has('section')) {
+			$title = ProductSection::find(Input::get('section'))->name;
 			$subsection = new ProductSubsection;
 			$subsections = $subsection->where('section', '=', Input::get('section'))->lists('name', 'id');
-			$view = $view->with('subsections', $subsections);
+			$view = $view->with('subsections', $subsections)->with('title', $title);
 		}
 
   		return $view;
