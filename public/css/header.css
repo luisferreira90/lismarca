@@ -88,12 +88,16 @@ header a {
 	display:none;
 }
 
-#main-menu a li {
+#main-menu li {
 	border-top:solid 1px;
-	color:darkgrey;
+	transition: all 0.5s ease;
 }
 
-#main-menu a li:hover {
+#main-menu li a {
+	color:#aeb0b2;
+}
+
+#main-menu li:hover {
 	background-color:#e6e7e9!important;
 }
 
@@ -102,13 +106,8 @@ header a {
 	cursor:default;
 }
 
-#main-menu > a:nth-child(1) > li:nth-child(1) {
+#main-menu >  li:nth-child(1) {
 	border-top:none;
-}
-
-#main-menu a li {
-	color:darkgrey;
-	transition: all 0.5s ease;
 }
 
 #hamburger {
@@ -125,13 +124,17 @@ header a {
 	background-size:40px;
 }
 
-
 #hamburger:hover {
 	cursor:pointer;
 }
 
-header .search_field {
+.search_field {
 	width:180px;
+	line-height: 21px;
+}
+
+.search_field input{
+	padding-top:5px;
 }
 
 .fixed-menu {
@@ -177,6 +180,10 @@ header .search_field {
 
 
 @media only screen and (min-width: 980px) {	
+	
+	#hamburger {
+		display:none;
+	}
 	
 	header {
 		height:110px;
@@ -239,21 +246,21 @@ header .search_field {
 		transition: background-color .5s ease;
 	}
 	
-	#main-menu a li{
+	#main-menu li{
 		border-left: solid 1px #e6e7e9;
 		border-top:none!important;
 	}
 	
-	#main-menu > a:nth-child(1) > li:nth-child(1) {
+	#main-menu > li:nth-child(1) {
 		border-left: none!important;
 	}
 
-	#main-menu a li:hover {
+	#main-menu li:hover {
 		cursor:pointer;
 		background-color:#e11b22!important;
 	}
 	
-	header nav li:hover{
+	header nav li:hover > a{
 		color:white!important;
 	}
 	
@@ -273,21 +280,6 @@ header .search_field {
 		height: 72px;
 	}
 	
-	header .search_field input{
-		margin-top:25px;
-		width:168px;
-		height: 23px;
-	}
-	
-	header .search_field button{
-		right:24px;
-		top:13.5px;
-	}
-	
-	#hamburger {
-		display:none;
-	}
-	
 	.search {
 		position:relative;
 		width:28px;
@@ -303,10 +295,6 @@ header .search_field {
 	
 	.search:hover > .search-icon {
 		opacity:0;
-	}
-	
-	.search:hover > .search_field {
-		display: block;
 	}
 	
 	.search-icon {
@@ -326,27 +314,13 @@ header .search_field {
 		width:45px;
 	}
 
-
 }
 
 
 @media only screen and (min-width: 1100px) {	
 	
-	#main-menu a li{
+	#main-menu li{
 		font-size:14px!important;
-	}
-	
-	header .search_field {
-		top:0;
-		right: 0px;
-		width:226px;
-		height: 72px;
-	}
-	
-	header .search_field input{
-		margin-left:0px;
-		width:202px;
-		height: 23px;
 	}
 	
 }

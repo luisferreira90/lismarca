@@ -44,27 +44,25 @@
 			</div>
 			<div id = 'hamburger' onclick = 'showMenu()'></div>
 			<ul id = 'main-menu'>
-				<a href = '/empresa'><li>Empresa</li></a>
-				<a href = '/produtos'><li>Produtos</li></a>
-				<a href = '/contactos'><li>Contactos</li></a>
-				<a href = '/portfolio'><li>Portfolio</li></a>
-				<a href = '/registo'>
-					<li class = 'validate-budget'>
+				<li><a href = '/empresa'>Empresa</a></li>
+				<li><a href = '/produtos'>Produtos</a></li>
+				<li><a href = '/contactos'>Contactos</a></li>
+				<li><a href = '/portfolio'>Portfolio</a></li>
+				<li class = 'validate-budget'>
+					<a href = '/registo'>
 						{{Lang::get('strings.validate_budget')}}
-					</li>
-				</a>
-				<a href = '#'>
-					<li class = 'search'>
-						<img src='/images/search.svg' alt='Pesquisa'/ class = 'search-icon'>
-						<img src='/images/search-light.svg' alt='Pesquisa'/ class = 'search-icon-light'>
-						<form class='search_field' method='GET' action='/produtos'>
-							<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
-							<button type='submit'>
-								<img src='/images/search.svg' alt='Pesquisa'/>
-							</button>
-						</form>
-					</li>
-				</a>
+					</a>
+				</li>
+				<li class = 'search'>
+					<img src='/images/search.svg' alt='Pesquisa'/ class = 'search-icon'>
+					<img src='/images/search-light.svg' alt='Pesquisa'/ class = 'search-icon-light'>
+					<form class='search_field' method='GET' action='/produtos'>
+						<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
+						<button type='submit'>
+							<img src='/images/search.svg'/>
+						</button>
+					</form>
+				</li>
 			</ul>
 		</nav>
 	</div>
