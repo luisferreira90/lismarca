@@ -2,7 +2,8 @@
 	font-size:14px;
 }
 
-.company-element {
+.company-element, 
+.contacts-element {
 	margin-top:20px;
 }
 
@@ -24,8 +25,40 @@
 }
 
 .company-element .details {
-		margin-left:10px;
+	margin-left:10px;
+}
+
+.contacts-element h2 {
+	font-size:22px;
+}
+
+.contacts-element p {
+	font-size: 15px;
+}
+
+.contacts-element iframe {
+	width:400px;
+	height: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+	
+	.contacts-element h2 {
+		font-size:28px;
 	}
+
+	.contacts-element p {
+		font-size: 17px;
+	}
+
+	.contacts-element iframe {
+		width:600px;
+		height: 450px;
+	}
+	
+}
+
+
 
 @media only screen and (min-width: 980px) {
 	
