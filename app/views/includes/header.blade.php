@@ -54,19 +54,16 @@
 					</a>
 				</li>
 				<li class = 'search'>
-					<img src='/images/search.svg' alt='Pesquisa'/ class = 'search-icon'>
-					<img src='/images/search-light.svg' alt='Pesquisa'/ class = 'search-icon-light'>
 					<form class='search_field' method='GET' action='/produtos'>
 						<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
-						<button type='submit'>
-							<img src='/images/search.svg'/>
+						<button class = 'hover' type='submit'>
+							<img class = 'hover' src='/images/search.svg'/>
 						</button>
 					</form>
 				</li>
 			</ul>
 		</nav>
 	</div>
-
 </header>	
 
 
@@ -74,10 +71,7 @@
 <div class = 'clear-fix'></div>
 
 <script>
-function openSearch() {
-		document.getElementById('bigSearch').style.display='block';
-		document.getElementById('bigSearch').focus();
-	}
+
 	$(window).scroll(function () {
 	    if( $(window).scrollTop() > $('#headerLower').offset().top && !($('#headerLower').hasClass('fixed'))) {
 	    	$('#headerLower').addClass('fixed');
