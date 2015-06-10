@@ -1,0 +1,36 @@
+.main-text {
+	font-size:14px;
+}
+
+.company-element {
+	margin-top:20px;
+}
+
+.company-element div {
+	display: inline-block;
+}
+
+.company-element .image {
+	float:left;
+}
+
+.company-element img {
+	width:100px;
+}
+
+.company-element h4,
+.company-element h5{
+	margin:0;
+}
+
+.company-element .details {
+		margin-left:10px;
+	}
+
+@media only screen and (min-width: 980px) {
+	
+	.company-element .details {
+		margin-left:20px;
+	}
+
+}

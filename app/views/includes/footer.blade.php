@@ -2,7 +2,7 @@
 
 <footer>
 	<div class = 'footer-upper'>
-		<div class = 'newsletter'>
+		<!--<div class = 'newsletter'>
 			<p><img src = '/images/arrow-right.svg'>Newsletter</p>
 			<form class='search_field' method='GET' action='http://www.google.com/search'>
 			    <input name='search'/ placeholder="{{Lang::get('strings.newsletter_input')}}" type = 'text'>
@@ -10,7 +10,7 @@
 			    	<img src='/images/email.svg' alt='newsletter'/>
 			    </button>
 			</form>
-		</div>
+		</div>-->
 
 		<div class = 'distribution'>
 			<p><img src = '/images/arrow-right.svg'>{{Lang::get('strings.distribution')}}</p>
