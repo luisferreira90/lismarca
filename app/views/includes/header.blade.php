@@ -47,7 +47,6 @@
 				<a href = '/empresa'><li>Empresa</li></a>
 				<a href = '/produtos'><li>Produtos</li></a>
 				<a href = '/contactos'><li>Contactos</li></a>
-				<a href = '/novidades'><li>Novidades</li></a>
 				<a href = '/portfolio'><li>Portfolio</li></a>
 				<a href = '/registo'>
 					<li class = 'validate-budget'>
@@ -77,7 +76,10 @@
 <div class = 'clear-fix'></div>
 
 <script>
-
+function openSearch() {
+		document.getElementById('bigSearch').style.display='block';
+		document.getElementById('bigSearch').focus();
+	}
 	$(window).scroll(function () {
 	    if( $(window).scrollTop() > $('#headerLower').offset().top && !($('#headerLower').hasClass('fixed'))) {
 	    	$('#headerLower').addClass('fixed');
