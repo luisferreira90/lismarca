@@ -24,7 +24,9 @@
     <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
 </div>
 
+<h3>Galeria</h3>
 <div class="slideshow">
+
     @foreach ($photos as $photo)
     <div>
         <div class = 'slideshow-image'><a href = '/images/produtos/items/{{$photo->src}}'><img src="/images/produtos/items/thumbnails/{{$photo->src}}"></a></div>
