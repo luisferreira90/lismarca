@@ -40,4 +40,13 @@ class ItemsController extends BaseController {
   		return $view;
 	}
 
+
+	public function item($id) {
+		$product = ProductItem::find($id);
+		if(!$product) {
+			return View::make('pages.product')->with('error', 'Produto não encontrado!');
+		}
+		return View::make('pages.product')->with('product', $product);
+	}
+
 }
