@@ -46,7 +46,9 @@ class ItemsController extends BaseController {
 		if(!$product) {
 			return View::make('pages.product')->with('error', 'Produto não encontrado!');
 		}
-		return View::make('pages.product')->with('product', $product);
+		$productPhoto = new ProductPhoto;
+		$photos = $productPhoto->getPhotos($id);
+		return View::make('pages.product')->with('product', $product)->with('photos', $photos);
 	}
 
 }

@@ -12,8 +12,24 @@
 @else
 <h1>{{$product->name}}</h1>
 
+<div class = 'product-icon'>
+    <img src = '/images/produtos/icons/{{$product->icon}}'>
+</div>
+
 <div class = 'product-main'>
     {{$product->description}}
+</div>
+
+<div class = 'product-file'>
+    <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
+</div>
+
+<div class="slideshow">
+    @foreach ($photos as $photo)
+    <div>
+        <div class = 'slideshow-image'><a href = '/images/produtos/items/{{$photo->src}}'><img src="/images/produtos/items/thumbnails/{{$photo->src}}"></a></div>
+    </div>
+    @endforeach
 </div>
 
 {{ HTML::script('js/slick.min.js') }}
