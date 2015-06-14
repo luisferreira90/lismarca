@@ -15,7 +15,7 @@ class PortfolioClient extends Eloquent{
     public static function storeImage($file) {
         $destinationPath = public_path().'/images/portfolio/icons/'; 
         $filename = $file->getClientOriginalName();
-        Image::make($file)->resize(400, null, function ($constraint) {
+        Image::make($file)->resize(290, null, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath . $filename);
         
@@ -25,7 +25,7 @@ class PortfolioClient extends Eloquent{
 
     public function listAll($filter)
     {
-        $items = $this->select('id', 'name', 'category', 'published');
+        $items = $this->select('id', 'name', 'category', 'published', 'icon');
 
         if(Input::has('category'))
             $items = $items->where('category', '=', Input::get('category'));

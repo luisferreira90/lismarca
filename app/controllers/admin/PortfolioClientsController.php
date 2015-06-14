@@ -107,8 +107,8 @@ class PortfolioClientsController extends \BaseController {
 			    );
 			    $validator = Validator::make(array('file'=> $file), $rules);
 			    if($validator->passes()){
-			    	$src = PortfolioPhoto::storeImage($file, $new->id);
-			    	PortfolioPhoto::create(array('src' => $src, 'portfolio_client' => $new->id));
+			    	$src = PortfolioPhoto::storeImage($file, $id);
+			    	PortfolioPhoto::create(array('src' => $src, 'portfolio_client' => $id));
 			    } else {
 			        return Redirect::back()->with('error', 'O campo imagens apenas suporta os formatos GIF, PNG e JPEG');
 			    }

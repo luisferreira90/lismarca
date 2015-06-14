@@ -11,10 +11,15 @@ class PortfolioPhoto extends Eloquent{
         return $this->belongsTo('PortfolioClient');
     }
 
+    public function getPhotos($id) {
+        $photos = $this->select('id', 'src', 'portfolio_client')->where('portfolio_client', '=', $id)->get();
+        return $photos;
+    }
+
     public static function storeImage($file, $id) {
         $destinationPath = public_path().'/images/portfolio/clients'; 
         $filename = $id . '-' . $file->getClientOriginalName();
-        Image::make($file)->resize(300, null, function ($constraint) {
+        Image::make($file)->resize(290, null, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath . '/thumbnails/' . $filename);
         $file->move($destinationPath, $filename);
