@@ -30,7 +30,8 @@
     @endforeach
 
 </div>
-
+<div class = 'pagination-div'>
 {{ $portfolios->appends(Input::except('page'))->links() }}
+</div>
 
 @stop
