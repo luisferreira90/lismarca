@@ -1,3 +1,7 @@
+{{ HTML::style('css/slick.css') }}
+{{ HTML::style('css/slick-theme.css') }}
+{{ HTML::style('css/products.css') }}
+
 @extends('layouts.layout')
 
 @section('content')
@@ -87,6 +91,29 @@
 
 <hr>
 
+<h2 class = 'red'>Em destaque</h2>
+<div class="slideshow">
+@foreach ($featured as $featureditem)
+    <div>
+        <div class = 'slideshow-image'><a href = '/produtos/{{$featureditem->id}}'><img src="/images/produtos/items/thumbnails/{{$featureditem->icon}}"></a></div>
+        <p>{{$featureditem->name}}</p>
+    </div>
+@endforeach
+</div>
+
+<hr>
+
+<h2 class = 'red'>Novidades</h2>
+<div class="slideshow">
+@foreach ($new as $newitem)
+    <div>
+        <div class = 'slideshow-image'><a href = '/produtos/{{$newitem->id}}'><img src="/images/produtos/items/thumbnails/{{$newitem->icon}}"></a></div>
+        <p>{{$newitem->name}}</p>
+    </div>
+@endforeach
+</div>
+
+<!--
 <div class = 'two-columns'>
 	<a href = 'produtos'>
 		<div class = 'promotion'>
@@ -119,12 +146,59 @@
 		</div>
 	</a>
 </div>
-
+-->
 <hr class = 'clear-fix'>
 <div class = 'location'>
 	<p class = 'red title-smaller'>.LOCALIZAÇÃO</p>
 	<img src="/images/location.svg">
 	<p class = 'dark-grey'>Rua Mestre Sidónio 9A, 9020-365 Funchal, Madeira | Portugal</p>
 </div>
+
+{{ HTML::script('js/slick.min.js') }}
+<script>
+
+$(document).ready(function(){
+  $('.slideshow').slick({
+    infinite: true,
+    slidesToShow: 7,
+    slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+    {
+      breakpoint: 1080,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }
+  ]
+  });
+});
+
+</script>
 
 @stop

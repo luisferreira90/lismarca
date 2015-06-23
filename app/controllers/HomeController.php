@@ -2,8 +2,7 @@
 
 class HomeController extends BaseController {
 
-	public function language() 
-    {
+	public function language() {
         $rules = [
         'language' => 'in:en,pt' //list of supported languages of your application.
         ];
@@ -18,6 +17,13 @@ class HomeController extends BaseController {
             App::setLocale($language);
             return Redirect::back()->withInput();
         }
+    }
+
+    public function homepage() {
+        $productItem = new ProductItem;
+        $new = $productItem->where('new', '=', '1')->orderBy('id', 'desc')->skip(0)->take(15)->get();
+        $featured = $productItem->where('featured', '=', '1')->orderBy('id', 'desc')->skip(0)->take(15)->get();
+        return View::make('pages/home')->with('new', $new)->with('featured', $featured);
     }
 
 }

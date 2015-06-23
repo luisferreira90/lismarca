@@ -1,10 +1,5 @@
 <?php
 
-Route::get('/', function()
-{
-	return View::make('pages/home');
-});
-
 Route::get('/empresa', function()
 {
 	return View::make('pages/company');
@@ -21,6 +16,8 @@ Route::get('/novidades', function()
 });
 
 Route::controller('password', 'RemindersController');
+
+Route::get('/', array('as' => 'home', 'uses' => 'HomeController@homepage'));
 
 Route::get('registo', array('as' => 'registo', 'uses' => 'UsersController@registration'));
 
