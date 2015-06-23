@@ -43,6 +43,10 @@
 	margin:0;
 }
 
+.two-columns a{
+	text-decoration: none;
+}
+
 .promotion img, 
 .new img {
 	width:100%;
