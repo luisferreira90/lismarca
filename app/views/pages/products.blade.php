@@ -78,42 +78,12 @@
 
 <h3 class = 'title red uppercase'>.Novidades</h3>
 <div class="slideshow">
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/1.jpg"></a></div>
-        <p>Cadeira em madeira</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/2.jpg"></a></div>
-        <p>Tapa-sol em polipropileno</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/3.jpg"></a></div>
-        <p>Item de teste 3</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/4.jpg"></a></div>
-        <p>Mobiliário de interior</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/5.jpg"></a></div>
-        <p>Calhas PVC</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/6.jpg"></a></div>
-        <p>Artigo de exposição de vinhos</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/7.jpg"></a></div>
-        <p>Janela de correr em metal</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/8.jpg"></a></div>
-        <p>Calhas triangulares</p>
-    </div>
-    <div>
-        <div class = 'slideshow-image'><a href = '#'><img src="/images/home/9.jpg"></a></div>
-        <p>Item de teste</p>
-    </div>
+    @foreach ($new as $newitem)
+        <div>
+            <div class = 'slideshow-image'><a href = '/produtos/{{$newitem->id}}'><img src="/images/produtos/icons/{{$newitem->icon}}"></a></div>
+            <p>{{$newitem->name}}</p>
+        </div>
+    @endforeach
 </div>
 
 {{ HTML::script('js/slick.min.js') }}

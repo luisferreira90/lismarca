@@ -37,7 +37,9 @@ class ItemsController extends BaseController {
 			$view = $view->with('subsections', $subsections)->with('title', $title);
 		}
 
-  		return $view;
+        $new = $item->where('new', '=', '1')->orderBy('id', 'desc')->skip(0)->take(15)->get();
+
+  		return $view->with('new', $new);
 	}
 
 
