@@ -15,9 +15,9 @@
 				<div class = 'language'>
 					<img src = '/images/arrow-right.svg' class = 'marker'>
 					@if(Session::get('language') === 'en') 
-						<a href = 'language?lang=pt'><img class = 'language-flag' src = '/images/flag-icon-pt.svg'></a>
+						<a href = '/language?lang=pt'><img class = 'language-flag' src = '/images/flag-icon-pt.svg'></a>
 					@else
-						<a href = 'language?lang=en'><img class = 'language-flag' src = '/images/flag-icon-en.svg'></a>
+						<a href = '/language?lang=en'><img class = 'language-flag' src = '/images/flag-icon-en.svg'></a>
 					@endif		
 				</div>
 
