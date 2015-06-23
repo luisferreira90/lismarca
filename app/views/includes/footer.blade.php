@@ -19,12 +19,10 @@
 
 	<nav>
 		<ul>
-			<li>.Empresa</li>
-			<li>.Produtos</li>
-			<li>.Contactos</li>
-			<li>.Novidades</li>
-			<li>.Portfolio</li>
-			<li>.Registo</li>
+			<li><a href = '/empresa'>.Empresa</a></li>
+			<li><a href = '/produtos'>.Produtos</a></li>
+			<li><a href = '/contactos'>.Contactos</a></li>
+			<li><a href = '/portfolio'>.Portfolio</a></li>
 		</ul>
 	</nav>
 

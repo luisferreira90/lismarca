@@ -52,7 +52,16 @@ footer .footer-lower {
 		margin-left:5%;
 		font-size: 14px;
 		text-transform: uppercase;
+	}
+	
+	footer nav li a{
+		text-decoration: none;
 		color:#6d6f71;
+		transition: all 0.5s ease;
+	}
+	
+	footer nav li a:hover{
+		color:#e11b22;
 	}
 
 	footer nav li:first-child {
