@@ -9,6 +9,10 @@
     text-transform: uppercase;
     text-align: center;
     margin-top:2px; 
+    text-overflow: ellipsis; /* will make [...] at the end */
+    width: 145px; /* change to your preferences */
+    white-space: nowrap; /* paragraph to one line */
+    overflow:hidden; /* older browsers */
 }
  
 .gallery-list .gallery-item img {

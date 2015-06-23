@@ -56,7 +56,7 @@ class ProductItem extends Eloquent{
         else
             $items = $items;
         
-        return $items->orderBy('id', 'desc')->paginate(15);
+        return $items->orderBy('id', 'desc')->paginate(18);
     }
 
 	

@@ -32,7 +32,7 @@ class PortfolioClient extends Eloquent{
 
         $items->orderBy('id', 'desc');
 
-        return $items->paginate(15);
+        return $items->paginate(18);
     }
 
 
