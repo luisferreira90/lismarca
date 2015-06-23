@@ -48,11 +48,13 @@
 				<li><a href = '/produtos'>Produtos</a></li>
 				<li><a href = '/contactos'>Contactos</a></li>
 				<li><a href = '/portfolio'>Portfolio</a></li>
+				@if(Auth::check())
 				<li class = 'validate-budget'>
 					<a href = '/registo'>
 						{{Lang::get('strings.validate_budget')}}
 					</a>
 				</li>
+				@endif
 				<li class = 'search'>
 					<form class='search_field' method='GET' action='/produtos'>
 						<input name='search'/ placeholder="{{Lang::get('strings.search')}}" type = 'text'>
