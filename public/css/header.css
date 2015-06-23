@@ -45,7 +45,7 @@ header a {
 }
 
 .login {
-	padding:0 10px;
+	padding:0 5px;
 	float:right;
 }
 
@@ -147,7 +147,7 @@ header a {
 
 
 
-@media only screen and (min-width: 330px) {
+@media only screen and (min-width: 340px) {
 	
 	.header-upper-inner div{
 		margin:0px 2px;
@@ -156,7 +156,7 @@ header a {
 }
 
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 410px) {
 	
 	.logo {
 		max-width: 300px;
@@ -173,7 +173,7 @@ header a {
 @media only screen and (min-width: 480px) {
 	
 	.header-upper-inner div{
-		margin:0px 15px;
+		margin:0px 10px;
 	}
 	
 	.header-upper-inner div:last-child{
