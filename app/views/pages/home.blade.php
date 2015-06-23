@@ -95,7 +95,7 @@
 <div class="slideshow">
 @foreach ($featured as $featureditem)
     <div>
-        <div class = 'slideshow-image'><a href = '/produtos/{{$featureditem->id}}'><img src="/images/produtos/items/thumbnails/{{$featureditem->icon}}"></a></div>
+        <div class = 'slideshow-image'><a href = '/produtos/{{$featureditem->id}}'><img src="/images/produtos/icons/{{$featureditem->icon}}"></a></div>
         <p>{{$featureditem->name}}</p>
     </div>
 @endforeach
@@ -107,46 +107,12 @@
 <div class="slideshow">
 @foreach ($new as $newitem)
     <div>
-        <div class = 'slideshow-image'><a href = '/produtos/{{$newitem->id}}'><img src="/images/produtos/items/thumbnails/{{$newitem->icon}}"></a></div>
+        <div class = 'slideshow-image'><a href = '/produtos/{{$newitem->id}}'><img src="/images/produtos/icons/{{$newitem->icon}}"></a></div>
         <p>{{$newitem->name}}</p>
     </div>
 @endforeach
 </div>
 
-<!--
-<div class = 'two-columns'>
-	<a href = 'produtos'>
-		<div class = 'promotion'>
-			<h3 class = 'red'>.PROMOÇÃO</h3>
-			<img src = '/images/slideshow/1.png'>
-		</div>
-	</a>
-	<a href = 'produtos'>
-		<div class = 'new'>
-			<h3 class = 'red'>.NOVIDADES</h3>
-			<img src = '/images/slideshow/2.png'>
-		</div>
-	</a>
-</div>
-
-<hr class = 'clear-fix'>
-
-<div class = 'two-columns'>
-	<div class = 'video'>
-		<h4 class = 'grey'>.CANAL YOUTUBE</h4>
-		<iframe 
-			src="https://www.youtube.com/embed/I_ZX1ypXgaY?rel=0&amp;showinfo=0" 
-			frameborder="0" allowfullscreen>
-		</iframe>
-	</div>
-	<a href = 'portfolio'>
-		<div class = 'portfolio'>
-			<h4 class = 'grey'>.PORTFOLIO</h4>
-			<img src="/images/slideshow/3.png">
-		</div>
-	</a>
-</div>
--->
 <hr class = 'clear-fix'>
 <div class = 'location'>
 	<p class = 'red title-smaller'>.LOCALIZAÇÃO</p>
