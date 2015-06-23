@@ -39,6 +39,8 @@ Route::get('/portfolio/{id}', array('as' => 'portfolio', 'uses' => 'PortfolioCon
 
 Route::resource('user', 'UsersController'); 
 
+Route::resource('cart', 'CartsController');
+
 Route::get('language', array('uses' => 'HomeController@language'));
 
 Route::get('registo/verificar/{confirmationCode}', [

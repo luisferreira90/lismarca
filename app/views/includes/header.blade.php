@@ -24,13 +24,13 @@
 				<div class = 'login'>
 					<img src = '/images/lock.svg' class = 'marker'>
 					@if(Auth::check() && User::isAdmin())
-						<a href = 'admin'>Administração</a>
-						<a href = 'logout'> / Logout</a>
+						<a href = '/admin'>Administração</a>
+						<a href = '/logout'> / Logout</a>
 					@elseif(Auth::check())
-						<a href = 'registo'>{{Lang::get('strings.profile')}}</a>
-						<a href = 'logout'> / Logout</a>
+						<a href = '/registo'>{{Lang::get('strings.profile')}}</a>
+						<a href = '/logout'> / Logout</a>
 					@else
-						<a href = 'login'>{{Lang::get('strings.login_registration')}}</a>
+						<a href = '/login'>{{Lang::get('strings.login_registration')}}</a>
 					@endif
 				</div>	
 			</div>

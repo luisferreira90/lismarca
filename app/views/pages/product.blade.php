@@ -21,8 +21,30 @@
 </div>
 
 <div class = 'product-main'>
-    {{$product->description}}
+  {{$product->description}}
 </div>
+
+@if(Auth::check())  
+<div class = 'cart'>
+  <h4>Adicionar ao carrinho</h4>
+  {{ Form::open(array('route' => array('cart.store'), 'method' => 'post')) }}
+
+      <div class = 'form-group'>
+          {{Form::label('quantity', 'Quantidade')}}
+          {{Form::number('quantity', 1, array('min' => '1'))}}
+      </div>
+
+      <div class = 'form-group'>
+          {{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control btn btn-primary'))}}
+      </div>
+
+      {{ Form::hidden('product_item', $product->id) }}
+
+      {{ Form::hidden('user', Auth::id()) }}
+
+  {{ Form::close() }}
+</div>
+@endif
 
 <div class = 'product-file'>
     <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
