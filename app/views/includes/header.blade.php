@@ -50,7 +50,7 @@
 				<li><a href = '/portfolio'>Portfolio</a></li>
 				@if(Auth::check())
 				<li class = 'validate-budget'>
-					<a href = '/registo'>
+					<a href = '/checkout'>
 						{{Lang::get('strings.validate_budget')}}
 					</a>
 				</li>

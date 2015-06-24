@@ -14,4 +14,13 @@ class CartsController extends BaseController {
 		return Redirect::back()->withInput();
 	}
 
+
+	public function checkout() {
+		$carts = new Cart;
+		$items = new ProductItem;
+		$cart = $carts->getUserCart();
+		$item = $items->getItems($cart);
+		return View::make('pages/checkout')->with('cart',$cart)->with('item', $item);
+	}
+
 }
