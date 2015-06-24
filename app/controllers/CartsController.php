@@ -17,10 +17,9 @@ class CartsController extends BaseController {
 
 	public function checkout() {
 		$carts = new Cart;
-		$items = new ProductItem;
-		$cart = $carts->getUserCart();
-		$item = $items->getItems($cart);
-		return View::make('pages/checkout')->with('cart',$cart)->with('item', $item);
+		$cart = $carts->getUserCart();		
+
+		return View::make('pages/checkout')->with('cart',$cart);
 	}
 
 }

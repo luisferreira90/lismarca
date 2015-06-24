@@ -4,8 +4,10 @@
 
 <div class = 'carts'>
 
-	@foreach($item as $items)
-		{{$items->name}}
+	@foreach($cart as $item)
+		Nome:{{$item->name}} <br>
+		Quantidade:{{$item->quantity}} <br>
+		Icon:{{$item->icon}} <br>
 	@endforeach
 
 </div>

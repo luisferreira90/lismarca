@@ -59,18 +59,6 @@ class ProductItem extends Eloquent{
         return $items->orderBy('id', 'desc')->paginate(18);
     }
 
-
-
-    public function getItems($ids) {
-        $array = array();
-        
-        foreach($ids as $id) {
-            array_push($array, $id->product_item);
-        }
-        
-        return $this->select('id', 'name', 'icon')->whereIn('id', $array)->get();
-    }
-
 	
 	/**
      * Publish item

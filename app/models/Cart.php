@@ -7,7 +7,12 @@ class Cart extends Eloquent{
 
 	public function getUserCart() {
 		$id = Auth::id();
-		return $this->select('product_item', 'quantity','user')->where('user', '=', $id)->get();
+		$items = new ProductItem;
+
+		return $this->join('product_items', 'product_items.id', '=', 'carts.product_item')
+		->select('carts.product_item', 'carts.quantity','carts.user', 'product_items.name', 'product_items.icon')
+		->where('carts.user', '=', $id)
+		->get();
 	}
 
 }
