@@ -48,6 +48,9 @@ class UsersController extends BaseController {
 
 	public function registration()
 	{
+		if(Auth::check())
+			return Redirect::route('home');
+
 		$user = null;
 		if(Auth::check()) {
 			$user = User::find(Auth::user()->id);
