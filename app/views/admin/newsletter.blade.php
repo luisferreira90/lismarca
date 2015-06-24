@@ -11,7 +11,7 @@
     {{$message}}
 @endforeach
 
-{{ Form::open(array('route' => array('admin.newsletter.store'), 'method' => 'post', 'class' => 'form-horizontal')) }}
+{{ Form::open(array('url' => 'admin/newsletter/send')) }}
 
 <div class = 'form-group'>
     {{Form::label('description', 'Texto')}}

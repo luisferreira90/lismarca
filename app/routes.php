@@ -77,12 +77,11 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('portfoliophoto', 'PortfolioPhotosController');
 
-	Route::resource('newsletter', 'NewsletterController');
-
 	Route::get('/', 'UsersController@users');
 
 	Route::get('newsletter', 'NewsletterController@edit');
 
+	Route::post('newsletter/send', 'NewsletterController@send');
 
 	Route::get('utilizadores', 'UsersController@users');
 

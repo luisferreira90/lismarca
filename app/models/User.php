@@ -36,6 +36,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
 
+    public function newsletterUsers() {
+    	$users = $this->select('name', 'email','newsletter')->where('newsletter', '=', '1')->get();
+    	return $users;
+    }
+
+
     /**
      * Return Entity Type list
      *
