@@ -24,10 +24,14 @@ class CartsController extends BaseController {
 
 
 	public function submit() {
-		var_dump(Input::all());die();
+		$carts = new Cart;
+		$cart = $carts->submitCart(Input::all());
+
+		return Redirect::route('checkout');
 	}
 
-	public function delete($id) {;
+
+	public function delete($id) {
 		DB::table('carts')->where('product_item', '=', $id)->where('user', '=', Auth::id())->delete();
 		return Redirect::route('checkout');
 	}

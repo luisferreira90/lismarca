@@ -30,7 +30,7 @@
 					<td>
 						{{Form::number('quantity[]', $product->quantity, array('min' => '1', 'required' => 'true'))}}
 						<br>
-						<a href = 'checkout/delete/{{$product->id}}'>Eliminar</a>
+						<a href = 'checkout/delete/{{$product->product_item}}'>Eliminar</a>
 					</td>
 				</tr>
 			@endforeach
@@ -39,7 +39,7 @@
 	</table>
 
 	<div class = 'form-group'>
-			{{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control btn btn-primary'))}}
+			{{Form::submit('Pedir orçamento', array('id' => 'submit', 'class' => 'form-control btn btn-primary'))}}
 	</div>
 	{{ Form::close() }}
 </div>
