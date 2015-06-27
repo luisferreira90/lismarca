@@ -39,9 +39,13 @@ Route::get('/portfolio', array('as' => 'portfolio', 'uses' => 'PortfolioControll
 
 Route::get('/portfolio/{id}', array('as' => 'portfolio', 'uses' => 'PortfolioController@portfolio'));
 
-Route::resource('user', 'UsersController'); 
+Route::resource('user', 'UsersController');
 
 Route::resource('cart', 'CartsController');
+
+Route::post('checkout/enviar', 'CartsController@submit');
+
+Route::get('checkout/delete/{id}', 'CartsController@delete');
 
 Route::get('language', array('uses' => 'HomeController@language'));
 
@@ -55,7 +59,7 @@ Route::get('registo/verificar/{confirmationCode}', [
 
 Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array('auth|admin')), function() {
 
-	Route::resource('user', 'UsersController'); 
+	Route::resource('user', 'UsersController');
 
 	Route::resource('section', 'SectionsController');
 

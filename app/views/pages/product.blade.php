@@ -24,7 +24,7 @@
   {{$product->description}}
 </div>
 
-@if(Auth::check())  
+@if(Auth::check())
 <div class = 'cart'>
   <h4>Adicionar ao carrinho</h4>
   {{ Form::open(array('route' => array('cart.store'), 'method' => 'post')) }}

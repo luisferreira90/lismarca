@@ -148,6 +148,10 @@
     text-align: center;
 }
 
+.cart input {
+  width:100px;
+}
+
 @media only screen and (min-width: 980px) {
 
     .product-main {
@@ -162,6 +166,11 @@
 
 
 /*BOOTSTRAP TABLES*/
+
+table input {
+  width:100px;
+}
+
 table img {
   width:145px;
   height: 100px;
@@ -170,6 +179,7 @@ table img {
 table {
   background-color: transparent;
 }
+
 caption {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -192,7 +202,7 @@ th {
 .table > tfoot > tr > td {
   padding: 8px;
   line-height: 1.42857143;
-  vertical-align: top;
+  vertical-align: middle;
   border-top: 1px solid #dddddd;
 }
 .table > thead > tr > th {

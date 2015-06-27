@@ -15,10 +15,10 @@
 				<th></th>
 				<th>Nome</th>
 				<th>Quantidade</th>
-				<th>Eliminar</th>
 			</tr>
 		</thead>
 		<tbody>
+			{{Form::open(array('action' => 'CartsController@submit'))}}
 			@foreach($cart as $product)
 				<tr>
 					<td>
@@ -28,16 +28,20 @@
 						{{$product->name}}
 					</td>
 					<td>
-						{{$product->quantity}}
-					</td>
-					<td>
-						Eliminar
+						{{Form::number('quantity[]', $product->quantity, array('min' => '1', 'required' => 'true'))}}
+						<br>
+						<a href = 'checkout/delete/{{$product->id}}'>Eliminar</a>
 					</td>
 				</tr>
 			@endforeach
+
 	</tbody>
 	</table>
 
+	<div class = 'form-group'>
+			{{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control btn btn-primary'))}}
+	</div>
+	{{ Form::close() }}
 </div>
 
 @stop
