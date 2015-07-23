@@ -20,17 +20,27 @@ class Cart extends Eloquent{
 		$currentCart = $this->getUserCart();
 		$i = 0;
 		$finalCart = array();
-		$cartModel = new Cart();
 
 		foreach($currentCart as $cart) {
 			$cart['quantity'] = $input['quantity'][$i];
 			$finalCart[] = $cart;
 			unset($cart['icon']);
-			
-			//$cartModel->save($finalCart);
 			$i++;
 		}
 
+		
+
+		DB::transaction(function()
+		{
+			$order = new Order;
+			$order->user = Auth::id();
+		    $order->save();
+	    	$insertedId = $order->id;
+		
+		});
+		
+
+		
 
 		Mail::send('pages.order', array('cart' => $finalCart), function($message) {
             	$message->to('lismarca.localhost@gmail.com', Input::get('name'))->subject('Pedido de orçamento');
