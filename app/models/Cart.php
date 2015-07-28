@@ -28,8 +28,6 @@ class Cart extends Eloquent{
 			$i++;
 		}
 
-		
-
 		DB::transaction(function($finalCart) use ($finalCart)
 		{
 			$order = new Order;
@@ -50,9 +48,7 @@ class Cart extends Eloquent{
 			Cart::where('user', '=', Auth::id())->delete();
 			
 		});
-		
-
-		
+			
 
 		Mail::send('pages.order', array('cart' => $finalCart), function($message) {
             	$message->to('lismarca.localhost@gmail.com', Input::get('name'))->subject('Pedido de orçamento');
