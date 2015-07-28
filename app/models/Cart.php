@@ -30,13 +30,25 @@ class Cart extends Eloquent{
 
 		
 
-		DB::transaction(function()
+		DB::transaction(function($finalCart) use ($finalCart)
 		{
 			$order = new Order;
 			$order->user = Auth::id();
 		    $order->save();
 	    	$insertedId = $order->id;
-		
+
+			foreach($finalCart as $cart) {
+				DB::table('order_items')->insert(
+				    array(
+				    	'order_id' => $insertedId, 
+				    	'product_item' => $cart['product_item'],
+				    	'quantity' => $cart['quantity']
+				    	)
+				);
+			}
+
+			Cart::where('user', '=', Auth::id())->delete();
+			
 		});
 		
 

@@ -1,11 +1,11 @@
 <?php
 
-class Order extends Eloquent{
+class OrderItem extends Eloquent{
 
-	protected $fillable = ['user', 'product_item', 'quantity', 'datetime', 'treated'];
+	protected $fillable = ['order_id', 'product_item', 'quantity'];
 	public $timestamps = false;
 
-	public function getOrder() {
+	public function getOrderItem() {
 		
 	}
 
