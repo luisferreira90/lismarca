@@ -21,7 +21,11 @@
 </div>
 
 <div class = 'product-main'>
-  {{$product->description}}
+  @if(App::getLocale() == 'en')
+    {{$product->description_en}}
+  @else
+    {{$product->description}}
+  @endif
 </div>
 
 @if(Auth::check())

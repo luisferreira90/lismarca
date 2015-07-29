@@ -11,29 +11,35 @@ use Redirect;*/
 class ItemsController extends BaseController {
 
 	public function items() {
+
+		$en = '';
+		if (App::getLocale() == 'en') {
+			$en = '_en';
+		}
+
 		$item = new ProductItem;
 		$items = $item->listAll(Input::all());
 
 		$view = View::make('pages.products')
 		->with('products', $items)
-		->with('sections', ProductSection::lists('name', 'id'));
+		->with('sections', ProductSection::lists('name' . $en, 'id'));
 
 		if(Input::has('section') && Input::has('subsection') && Input::has('category')) {
 			$subcategory = new ProductSubcategory;
-			$subcategories = $subcategory->where('category', '=', Input::get('category'))->lists('name', 'id');
+			$subcategories = $subcategory->where('category', '=', Input::get('category'))->lists('name' . $en, 'id');
 			$view = $view->with('subcategories', $subcategories);	
 		}
 
 		if(Input::has('section') && Input::has('subsection')) {
 			$category = new ProductCategory;
-			$categories = $category->where('subsection', '=', Input::get('subsection'))->lists('name', 'id');
+			$categories = $category->where('subsection', '=', Input::get('subsection'))->lists('name' . $en, 'id');
 			$view = $view->with('categories', $categories);
 		}
 
 		if(Input::has('section')) {
 			$title = ProductSection::find(Input::get('section'))->name;
 			$subsection = new ProductSubsection;
-			$subsections = $subsection->where('section', '=', Input::get('section'))->lists('name', 'id');
+			$subsections = $subsection->where('section', '=', Input::get('section'))->lists('name' . $en, 'id');
 			$view = $view->with('subsections', $subsections)->with('title', $title);
 		}
 
