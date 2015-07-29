@@ -18,6 +18,9 @@ class Cart extends Eloquent{
 
 	public function submitCart($input) {
 		$currentCart = $this->getUserCart();
+		if(count($currentCart) == 0) {
+			return Redirect::route('checkout');
+		}
 		$i = 0;
 		$finalCart = array();
 
