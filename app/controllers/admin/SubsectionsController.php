@@ -14,6 +14,7 @@ class SubsectionsController extends \BaseController {
 	private function validate($data) {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
+			'name_en' => 'required|min:2',
 			'ordering' => 'numeric',
 			'icon' => 'image',
 			'section' => 'required'
@@ -72,7 +73,7 @@ class SubsectionsController extends \BaseController {
         	$data['icon'] = ProductSubsection::storeImage(Input::file('icon'));
     	}
         else {
-        	$data = Input::only(['name','ordering', 'section']);
+        	$data = Input::only(['name','name_en','ordering', 'section']);
         }		
 
         ProductSubsection::find($id)->fill($data)->save();        

@@ -23,6 +23,11 @@
     </div>
 
     <div class = 'form-group'>
+            {{Form::label('name_en', 'Nome (Inglês)')}}
+            {{Form::text('name_en', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
         {{Form::label('category','Categoria')}}
         {{Form::select('category', $categories, null, array('class' => 'form-control'))}}
     </div>

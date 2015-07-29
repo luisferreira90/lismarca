@@ -2,7 +2,7 @@
 
 class ProductItem extends Eloquent{
 
-	protected $fillable = ['section','subsection','category','subcategory', 'name', 'icon', 'description', 'published','new','featured'];
+	protected $fillable = ['section','subsection','category','subcategory', 'name', 'icon', 'description', 'description_en', 'published','new','featured'];
 	public $timestamps = false;
 
 

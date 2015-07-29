@@ -23,6 +23,11 @@
     </div>
 
     <div class = 'form-group'>
+            {{Form::label('name_en', 'Nome (Inglês)')}}
+            {{Form::text('name_en', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
         {{Form::label('subsection','Sub-Secção')}}
         {{Form::select('subsection', $subsections, null, array('class' => 'form-control'))}}
     </div>

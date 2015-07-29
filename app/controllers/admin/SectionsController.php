@@ -13,6 +13,7 @@ class SectionsController extends \BaseController {
 	private function validate($data) {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
+			'name_en' => 'required|min:2',
 			'ordering' => 'numeric',
 			'icon' => 'image'
 			]);
@@ -66,7 +67,7 @@ class SectionsController extends \BaseController {
         	$data['icon'] = ProductSection::storeImage(Input::file('icon'));
     	}
         else {
-        	$data = Input::only(['name','ordering']);
+        	$data = Input::only(['name','name_en','ordering']);
         }		
 
         ProductSection::find($id)->fill($data)->save();

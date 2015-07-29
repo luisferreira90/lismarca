@@ -14,6 +14,7 @@ class SubcategoriesController extends \BaseController {
 	private function validate($data) {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
+			'name_en' => 'required|min:2',
 			'ordering' => 'numeric',
 			'icon' => 'image',
 			'category' => 'required'
@@ -71,7 +72,7 @@ class SubcategoriesController extends \BaseController {
         	$data['icon'] = ProductSubcategory::storeImage(Input::file('icon'));
     	}
         else {
-        	$data = Input::only(['name','ordering','category']);
+        	$data = Input::only(['name', 'name_en', 'ordering', 'category']);
         }		
 
         ProductSubcategory::find($id)->fill($data)->save();        

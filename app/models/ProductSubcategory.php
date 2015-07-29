@@ -4,7 +4,7 @@
 class ProductSubcategory extends Eloquent{
 
 	protected $table = 'product_subcategories';
-	protected $fillable = ['category', 'name', 'icon', 'published', 'ordering'];
+	protected $fillable = ['category', 'name', 'name_en', 'icon', 'published', 'ordering'];
 	public $timestamps = false;
 
 

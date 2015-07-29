@@ -33,6 +33,11 @@
     </div>
 
     <div class = 'form-group'>
+        {{Form::label('description_en', 'Descrição (Inglês)')}}
+        {{Form::textarea('description_en', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
         {{Form::label('new', 'Novidade')}}
         {{Form::checkbox('new', '1', array('class' => 'form-control'))}}
     </div>
@@ -81,6 +86,7 @@
 
 <script>
     CKEDITOR.replace('description');
+    CKEDITOR.replace('description_en');
 </script>
 
 @if(isset($item))

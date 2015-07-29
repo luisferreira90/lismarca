@@ -19,6 +19,7 @@ class ItemsController extends \BaseController {
 		$validator = Validator::make($data, [
 			'name' => 'required|min:2',
 			'description' => 'required',
+			'description_en' => 'required',
 			'icon' => 'image'
 			]);
 

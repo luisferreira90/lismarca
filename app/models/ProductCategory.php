@@ -4,7 +4,7 @@
 class ProductCategory extends Eloquent{
 
 	protected $table = 'product_categories';
-	protected $fillable = ['subsection', 'name', 'icon', 'published', 'ordering'];
+	protected $fillable = ['subsection', 'name', 'name_en',  'icon', 'published', 'ordering'];
 	public $timestamps = false;
 
 
