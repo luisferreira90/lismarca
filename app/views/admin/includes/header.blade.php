@@ -19,6 +19,7 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/categorias">Categorias</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/subcategorias">Sub-categorias</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/items">Items</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/encomendas">Encomendas</a></li>
         </ul>
       </li>
 
@@ -41,7 +42,6 @@
         <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/entidades">Tipos de entidade</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/localizacoes">Localizações</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/newsletter">Newsletter</a></li>
         </ul>
       </li>
 

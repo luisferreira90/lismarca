@@ -73,6 +73,8 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 
 	Route::resource('productphoto', 'ProductPhotosController');
 
+	Route::resource('order', 'OrdersController');
+
 	Route::resource('entity', 'EntitiesController');
 
 	Route::resource('location', 'LocationsController');
@@ -176,6 +178,13 @@ Route::group(array('namespace' => 'admin', 'prefix'=> 'admin', 'before' => array
 	Route::get('items/publish/{id}', 'ItemsController@publish');
 
 	Route::get('items/unpublish/{id}', 'ItemsController@unpublish');
+
+
+	Route::get('encomendas', 'OrdersController@orders');
+
+	Route::post('encomendas', 'OrdersController@orders');
+
+	Route::get('encomendas/{id}', 'OrdersController@edit');
 
 
 	Route::get('portfolio-categoria', 'PortfolioCategoriesController@categories');
