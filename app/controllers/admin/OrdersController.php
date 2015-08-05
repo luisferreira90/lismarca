@@ -5,6 +5,7 @@ namespace admin;
 use View;
 use Redirect;
 use Order;
+use OrderItem;
 use User;
 use DB;
 
@@ -25,36 +26,25 @@ class OrdersController extends \BaseController {
 
 		$order = DB::table('orders')
             ->join('users', 'orders.user', '=', 'users.id')
-            ->select('users.id', 'users.name', 'users.company_name', 'users.email', 'users.phone', 'users.address',
-            		 'orders.datetime','orders.treated')
+            ->select('users.id as user_id', 'users.name', 'users.company_name', 'users.email', 'users.phone', 'users.address',
+            		 'orders.id', 'orders.datetime','orders.treated')
             ->where('orders.id', '=', $id)
             ->get();
 
-            //var_dump($order);die();
+        $products = OrderItem::where('order_id', '=', $id)->get();
 
-		return View::make('admin.order-edit')->with('order', $order);
+		return View::make('admin.order-edit')->with('order', $order)->with('products', $products);
 	}
 
 
 	public function update($id) {
-		$data = Input::only(['name']);
-		
-		$validator = Validator::make($data, [
-			'name' => 'required|min:2'
-		]);
 
-        if($validator->fails()){
-            return Redirect::to('admin/localizacoes/' . $id)->withErrors($validator)->withInput();
-        }
+		$order = Order::find($id);
 
-        Location::find($id)->fill($data)->save();  
-    	return Redirect::to('admin/localizacoes/' . $id)->withInput();
-	}
+		$order->treated = 1;
 
-
-	public function destroy($id) {
-		Location::find($id)->delete();
-		return Redirect::to('admin/localizacoes');
+		$order->save();
+    	return Redirect::to('admin/encomendas/' . $id)->withInput();
 	}
 
 }
