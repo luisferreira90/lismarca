@@ -44,8 +44,10 @@ class SectionsController extends \BaseController {
 
         $new = ProductSection::create($data);
 
-        if(isset($data['icon'])) 
+        if(isset($data['icon'])) {
         	$data['icon'] = ProductSection::storeImage(Input::file('icon'), $new->id);
+        	ProductSection::find($new->id)->fill($data)->save();
+        }
 
         if($new){
             return Redirect::to('admin/seccoes');

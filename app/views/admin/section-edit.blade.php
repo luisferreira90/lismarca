@@ -65,7 +65,7 @@
 
     <h2>Icone</h2>
 
-    {{ HTML::image($section->icon) }}
+    {{ HTML::image('images/produtos/icons/' . $section->icon) }}
 
 </div>
 
