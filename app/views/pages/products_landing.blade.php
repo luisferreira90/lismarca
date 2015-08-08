@@ -16,7 +16,7 @@
     <div class = 'gallery-list-inner'>
         @foreach ($sections as $section)
 
-            <div class="gallery-item">
+            <div class="gallery-item gallery-item-section">
                 <div class='image'>
                     <a href={{'/produtos/?section=' . $section->id }}>{{ HTML::image('images/produtos/icons/' . $section->icon) }}</a>
                 </div>

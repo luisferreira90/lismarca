@@ -164,6 +164,17 @@
 
 }
 
+.gallery-item-section, 
+.gallery-item-section a,
+.gallery-item-section img {
+  width:208px!important;
+  height:277px!important;
+}
+
+.gallery-list .gallery-item-section h3 {
+    width: 208px; /* change to your preferences */
+}
+
 
 /*BOOTSTRAP TABLES*/
 
