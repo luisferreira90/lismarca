@@ -42,6 +42,17 @@ class ItemsController extends BaseController {
 			$subsections = $subsection->where('section', '=', Input::get('section'))->lists('name' . $en, 'id');
 			$view = $view->with('subsections', $subsections)->with('title', $title);
 		}
+		else {
+			if ($en!='')
+				$name = 'name_en';
+			else
+				$name = 'name';
+
+			$sections = ProductSection::select($name . ' as name', 'id', 'icon')->get();
+
+			$view = View::make('pages.products_landing')
+			->with('sections', $sections);
+		}
 
         $new = $item->where('new', '=', '1')->orderBy('id', 'desc')->skip(0)->take(15)->get();
 

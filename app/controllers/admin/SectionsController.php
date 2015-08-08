@@ -42,10 +42,11 @@ class SectionsController extends \BaseController {
         if($validator)
         	return Redirect::to('admin/seccoes/criar')->withErrors($validator)->withInput();
 
-        if(isset($data['icon'])) 
-        	$data['icon'] = ProductSection::storeImage(Input::file('icon'));
-
         $new = ProductSection::create($data);
+
+        if(isset($data['icon'])) 
+        	$data['icon'] = ProductSection::storeImage(Input::file('icon'), $new->id);
+
         if($new){
             return Redirect::to('admin/seccoes');
         }
@@ -64,7 +65,7 @@ class SectionsController extends \BaseController {
 
 		if (Input::file('icon')) {
 			$data = Input::all();
-        	$data['icon'] = ProductSection::storeImage(Input::file('icon'));
+        	$data['icon'] = ProductSection::storeImage(Input::file('icon'), $id);
     	}
         else {
         	$data = Input::only(['name','name_en','ordering']);

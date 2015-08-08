@@ -17,9 +17,9 @@ class ProductSection extends Eloquent {
     }
 
 
-    public static function storeImage($file) {
+    public static function storeImage($file, $id) {
         $destinationPath = public_path().'/images/produtos/icons'; 
-        $filename = 'images/produtos/icons/' . $file->getClientOriginalName();
+        $filename = $id . '-section-' . $file->getClientOriginalName();
         $upload_success = $file->move($destinationPath, $filename);
         return $filename;
     }
