@@ -113,6 +113,7 @@
 		width:31%;
 		margin-left:3.384615384615385%;
 		height: 100%;
+		background-color:#e11b22;
 	}
 
 	.home-sections .three-columns img {
@@ -126,8 +127,8 @@
 		transition: opacity 1s ease-in-out;
 	}
 
-	.home-sections:hover > .three-columns img.top {
-		opacity:0;
+	.home-sections:hover > .three-columns img {
+		opacity:0.3;
 	}
 
 	.home-sections .three-columns div:first-child {

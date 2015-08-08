@@ -10,16 +10,13 @@
 	<section class = 'home-sections'>
 		<div class = 'three-columns'>
 			<div>
-				<img class="bottom" src="/images/home/1t.jpg" />
-		  		<img class="top" src="/images/home/1.jpg" />
+		  		<img src="/images/home/1.jpg" />
 		  	</div>
 		  	<div>
-				<img class="bottom" src="/images/home/2t.jpg" />
-		  		<img class="top" src="/images/home/2.jpg" />
+		  		<img src="/images/home/2.jpg" />
 		  	</div>
 		  	<div>
-				<img class="bottom" src="/images/home/3t.jpg" />
-		  		<img class="top" src="/images/home/3.jpg" />
+		  		<img src="/images/home/3.jpg" />
 		  	</div>
 		</div>
 		<div class = 'section-select white'>
@@ -38,16 +35,13 @@
 	<section class = 'home-sections'>
 		<div class = 'three-columns'>
 			<div>
-				<img class="bottom" src="/images/home/4t.jpg" />
-		  		<img class="top" src="/images/home/4.jpg" />
+		  		<img src="/images/home/4.jpg" />
 		  	</div>
 		  	<div>
-				<img class="bottom" src="/images/home/5t.jpg" />
-		  		<img class="top" src="/images/home/5.jpg" />
+		  		<img src="/images/home/5.jpg" />
 		  	</div>
 		  	<div>
-				<img class="bottom" src="/images/home/6t.jpg" />
-		  		<img class="top" src="/images/home/6.jpg" />
+		  		<img src="/images/home/6.jpg" />
 		  	</div>
 		</div>
 		<div class = 'section-select white'>
@@ -65,16 +59,13 @@
 	<section class = 'home-sections'>
 		<div class = 'three-columns'>
 			<div>
-				<img class="bottom" src="/images/home/7t.jpg" />
-		  		<img class="top" src="/images/home/7.jpg" />
+		  		<img src="/images/home/7.jpg" />
 		  	</div>
 		  	<div>
-				<img class="bottom" src="/images/home/8t.jpg" />
-		  		<img class="top" src="/images/home/8.jpg" />
+		  		<img src="/images/home/8.jpg" />
 		  	</div>
 		  	<div>
-				<img class="bottom" src="/images/home/9t.jpg" />
-		  		<img class="top" src="/images/home/9.jpg" />
+		  		<img src="/images/home/9.jpg" />
 		  	</div>
 		</div>
 		<div class = 'section-select white'>
