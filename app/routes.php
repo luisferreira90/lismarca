@@ -41,6 +41,8 @@ Route::get('/portfolio', array('as' => 'portfolio', 'uses' => 'PortfolioControll
 
 Route::get('/portfolio/{id}', array('as' => 'portfolio', 'uses' => 'PortfolioController@portfolio'));
 
+Route::get('/portfolio/{id}-*', array('as' => 'portfolio', 'uses' => 'PortfolioController@portfolio'));
+
 Route::resource('user', 'UsersController');
 
 Route::resource('cart', 'CartsController');
