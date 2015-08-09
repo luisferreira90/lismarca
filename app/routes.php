@@ -33,6 +33,8 @@ Route::get('/produtos', array('as' => 'produtos', 'uses' => 'ItemsController@ite
 
 Route::get('/produtos/{id}', array('as' => 'produtos', 'uses' => 'ItemsController@item'));
 
+Route::get('/produtos/{id}-*', array('as' => 'produtos', 'uses' => 'ItemsController@item'));
+
 Route::get('checkout', array('as' => 'checkout', 'uses' => 'CartsController@checkout'));
 
 Route::get('/portfolio', array('as' => 'portfolio', 'uses' => 'PortfolioController@portfolios'));

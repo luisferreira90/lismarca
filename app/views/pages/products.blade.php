@@ -60,7 +60,7 @@
 
             <div class="gallery-item">
                 <div class='image'>
-                    <a href={{'/produtos/' . $product->id }}>{{ HTML::image('images/produtos/icons/' . $product->icon) }}</a>
+                    <a href={{'/produtos/' . $product->id . '-' . str_replace(' ','-',$product->name)}}>{{ HTML::image('images/produtos/icons/' . $product->icon) }}</a>
                 </div>
                 <h3>.{{ $product->name }}</h3>         
             </div>
