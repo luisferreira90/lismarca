@@ -33,13 +33,11 @@ class ItemsController extends BaseController {
 			$subcategories = $subcategory->where('category', '=', Input::get('category'))->lists('name' . $en, 'id');
 			$view = $view->with('subcategories', $subcategories);	
 		}
-
-		else if(Input::has('section') && Input::has('subsection')) {
+		if(Input::has('section') && Input::has('subsection')) {
 			$category = new ProductCategory;
 			$categories = $category->where('subsection', '=', Input::get('subsection'))->lists('name' . $en, 'id');
 			$view = $view->with('categories', $categories);
 		}
-
 		else if(Input::has('section')) {
 			$title = ProductSection::find(Input::get('section'))->name;
 			$subsection = new ProductSubsection;

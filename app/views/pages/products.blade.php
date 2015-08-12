@@ -18,35 +18,25 @@
 <div class = 'filters'>
     {{ Form::open(array('url' => 'produtos', 'method' => 'GET', 'class' => 'form-inline')) }}
         <div class = 'form-group'>
-            {{Form::label('section','Secção')}}   
-            {{Form::select('section', [null=>'Escolha uma secção']+$sections, Input::get('section'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
+            {{ Form::hidden('section', Input::get('section')) }}    
         </div>
 
-        @if(isset($subsections))
-            <div class = 'form-group'>
-                {{Form::label('subsection','Sub-Secção')}}   
-                {{Form::select('subsection', [null=>'Escolha uma sub-secção']+$subsections, Input::get('subsection'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
-            </div>
-        @endif
+        <div class = 'form-group'>
+            {{ Form::hidden('subsection', Input::get('subsection')) }}    
+        </div>
 
-        @if(isset($categories))
+        @if(isset($categories) && count($categories) > 0)
             <div class = 'form-group'>
                 {{Form::label('category','Categoria')}}   
                 {{Form::select('category', [null=>'Escolha uma categoria']+$categories, Input::get('category'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
             </div>
         @endif
 
-        @if(isset($subcategories))
+        @if(isset($subcategories) && count($subcategories) > 0)
             <div class = 'form-group'>
                 {{Form::label('subcategory','Sub-Categoria')}}   
                 {{Form::select('subcategory', [null=>'Escolha uma sub-categoria']+$subcategories, Input::get('subcategory'), array('class' => 'form-control', 'onchange' => 'this.form.submit()'))}}
             </div>
-        @endif
-
-        @if(isset($subsections))
-            <div class = 'form-group-clear'>
-                <a href = 'produtos/'>Limpar filtros</a>
-            </div>  
         @endif
 
     {{ Form::close() }}    
