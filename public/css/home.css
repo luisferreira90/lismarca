@@ -86,7 +86,7 @@
 		vertical-align: middle;
 	}
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 884px) {
 	
 	.home-sections {
 		width:100%;
@@ -95,7 +95,8 @@
 
 	.home-sections div {
 		width:48%;
-		height: 240px;
+		height: 166.2px;
+		font-size:15px;
 	}
 
 	.section-select {
@@ -107,17 +108,19 @@
 		margin-right:4%;
 	}
 
+	.home-sections .three-columns {
+		text-align:center;
+	}
+
 	.home-sections .three-columns div {
 		position:relative;
 		display:inline-block;
-		width:31%;
-		margin-left:3.384615384615385%;
-		height: 100%;
+		width:124.8px;
+		height: 166.2px;
 		background-color:#e11b22;
 	}
 
 	.home-sections .three-columns img {
-		position:absolute;
 		width:100%;
 		height:100%;
 		max-width: 208px;
@@ -169,7 +172,7 @@
 	}
 
 	.section-select h1 {
-		font-size:38px;
+		font-size:28px;
 		margin-bottom:0;
 	}
 
@@ -220,7 +223,51 @@
 @media only screen and (min-width: 980px) {
 
 	.section-select h1 {
-		font-size:41px;
+		font-size:35px;
 	}
 	
+}
+
+@media only screen and (min-width: 1020px) {
+
+	.home-sections div {
+		height: 202.21px;
+		font-size:18px;
+	}
+
+	.section-select h1 {
+		font-size:39px;
+	}
+
+	.home-sections .three-columns div {
+		width:151.84px;
+		height: 202.21px;
+	}
+
+}
+
+@media only screen and (min-width: 1280px) {
+
+	.home-sections div {
+		height: 254.84px;
+		font-size:22px;
+	}
+
+	.section-select h1 {
+		font-size:50px;
+	}
+
+	.home-sections .three-columns div {
+		width:191.36px;
+		height: 254.84px;
+	}
+	
+}
+
+@media only screen and (min-width: 1360px) {
+
+	.home-sections .three-columns div:nth-child(2) {
+		display:inline-block;
+	}
+
 }
