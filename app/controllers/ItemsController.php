@@ -15,6 +15,10 @@ class ItemsController extends BaseController {
 		$en = '';
 		if (App::getLocale() == 'en') {
 			$en = '_en';
+			$name = 'name_en';
+		}
+		else {
+			$name = 'name';
 		}
 
 		$item = new ProductItem;
@@ -30,24 +34,25 @@ class ItemsController extends BaseController {
 			$view = $view->with('subcategories', $subcategories);	
 		}
 
-		if(Input::has('section') && Input::has('subsection')) {
+		else if(Input::has('section') && Input::has('subsection')) {
 			$category = new ProductCategory;
 			$categories = $category->where('subsection', '=', Input::get('subsection'))->lists('name' . $en, 'id');
 			$view = $view->with('categories', $categories);
 		}
 
-		if(Input::has('section')) {
+		else if(Input::has('section')) {
 			$title = ProductSection::find(Input::get('section'))->name;
 			$subsection = new ProductSubsection;
 			$subsections = $subsection->where('section', '=', Input::get('section'))->lists('name' . $en, 'id');
 			$view = $view->with('subsections', $subsections)->with('title', $title);
+
+			$subsections = ProductSubsection::select($name . ' as name', 'id', 'icon', 'section')
+			->where('section', '=', Input::get('section'))->get();
+
+			$view = View::make('pages.products_landing_subsection')
+			->with('subsections', $subsections)->with('section', Input::get('section'));
 		}
 		else {
-			if ($en!='')
-				$name = 'name_en';
-			else
-				$name = 'name';
-
 			$sections = ProductSection::select($name . ' as name', 'id', 'icon')->get();
 
 			$view = View::make('pages.products_landing')

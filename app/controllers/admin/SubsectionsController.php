@@ -47,10 +47,13 @@ class SubsectionsController extends \BaseController {
         if($validator)
             return Redirect::to('admin/subseccoes/criar')->withErrors($validator)->withInput();
 
-        if(isset($data['icon'])) 
-        	$data['icon'] = ProductSubsection::storeImage(Input::file('icon'));
-
         $new = ProductSubsection::create($data);
+
+        if(isset($data['icon'])) 
+        	$data['icon'] = ProductSubsection::storeImage(Input::file('icon'), $new->id);
+        	ProductSubsection::find($new->id)->fill($data)->save();
+
+        
         if($new){
             return Redirect::to('admin/subseccoes');
         }
@@ -70,7 +73,7 @@ class SubsectionsController extends \BaseController {
 
         if (Input::file('icon')) {
 			$data = Input::all();
-        	$data['icon'] = ProductSubsection::storeImage(Input::file('icon'));
+        	$data['icon'] = ProductSubsection::storeImage(Input::file('icon'), $id);
     	}
         else {
         	$data = Input::only(['name','name_en','ordering', 'section']);
