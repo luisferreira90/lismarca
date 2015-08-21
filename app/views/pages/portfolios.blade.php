@@ -22,7 +22,7 @@
     @foreach ($portfolios as $portfolio)
         <div class="gallery-item">
             <div class='image'>
-                <a href={{'/portfolio/' . $portfolio->id . '-' . str_replace(' ','-',$portfolio->name)}}>{{ HTML::image('images/portfolio/icons/' . $portfolio->icon) }}</a>
+                <a href={{'/portfolio/' . $portfolio->id . '-' . str_replace(array(' - ', '. ', '\\', '/', ' '),'-',$portfolio->name)}}>{{ HTML::image('images/portfolio/icons/' . $portfolio->icon) }}</a>
             </div>
             <h3>.{{ $portfolio->name }}</h3>         
         </div>

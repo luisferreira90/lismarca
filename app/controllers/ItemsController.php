@@ -57,7 +57,15 @@ class ItemsController extends BaseController {
 			->with('sections', $sections);
 		}
 
+
         $new = $item->where('new', '=', '1')->orderBy('id', 'desc')->skip(0)->take(15)->get();
+
+        if(Input::has('search')) {
+			$searchView = View::make('pages.products')
+			->with('products', $items)
+			->with('new', $new);
+			return $searchView;
+		}
 
   		return $view->with('new', $new);
 	}
