@@ -6,7 +6,7 @@
 
 @section('content')
 
-<a href = 'produtos?section=1'>
+<a href = 'produtos?section=2'>
 	<section class = 'home-sections'>
 		<div class = 'three-columns'>
 			<div>
@@ -31,7 +31,7 @@
 	</section>
 </a>
 
-<a href = 'produtos?section=2'>
+<a href = 'produtos?section=3'>
 	<section class = 'home-sections'>
 		<div class = 'three-columns'>
 			<div>
@@ -55,7 +55,7 @@
 	</section>
 </a>
 
-<a href = 'produtos?section=3'>
+<a href = 'produtos?section=1'>
 	<section class = 'home-sections'>
 		<div class = 'three-columns'>
 			<div>

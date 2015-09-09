@@ -30,28 +30,28 @@ class ItemsController extends BaseController {
 
 		if(Input::has('section') && Input::has('subsection') && Input::has('category')) {
 			$subcategory = new ProductSubcategory;
-			$subcategories = $subcategory->where('category', '=', Input::get('category'))->lists('name' . $en, 'id');
+			$subcategories = $subcategory->where('category', '=', Input::get('category'))->orderBy('ordering')->lists('name' . $en, 'id');
 			$view = $view->with('subcategories', $subcategories);	
 		}
 		if(Input::has('section') && Input::has('subsection')) {
 			$category = new ProductCategory;
-			$categories = $category->where('subsection', '=', Input::get('subsection'))->lists('name' . $en, 'id');
+			$categories = $category->where('subsection', '=', Input::get('subsection'))->orderBy('ordering')->lists('name' . $en, 'id');
 			$view = $view->with('categories', $categories);
 		}
 		else if(Input::has('section')) {
 			$title = ProductSection::find(Input::get('section'))->name;
 			$subsection = new ProductSubsection;
-			$subsections = $subsection->where('section', '=', Input::get('section'))->lists('name' . $en, 'id');
+			$subsections = $subsection->where('section', '=', Input::get('section'))->orderBy('ordering')->lists('name' . $en, 'id');
 			$view = $view->with('subsections', $subsections)->with('title', $title);
 
 			$subsections = ProductSubsection::select($name . ' as name', 'id', 'icon', 'section')
-			->where('section', '=', Input::get('section'))->get();
+			->where('section', '=', Input::get('section'))->orderBy('ordering')->get();
 
 			$view = View::make('pages.products_landing_subsection')
 			->with('subsections', $subsections)->with('section', Input::get('section'));
 		}
 		else {
-			$sections = ProductSection::select($name . ' as name', 'id', 'icon')->get();
+			$sections = ProductSection::select($name . ' as name', 'id', 'icon')->orderBy('ordering')->get();
 
 			$view = View::make('pages.products_landing')
 			->with('sections', $sections);
