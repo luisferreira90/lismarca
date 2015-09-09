@@ -2,7 +2,7 @@
 
 class ProductItem extends Eloquent{
 
-	protected $fillable = ['section','subsection','category','subcategory', 'name', 'icon', 'description', 'description_en', 'published','new','featured'];
+	protected $fillable = ['section','subsection','category','subcategory', 'name', 'icon', 'description', 'description_en', 'published','new','featured', 'colors', 'dimensions'];
 	public $timestamps = false;
 
 
@@ -18,6 +18,24 @@ class ProductItem extends Eloquent{
         Image::make($file)->resize(290, null, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath . $filename);
+        
+        return $filename;
+    }
+
+
+    public static function storeColor($file) {
+        $destinationPath = public_path().'/images/produtos/colors/'; 
+        $filename = $file->getClientOriginalName();
+        Image::make($file)->save($destinationPath . $filename);
+        
+        return $filename;
+    }
+
+
+    public static function storeDimensions($file) {
+        $destinationPath = public_path().'/images/produtos/dimensions/'; 
+        $filename = $file->getClientOriginalName();
+        Image::make($file)->save($destinationPath . $filename);
         
         return $filename;
     }

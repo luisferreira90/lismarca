@@ -81,6 +81,12 @@ class ItemsController extends \BaseController {
 		if(isset($data['icon'])) 
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
 
+        if(isset($data['colors'])) 
+        	$data['colors'] = ProductItem::storeColor(Input::file('colors'));
+
+        if(isset($data['dimensions'])) 
+        	$data['dimensions'] = ProductItem::storeDimensions(Input::file('dimensions'));
+
      	$category = ProductSubcategory::find(Input::get('subcategory'))->category;
     	$subsection = ProductCategory::find($category)->subsection;
     	$section = ProductSubsection::find($subsection)->section;
@@ -137,6 +143,13 @@ class ItemsController extends \BaseController {
 		if (Input::file('icon')) {
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
     	}
+
+    	if(Input::file('colors')) 
+        	$data['colors'] = ProductItem::storeColor(Input::file('colors'));
+
+        if(Input::file('dimensions')) 
+        	$data['dimensions'] = ProductItem::storeDimensions(Input::file('dimensions'));
+
 
         if (!Input::has('new'))
         	$data['new'] = 0;

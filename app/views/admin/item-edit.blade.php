@@ -58,6 +58,16 @@
     </div>
 
     <div class = 'form-group'>
+        {{Form::label('colors', 'Cores')}}
+        {{Form::file('colors', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
+        {{Form::label('dimensions', 'Dimensões')}}
+        {{Form::file('dimensions', null, array('class' => 'form-control'))}}
+    </div>
+
+    <div class = 'form-group'>
         {{Form::label('images', 'Imagens')}}
         {{Form::file('images[]', ['multiple' => true], array('class' => 'form-control'))}}
     </div>
