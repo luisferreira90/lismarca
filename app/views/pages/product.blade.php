@@ -10,7 +10,18 @@
 @if(isset($error))
     {{$error}}
 @else
+
 <h1>{{$product->name}}</h1>
+
+<h2>INFORMAÇÃO SOBRE O PRODUTO</h2>
+
+<div class = 'product-main'>
+  @if(App::getLocale() == 'en')
+    {{$product->description_en}}
+  @else
+    {{$product->description}}
+  @endif
+</div>
 
 <div class="slideshow">
     @foreach ($photos as $photo)
@@ -20,12 +31,22 @@
     @endforeach
 </div>
 
-<div class = 'product-main'>
-  @if(App::getLocale() == 'en')
-    {{$product->description_en}}
-  @else
-    {{$product->description}}
-  @endif
+<div class = 'other-info'>
+
+  <div class = 'colors-dimensions'>
+    <h4>CORES DISPONÍVEIS:</h4>
+    <img src="/images/produtos/colors/{{$product->colors}}">
+  </div>
+
+  <div class = 'colors-dimensions'>
+    <h4>DIMENSÕES:</h4>
+    <img src="/images/produtos/dimensions/{{$product->dimensions}}">
+  </div>
+
+  <div class = 'product-file'>
+    <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
+</div>
+
 </div>
 
 @if(Auth::check())
@@ -49,10 +70,6 @@
   {{ Form::close() }}
 </div>
 @endif
-
-<div class = 'product-file'>
-    <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
-</div>
 
 {{ HTML::script('js/slick.min.js') }}
 <script>
