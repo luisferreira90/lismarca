@@ -23,7 +23,7 @@ class ProductItem extends Eloquent{
     }
 
 
-    public static function storeColor($file) {
+    public static function storeColors($file) {
         $destinationPath = public_path().'/images/produtos/colors/'; 
         $filename = $file->getClientOriginalName();
         Image::make($file)->save($destinationPath . $filename);

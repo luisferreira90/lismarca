@@ -107,6 +107,22 @@
 
     <div class = 'form-icon'>
 
+        <h3>Cores</h3>
+
+        {{ HTML::image('/images/produtos/colors/' . $item->colors) }}
+
+    </div>
+
+    <div class = 'form-icon'>
+
+        <h3>Dimensões</h3>
+
+        {{ HTML::image('/images/produtos/dimensions/' . $item->dimensions) }}
+
+    </div>
+
+    <div class = 'form-icon'>
+
         <h3>Icone / Imagem de apresentação actual</h3>
 
         {{ HTML::image('/images/produtos/icons/' . $item->icon) }}

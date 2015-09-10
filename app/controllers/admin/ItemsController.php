@@ -82,7 +82,7 @@ class ItemsController extends \BaseController {
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
 
         if(isset($data['colors'])) 
-        	$data['colors'] = ProductItem::storeColor(Input::file('colors'));
+        	$data['colors'] = ProductItem::storeColors(Input::file('colors'));
 
         if(isset($data['dimensions'])) 
         	$data['dimensions'] = ProductItem::storeDimensions(Input::file('dimensions'));
@@ -140,16 +140,20 @@ class ItemsController extends \BaseController {
 
 		$data = Input::all();
 
-		if (Input::file('icon')) {
+		if (Input::file('icon'))
         	$data['icon'] = ProductItem::storeImage(Input::file('icon'));
-    	}
+        else
+        	unset($data['icon']);
 
     	if(Input::file('colors')) 
-        	$data['colors'] = ProductItem::storeColor(Input::file('colors'));
+        	$data['colors'] = ProductItem::storeColors(Input::file('colors'));
+        else
+        	unset($data['colors']);
 
         if(Input::file('dimensions')) 
         	$data['dimensions'] = ProductItem::storeDimensions(Input::file('dimensions'));
-
+        else
+        	unset($data['dimensions']);
 
         if (!Input::has('new'))
         	$data['new'] = 0;
