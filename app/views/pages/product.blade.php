@@ -11,6 +11,8 @@
     {{$error}}
 @else
 
+<p>PRODUTOS | MOBILIÁRIO | Mobiliário exterior | <b>Cadeira Alhambra</b></p>
+
 <h1>{{$product->name}}</h1>
 
 <h2>INFORMAÇÃO SOBRE O PRODUTO</h2>
@@ -23,12 +25,15 @@
   @endif
 </div>
 
-<div class="slideshow">
+<div class = 'slideshow-container'>
+  <div id = 'currentPhoto'></div>
+  <div class="slideshow product-slideshow">
     @foreach ($photos as $photo)
-    <div>
-        <div class = 'slideshow-image'><a href = '/images/produtos/items/{{$photo->src}}'><img src="/images/produtos/items/thumbnails/{{$photo->src}}"></a></div>
-    </div>
+      <div id = '{{$photo->src}}'>
+          <div class = 'slideshow-image'><img src="/images/produtos/items/{{$photo->src}}"></div>
+      </div>
     @endforeach
+  </div>
 </div>
 
 <div class = 'other-info'>
@@ -45,7 +50,7 @@
 
   <div class = 'product-file'>
     <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
-</div>
+  </div>
 
 </div>
 
@@ -75,34 +80,30 @@
 <script>
 
 $(document).ready(function(){
+
   $('.slideshow').slick({
     infinite: true,
-    slidesToShow: 7,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 1,
     autoplay: true,
+    arrows: true,
     autoplaySpeed: 5000,
+    swipeToSlide: true,
     responsive: [
     {
       breakpoint: 1080,
       settings: {
-        slidesToShow: 5,
-        slidesToScroll: 3,
+        slidesToShow: 4,
+        slidesToScroll: 1,
         infinite: true,
         dots: true
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 2
       }
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 2
+        slidesToScroll: 1
       }
     },
     {
@@ -114,7 +115,21 @@ $(document).ready(function(){
     }
   ]
   });
+
+
 });
+
+
+$('.slideshow').on('init', function(event, slick){
+    $('#currentPhoto').css('background-image', 'url(http://lismarcadev/images/produtos/items/' + slick.$slides[0].id + ')' );
+});
+
+
+
+$('.slideshow').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+  $('#currentPhoto').css('background-image', 'url(http://lismarcadev/images/produtos/items/' + $("[data-slick-index='" +currentSlide+ "']").attr('id') + ')' );
+});
+
 
 </script>
 @endif

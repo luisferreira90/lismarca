@@ -1,3 +1,12 @@
+#currentPhoto {
+  width:350px;
+  height:437px;
+  border:solid 1px red;
+  /*background-image:url('http://lismarcadev/images/produtos/items/2880-new-fiona-1.jpg');*/
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
 .gallery-list {
     margin: 10px auto;
     overflow: hidden;
