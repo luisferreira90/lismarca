@@ -171,8 +171,18 @@
     text-align: right;
 }
 
+.cart h4 {
+  margin:0px;
+  font-size:15px;
+}
+
 .cart input {
   width:100px;
+  text-align:center;
+}
+
+.cart .form-group label {
+  font-size:15px;
 }
 
 #currentPhoto {

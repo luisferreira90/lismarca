@@ -24,6 +24,31 @@
   @else
     {{$product->description}}
   @endif
+
+  @if(Auth::check())
+    <div class = 'cart'>
+      <h4 class = 'dark-grey'>Adicionar ao carrinho</h4>
+      {{ Form::open(array('route' => array('cart.store'), 'method' => 'post')) }}
+
+          <div class = 'form-group'>
+              {{Form::label('quantity', 'Quantidade')}}
+              {{Form::number('quantity', 1, array('min' => '1'))}}
+          </div>
+
+          <div class = 'form-group'>
+              {{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control btn btn-primary'))}}
+          </div>
+
+          {{ Form::hidden('product_item', $product->id) }}
+
+          {{ Form::hidden('user', Auth::id()) }}
+
+      {{ Form::close() }}
+    </div>
+  @endif
+
+
+
 </div>
 
 <div class = 'slideshow-container'>
@@ -60,28 +85,6 @@
   </div>
 
 </div>
-
-@if(Auth::check())
-<div class = 'cart'>
-  <h4>Adicionar ao carrinho</h4>
-  {{ Form::open(array('route' => array('cart.store'), 'method' => 'post')) }}
-
-      <div class = 'form-group'>
-          {{Form::label('quantity', 'Quantidade')}}
-          {{Form::number('quantity', 1, array('min' => '1'))}}
-      </div>
-
-      <div class = 'form-group'>
-          {{Form::submit(Lang::get('strings.submit'), array('id' => 'submit', 'class' => 'form-control btn btn-primary'))}}
-      </div>
-
-      {{ Form::hidden('product_item', $product->id) }}
-
-      {{ Form::hidden('user', Auth::id()) }}
-
-  {{ Form::close() }}
-</div>
-@endif
 
 {{ HTML::script('js/slick.min.js') }}
 <script>
