@@ -83,11 +83,10 @@ $(document).ready(function(){
 
   $('.slideshow').slick({
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     arrows: true,
-    centerMode: true,
     autoplaySpeed: 5000,
     swipeToSlide: true,
     prevArrow: '<div class="slick-prev-custom"></div>',
