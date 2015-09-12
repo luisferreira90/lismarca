@@ -11,13 +11,14 @@
     {{$error}}
 @else
 
-<p>PRODUTOS | MOBILIÁRIO | Mobiliário exterior | <b>Cadeira Alhambra</b></p>
-
-<h1>{{$product->name}}</h1>
-
-<h2>INFORMAÇÃO SOBRE O PRODUTO</h2>
+<p class = 'dark-grey breadcrumbs'>PRODUTOS | MOBILIÁRIO | Mobiliário exterior | <span class = 'bold'>Cadeira Alhambra</span></p>
 
 <div class = 'product-main'>
+
+<h1 class = 'main-product-title'>{{$product->name}}</h1>
+
+<h2 class = 'dark-grey main-product-info'>INFORMAÇÃO SOBRE O PRODUTO</h2>
+
   @if(App::getLocale() == 'en')
     {{$product->description_en}}
   @else
@@ -38,18 +39,24 @@
 
 <div class = 'other-info'>
 
-  <div class = 'colors-dimensions'>
-    <h4>CORES DISPONÍVEIS:</h4>
-    <img src="/images/produtos/colors/{{$product->colors}}">
+  <div class = 'colors'>
+    <h4 class = 'dark-grey'>CORES DISPONÍVEIS:</h4>
+    <div>
+      <img src="/images/produtos/colors/{{$product->colors}}">
+    </div>
   </div>
 
-  <div class = 'colors-dimensions'>
-    <h4>DIMENSÕES:</h4>
-    <img src="/images/produtos/dimensions/{{$product->dimensions}}">
+  <div class = 'dimensions'>
+    <h4 class = 'dark-grey'>DIMENSÕES:</h4>
+    <div>
+      <img src="/images/produtos/dimensions/{{$product->dimensions}}">
+    </div>
   </div>
 
   <div class = 'product-file'>
-    <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
+    <div>
+      <a href = '/pdf/{{$product->id}}.pdf'><img src = '/images/pdf.svg'></a>
+    </div>
   </div>
 
 </div>
