@@ -219,7 +219,13 @@
 .product-main {
   float:left;
   display:inline-block;
-  width:700px;
+  width:400px;
+  font-size:20px!important;
+}
+
+.product-main span {
+  font-size:20px!important;
+  color:#6d6f71;
 }
 
 .other-info {
