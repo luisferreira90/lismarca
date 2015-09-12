@@ -1,10 +1,24 @@
-#currentPhoto {
-  width:350px;
-  height:437px;
-  border:solid 1px red;
-  /*background-image:url('http://lismarcadev/images/produtos/items/2880-new-fiona-1.jpg');*/
-  background-repeat:no-repeat;
-  background-position:center;
+.slick-prev-custom,
+.slick-next-custom {
+  width:128px;
+  height: 128px;
+  position:absolute;
+  top:-280px;
+}
+
+.slick-prev-custom:hover,
+.slick-next-custom:hover {
+  cursor:pointer;
+}
+
+.slick-next-custom {
+  background-image:url('../images/arrow-right-slideshow.png');
+  left:453px;
+}
+
+.slick-prev-custom {
+  left:-30px;
+  background-image:url('../images/arrow-left-slideshow.png');
 }
 
 .gallery-list {
@@ -159,6 +173,20 @@
 
 .cart input {
   width:100px;
+}
+
+.slideshow-container {
+  position:relative;
+  max-width:570px;
+  overflow:hidden;
+  height:550px;
+}
+
+#currentPhoto {
+  width:100%;
+  height:450px;
+  background-repeat:no-repeat;
+  background-position:center;
 }
 
 @media only screen and (min-width: 980px) {

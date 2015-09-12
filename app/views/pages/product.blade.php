@@ -83,33 +83,20 @@ $(document).ready(function(){
 
   $('.slideshow').slick({
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     arrows: true,
+    centerMode: true,
     autoplaySpeed: 5000,
     swipeToSlide: true,
+    prevArrow: '<div class="slick-prev-custom"></div>',
+    nextArrow: '<div class="slick-next-custom"></div>',
     responsive: [
-    {
-      breakpoint: 1080,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1
       }
     }
@@ -127,7 +114,7 @@ $('.slideshow').on('init', function(event, slick){
 
 
 $('.slideshow').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-  $('#currentPhoto').css('background-image', 'url(http://lismarcadev/images/produtos/items/' + $("[data-slick-index='" +currentSlide+ "']").attr('id') + ')' );
+  $('#currentPhoto').css('background-image', 'url(http://lismarcadev/images/produtos/items/' + $("[data-slick-index='" +nextSlide+ "']").attr('id') + ')' );
 });
 
 
