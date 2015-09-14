@@ -103,9 +103,9 @@ $(document).ready(function(){
     nextArrow: '<div class="slick-next-custom"></div>',
     responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 520,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1
       }
     }

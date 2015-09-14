@@ -50,6 +50,7 @@ header a {
 }
 
 .header-lower {
+	padding-left:10px;
 	height: 72px;
 	z-index: 11;
 	background-color:white;
@@ -119,7 +120,7 @@ header a {
 	height: 77px;
 	width:70px;
 	background-repeat:no-repeat;
-	background-position:3;
+	background-position:24;
 	background-image: url('../images/hamburger.svg');
 	background-size:40px;
 }

@@ -24,7 +24,7 @@
 				<div class = 'login'>
 					<img src = '/images/lock.svg' class = 'marker'>
 					@if(Auth::check() && User::isAdmin())
-						<a href = '/admin'>Administração</a>
+						<a href = '/admin'>Admin</a>
 						<a href = '/logout'> / Logout</a>
 					@elseif(Auth::check())
 						<a href = '/registo'>{{Lang::get('strings.profile')}}</a>
