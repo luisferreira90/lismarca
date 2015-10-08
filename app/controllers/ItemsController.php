@@ -76,9 +76,31 @@ class ItemsController extends BaseController {
 		if(!$product) {
 			return View::make('pages.product')->with('error', 'Produto não encontrado!');
 		}
+
+		$en = '';
+		if (App::getLocale() == 'en') {
+			$en = '_en';
+			$name = 'name_en';
+		}
+		else {
+			$name = 'name';
+		}
+
+		$section = DB::table('product_sections')->select('name' . $en . ' as name', 'id')->where('id', $product->section)->get();
+		$subsection = DB::table('product_subsections')->select('name' . $en . ' as name', 'id')->where('id', $product->subsection)->get();
+		$category = DB::table('product_categories')->select('name' . $en . ' as name', 'id')->where('id', $product->category)->get();
+		$subcategory = DB::table('product_subcategories')->select('name' . $en . ' as name', 'id')->where('id', $product->subcategory)->get();
+
+
 		$productPhoto = new ProductPhoto;
 		$photos = $productPhoto->getPhotos($id);
-		return View::make('pages.product')->with('product', $product)->with('photos', $photos);
+		return View::make('pages.product')
+		->with('product', $product)
+		->with('photos', $photos)
+		->with('section', $section)
+		->with('subsection', $subsection)
+		->with('category', $category)
+		->with('subcategory', $subcategory);
 	}
 
 }

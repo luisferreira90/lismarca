@@ -11,7 +11,18 @@
     {{$error}}
 @else
 
-<p class = 'dark-grey breadcrumbs'>PRODUTOS | MOBILIÁRIO | Mobiliário exterior | <span class = 'bold'>Cadeira Alhambra</span></p>
+<p class = 'dark-grey breadcrumbs'>
+  <a href = '/produtos'>PRODUTOS</a> | 
+  <a href = '/produtos/?section={{$section[0]->id}}'>{{$section[0]->name}}</a> | 
+  <a href = '/produtos/?section={{$section[0]->id}}&subsection={{$subsection[0]->id}}'>{{$subsection[0]->name}}</a>
+  @if(!empty($category))
+   | <a href = '/produtos/?section={{$section[0]->id}}&subsection={{$subsection[0]->id}}&category={{$category[0]->id}}'>{{$category[0]->name}}</a>
+  @endif
+  @if(!empty($subcategory))
+   | <a href = '/produtos/?section={{$section[0]->id}}&subsection={{$subsection[0]->id}}&category={{$category[0]->id}}&subcategory={{$subcategory[0]->id}}'>{{$subcategory[0]->name}}</a>
+  @endif
+  <!--<span class = 'bold'></span></a>-->
+</p>
 
 <div class = 'product-main'>
 
